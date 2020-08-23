@@ -1,0 +1,18 @@
+{
+  "blog": {
+    "title": "Tapirio",
+    "author": "Vasily Myazin",
+    "description": "Made for the dev-savvy. Great for blogs and static websites. Customizeable, flexible, fast.",
+    "URL": "https://tapirio.com"
+  },
+  "appIds": {
+    "googleAnalytics": "AABBCC",
+    "facebookApp": "BBCCDD"
+  },
+  "social": {
+    "facebook": "http://facebook.com",
+    "twitter": "http://twitter.com/usetapirio",
+    "instagram": "http://instagram.com",
+    "linkedin": "http://linkedin.com"
+  }
+}
