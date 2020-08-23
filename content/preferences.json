@@ -1,18 +1,17 @@
 {
   "blog": {
-    "title": "Tapirio",
+    "title": "Vasily Myazin",
     "author": "Vasily Myazin",
-    "description": "Made for the dev-savvy. Great for blogs and static websites. Customizeable, flexible, fast.",
-    "URL": "https://tapirio.com"
+    "description": "Personal blog of Vasily Myazin",
+    "URL": "https://vasilym.com"
   },
   "appIds": {
-    "googleAnalytics": "AABBCC",
-    "facebookApp": "BBCCDD"
+    "googleAnalytics": "UA-2420101-39"
   },
   "social": {
     "facebook": "http://facebook.com",
-    "twitter": "http://twitter.com/usetapirio",
-    "instagram": "http://instagram.com",
+    "twitter": "http://twitter.com/vasily_m",
+    "instagram": "http://instagram.com/vasily",
     "linkedin": "http://linkedin.com"
   }
 }
