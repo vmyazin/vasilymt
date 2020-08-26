@@ -5,13 +5,17 @@ block content
   
   .container.page
     .blog-content
-      .row
+      .row.mt-5.pt-4
         .col.col-md-2
           h2.font-light
             a.hidden-link(href="/blog/")
               ion-icon.align-middle(name="arrow-back")
               | Posts
         .col-md-8
+          img(src=postMetaData.image)
+
+          h3.post-title.mt-4= postMetaData.title
+
           p.author
             if postMetaData.author
               =postMetaData.author
@@ -19,7 +23,7 @@ block content
               =blogInfo.blog.author
             span.separator | 
             =postMetaData.date
-          h3.post-title= postMetaData.title
+
           | !{content}
 
           p Tags: 

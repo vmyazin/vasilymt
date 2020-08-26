@@ -6,8 +6,6 @@ description: After looking for the perfect solution for a website platform we en
 image: /images/blog/laptop-tapirio.jpg
 tags: story, history, meta
 ---
-![Tapirio on a laptop](/images/blog/laptop-tapirio.jpg)
-
 **After years of building various websites for my personal projects and clients I formed an opinion on what makes a good, solid engine for a website or web application.**
 
 I tried many different approaches and technologies and here are some examples to name:
