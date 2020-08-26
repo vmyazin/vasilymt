@@ -138,20 +138,22 @@ a:hover .social {
   font-size: 24px;
 }
 
-.page-callout p {
-  font-size: 32px;
-  max-width: 580px;
-  margin: 0 auto 20px;
-  line-height: 1.5;
-  color: #777;
-}
+.page-callout {
+  p {
+    font-size: $font-lg;
+    max-width: 580px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+    color: #777;
 
-.page-callout p:last-child {
-  margin-bottom: 0;
-}
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-.page-callout .subtext p {
-  font-size: 24px;
+  .subtext p {
+    font-size: $font-md;
+  }
 }
 
 .hero {
@@ -159,13 +161,10 @@ a:hover .social {
   margin: 60px auto 0;
 }
 .illustration {
-  max-width: 700px;
+  max-width: 800px;
   margin: 60px auto 0;
 }
-.illustration img {
-  margin-right: 30px;
-  margin-left: 10px;
-}
+
 .contact-info {
   font-weight: 500;
   margin-bottom: 40px;
