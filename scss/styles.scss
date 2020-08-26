@@ -93,6 +93,10 @@ p {
 
 .top-nav {
   background-color: $text-color;
+
+  .nav-link {
+    font-size: $font-md;
+  }
 }
 
 .page-header {
@@ -231,7 +235,7 @@ a:hover .social {
 
 .logos {
   display: inline-block;
-  
+
   .brand-logo + .brand-logo {
     margin-left: 80px;
   }
