@@ -23,7 +23,6 @@
 }
 body {
   font: 18px rational, Helvetica, Arial, sans-serif;
-  background-color: #f2f4f8;
   color: #22262b;
 }
 a {
@@ -334,6 +333,10 @@ a:hover .social {
       margin-right: 4px;
     }
   }
+}
+
+.odd {
+  background-color: #f2f4f8;
 }
 
 .page {
