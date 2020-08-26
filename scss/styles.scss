@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 @font-face {
   font-family: 'rationalhairline';
   src: url("../fonts/rene_bieder_-_rational-hairline-webfont.eot");
@@ -69,11 +71,6 @@ p {
   font-family: rationalextralight, Helvetica, Arial, sans-serif;
 }
 
-.row {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .section {
   display: table;
   table-layout: fixed;
@@ -92,6 +89,10 @@ p {
     padding: 50px 20px;
     height: 600px;
   }
+}
+
+.top-nav {
+  background-color: $text-color;
 }
 
 .page-header {
@@ -227,12 +228,18 @@ a:hover .social {
   width: 110px;
   height: 70px;
 }
-.logos .brand-logo + .brand-logo {
-  margin-left: 80px;
+
+.logos {
+  display: inline-block;
+  
+  .brand-logo + .brand-logo {
+    margin-left: 80px;
+  }
+  .row {
+    margin-top: 40px;
+  }
 }
-.logos .row {
-  margin-top: 40px;
-}
+
 @media (max-width: 544px) {
   .logos .row + .row {
     margin-top: 0;
@@ -245,33 +252,33 @@ a:hover .social {
   }
 }
 
-.section.video {
+.video {
   position: relative;
   overflow: hidden;
   text-align: center;
 }
 
-.section.video .page-wrapper {
+.video .page-wrapper {
   display: flex;
   height: 800px;
   padding-bottom: 0;
 }
 
 @media (max-width: 1370px) {
-  .section.video .page-wrapper {
+  .video .page-wrapper {
     display: flex;
     height: 600px;
   }
 }
 
 @media (max-width: 500px) {
-  .section.video .page-wrapper {
+  .video .page-wrapper {
     display: flex;
     height: 300px;
   }
 }
 
-.section.video .page-header {
+.video .page-header {
   width: auto;
   z-index: 1;
   position: relative;

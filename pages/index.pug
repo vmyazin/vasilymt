@@ -4,7 +4,7 @@ block content
   include partials/header
 
   .container-fluid
-    .row.section.video.even
+    .row.position-relative.video.even
       .page-wrapper
         .page-header
           h1 Vasily Myazin
@@ -12,44 +12,42 @@ block content
         .video-holder
           video(autoplay loop muted preload='auto' playsinline='playsinline')
             source(src='/videos/VasilyWorkReel.mp4' type='video/mp4')
-  .container-fluid
-    .row.section.even
-      .page-wrapper
-        .page-callout
-          p Digital Product Specialist with 10+ years of experience. Currently based in New York City, working as Product Designer. Played key role in a variety of Silicon Valley startups. A wearer of many digital hats.
-          .subtext
-            p
-              a(href='https://www.linkedin.com/in/vmyazin/')
-                img.social(src='images/icon-linkedin.svg' alt='LinkedIn')
-                |  
-                span LinkedIn
-  .container-fluid
-    .row.section.odd
-      .page-wrapper
-        .page-header.page-header-med
-          h2 Expertise
-          .illustration
-            img(src='images/venn.svg')
+  .section.even
+    .page-wrapper
+      .page-callout
+        p Digital Product Specialist with 10+ years of experience. Currently based in New York City, working as Product Designer. Played key role in a variety of Silicon Valley startups. A wearer of many digital hats.
+        .subtext
+          p
+            a(href=blogInfo.social.linkedin)
+              img.social(src='images/icon-linkedin.svg' alt='LinkedIn')
+              |  
+              span LinkedIn
 
-  .container-fluid
-    .row.section.gold
-      .page-wrapper
-        .page-header.page-header-med
-          h2 Brands
-          h3 I've had opportunity to work with
-          .logos
-            .row
-              .brand-logo.logo-sen
-              .brand-logo.logo-psn
-              .brand-logo.logo-fb
-            .row
-              .brand-logo.logo-bmw
-              .brand-logo.logo-mb
-  .container-fluid
-    .row.section.even
-      .page-wrapper.text-center
-        .page-header.page-header-med
-          h3 Get in touch
-        a.btn.btn-lg.btn-secondary.hollow(href='mailto:contact@vasilym.com') contact@vasilym.com
+  .section.odd
+    .page-wrapper
+      .page-header.page-header-med
+        h2 Expertise
+        .illustration
+          img(src='images/venn.svg')
+
+  .section.gold
+    .page-wrapper
+      .page-header.page-header-med
+        h2 Brands
+        h3 I've had opportunity to work with
+        .logos
+          .mt-5
+            .brand-logo.logo-sen
+            .brand-logo.logo-psn
+            .brand-logo.logo-fb
+          .mt-5
+            .brand-logo.logo-bmw
+            .brand-logo.logo-mb
+
+  .section.even
+    .page-wrapper.text-center
+      .page-header.page-header-med
+        h3 Get in touch
+      a.btn.btn-lg.btn-secondary.hollow(href='mailto:contact@vasilym.com') contact@vasilym.com
 
   include partials/footer
