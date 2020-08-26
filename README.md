@@ -1,4 +1,8 @@
-# Tapirio Platform
+# vasilym.com
+
+Vasily's personal+professional website
+
+## Based on Tapirio Platform
 
 A simple to use platfrom for building Robust & SEO-friendly websites with blogging capabilities. Foundation built with ExpressJS, Pug, Sass, Bootstrap. There is no reliance upon jQuery.
 
