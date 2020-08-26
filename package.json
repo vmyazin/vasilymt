@@ -1,5 +1,5 @@
 {
-  "name": "tapirio",
+  "name": "vasilymt",
   "version": "0.1.2",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "jest",
     "sass": "node-sass -w sass -o public/stylesheets",
     "devstart": "nodemon ./bin/www-vasily",
-    "serverstart": "DEBUG=tapirio:* npm run devstart"
+    "serverstart": "DEBUG=vasilymt:* npm run devstart"
   },
   "jest": {
     "testEnvironment": "node",
