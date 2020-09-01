@@ -52,8 +52,13 @@ block content
     .page-wrapper.text-center
       .page-header.page-header-med
         h4.mb-4
-          |Get in touch
-          img.pl-3(src="/images/avatar.svg", alt="Little Man")
+          .tooltip-zone.d-inline-block.position-relative
+            |Get in touch
+            img.pl-3(src="/images/avatar.svg", alt="Little Man")
+
+            .vm-tooltip
+              | What's good?
+
         a.btn.btn-primary.btn-lg(href='mailto:contact@vasilym.com') contact@vasilym.com
         .row
           .col-md-4.offset-md-4

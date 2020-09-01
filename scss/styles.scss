@@ -350,6 +350,41 @@ a:hover .social {
   background-color: #f2f4f8;
 }
 
+.vm-tooltip {
+  position: absolute;
+  right: -172px;
+  top: 0;
+  color: white;
+  padding: 15px;
+  font-size: $font-sm;
+  background-color: $text-color;
+
+  &:after {
+    content: '';
+    left: -20px;
+    top: 0%;
+    transform: translateY(70%);
+    border-width: 10px;
+    border-color: transparent $text-color transparent transparent;
+    z-index: 4;
+    border-style: solid;
+    position: absolute;
+  }
+}
+
+.tooltip-zone {
+  .vm-tooltip {
+    opacity: 0;
+    transition: all 1s cubic-bezier(1, -1, 0, 2);
+  }
+
+  &:hover {
+    .vm-tooltip {
+      opacity: 1;
+    }
+  }
+} 
+
 .contact {
   h4 {
     font-size: $font-xl;
