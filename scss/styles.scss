@@ -58,13 +58,29 @@ h1 {
 }
 
 h3 {
-  font-size: 32px;
+  font-size: $font-xl;
   margin: 0 0 1rem;
   font-weight: 300;
 }
 
 p {
   margin: 0 0 1rem;
+}
+
+.btn {
+  border: 0;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
+  border-radius: 0;
+  padding: 12px 28px;
+}
+
+.btn-primary {
+  background-color: $very-light-gray;
+  color: $text-color;
+
+  &:hover {
+    background-color: $light-gray;
+  }
 }
 
 .section {
@@ -162,19 +178,14 @@ a:hover .social {
   margin: 60px auto 0;
 }
 
-.contact-info {
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-.contact-info b {
-  font-weight: 600;
-}
 .even {
   background-color: #fff;
 }
+
 .gold {
   background-color: #f6f6ee;
 }
+
 @media (max-width: 544px) {
   h1 {
     font-size: 44px;
@@ -337,6 +348,19 @@ a:hover .social {
 
 .odd {
   background-color: #f2f4f8;
+}
+
+.contact {
+  h4 {
+    font-size: $font-xl;
+  }
+
+  p {
+    margin-top: 2rem;
+    color: $lighter-gray;
+    font-size: $font-sm;
+    line-height: 1.4;
+  }
 }
 
 .page {
