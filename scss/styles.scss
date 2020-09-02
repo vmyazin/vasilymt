@@ -489,7 +489,7 @@ a:hover .social {
 
   .text {
     flex: 1;
-    padding: 20px;
+    padding: 20px 30px;
     background-color: $main-bg;
 
     small {
@@ -500,6 +500,7 @@ a:hover .social {
     p {
       color: $text-color;
       line-height: 1.5;
+      margin-bottom: 0;
     }
   }
 }

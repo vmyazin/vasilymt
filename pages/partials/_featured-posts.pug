@@ -1,7 +1,7 @@
 ul.article-list.featured.list-unstyled.justify-content-between
   each article, ind in articles
     if ind < 2
-      li.featured
+      li.featured.mx-1
         a(href="/blog/" + article.slug)
           .square
             img(src=article.image, alt=article.description)
