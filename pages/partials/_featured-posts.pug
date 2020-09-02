@@ -3,9 +3,10 @@ ul.article-list.featured.list-unstyled.justify-content-between
     if ind < 2
       li.featured
         a(href="/blog/" + article.slug)
-          h3.heading(title=article.title)
-            =article.title
-          small.meta.text-nowrap= article.date
-          p.img-gradient
+          .square
             img(src=article.image, alt=article.description)
-          p= article.description
+          .text
+            h3.heading(title=article.title)
+              =article.title
+            small.meta.text-nowrap= article.date
+            p= article.description

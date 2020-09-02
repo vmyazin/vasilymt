@@ -3,31 +3,35 @@ extends layout
 block content
   include partials/header
   
-  .container.page
-    .blog-content
-      .row
-        .col.col-lg-2
+  .container.my-4
+    .row
+      .col.col-lg-6.offset-lg-3
+        .text-center
           h2 Blog
-        .col-lg-7
-          include partials/_featured-posts.pug
+          p.light-text.mb-0 Vasily Myazin’s thoughts in written form are collected here.
 
-          ul.article-list.list-unstyled
-            each article, ind in articles
-              if ind >= 2
-                li
-                  a(href="/blog/" + article.slug)
-                    ion-icon(name='document-text')
-                    =article.title
-                    | 
-                    small.text-nowrap.meta= article.date
+  .container-fluid.max-body-width
+    .row
+      include partials/_featured-posts.pug
+      
+  .container.page
+    .row
+      .col.col-lg-6.offset-lg-3
+        ul.article-list.list-unstyled
+          each article, ind in articles
+            if ind >= 2
+              li
+                a(href="/blog/" + article.slug)
+                  ion-icon(name='document-text')
+                  =article.title
+                  | 
+                  small.text-nowrap.meta= article.date
 
-        .col.col-lg-3
-          .input-group.search-container
-            input#search.form-control(type='text' placeholder='Search posts' aria-label='Search posts' aria-describedby='basic-addon2' autocomplete="off")
-            i.gg-close.clear-search-input
-            .input-group-append
-              button.btn.btn-outline-secondary(type="button")
-                i.gg-search
-          ul.list-unstyled.search-results
+        .search-container
+          input#search.form-control(type='text' placeholder='Search posts' aria-label='Search posts'  autocomplete="off")
+          i.gg-close.clear-search-input
+        ul.list-unstyled.search-results
+
+        .mb-5.pb-5
 
   include partials/footer
