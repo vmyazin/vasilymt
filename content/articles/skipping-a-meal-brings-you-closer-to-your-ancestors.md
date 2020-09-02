@@ -3,7 +3,7 @@ title: Skipping A Meal Brings You Closer To Your Ancestors
 date: August 22nd, 2020
 author: Vasily Myazin
 description: I used to be extremely rigid with eating three meals a day, plus an occasional snack. Then I evolved to be more like my ancient ancestors.
-image: /images/blog/blog-img-empty.jpg
+image: /images/blog/orangutan-hotdog.jpg
 tags: diet, ancestry, psychology, food
 ---
 **I had a discussion with some friends about having regular meals. I used to be extremely rigid with eating three meals a day, plus an occasional snack. “Breakfast is the most important meal of the day”, some people believe. Lunch is a vital divider of the day, for certain nations it’s the reason to have a siesta, usually after a carb-heavy load. Dinner is a sacred ritual, some have it at 5pm, others wait until it’s dark outside. Regardless of what eating schedule you follow, I’ve got a surprising fact for you: an obligation to gobble up a hefty portion of proteins and carbs is often an illusion.**
