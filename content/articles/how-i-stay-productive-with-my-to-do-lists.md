@@ -3,7 +3,7 @@ title: How I Stay Productive With My To-Do Lists
 date: August 15th, 2020
 author: Vasily Myazin
 description: In this post I share my ways to keep organized and get stuff done
-image: /images/blog/blog-img-empty.jpg
+image: /images/blog/watch-postits.jpg
 tags: todo, productivity, systems
 ---
 **Trusting your own memory to keep you organized and on top of things is foolish. It may be a matter of pride: “look at me, I can juggle all of these things in my head, I take hold of whatever comes my way and I deal with it.” I still catch myself thinking this way. But I know better. I have ways to keep myself organized and get stuff done. I’ll admit before going further that my ways are pretty rudimentary and can surely be optimized, yet here I am, sharing what I know and what works for me.**

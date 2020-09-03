@@ -43,10 +43,10 @@ a:hover {
   text-decoration: none;
   color: #005994;
   cursor: pointer;
-}
 
-a:hover span {
-  border-bottom: 1px solid #005994;
+  span {
+    border-bottom: 1px solid #005994;
+  }
 }
 
 b {
@@ -405,6 +405,11 @@ a:hover .social {
   color: $lighter-gray;
 }
 
+.hidden-link {
+  color: inherit;
+  text-decoration: none !important;
+}
+
 .blog-content {
   min-height: 65vh;
 
@@ -422,6 +427,10 @@ a:hover .social {
       margin-right: 4px;
     }  
   }  
+
+  a {
+    text-decoration: underline;
+  }
 }  
 
 .author {
@@ -437,7 +446,7 @@ a:hover .social {
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  h3.post-title {
+  .post-title {
     font-size: 3rem;
     font-weight: bold;
   }
@@ -449,6 +458,14 @@ a:hover .social {
   p + p,
   ul + p {
     margin-bottom: 1.5rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .page {  
+    .post-title {
+      font-size: $font-xl;
+    }
   }
 }
 
@@ -543,6 +560,7 @@ a:hover .social {
     color: $text-color;
     line-height: 1.4;
     display: block;
+    text-decoration: none;
 
     &:hover {
       color: $light-gray;
