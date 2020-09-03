@@ -24,7 +24,7 @@ When I’m done with the task, I change the minus to a plus sign, that’s how I
 
 After completing the last remaining item the sheet has served its purpose and I crumple it up and toss it into the rubbish bin. This process brings me a healthy degree of satisfaction and I gotta say, I swear by it.
 
-## Method 2: Siri
+## Method 2: Voice Assistant (Siri)
 
 There are times when I am not at my desk and cannot write down on a sticky note. Sometimes I’m on the go and I think of something I’d love to remember at some point. How I wish I had a personal assistant there with me to jot it down and remind me when I need to execute. Luckily, these days we have ubiquitous smartphones in our pockets, or in my case an Apple Watch on my wrist. I leave my todo management to Siri. I either long-press the crown of the watch or say “Hey Siri,” followed by something like “Remind me to do laundry tomorrow at 11am”, “Remind me to call Michael at 9pm on Wednesday.”, or “Remind me to review VPN subscription in 354 days.”
 
