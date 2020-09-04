@@ -191,10 +191,6 @@ a:hover .social {
   max-width: 470px;
   margin: 60px auto 0;
 }
-.illustration {
-  max-width: 800px;
-  margin: 60px auto 0;
-}
 
 .even {
   background-color: #fff;
@@ -358,6 +354,19 @@ a:hover .social {
 
 .odd {
   background-color: #f2f4f8;
+}
+
+.scheme {
+  background: url(/images/bg-square.svg);
+
+  h2 {
+    color: $light-gray;
+  }
+}
+
+.illustration {
+  max-width: 900px;
+  margin: 60px auto 0;
 }
 
 .vm-tooltip {
