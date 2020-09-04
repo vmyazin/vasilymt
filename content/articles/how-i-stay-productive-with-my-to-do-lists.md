@@ -16,9 +16,9 @@ I usually keep a stack on my desk and make a short list of actionable items for 
 
 My format goes like this:
 
-“– buy gym shorts”
+![Example of a todo item - Publish blog post](/images/blog/todo-item.gif)
 
-A dash (a minus sign), followed by a sentence, always starting with a verb. It’s usually as concise as possible without being too cryptic.
+A dash (the minus sign), followed by a sentence, always starting with a verb. It’s usually as concise as possible without being too cryptic.
 
 When I’m done with the task, I change the minus to a plus sign, that’s how I know it’s marked completed.
 
