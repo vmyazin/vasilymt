@@ -303,7 +303,8 @@ a:hover .social {
 @media (max-width: 500px) {
   .video .page-wrapper {
     display: flex;
-    height: 300px;
+    height: 380px;
+    background: rgba(255, 255, 255, .7);
   }
 }
 
@@ -311,12 +312,20 @@ a:hover .social {
   width: auto;
   z-index: 1;
   position: relative;
-  background: white;
+  background: rgba(255, 255, 255, 1);
   padding: 40px 40px 0;
   display: inline-flex;
   margin: 0 auto;
   flex-direction: column;
   align-self: flex-end;
+}
+
+@media (max-width: 500px) {
+  .video .page-header {
+    background: rgba(255, 255, 255, .8);
+    transform: scale(1.1);
+    padding-bottom: 22px;
+  }
 }
 
 .video-holder {
