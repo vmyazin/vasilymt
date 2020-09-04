@@ -145,13 +145,27 @@ a:hover .social {
   margin-bottom: 0;
 }
 
-.page-header-med h2 {
-  font-weight: 300;
-  font-family: rational, Helvetica, Arial, sans-serif;
-  font-size: 66px;
+.page-header-med {
+  h2 {
+    font-weight: 300;
+    font-family: rational, Helvetica, Arial, sans-serif;
+    font-size: 66px;
+  }
+  h3 {
+    font-size: 24px;
+    opacity: 0.4;
+  }
 }
-.page-header-med h3 {
-  font-size: 24px;
+
+@include media-breakpoint-down(sm) {
+  .page-header-med {
+    h2 {
+      font-size: $font-xl;
+    }
+    h3 {
+      font-size: $font-md;
+    }
+  }
 }
 
 .page-callout {
