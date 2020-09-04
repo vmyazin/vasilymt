@@ -27,9 +27,9 @@ block content
 
           | !{content}
 
-          p Tags: 
-  
           .alert.alert-secondary(role='tags')
+            b Tags: 
+            |&nbsp;
             each tag, ind in postMetaData.tags
               a(href="/tags/" + tag)= tag
               if ind !== postMetaData.tags.length - 1
