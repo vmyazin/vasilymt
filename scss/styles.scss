@@ -360,6 +360,10 @@ a:hover .social {
 }
 
 .tooltip-zone {
+  &:hover *:not(.vm-tooltip) {
+    opacity: 0.85;
+  }
+
   .vm-tooltip {
     opacity: 0;
     transition: all 1s cubic-bezier(1, -1, 0, 2);
