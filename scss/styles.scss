@@ -125,6 +125,26 @@ p {
   padding-right: 0;
 }
 
+.navbar-brand {
+  position: relative;
+  overflow: hidden;
+    
+  img.on-hover {
+    transition: all .3s ease-in;
+    position: absolute;
+    top: -75px;
+    left: 0;
+    z-index: 99;
+  }
+
+  &:hover {
+    img.on-hover {
+      top: 5px;
+      display: inline-block;
+    }
+  }
+}
+
 .page-header {
   text-align: center;
   width: 100%;
@@ -144,7 +164,6 @@ a .social {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
 }
 
 a:hover .social {
@@ -152,7 +171,6 @@ a:hover .social {
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
   -ms-filter: grayscale(0%);
-  -o-filter: grayscale(0%);
 }
 
 .video .page-header h3 {
@@ -488,16 +506,16 @@ a:hover .social {
       right: -10px;
       border-width: 0;
     }
+  }
+  
+  &:hover {
+    [name="arrow-back"] {
+      opacity: .8;
+    }
 
-    &:hover {
-      [name="arrow-back"] {
-        opacity: .8;
-      }
-
-      span {
-        opacity: 1;
-        right: 0;
-      }
+    span {
+      opacity: 1;
+      right: 0;
     }
   }
 }
