@@ -6,4 +6,11 @@ block content
     .container-fluid
       .row
         .col
-          p Copyright &copy; 2020  
+          .d-flex.justify-content-between
+            p Copyright &copy; #{blogInfo.currentYear}
+            p
+              a.fun-link(href="//dev.tapirio.com")
+                img.icon(src="/images/logo-tapirio.svg")
+                | 
+                | Built on 
+                span Tapirio

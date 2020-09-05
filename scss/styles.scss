@@ -5,10 +5,19 @@
 @import 'bootstrap/_breakpoints.scss';
 @import '_variables.scss';
 
-
 body {
   font: 18px rational, Helvetica, Arial, sans-serif;
   color: #22262b;
+}
+
+html, body, .body-inner {
+  height: 100%;
+  margin: 0;
+}
+
+.body-inner {
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -613,15 +622,45 @@ a:hover .social {
 ==================================================*/
 .footer {
   padding: 20px 0;
-  background-color: #333;
-  color: #676767;
+  background-color: $text-color;
+  color: $lighter-gray;
+  margin-top: auto;
+  
+  p {
+    margin-bottom: 0;
+
+    span {
+      color: $main-bg;
+    }
+  }
+
+  a {
+    color: $main-bg;
+    text-decoration: none;
+  }
+
+  .fun-link {
+    display: block;
+    color: $lighter-gray;
+    padding: 10px 10px;
+    margin: -10px -10px -10px 0;
+    
+    &:hover {
+      color: $text-color;
+      background-color: white;
+
+      span {
+        color: $tapirio-color;
+        border-color: $tapirio-color;
+      }
+    }
+  }
+
+  .icon {
+    margin: -5px 0;
+  }
 }
-.footer p {
-  font-family: rational, Helvetica, Arial, sans-serif;
-}
-.footer p:only-child {
-  margin-bottom: 0;
-}
+
 /* ================================================
   /Footer 
 ==================================================*/

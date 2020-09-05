@@ -7,6 +7,12 @@ const blog = new MarkdownBlog(router.blogPath);
 const blogInfo = blog.info;
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
+let dateObj = new Date();
+let current = {};
+current.year = dateObj.getFullYear();
+blogInfo['currentYear'] = current.year;
+console.log(blogInfo);
+
 router.get('/', (req, res) => {
   const articles = blog.posts;
   res.render('index', { articles, blogInfo, path: req.path });
