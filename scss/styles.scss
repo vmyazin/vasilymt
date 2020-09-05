@@ -517,15 +517,44 @@ a:hover .social {
   .featured {
     width: 50%;
     display: inline-block;
-
+    position: relative;
+    overflow: hidden;
+    
     a {
       display: flex;
       flex-direction: row;
       height: 100%;
     }
-
+    
     h3 {
       font-size: $font-lg;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 100%;
+      background-color: $accent-color;
+      height: 5px;
+      transition: top .2s ease-in-out;
+    }
+
+    &:hover {
+      transition: top 1s ease-in-out;
+
+      * {
+        color: $accent-color;
+      }
+
+      .text {
+        background-color: lighten($accent-color, 45%);
+      }
+
+      &:after {
+        top: 100%;
+        background-color: rgba(0, 0, 0, .5);
+      }
     }
   }
 
@@ -549,6 +578,7 @@ a:hover .social {
     flex: 1;
     padding: 20px 30px;
     background-color: $main-bg;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 
     small {
       display: block;
