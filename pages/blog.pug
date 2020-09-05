@@ -17,13 +17,12 @@ block content
   .container.page
     .row
       .col.col-lg-6.offset-lg-3
-        ul.article-list.list-unstyled
+        ul.article-list.list-unstyled.plain-list.mb-5
           each article, ind in articles
             if ind >= 2
               li
                 a(href="/blog/" + article.slug)
-                  ion-icon(name='document-text')
-                  =article.title
+                  h3=article.title
                   | 
                   small.text-nowrap.meta= article.date
 
