@@ -5,7 +5,7 @@ block content
   
   .container.page
     .row
-      .col.col-md-8
+      .col.col-md-8.offset-md-2
         h2 About This Site
         p Vasily justed wanted a fancy website, so he got to work. Frankly, the first time the proverbial shovel "hit the ground" was all the way in 2016. Here we are now. It's work in progress. I would highly value your feedback.
         
@@ -14,6 +14,18 @@ block content
         p Digital (no)mad, world traveler, techie, design nut, musician, rookie philosopher, "this" guy.
 
         img.img-fluid(src="/images/florida-trio.jpg")
-
+    .row
+      .col
+        .text-center.mt-5
+          ul.list-inline.d-flex-inline.social-links
+            li.list-inline-item.ml-4
+              a.social-link.align-middle(href=blogInfo.social.twitter)
+                ion-icon(name='logo-twitter')
+            li.list-inline-item
+              a.social-link.align-middle(href=blogInfo.social.instagram)
+                ion-icon(name='logo-instagram')
+            li.list-inline-item
+              a.social-link.align-middle(href=blogInfo.social.linkedin)
+                ion-icon(name='logo-linkedin')
 
   include partials/footer

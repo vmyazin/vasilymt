@@ -529,7 +529,6 @@ a:hover .social {
   }
 }
 
-
 @include media-breakpoint-down(md) {
   .nav-back {
     h2 {
@@ -677,9 +676,6 @@ a:hover .social {
       font-weight: 300;
       margin-bottom: 0;
     }
-    
-    small {
-    }
   }
 }
 
@@ -711,6 +707,19 @@ a:hover .social {
   --ggs: .7;
 }
 
+.social-links {
+  max-width: 200px;
+  display: flex;
+  align-self: center;
+  flex-shrink: 1;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  ion-icon {
+    font-size: 200%;
+  }
+}
+
 .post-nav {
   [class*="gg"] {
     vertical-align: sub;
@@ -730,6 +739,7 @@ a:hover .social {
 
   .direction {
     color: $light-gray;
+    border-width: 0;
   }
 
   .title {
