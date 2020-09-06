@@ -481,6 +481,15 @@ a:hover .social {
     width: auto;
   }  
 
+  figure {
+    figcaption {
+      margin-top: .5rem;
+      color: $lighter-gray;
+      font-size: $font-xs;
+      font-weight: 300;
+    }
+  }
+
   h2 {
     font-size: $font-lg;
 
@@ -507,7 +516,7 @@ a:hover .social {
       border-width: 0;
     }
   }
-  
+
   &:hover {
     [name="arrow-back"] {
       opacity: .8;

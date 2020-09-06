@@ -12,7 +12,12 @@ block content
               ion-icon.align-bottom(name="arrow-back")
               span Posts
         .col-md-8
-          img(src=postMetaData.image)
+          figure
+            img(src=postMetaData.image alt="postMetaData.description")
+            if postMetaData.image_desc
+              figcaption= postMetaData.image_desc
+            else
+              figcaption= postMetaData.description
 
           h3.post-title.mt-4= postMetaData.title
 
