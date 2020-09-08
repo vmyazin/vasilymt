@@ -100,11 +100,6 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', init)
-  function init() {
-    //
-    new Search()
-  }
   function debounce(fn, time) {
     let timeout;
   
@@ -115,4 +110,10 @@
       timeout = setTimeout(functionCall, time)
     }
   }
+
+  document.addEventListener('DOMContentLoaded', init)
+  function init() {
+    new Search()
+  }
+
 })()

@@ -747,6 +747,40 @@ a:hover .social {
   }
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1rem;
+  padding: 1rem;
+  opacity: .5;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
+
+  [class*="gg-"] {
+    color: desaturate($accent-color, 50%);
+    --ggs: 2.5;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    [class*="gg-"] {
+      color: $accent-color;
+    }
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .scroll-to-top {
+    display: none;
+  }
+}
+
 /* ================================================
   Footer 
 ==================================================*/
