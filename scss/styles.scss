@@ -33,7 +33,7 @@ a {
     cursor: pointer;
 
     span {
-      border-bottom: 1px solid #005994;
+      border-bottom: 1px solid $accent-color;
     }
   }
 
@@ -751,7 +751,11 @@ a:hover .social {
     text-decoration: none;
 
     &:hover {
-      color: $light-gray;
+      color: $accent-color;
+
+      .direction {
+        font-weight: 600;
+      }
     }
   }
 
