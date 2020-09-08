@@ -112,17 +112,22 @@ p {
   }
 }
 
-.top-nav {
-  background-color: $text-color;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  padding-left: 15px;
+  padding-right: 15px;
 
+  transition: background-color .2s ease-in-out;
+  
   .nav-link {
     font-size: $font-md;
   }
 }
 
-.navbar {
-  padding-left: 0;
-  padding-right: 0;
+.opaque {
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .navbar-brand {
@@ -310,16 +315,20 @@ a:hover .social {
   }
 }
 
+.video-container {
+  margin-top: -90px;
+}
+
 .video {
   position: relative;
   overflow: hidden;
   text-align: center;
-}
-
-.video .page-wrapper {
-  display: flex;
-  height: 800px;
-  padding-bottom: 0;
+  
+  .page-wrapper {
+    display: flex;
+    height: 800px;
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 1370px) {

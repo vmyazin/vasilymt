@@ -1,17 +1,13 @@
-nav.top-nav
-  .container-fluid
-    .row
-      .col
-        .navbar.navbar-expand.navbar-dark
-          a.navbar-brand(href="/")
-            img(src="/images/vm-logo.svg", alt=blogInfo.blog.title)
-            img.on-hover(src="/images/vm-logo-c.svg", alt=blogInfo.blog.title)
+nav.navbar.navbar-expand.navbar-dark
+  a.navbar-brand(href="/")
+    img(src="/images/vm-logo.svg", alt=blogInfo.blog.title)
+    img.on-hover(src="/images/vm-logo-c.svg", alt=blogInfo.blog.title)
 
-          ul.navbar-nav.ml-auto
-            li.nav-item.d-none.d-sm-block
-              a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home
-            li.nav-item.ml-0.ml-md-5
-              a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Thoughts
-            li.nav-item.ml-5
-              a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
-            
+  ul.navbar-nav.ml-auto
+    li.nav-item.d-none.d-sm-block
+      a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home
+    li.nav-item.ml-0.ml-md-5
+      a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Thoughts
+    li.nav-item.ml-5
+      a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
+          

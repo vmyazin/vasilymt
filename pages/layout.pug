@@ -5,7 +5,8 @@ html
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
     script(type="module" src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js')
     script(type="text/javascript" src="/javascript/scroll-to-top.js" charset="utf-8")
-    script(type="text/javascript" src="/javascript/interactions.js" charset="utf-8")
+    script(type="text/javascript" src="/javascript/topnav.js" charset="utf-8")
+    script(type="text/javascript" src="/javascript/search.js" charset="utf-8")
 
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon.png" type="images/x-icon")
@@ -31,9 +32,12 @@ html
       else
         meta(property='og:image' content='/images/og-image-vm.png')
 
-  body
-    .body-inner
-      block content
+  if path === '/'
+    body(class='home')
+  else
+    body(class=path)
+  .body-inner
+    block content
 
   if blogInfo
     //  Global site tag (gtag.js) - Google Analytics 
