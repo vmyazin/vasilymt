@@ -33,11 +33,12 @@ html
         meta(property='og:image' content='/images/og-image-vm.png')
 
   if path === '/'
-    body(class='home')
-  else
-    body(class=path)
-  .body-inner
-    block content
+    - path = 'home'
+
+  body(class=path)
+
+    .body-inner
+      block content
 
   if blogInfo
     //  Global site tag (gtag.js) - Google Analytics 
