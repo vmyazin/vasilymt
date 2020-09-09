@@ -688,6 +688,11 @@ a:hover .social {
 
   &.plain-list {
     line-height: 1.2;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 2rem;
+    }
 
     h3 {
       font-size: $font-lg;
@@ -806,6 +811,7 @@ a:hover .social {
 /* ================================================
   Footer 
 ==================================================*/
+
 .footer {
   padding: 20px 0;
   background-color: $text-color;
@@ -851,3 +857,95 @@ a:hover .social {
 /* ================================================
   /Footer 
 ==================================================*/
+
+
+.horizontal-flip {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 2px solid $black;
+  border-radius: 0;
+  font-size: $font-sm;
+
+  &:focus {
+    box-shadow: none;
+    border-color: $accent-color;
+  }
+}
+
+.search-container {
+  position: relative;
+  
+  .form-control {
+    padding-left: 8px;
+  }
+
+  .gg-search {
+    position: absolute;
+    left: -20px;
+    bottom: 15px;
+    z-index: 3;
+    cursor: pointer;
+    --ggs: 1;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .form-control {
+      padding-left: 28px;
+    }
+
+    .gg-search {
+      left: 5px;
+    }
+  }
+  
+  [class*="close"] {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    z-index: 3;
+    cursor: pointer;
+    --ggs: 1;
+  }
+}
+
+.search-results {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+
+  li {
+    a {
+      display: block;
+      padding: 10px 15px;
+      color: $text-color;
+
+      &:hover {
+        background-color: $main-bg;
+        color: inherit;
+      }
+    }
+
+    &:first-child {
+      a {
+        padding-top: 15px;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+    &:last-child {
+      a {
+        padding-bottom: 15px;
+        border-radius: 0 0 4px 4px;
+      }
+    }
+
+    &:only-child {
+      a { border-radius: 4px; }
+    }
+  }
+}
