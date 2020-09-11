@@ -68,6 +68,11 @@ h3 {
   font-weight: 600;
 }
 
+h4 {
+  font-size: $font-lg;
+  font-weight: 500;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -584,6 +589,10 @@ a:hover .social {
 
   p + h2 {
     margin-top: 2.5rem;
+  }
+
+  p + h4 {
+    margin-top: 1.5rem;
   }
 }
 
