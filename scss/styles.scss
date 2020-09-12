@@ -734,6 +734,17 @@ a:hover .social {
   }
 }
 
+.columns {
+  columns: 2;
+  -webkit-columns: 2;
+  display: list-item;
+
+  li {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 [class^="gg"] {
   display: inline-block;
   --ggs: .7;

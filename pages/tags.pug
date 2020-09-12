@@ -4,13 +4,15 @@ block content
   include partials/header
 
   .container.page
-    .blog-content
-      .row
-        .col
-          h2 Posts' Tags
+    .row
+      .col
+        h2.mb-5 Tags From The Blog
 
+        ul.columns.list-unstyled.article-list.plain-list
           each tag, ind in tags
             li
-              a(href="/tags/" + tag)=tag
-              
+              a(href="/tags/" + tag)
+                h3=tag
+              div
+                
   include partials/footer

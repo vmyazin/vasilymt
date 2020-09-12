@@ -4,21 +4,19 @@ block content
   include partials/header
 
   .container.page
-    .blog-content
-      .row
-        .col
-          h2
-            span.badge.badge-warning Tag
-            | 
-            =tag
+    .row
+      .col
+        h2.mb-5
+          span.badge.badge-warning Tag
+          | 
+          =tag
 
-          ul.article-list.list-unstyled
-            each article, ind in articles
-              li
-                a(href="/blog/" + article.slug)
-                  ion-icon(name='document-text')
-                  =article.title
-                  | 
-                  small.text-nowrap.meta= article.date
+        ul.article-list.list-unstyled.plain-list
+          each article, ind in articles
+            li
+              a(href="/blog/" + article.slug)
+                h3=article.title
+                | 
+                small.text-nowrap.meta= article.date
 
   include partials/footer
