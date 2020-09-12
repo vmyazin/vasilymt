@@ -18,29 +18,17 @@ router.get('/', (req, res) => {
   res.render('index', { articles, blogInfo, path: req.path });
 });
 
-router.get('/tags', async (req, res) => {
-  const tags = blog.tags;
-  res.render('tags', { tags, blogInfo, path: req.path });
-});
-
-router.get('/tags/:tag', async (req, res) => {
-  const tag = req.params.tag;
-  const tags = blog.tags;
-  const articles = await blog.getPostsByTag(tag);
-  res.render('tag', { tag, tags, articles, blogInfo, path: req.path });
-});
-
 router.get('/about', (req, res) => {
-  res.render('about', { blogInfo, path: req.path });
+  res.render('about', { blogInfo, path: req.path, title: "About" });
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', { blogInfo, path: req.path });
+  res.render('contact', { blogInfo, path: req.path, title: "Contact"  });
 });
 
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
-  res.render('blog', { articles, blogInfo, path: req.path });
+  res.render('blog', { articles, blogInfo, path: req.path, title: "Blog • Thoughts"  });
 });
 
 router.route('/api/search').get(cors(), async (req, res) => {
@@ -78,6 +66,18 @@ router.get('/blog/:filename', async (req, res) => {
       isBlogPost: true
     }
   ));
+});
+
+router.get('/tags', async (req, res) => {
+  const tags = blog.tags;
+  res.render('tags', { tags, blogInfo, path: req.path, title: "Tags" });
+});
+
+router.get('/tags/:tag', async (req, res) => {
+  const tag = req.params.tag;
+  const tags = blog.tags;
+  const articles = await blog.getPostsByTag(tag);
+  res.render('tag', { tag, tags, articles, blogInfo, path: req.path, title: tag });
 });
 
 module.exports = router;

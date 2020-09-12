@@ -15,6 +15,8 @@ html
     if blogInfo
       if isBlogPost
         title #{postMetaData.title} • #{blogInfo.blog.title}
+      else if title
+        title #{title} • #{blogInfo.blog.title}
       else
         title= blogInfo.blog.title
     
