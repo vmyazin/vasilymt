@@ -186,11 +186,6 @@ a:hover .social {
   -ms-filter: grayscale(0%);
 }
 
-.video .page-header h3 {
-  color: $light-gray;
-  margin-bottom: 0;
-}
-
 .page-header-med {
   h2 {
     font-weight: 300;
@@ -338,6 +333,12 @@ a:hover .social {
     display: flex;
     height: 800px;
     padding-bottom: 0;
+  }
+
+  .page-header h3 {
+    font-size: $font-md;
+    color: $light-gray;
+    margin-bottom: 0;
   }
 }
 
