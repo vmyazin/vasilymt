@@ -762,7 +762,19 @@ a:hover .social {
   margin: 0 auto;
 
   ion-icon {
-    font-size: 200%;
+    font-size: 36px;
+  }
+
+  .social-link {
+    display: inline-block;
+
+    img {
+      width: 36px;
+      height: auto;
+      &:hover {
+        filter: invert(66%) sepia(70%) saturate(7152%) hue-rotate(2deg) brightness(96%) contrast(109%);
+      }
+    }
   }
 }
 

@@ -21,15 +21,14 @@ block content
       .col
         .text-center.mb-4
           ul.list-inline.d-flex-inline.social-links
-            li.list-inline-item.ml-4
-              a.social-link.align-middle(href=blogInfo.social.twitter)
-                ion-icon(name='logo-twitter')
+            each socialLink, socialNet in blogInfo.social
+              if socialNet !== "telegram"
+                li.list-inline-item
+                  a.social-link.align-middle(href=socialLink)
+                    ion-icon(name='logo-' + socialNet)
             li.list-inline-item
-              a.social-link.align-middle(href=blogInfo.social.instagram)
-                ion-icon(name='logo-instagram')
-            li.list-inline-item
-              a.social-link.align-middle(href=blogInfo.social.linkedin)
-                ion-icon(name='logo-linkedin')
+              a.social-link.align-middle(href=blogInfo.social.telegram)
+                img(src="/images/social/logo-telegram.svg")
 
     .row
       .col.col-md-8.offset-md-2
