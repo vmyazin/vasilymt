@@ -1,6 +1,7 @@
 ---
 title: How To Deal With Perfectionism Without Being Afraid of Imperfect Results
-date: September 14th, 2020
+date: 09-14-2020
+prettyDate: September 14th, 2020
 author: Vasily Myazin
 description: The absolute worst way to deal with perfectionism is to give in to it. When we want to achieve something great we should be okay shortcomings.
 image: /images/blog/sand-castle.jpg

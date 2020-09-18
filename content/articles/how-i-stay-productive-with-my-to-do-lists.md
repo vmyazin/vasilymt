@@ -1,6 +1,7 @@
 ---
 title: How I Stay Productive With My To-Do Lists
-date: August 15th, 2020
+date: 08-15-2020
+prettyDate: August 15th, 2020
 author: Vasily Myazin
 description: In this post I share my ways to keep organized and get stuff done
 image: /images/blog/watch-postits.jpg

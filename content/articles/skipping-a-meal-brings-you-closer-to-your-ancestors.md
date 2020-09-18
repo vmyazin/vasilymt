@@ -1,6 +1,7 @@
 ---
 title: Skipping A Meal Brings You Closer To Your Ancestors
-date: August 22nd, 2020
+date: 08-22-2020
+prettyDate: August 22nd, 2020
 author: Vasily Myazin
 description: I used to be extremely rigid with eating three meals a day, plus an occasional snack. Then I evolved to be more like my ancient ancestors.
 image: /images/blog/orangutan-hotdog.jpg

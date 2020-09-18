@@ -1,6 +1,7 @@
 ---
 title: How I Keep Grounded While Traveling Frequently
-date: September 7th, 2020
+date: 09-07-2020
+prettyDate: September 7th, 2020
 author: Vasily Myazin
 description: Moving around and constantly readjusting to new environments is not normal for most people. Being nomadic – part- or full-time – takes some effort to start enjoying. Here are my insights about that.
 image: /images/blog/cozy-room.jpg

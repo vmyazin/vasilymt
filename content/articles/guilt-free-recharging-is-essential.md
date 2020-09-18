@@ -1,6 +1,7 @@
 ---
 title: Guilt-free Recharging Is Essential
-date: September 4th, 2020
+date: 09-04-2020
+prettyDate: September 4th, 2020
 author: Vasily Myazin
 description: I used to think that I was wasting time taking a break, a day-off, or even a short vacation. Turns out most of us should do it to stay sane and productive.
 image: /images/blog/beach-relax.jpg
