@@ -1,7 +1,7 @@
 const cors = require('cors')
 const express = require('express');
 const router = express.Router();
-router.blogPath = './content/articles/';
+router.blogPath = __dirname + '/../content/articles/';
 const MarkdownBlog = require('../scripts/blog-setup');
 const blog = new MarkdownBlog(router.blogPath);
 const blogInfo = blog.info;
@@ -11,7 +11,6 @@ let dateObj = new Date();
 let current = {};
 current.year = dateObj.getFullYear();
 blogInfo['currentYear'] = current.year;
-console.log(blogInfo);
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
