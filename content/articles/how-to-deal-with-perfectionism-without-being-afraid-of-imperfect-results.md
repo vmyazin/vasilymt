@@ -13,10 +13,12 @@ tags: perfectionism, productivity, results
 ### Practice self-examination to address chronic perfectionism
 
 This may not concern everyone but there is a fair chunk of the population that suffers from perfectionism, often without even knowing it. How do I know when a serious case of perfectionism hits me? Given that all of the necessary elements are accomplished:
-I can’t seem to reach or simply define the finish line
-My mood changes from feeling excited and enthusiastic to tense
-I imagine “the crowd” judging me for not delivering best-in-class outcome
-I keep putting off publishing or sharing because I need to add “just one more thing”
+
+- I can’t seem to reach or simply define the finish line
+- My mood changes from feeling excited and enthusiastic to tense
+- I imagine “the crowd” judging me for not delivering best-in-class outcome
+- I keep putting off publishing or sharing because I need to add “just one more thing”
+
 These attributes yield the awareness of my being stuck in the perfection purgatory and prompt me to take action to remedy the situation.
 
 ### Learn to know when to stop improving on a project
