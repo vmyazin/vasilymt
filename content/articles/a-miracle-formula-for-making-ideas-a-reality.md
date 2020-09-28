@@ -1,5 +1,5 @@
 ---
-title: A Miracle Formula For Making Ideas A Reality, For You And Your Friends
+title: A Miracle Formula For Making Ideas A Reality (For You And Your Friends)
 date: 09-27-2020
 prettyDate: September 27th, 2020
 author: Vasily Myazin
@@ -19,9 +19,9 @@ The issue that I have with hearing about my friends’ plans is that they often 
 Tools you can use may vary based on your preferences. I can recommend these idea-capturing approaches:
 
 - good old pen and paper on your desk
-- asking a voice assistant (Siri, Alexa or Google Assistant) to remind you
-- a spreadsheet editor (I prefer Google Sheets)
-- a text document (also Google Docs)
+- [asking a voice assistant (Siri, Alexa or Google Assistant) to remind you](/blog/how-i-stay-productive-with-my-to-do-lists)
+- a spreadsheet editor (I prefer Google Sheets). Pro tip: go to [doc.new](https://doc.new) in your browser to start a blank document
+- a text document (also Google Docs) Pro tip: go to [sheet.new](https://sheet.new) in your browser to start a new spreadsheet
 - a note-taking app in your phone
 
 All of these can be used at the same time. You can access notes on your phone, tablet and computer simultaneously – don’t skimp on the cloud syncing.
