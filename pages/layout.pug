@@ -27,19 +27,22 @@ html
         meta(property='og:type' content='article')
         meta(property='og:title' content=postMetaData.title)
         meta(property='og:description' content=postMetaData.description)
+        meta(name='twitter:title' content=postMetaData.title)
         meta(name='twitter:description' content=postMetaData.description)
         meta(property='og:url' content=postMetaData.fullUrl)
       else
         meta(property='og:type' content='website')
         meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
+        meta(name='twitter:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
         meta(property='og:url' content='/')
         meta(property='og:description' content=blogInfo.blog.description)
       if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.image)
+        meta(name='twitter:image' content=postMetaData.image)
       else
         meta(property='og:image' content='/images/og-image-vm.png')
-      meta(property='og:image:width' content='1000')
-      meta(property='og:image:height' content='562')
+        meta(name='twitter:image' content='/images/og-image-vm.png')
+      meta(name="twitter:card" content="summary_large_image")
 
   if path === '/'
     - path = 'home'
