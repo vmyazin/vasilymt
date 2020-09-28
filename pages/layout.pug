@@ -20,14 +20,17 @@ html
       else
         title= blogInfo.blog.title
     
-      meta(property='og:type' content='website')
+      meta(property='og:locale' content='en_US')
       meta(property='og:site_name' content=blogInfo.blog.title)
+      
       if isBlogPost
+        meta(property='og:type' content='article')
         meta(property='og:title' content=postMetaData.title)
         meta(property='og:description' content=postMetaData.description)
         meta(name='twitter:description' content=postMetaData.description)
-        meta(property='og:url' content=path)
+        meta(property='og:url' content=postMetaData.fullUrl)
       else
+        meta(property='og:type' content='website')
         meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
         meta(property='og:url' content='/')
         meta(property='og:description' content=blogInfo.blog.description)
