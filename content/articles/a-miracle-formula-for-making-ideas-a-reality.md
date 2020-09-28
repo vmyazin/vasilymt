@@ -4,8 +4,9 @@ date: 09-27-2020
 prettyDate: September 27th, 2020
 author: Vasily Myazin
 description: Being proactive and jotting down your ideas will help you materialize them. I do it for myself and encourage others to use this simple trick.
-image_desc: Photo by 
-tags: 
+image: /images/blog/note-taking.jpg
+image_desc: Photo by Judit Peter
+tags: ideas, notes, friends, hustle
 ---
 **I’ve developed a habit. Whenever I have an impulse to do something, I make the smallest first step to start making it a reality. For example, I have an idea for a blog post, I create a new document Google Docs and start typing something. I tell myself: I just need to get an idea out on the screen, just an outline and then I can close the laptop and go on with my day. As conventional wisdom goes, where there's 30 words, there’s a hundred and it goes on.**
 
