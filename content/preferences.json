@@ -1,9 +1,9 @@
 {
   "blog": {
-    "title": "Vasily Myazin",
+    "siteName": "Vasily Myazin",
     "author": "Vasily Myazin",
     "description": "Personal blog of Vasily Myazin",
-    "URL": "https://vasilym.com"
+    "URL": "https://www.vasilym.com"
   },
   "appIds": {
     "googleAnalytics": "UA-2420101-39"

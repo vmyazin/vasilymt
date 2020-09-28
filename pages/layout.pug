@@ -14,26 +14,26 @@ html
     //- check if blogInfo object is present, a lot depends on it
     if blogInfo
       if isBlogPost
-        title #{postMetaData.title} • #{blogInfo.blog.title}
+        title #{postMetaData.title} • #{blogInfo.blog.siteName}
       else if title
-        title #{title} • #{blogInfo.blog.title}
+        title #{title} • #{blogInfo.blog.siteName}
       else
-        title= blogInfo.blog.title
+        title= blogInfo.blog.siteName
     
       meta(property='og:locale' content='en_US')
-      meta(property='og:site_name' content=blogInfo.blog.title)
+      meta(property='og:site_name' content=blogInfo.blog.siteName)
       
       if isBlogPost
         meta(property='og:type' content='article')
-        meta(property='og:title' content=postMetaData.title)
+        meta(property='og:title' content=postMetaData.title + ' by ' + blogInfo.blog.author)
         meta(property='og:description' content=postMetaData.description)
-        meta(name='twitter:title' content=postMetaData.title)
+        meta(name='twitter:title' content=postMetaData.title + ' by ' + blogInfo.blog.author)
         meta(name='twitter:description' content=postMetaData.description)
         meta(property='og:url' content=postMetaData.fullUrl)
       else
         meta(property='og:type' content='website')
-        meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
-        meta(name='twitter:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
+        meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.siteName)
+        meta(name='twitter:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.siteName)
         meta(property='og:url' content='/')
         meta(property='og:description' content=blogInfo.blog.description)
 
