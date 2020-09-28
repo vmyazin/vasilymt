@@ -12,6 +12,17 @@ let current = {};
 current.year = dateObj.getFullYear();
 blogInfo['currentYear'] = current.year;
 
+// ask Request for the host name and assign environment name
+function getEnv(host) {
+  if (host.includes('localhost')) {
+    blogInfo.env = 'local'
+  } else if (host.includes('alpha')) {
+    blogInfo.env = 'alpha'
+  } else {
+    blogInfo.env = 'prod'
+  }
+}
+
 router.get('/', (req, res) => {
   const articles = blog.posts;
   res.render('index', { articles, blogInfo, path: req.path });
@@ -48,6 +59,7 @@ router.get('/blog/:filename', async (req, res) => {
         nextPostMetaData = blog.getPostMetadata(slug, 1),
         prevPostMetaData = blog.getPostMetadata(slug, -1)
   postMetaData.fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
+  getEnv(req.get('host'))
 
   if (!postMetaData) {
     res.render('blog-not-found', slug);
