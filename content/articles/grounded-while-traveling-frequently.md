@@ -12,8 +12,6 @@ tags: traveling, training, tips
 
 It took some effort and experience to adjust myself to regularly changing dwellings, especially when it [comes to sleep](https://blog.eightsleep.com/heres-why-you-cant-fall-asleep-in-a-new-place/). It helps to pack earplugs, a blackout eye mask, and maybe even your own pillow, if you can fit it in your luggage. Sleep is a whole subject of its own, however. In this article I will share my quick thoughts on how I settle into a new place easier.
 
-### How I Keep Grounded
-
 #### Meditate at the new place
 
 To connect with my new room I often try to meditate there soon after checking-in. 5-10 minutes of sitting in silence with my eye shut on top of the bed is enough to ease in and calmly integrate with the new environment. It also trains my brain that this space is suitable for remaining calm.
