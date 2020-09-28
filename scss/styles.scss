@@ -3,6 +3,7 @@
 @import 'bootstrap/_functions.scss';
 @import 'bootstrap/_variables.scss';
 @import 'bootstrap/_breakpoints.scss';
+@import 'social.scss';
 @import '_variables.scss';
 
 body {
@@ -165,25 +166,6 @@ p {
   h3 {
     font-weight: 300;
   }
-}
-
-.social {
-  width: 30px;
-  vertical-align: middle;
-}
-
-a .social {
-  filter: gray;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-}
-
-a:hover .social {
-  filter: none;
-  -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
-  -ms-filter: grayscale(0%);
 }
 
 .page-header-med {
@@ -772,31 +754,6 @@ blockquote {
   
   p {
     display: inline;
-  }
-}
-
-.social-links {
-  max-width: 200px;
-  display: flex;
-  align-self: center;
-  flex-shrink: 1;
-  justify-content: space-between;
-  margin: 0 auto;
-
-  ion-icon {
-    font-size: 36px;
-  }
-
-  .social-link {
-    display: inline-block;
-
-    img {
-      width: 36px;
-      height: auto;
-      &:hover {
-        filter: invert(66%) sepia(70%) saturate(7152%) hue-rotate(2deg) brightness(96%) contrast(109%);
-      }
-    }
   }
 }
 

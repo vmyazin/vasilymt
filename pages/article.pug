@@ -2,7 +2,7 @@ extends layout
 
 block content
   include partials/header
-  
+
   .container.page
     .blog-content
       .row.mt-0.pt-0.mt-md-5
@@ -12,6 +12,7 @@ block content
               ion-icon.align-bottom(name="arrow-back")
               span Posts
         .col-md-8
+          include partials/_share-links
           figure
             img(src=postMetaData.image alt="postMetaData.description")
             if postMetaData.image_desc
@@ -31,8 +32,6 @@ block content
             =postMetaData.prettyDate
 
           | !{content}
-
-          include partials/_share-links
 
           .alert.alert-secondary(role='tags')
             b Tags: 

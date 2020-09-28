@@ -5,14 +5,19 @@ each tag, ind in postMetaData.tags
 - url = encodeURI(postMetaData.fullUrl)
 - tweet = encodeURI("On the blog: " + postMetaData.title + " " + postMetaData.fullUrl + "&hashtags=" + allTags)
 
-p Share this post:
-  ul
-    li
-      a(href="https://twitter.com/intent/tweet?text=" + tweet target="_blank") Twitter
-    li
-      a(href="https://www.facebook.com/sharer.php?u=" + url target="_blank") Facebook
-    li
-      a(href!="https://t.me/share/url?url=" + url + "&text=" + encodeURI(postMetaData.title + " by " + blogInfo.blog.author) target="_blank") Telegram
-    li
-      a(href!="https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + encodeURI(postMetaData.title + " by " + blogInfo.blog.author) + "&source=" + encodeURI(blogInfo.blog.author) target="_blank") LinkedIn
-    
+  .social-share-list-holder
+    ul.social-share-list
+      li.list-group-item
+        a(href="https://twitter.com/intent/tweet?text=" + tweet target="_blank")
+          ion-icon(name='logo-twitter')
+      li.list-group-item
+        a(href="https://www.facebook.com/sharer.php?u=" + url target="_blank")
+          ion-icon(name='logo-facebook')
+      li.list-group-item
+        a(href!="https://t.me/share/url?url=" + url + "&text=" + encodeURI(postMetaData.title + " by " + blogInfo.blog.author) target="_blank")
+          img.social-icon(src="/images/social/logo-telegram.svg")
+      li.list-group-item
+        a(href!="https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + encodeURI(postMetaData.title + " by " + blogInfo.blog.author) + "&source=" + encodeURI(blogInfo.blog.author) target="_blank")
+          ion-icon(name='logo-linkedIn')
+          
+      
