@@ -8,18 +8,6 @@ A simple to use platfrom for building Robust & SEO-friendly websites with bloggi
 
 Blog posts support Markdown and HTML.
 
-How to get going:
-
-`git clone https://github.com/vmyazin/tapirio.git`
-
-`cd tapirio`
-
-`yarn`
-
-`yarn start`
-
-Proceed to [http://localhost:3501](http://localhost:3501)
-
 ## Markdown blog post template
 
 ```
