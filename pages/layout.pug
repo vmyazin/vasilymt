@@ -36,9 +36,10 @@ html
         meta(name='twitter:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
         meta(property='og:url' content='/')
         meta(property='og:description' content=blogInfo.blog.description)
+
       if isBlogPost && postMetaData.image !== undefined
-        meta(property='og:image' content=postMetaData.image)
-        meta(name='twitter:image' content=postMetaData.image)
+        meta(property='og:image' content=postMetaData.imageFullUrl)
+        meta(name='twitter:image' content=postMetaData.imageFullUrl)
       else
         meta(property='og:image' content='/images/og-image-vm.png')
         meta(name='twitter:image' content='/images/og-image-vm.png')

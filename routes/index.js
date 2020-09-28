@@ -60,7 +60,7 @@ router.get('/blog/:filename', async (req, res) => {
         prevPostMetaData = blog.getPostMetadata(slug, -1)
   postMetaData.fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
   postMetaData.homeUrl = req.protocol + '://' + req.get('host')
-  postMetaData.image = postMetaData.homeUrl + postMetaData.image
+  postMetaData.imageFullUrl = postMetaData.homeUrl + postMetaData.image
 
   getEnv(req.get('host'))
 
