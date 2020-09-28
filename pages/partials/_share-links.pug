@@ -1,0 +1,9 @@
+- allTags = ''
+each tag, ind in postMetaData.tags
+  - allTags += tag + ','
+- allTags = allTags.slice(0, -1)
+
+p Share this post:
+  ul
+    li
+      a(href="https://twitter.com/intent/tweet?text=" + encodeURI("On the blog: " + postMetaData.title + " " + postMetaData.fullUrl + "&hashtags=" + allTags) target="_blank") Twitter

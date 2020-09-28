@@ -43,10 +43,11 @@ router.route('/api/search').get(cors(), async (req, res) => {
 })
 
 router.get('/blog/:filename', async (req, res) => {
-  const slug = req.params.filename;
-  const postMetaData = blog.getPostMetadata(slug);
-  const nextPostMetaData = blog.getPostMetadata(slug, 1);
-  const prevPostMetaData = blog.getPostMetadata(slug, -1);
+  const slug = req.params.filename
+  const postMetaData = blog.getPostMetadata(slug),
+        nextPostMetaData = blog.getPostMetadata(slug, 1),
+        prevPostMetaData = blog.getPostMetadata(slug, -1)
+  postMetaData.fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
 
   if (!postMetaData) {
     res.render('blog-not-found', slug);
