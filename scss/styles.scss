@@ -700,12 +700,18 @@ p {
   .article-list {
     display: block;
 
+    a {
+      small {
+        font-size: $font-xs;
+      }
+    }
+
     .featured {
       width: 100%;
       flex-shrink: 0;
 
       h3 {
-        font-size: $font-md;
+        font-size: $font-sm;
       }
 
       p {
@@ -715,6 +721,16 @@ p {
 
     .square {
       width: 150px;
+    }
+
+    .text {
+      padding: 20px;
+    }
+
+    &.plain-list {
+      h3 {
+        font-size: $font-sm;
+      }
     }
   }
 }
