@@ -20,8 +20,8 @@ Tools you can use may vary based on your preferences. I can recommend these idea
 
 - good old pen and paper on your desk
 - [asking a voice assistant (Siri, Alexa or Google Assistant) to remind you](/blog/how-i-stay-productive-with-my-to-do-lists)
-- a spreadsheet editor (I prefer Google Sheets). Pro tip: go to [doc.new](https://doc.new) in your browser to start a blank document
-- a text document (also Google Docs) Pro tip: go to [sheet.new](https://sheet.new) in your browser to start a new spreadsheet
+- a spreadsheet editor (I prefer Google Sheets). *Pro tip: go to [sheet.new](https://sheet.new) in your browser to start a new spreadsheet.*
+- a text document (also Google Docs). *Pro tip: go to [doc.new](https://doc.new) in your browser to start a blank document.*
 - a note-taking app in your phone
 
 All of these can be used at the same time. You can access notes on your phone, tablet and computer simultaneously – don’t skimp on the cloud syncing.
