@@ -22,7 +22,7 @@ html, body, .body-inner {
 }
 
 a {
-  color: #22262b;
+  color: $accent-color;
 
   span {
     border-bottom: 1px solid #22262b;
@@ -30,11 +30,11 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: $accent-color;
+    color: $light-gray;
     cursor: pointer;
 
     span {
-      border-bottom: 1px solid $accent-color;
+      border-bottom: 1px solid $light-gray;
     }
   }
 
@@ -595,10 +595,15 @@ p {
 
   a {
     display: block;
+    color: $black;
 
     small {
       color: $light-gray;
       font-size: $font-sm;
+    }
+
+    &:hover {
+      color: $accent-color;
     }
   }
 
@@ -787,6 +792,11 @@ blockquote {
 
     &:hover {
       color: $accent-color;
+      border-color: $accent-color;
+
+      span {
+        border-color: $accent-color;
+      }
 
       .direction {
         font-weight: 600;

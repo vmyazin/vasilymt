@@ -13,6 +13,11 @@
 
   .social-link {
     display: inline-block;
+    color: $black;
+
+    &:hover {
+      color: $accent-color;
+    }
   }
 }
 
@@ -41,6 +46,7 @@ img.social-icon {
   max-width: 1140px;
   margin: 0 auto;
 }
+
 .social-share-list {
   position: absolute;
   right: 45px;
