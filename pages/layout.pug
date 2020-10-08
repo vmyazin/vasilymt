@@ -30,12 +30,14 @@ html
         meta(name='twitter:title' content=postMetaData.title + ' by ' + blogInfo.blog.author)
         meta(name='twitter:description' content=postMetaData.description)
         meta(property='og:url' content=postMetaData.fullUrl)
+        meta(name='description' content=postMetaData.description)
       else
         meta(property='og:type' content='website')
         meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.siteName)
         meta(name='twitter:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.siteName)
         meta(property='og:url' content='/')
         meta(property='og:description' content=blogInfo.blog.description)
+        meta(name='description' content=title + ' • ' + blogInfo.blog.description)
 
       if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.imageFullUrl)
