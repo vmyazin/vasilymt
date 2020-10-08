@@ -3,7 +3,7 @@ each tag, ind in postMetaData.tags
   - allTags += tag + ','
 - allTags = allTags.slice(0, -1)
 - url = encodeURI(postMetaData.fullUrl)
-- tweet = encodeURI("On the blog: " + postMetaData.title + " " + postMetaData.fullUrl + "&hashtags=" + allTags)
+- tweet = encodeURI(postMetaData.title + " by " + blogInfo.blog.author + " " + postMetaData.fullUrl + "&hashtags=" + allTags)
 
   .social-share-list-holder
     ul.social-share-list
