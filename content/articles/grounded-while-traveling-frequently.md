@@ -22,7 +22,7 @@ To build continuity between my previous place and the new one I put out some mem
 
 #### Light up an incense
 
-I carry a small wooden case full of incense that I burn at a new place to make it smell familiar. My favorite is the classic Nag Champa [https://en.wikipedia.org/wiki/Nag_champa] of Indian origin and the variants from the same brand. In my experience most people like its fragrance and it sets a calm relaxing ambiance.
+I carry a small wooden case full of incense that I burn at a new place to make it smell familiar. My favorite is the classic [Nag Champa](https://en.wikipedia.org/wiki/Nag_champa) of Indian origin and the variants from the same brand. In my experience most people like its fragrance and it sets a calm relaxing ambiance.
 
 #### Take a walk around the block
 

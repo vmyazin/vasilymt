@@ -24,7 +24,7 @@ It doesn’t take a lot to tidy up your immediate surroundings. Of course, first
 
 I get fired up to clean up when I notice a pile begins to form near me, on the work desk or in the kitchen. When I drop some food crumbs while cooking, I take a mental note to sweep momentarily. When I’m cooking I make an effort to rinse and dry anything that has served its brief purpose. All while still making the dish.
 
-I’d be remiss if I didn’t mention the awe-inspiring impact of opening my eyes in the morning and perceiving the sparkling splendor of my room or kitchen with my half-awakened brain. I’m half-joking — I’m not that fanatical about cleaning, but general tidiness has a positive snowballing effect from the start to till the end of each day, believe me.
+I’d be remiss if I didn’t mention the awe-inspiring impact of opening my eyes in the morning and perceiving the sparkling splendor of my room or kitchen with my half-awakened brain. I’m half-joking — I’m not that fanatical about cleaning, but general tidiness has a positive snowballing effect from the start till the end of each day, believe me.
 
 ![Here is my desk at an AirBnb before and after](/images/blog/tidy-desk.jpg)
 
