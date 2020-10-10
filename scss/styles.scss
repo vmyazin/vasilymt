@@ -545,6 +545,29 @@ p {
   }
 }
 
+a.tag {
+  border-radius: 3px;
+  background-color: $lighter-gray;
+  color: $very-light-gray;
+  padding: .4em .65em;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+.badge-accent {
+  background-color: $accent-color;
+  color: white;
+}
+
 .author {
   display: inline-block;
   color: $light-gray;
@@ -807,10 +830,19 @@ blockquote {
   .direction {
     color: $light-gray;
     border-width: 0;
+
+    &.prev {
+      margin-left: -15px;
+    }
+
+    &.next {
+      margin-right: -15px;
+    }
   }
 
   .title {
     font-size: $font-sm;
+    border-bottom: 0;
   }
 }
 
