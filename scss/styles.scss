@@ -545,14 +545,20 @@ p {
   }
 }
 
+[role='tags'] {
+  margin-bottom: -4px;
+}
+
 a.tag {
   border-radius: 3px;
   background-color: $lighter-gray;
   color: $very-light-gray;
-  padding: .4em .65em;
+  padding: .3em .65em .4em;
   font-weight: 600;
   text-decoration: none;
+  display: inline-block;
   margin-right: 10px;
+  margin-bottom: 4px;
 
   &:last-child {
     margin-right: 0;
