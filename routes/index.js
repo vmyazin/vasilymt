@@ -38,7 +38,7 @@ router.get('/contact', (req, res) => {
 
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
-  res.render('blog', { articles, blogInfo, path: req.path, title: "Blog • Thoughts"  });
+  res.render('blog', { articles, blogInfo, path: req.path, title: "Blog"  });
 });
 
 router.route('/api/search').get(cors(), async (req, res) => {
