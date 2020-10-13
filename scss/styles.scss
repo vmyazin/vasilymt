@@ -302,6 +302,13 @@ p {
   }
 }
 
+.blog-digest {
+  background-color: $main-bg;
+
+  .text {
+  }
+}
+
 .video-container {
   margin-top: -90px;
 }
@@ -593,7 +600,7 @@ a.tag {
   }
 
   p, li {
-    line-height: 1.75;
+    line-height: 1.85;
   }
 
   p + p,
