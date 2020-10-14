@@ -1,0 +1,34 @@
+//  Begin Mailchimp Signup Form 
+.cta-box
+  #mc_embed_signup
+    form#mc-embedded-subscribe-form.validate(action='https://vasilym.us2.list-manage.com/subscribe/post?u=31675307b985dd1334cfdf9c9&id=ee26540081' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate)
+      #mc_embed_signup_scroll
+        h4.text-center Get my BEST content updates delivered straight to your inbox.
+        p.subheading.text-center Join my email list to be updated as soon as a new post is published. Unsubscribe anytime.
+        
+        .d-flex.flex-column.form-wrap.mt-4
+
+          .mc-field-group.mb-3
+            label.sr-only(for='mce-FNAME') First Name
+            input#mce-FNAME(type='text' name='FNAME' placeholder="First Name" aria-label="First Name")
+          
+          .mc-field-group.mb-1
+            label.sr-only(for='mce-EMAIL')
+              | Email Address
+              span.asterisk *
+            input.required.email#mce-EMAIL(type='email' name='EMAIL' placeholder="Email Address*" aria-label="Email Address*")
+          .indicates-required.mt-2.mb-4.text-center
+            span.asterisk *
+            |  indicates required
+          
+          #mce-responses.clear
+            .response#mce-error-response(style='display:none')
+            .response#mce-success-response(style='display:none')
+          //  real people should not fill this in and expect good things - do not remove this or risk form bot signups
+          
+          div(style='position: absolute; left: -5000px;' aria-hidden='true')
+            input(type='text' name='b_31675307b985dd1334cfdf9c9_ee26540081' tabindex='-1')
+          .clear
+            .text-center
+              input.btn.btn-accent.btn-lg.btn-block#mc-embedded-subscribe.button(type='submit' value='Subscribe' name='subscribe')
+// End mc_embed_signup
