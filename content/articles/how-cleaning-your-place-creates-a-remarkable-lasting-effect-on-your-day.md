@@ -5,7 +5,7 @@ prettyDate: October 8th, 2020
 author: Vasily Myazin
 description: In a messy environment your thoughts tend to get stuck in the clogged pipes of your unfocused mind. In a clean environment clear thoughts start gathering: pointed, potent and unrestrained.
 image: /images/blog/kitchen-before-after.jpg
-image_desc: Photo by Curtis Adams, collage by Vasily Myazin
+imageDesc: Photo by Curtis Adams, collage by Vasily Myazin
 tags: productivity, cleaning, focus
 ---
 **I’ve seen some nasty looking dwellings in my day. And I mean so messy and disorganized that it made wonder whether the person living there was depressed or distressed. More often than not, it’s a simple act of neglect whose effect rapidly accumulates over time. At that stage it seems futile to do anything about it and their brain just accepts it as a norm.**

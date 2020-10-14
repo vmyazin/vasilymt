@@ -62,6 +62,10 @@ router.get('/blog/:filename', async (req, res) => {
   postMetaData.homeUrl = req.protocol + '://' + req.get('host')
   postMetaData.imageFullUrl = postMetaData.homeUrl + postMetaData.image
 
+  if (postMetaData.imageForShare !== undefined) {
+    postMetaData.imageForShareFullUrl = postMetaData.homeUrl + postMetaData.imageForShare
+  }
+
   getEnv(req.get('host'))
 
   if (!postMetaData) {

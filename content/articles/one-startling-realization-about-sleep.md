@@ -5,7 +5,7 @@ prettyDate: September 24th, 2020
 author: Vasily Myazin
 description: In the modern world we come to expect a perfect setting for sleep every night. I realized it was a pipe dream all along.
 image: /images/blog/nature-sleep.jpg
-image_desc: Photo by pixabay.com
+imageDesc: Photo by pixabay.com
 tags: sleep, rest, traveling, natural
 ---
 **My obsession with perfect sleep every night might be a fantasy. I realized it during a road trip with the help of a friend of mine. Early in the morning we woke up in a nice two-bed hotel room in Washington DC where we stayed for one night. He asked me: “How did you sleep?”**

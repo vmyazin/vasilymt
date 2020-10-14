@@ -5,7 +5,7 @@ prettyDate: September 14th, 2020
 author: Vasily Myazin
 description: The absolute worst way to deal with perfectionism is to give in to it. When we want to achieve something great we should be okay shortcomings.
 image: /images/blog/sand-castle.jpg
-image_desc: Photo by Jaime Spaniol, taken in Armação dos Búzios, Brazil
+imageDesc: Photo by Jaime Spaniol, taken in Armação dos Búzios, Brazil
 tags: perfectionism, productivity, results
 ---
 **Getting desired results for set goals is incredibly important. After all, when we get fired up by an idea and set it in motion, we want to achieve something that in the end will resemble what we had in mind.**

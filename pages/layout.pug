@@ -39,13 +39,17 @@ html
         meta(property='og:description' content=blogInfo.blog.description)
         meta(name='description' content=title + ' • ' + blogInfo.blog.description)
 
-      if isBlogPost && postMetaData.image !== undefined
+      if isBlogPost && postMetaData.imageForShareFullUrl !== undefined
+        meta(property='og:image' content=postMetaData.imageForShareFullUrl)
+        meta(name='twitter:image' content=postMetaData.imageForShareFullUrl)
+      else if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.imageFullUrl)
         meta(name='twitter:image' content=postMetaData.imageFullUrl)
       else
         meta(property='og:image' content='/images/og-image-vm.png')
         meta(name='twitter:image' content='/images/og-image-vm.png')
       meta(name="twitter:card" content="summary_large_image")
+      meta(name="twitter:creator" content="vasily_m")
 
   if path === '/'
     - path = 'home'
