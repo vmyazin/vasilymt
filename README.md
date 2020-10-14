@@ -18,7 +18,7 @@ prettyDate: September 7th, 2020
 author: Vasily Myazin
 description: 
 image: /images/blog/
-image_desc: Photo by 
+imageDesc: Photo by 
 tags: 
 ---
 ```

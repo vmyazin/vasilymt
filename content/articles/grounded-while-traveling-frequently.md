@@ -5,7 +5,7 @@ prettyDate: September 7th, 2020
 author: Vasily Myazin
 description: Moving around and constantly readjusting to new environments is not normal for most people. Being nomadic – part- or full-time – takes some effort to start enjoying. Here are my insights about that.
 image: /images/blog/cozy-room.jpg
-image_desc: Photo by pixabay.com
+imageDesc: Photo by pixabay.com
 tags: traveling, training, tips
 ---
 **Those who know me personally are familiar with my insatiable appetite for traveling. Be it around the current locale, a next city over or long-distance international travel – I love to traverse the globe. It wasn’t innate in me to be comfortable with not knowing what exactly to expect on the other side. To set the stage for you: I typically travel alone, that’s my favorite way so far. The points I share below are made with the solo traveler in mind but can be applied to couples and groups of tight friends as well.**

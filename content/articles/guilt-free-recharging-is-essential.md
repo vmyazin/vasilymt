@@ -5,7 +5,7 @@ prettyDate: September 4th, 2020
 author: Vasily Myazin
 description: I used to think that I was wasting time taking a break, a day-off, or even a short vacation. Turns out most of us should do it to stay sane and productive.
 image: /images/blog/beach-relax.jpg
-image_desc: Photo by Ruel Madelo, taken in Badian, Philippines
+imageDesc: Photo by Ruel Madelo, taken in Badian, Philippines
 tags: rest, productivity, introverts, recharge
 ---
 **It is easy to forget that taking some rest is essential. Somehow it is drilled into us, the wanna-be hustler types, that we must work and only take minimal rest. It seems like if you want to achieve something outstanding you must not lay your head down even on the weekends.** It looks like it when we examine [influential people's social media](https://www.thechicagoschool.edu/insight/from-the-magazine/a-virtual-life/). They sure look like they never rest, and spit out pearls of wisdom on Twitter even on weekends and late at night. What is vastly overlooked is the need to take substantial breaks from your daily tasks and long-term missions. It concerns those who are on the introverted side, like myself, even more. If for several days straight I'm deeply involved in conversations and problem solving in a collective, be it online or in-person, it is imperative for me to take a break in solitude. And even then the guilty feeling that I'm not spending my time on something practical, something that will move the needle, creeps up.

@@ -5,8 +5,10 @@ prettyDate: October 13th, 2020
 author: Vasily Myazin
 description: Years ago I had an epiphany. I realized that I can connect performing an enduring physical exercise to an unrelated goal in my mind.
 image: /images/blog/running-man.jpg
-image_desc: Photo by Jenny Hill on Unsplash
+imageDesc: Photo by Jenny Hill on Unsplash
+imageForShare: /images/blog/running-man-share.jpg
 tags: exercise, endurance, training, goals
+published: false
 ---
 
 **Years ago I had an epiphany. I realized that I can connect performing an enduring physical exercise (running, weight training, taking a hot sauna) to a goal fixed in my mind. I pick the most pertinent goal of the current stage of life and imagine that focusing on the exercise is a rehearsal for achieving the goal.**
