@@ -40,6 +40,10 @@ router.get('/contact', (req, res) => {
   res.render('contact', { siteInfo, path: req.path, title: "Contact"  });
 });
 
+router.get('/privacy', (req, res) => {
+  res.render('privacy', { siteInfo, path: req.path, title: "Privacy Policy" });
+});
+
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
   res.render('blog', { articles, siteInfo, path: req.path, title: "Blog"  });

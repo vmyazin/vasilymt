@@ -611,6 +611,15 @@ a.tag {
 
   p, li {
     line-height: 1.75;
+
+    small {
+      display: inline-block;
+      line-height: 1.4;
+    }
+  }
+
+  h1 {
+    font-size: $font-xxl;
   }
 
   p + p,
@@ -625,6 +634,7 @@ a.tag {
   p + h4 {
     margin-top: 1.5rem;
   }
+
 }
 
 @include media-breakpoint-down(md) {
