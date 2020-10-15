@@ -4,41 +4,45 @@ const router = express.Router();
 router.blogPath = __dirname + '/../content/articles/';
 const MarkdownBlog = require('../scripts/blog-setup');
 const blog = new MarkdownBlog(router.blogPath);
-const blogInfo = blog.info;
+const siteInfo = blog.info;
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
 let dateObj = new Date();
 let current = {};
 current.year = dateObj.getFullYear();
-blogInfo['currentYear'] = current.year;
+siteInfo['currentYear'] = current.year;
 
 // ask Request for the host name and assign environment name
 function getEnv(host) {
   if (host.includes('localhost')) {
-    blogInfo.env = 'local'
+    siteInfo.env = 'local'
   } else if (host.includes('alpha')) {
-    blogInfo.env = 'alpha'
+    siteInfo.env = 'alpha'
   } else {
-    blogInfo.env = 'prod'
+    siteInfo.env = 'prod'
   }
 }
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
-  res.render('index', { articles, blogInfo, path: req.path });
+  res.render('index', { articles, siteInfo, path: req.path });
 });
 
 router.get('/about', (req, res) => {
-  res.render('about', { blogInfo, path: req.path, title: "About" });
+  res.render('about', { siteInfo, path: req.path, title: "About" });
+});
+
+router.get('/about', (req, res) => {
+  res.render('about', { siteInfo, path: req.path, title: "About" });
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', { blogInfo, path: req.path, title: "Contact"  });
+  res.render('contact', { siteInfo, path: req.path, title: "Contact"  });
 });
 
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
-  res.render('blog', { articles, blogInfo, path: req.path, title: "Blog"  });
+  res.render('blog', { articles, siteInfo, path: req.path, title: "Blog"  });
 });
 
 router.route('/api/search').get(cors(), async (req, res) => {
@@ -76,7 +80,7 @@ router.get('/blog/:filename', async (req, res) => {
   res.render('article', Object.assign({},
     { postMetaData },
     { nextPostMetaData, prevPostMetaData },
-    { blogInfo },
+    { siteInfo },
     {
       content: await blog.renderMarkdown(slug),
       path: req.path,
@@ -89,14 +93,14 @@ router.get('/blog/:filename', async (req, res) => {
 
 router.get('/tags', async (req, res) => {
   const tags = blog.tags;
-  res.render('tags', { tags, blogInfo, path: req.path, title: "Tags" });
+  res.render('tags', { tags, siteInfo, path: req.path, title: "Tags" });
 });
 
 router.get('/tags/:tag', async (req, res) => {
   const tag = req.params.tag;
   const tags = blog.tags;
   const articles = await blog.getPostsByTag(tag);
-  res.render('tag', { tag, tags, articles, blogInfo, path: req.path, title: tag });
+  res.render('tag', { tag, tags, articles, siteInfo, path: req.path, title: tag });
 });
 
 module.exports = router;

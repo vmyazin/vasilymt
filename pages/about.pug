@@ -21,13 +21,13 @@ block content
       .col
         .text-center.mb-4
           ul.list-inline.d-flex-inline.social-links
-            each socialLink, socialNet in blogInfo.social
+            each socialLink, socialNet in siteInfo.social
               if socialNet !== "telegram"
                 li.list-inline-item
                   a.social-link.align-middle(href=socialLink)
                     ion-icon(name='logo-' + socialNet)
             li.list-inline-item
-              a.social-link.align-middle(href=blogInfo.social.telegram)
+              a.social-link.align-middle(href=siteInfo.social.telegram)
                 img.social-icon(src="/images/social/logo-telegram.svg")
 
     .row
