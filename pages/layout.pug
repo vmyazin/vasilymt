@@ -11,33 +11,33 @@ html
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon.png" type="images/x-icon")
 
-    //- check if blogInfo object is present, a lot depends on it
-    if blogInfo
+    //- check if siteInfo object is present, a lot depends on it
+    if siteInfo
       if isBlogPost
-        title #{postMetaData.title} • #{blogInfo.blog.siteName}
+        title #{postMetaData.title} • #{siteInfo.blog.siteName}
       else if title
-        title #{title} • #{blogInfo.blog.siteName}
+        title #{title} • #{siteInfo.blog.siteName}
       else
-        title= blogInfo.blog.siteName
+        title= siteInfo.blog.siteName
     
       meta(property='og:locale' content='en_US')
-      meta(property='og:site_name' content=blogInfo.blog.siteName)
+      meta(property='og:site_name' content=siteInfo.blog.siteName)
       
       if isBlogPost
         meta(property='og:type' content='article')
-        meta(property='og:title' content=postMetaData.title + ' by ' + blogInfo.blog.author)
+        meta(property='og:title' content=postMetaData.title + ' by ' + siteInfo.blog.author)
         meta(property='og:description' content=postMetaData.description)
-        meta(name='twitter:title' content=postMetaData.title + ' by ' + blogInfo.blog.author)
+        meta(name='twitter:title' content=postMetaData.title + ' by ' + siteInfo.blog.author)
         meta(name='twitter:description' content=postMetaData.description)
         meta(property='og:url' content=postMetaData.fullUrl)
         meta(name='description' content=postMetaData.description)
       else
         meta(property='og:type' content='website')
-        meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.siteName)
-        meta(name='twitter:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.siteName)
+        meta(property='og:title' content=siteInfo.blog.description + ' • ' + siteInfo.blog.siteName)
+        meta(name='twitter:title' content=siteInfo.blog.description + ' • ' + siteInfo.blog.siteName)
         meta(property='og:url' content='/')
-        meta(property='og:description' content=blogInfo.blog.description)
-        meta(name='description' content=title + ' • ' + blogInfo.blog.description)
+        meta(property='og:description' content=siteInfo.blog.description)
+        meta(name='description' content=title + ' • ' + siteInfo.blog.description)
 
       if isBlogPost && postMetaData.imageForShareFullUrl !== undefined
         meta(property='og:image' content=postMetaData.imageForShareFullUrl)
@@ -59,12 +59,12 @@ html
     .body-inner
       block content
 
-  if blogInfo
+  if siteInfo
     //  Global site tag (gtag.js) - Google Analytics 
-    script(async src='https://www.googletagmanager.com/gtag/js?id=' + blogInfo.appIds.googleAnalytics)
+    script(async src='https://www.googletagmanager.com/gtag/js?id=' + siteInfo.appIds.googleAnalytics)
     script.    
       window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
-        gtag('config', "#{blogInfo.appIds.googleAnalytics}");
+        gtag('config', "#{siteInfo.appIds.googleAnalytics}");
