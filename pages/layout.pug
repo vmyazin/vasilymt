@@ -59,12 +59,12 @@ html
     .body-inner
       block content
 
-  if siteInfo
-    //  Global site tag (gtag.js) - Google Analytics 
-    script(async src='https://www.googletagmanager.com/gtag/js?id=' + siteInfo.appIds.googleAnalytics)
-    script.    
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-    
-        gtag('config', "#{siteInfo.appIds.googleAnalytics}");
+    if siteInfo && (siteInfo.env !== '' && siteInfo.env === 'prod')
+      //  Global site tag (gtag.js) - Google Analytics 
+      script(async src='https://www.googletagmanager.com/gtag/js?id=' + siteInfo.appIds.googleAnalytics)
+      script.    
+        window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+      
+          gtag('config', "#{siteInfo.appIds.googleAnalytics}");

@@ -25,27 +25,28 @@ function getEnv(host) {
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
+  getEnv(req.get('host'))
   res.render('index', { articles, siteInfo, path: req.path });
 });
 
 router.get('/about', (req, res) => {
-  res.render('about', { siteInfo, path: req.path, title: "About" });
-});
-
-router.get('/about', (req, res) => {
+  getEnv(req.get('host'))
   res.render('about', { siteInfo, path: req.path, title: "About" });
 });
 
 router.get('/contact', (req, res) => {
+  getEnv(req.get('host'))
   res.render('contact', { siteInfo, path: req.path, title: "Contact"  });
 });
 
 router.get('/privacy', (req, res) => {
+  getEnv(req.get('host'))
   res.render('privacy', { siteInfo, path: req.path, title: "Privacy Policy" });
 });
 
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
+  getEnv(req.get('host'))
   res.render('blog', { articles, siteInfo, path: req.path, title: "Blog"  });
 });
 
@@ -97,6 +98,7 @@ router.get('/blog/:filename', async (req, res) => {
 
 router.get('/tags', async (req, res) => {
   const tags = blog.tags;
+  getEnv(req.get('host'))
   res.render('tags', { tags, siteInfo, path: req.path, title: "Tags" });
 });
 
@@ -104,6 +106,7 @@ router.get('/tags/:tag', async (req, res) => {
   const tag = req.params.tag;
   const tags = blog.tags;
   const articles = await blog.getPostsByTag(tag);
+  getEnv(req.get('host'))
   res.render('tag', { tag, tags, articles, siteInfo, path: req.path, title: tag });
 });
 
