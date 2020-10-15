@@ -12,12 +12,12 @@
             label.sr-only(for='mce-FNAME') First Name
             input#mce-FNAME(type='text' name='FNAME' placeholder="First Name" aria-label="First Name")
           
-          .mc-field-group.mb-1
+          .mc-field-group.mb-3
             label.sr-only(for='mce-EMAIL')
               | Email Address
               span.asterisk *
             input.required.email#mce-EMAIL(type='email' name='EMAIL' placeholder="Email Address*" aria-label="Email Address*")
-          .indicates-required.mt-2.mb-4.text-center
+          .indicates-required.mt-2.mb-4.text-center.sr-only
             span.asterisk *
             |  indicates required
           
@@ -29,6 +29,6 @@
           div(style='position: absolute; left: -5000px;' aria-hidden='true')
             input(type='text' name='b_31675307b985dd1334cfdf9c9_ee26540081' tabindex='-1')
           .clear
-            .text-center
+            .text-center.mb-1
               input.btn.btn-accent.btn-lg.btn-block#mc-embedded-subscribe.button(type='submit' value='Subscribe' name='subscribe')
 // End mc_embed_signup
