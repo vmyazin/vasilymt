@@ -38,57 +38,25 @@ block content
 
   .section.blog-digest
     .digest-grid.article-list
-      a.small(href="#")
-        .summary-wrapper
-          .square
-            img(src="/images/blog/beach-relax.jpg", alt="")
-          .d-flex.flex-column
-            h3.heading Favorite Ramen Places in New York
-            small.text-nowrap.meta August 16, 2020
-            p Visit Brooklyn, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie.
-
-      a.small(href="#")
-        .summary-wrapper
-          .square
-            img(src="/images/blog/beach-relax.jpg", alt="")
-          .d-flex.flex-column
-            h3.heading Favorite Ramen Places in New York
-            small.text-nowrap.meta August 16, 2020
-            p Visit Brooklyn, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie.
-      a.grande(href="#")
-        .summary-wrapper-vert
-          .stretch
-            img.img-fluid(src="/images/blog/beach-relax.jpg", alt="")
-          h3.heading Favorite Ramen Places in New York
-          small.text-nowrap.meta August 16, 2020
-          p Visit Brooklyn, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie.
-
-
-  .section.blog-digest
-    .container-fluid.article-list
-      .row
-        .col-md-6
-          .row
-            .col
-              img.img-fluid(src="/images/blog/beach-relax.jpg", alt="")
-            .col.text
-              h3.heading Favorite Ramen Places in New York
-              small.text-nowrap.meta August 16, 2020
-              p Visit Brooklyn, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie.
-          .row
-            .col
-              img.img-fluid(src="/images/blog/beach-relax.jpg", alt="")
-            .col.text
-              h3.heading Favorite Ramen Places in New York
-              small.text-nowrap.meta August 16, 2020
-              p Visit Brooklyn, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie.
-        .col-md-6
-          .row
-            .col.text
-              img.img-fluid(src="/images/blog/cozy-room.jpg", alt="")
-              h3.heading Favorite Ramen Places in New York
-              small.text-nowrap.meta August 16, 2020
-              p Visit Brooklyn, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie.
+      each article, ind in articles
+        if ind < 2
+          a.small.hover-effect(href="/blog/" + article.slug)
+            .summary-wrapper
+              .square
+                img(src=article.image, alt=article.description)
+              .text.d-flex.flex-column.px-4.py-3
+                h3.heading= article.title
+                small.text-nowrap.meta= article.prettyDate
+                p= article.description
+        if ind == 3
+          a.grande.hover-effect(href="#")
+            .summary-wrapper-vert.d-flex
+              .stretch.flex-1
+                img(src=article.image, alt=article.description)
+              .text.px-4.py-3
+                h3.heading= article.title
+                small.text-nowrap.meta= article.prettyDate
+                p= article.description
 
   .section.gold
     .page-wrapper.pt-4.pt-sm-0

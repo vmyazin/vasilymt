@@ -74,6 +74,10 @@ h4 {
   font-weight: 300;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 p {
   margin: 0 0 1rem;
 }
@@ -322,17 +326,42 @@ p {
 .blog-digest {
   background-color: $main-bg;
 
-  .text {
-  }
-
   .summary-wrapper {
     display: flex;
     align-items: stretch;
+    height: 100%;
+
+    .square {
+      flex-shrink: 0;
+    }
   }
 
   .summary-wrapper-vert {
     display: flex;
     flex-direction: column;
+    height: 100%;
+  }
+
+  [class^="summary-wrapper"] {
+    .meta {
+      display: block;
+      font-size: $font-xs;
+      margin-bottom: .5rem;
+    }
+
+    p {
+      font-size: $font-sm;
+    }
+  }
+}
+
+.stretch {
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -341,9 +370,12 @@ p {
   grid-template-columns: 50% 1fr 1fr;
   grid-template-rows: 0 1fr 1fr 0;
   grid-gap: 0;
+  border-top: 1px solid $lighter-gray;
 
   a {
     display: block;
+    position: relative;
+    overflow: hidden;
 
     &:nth-child(1) {
       grid-row: 2 / 3;
@@ -364,9 +396,7 @@ p {
     grid-row: 2 / 4;
     grid-column: 2 / 4;
 
-    .img-fluid {
-      width: 50%;
-    }
+    border-left: 1px solid $lighter-gray;
   }
 
   .small {
@@ -725,7 +755,9 @@ a.tag {
     h3 {
       font-size: $font-lg;
     }
-    
+  }
+
+  .hover-effect {    
     &:after {
       content: '';
       position: absolute;
@@ -771,7 +803,6 @@ a.tag {
   }
 
   .text {
-    flex: 1;
     padding: 20px 30px;
     background-color: $main-bg;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
