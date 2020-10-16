@@ -44,9 +44,9 @@ router.get('/privacy', (req, res) => {
   res.render('privacy', { siteInfo, path: req.path, title: "Privacy Policy" });
 });
 
-router.get('/Terms', (req, res) => {
+router.get('/terms', (req, res) => {
   getEnv(req.get('host'))
-  res.render('Terms', { siteInfo, path: req.path, title: "Privacy Policy" });
+  res.render('terms', { siteInfo, path: req.path, title: "Privacy Policy" });
 });
 
 router.get('/blog', async (req, res) => {
