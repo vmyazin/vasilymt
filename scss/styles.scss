@@ -373,6 +373,54 @@ p {
   .small {
     grid-column: 1 / 2;
   }
+
+  .summary-wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .summary-wrapper-vert {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.digest-grid {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr;
+  grid-template-rows: 0 1fr 1fr 0;
+  grid-gap: 0;
+
+  a {
+    display: block;
+
+    &:nth-child(1) {
+      grid-row: 2 / 3;
+    }
+
+    &:nth-child(2) {
+      grid-row: 3 / 4;
+    }
+
+    .square {
+      img {
+        z-index: 0;
+      }
+    }
+  }
+
+  .grande {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+
+    .img-fluid {
+      width: 50%;
+    }
+  }
+
+  .small {
+    grid-column: 1 / 2;
+  }
 }
 
 .video-container {
