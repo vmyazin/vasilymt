@@ -1,11 +1,11 @@
 ul.article-list.featured.featured-article-list-layout.list-unstyled.justify-content-between
   each article, ind in articles
     if ind < 2
-      li.featured
+      li.featured.hover-effect
         a(href="/blog/" + article.slug)
           .square
             img(src=article.image, alt=article.description)
-          .text
+          .text.flex-1
             h3.heading(title=article.title)
               =article.title
             small.meta.text-nowrap= article.prettyDate
