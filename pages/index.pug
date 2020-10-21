@@ -46,16 +46,16 @@ block content
                 img(src=article.image, alt=article.description)
               .text.d-flex.flex-column.px-4.py-3
                 h3.heading= article.title
-                small.text-nowrap.meta= article.prettyDate
+                small.meta= article.prettyDate
                 p= article.description
         if ind == 3
-          a.grande.hover-effect(href="#")
-            .summary-wrapper-vert.d-flex
+          a.grande.hover-effect(href="/blog/" + article.slug)
+            .summary-wrapper-vert
               .stretch.flex-1
                 img(src=article.image, alt=article.description)
               .text.px-4.py-3
                 h3.heading= article.title
-                small.text-nowrap.meta= article.prettyDate
+                small.meta= article.prettyDate
                 p= article.description
 
   .section.gold
