@@ -19,6 +19,12 @@ html, body, .body-inner {
 .body-inner {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.max-layout-width {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 a {
@@ -37,7 +43,10 @@ a {
       border-bottom: 1px solid $light-gray;
     }
   }
+}
 
+.light-gray {
+  color: $light-gray;
 }
 
 b {
@@ -396,7 +405,6 @@ p {
   [class^="summary-wrapper"] {
     .meta {
       display: block;
-      font-size: $font-xs;
       margin-bottom: .5rem;
     }
 
@@ -406,6 +414,11 @@ p {
   }
 }
 
+.meta {
+  display: block;
+  color: $light-gray;
+}  
+
 .stretch {
   overflow: hidden;
 
@@ -413,6 +426,53 @@ p {
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+}
+
+.post-card {
+  a {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    width: 100%;
+    margin: 0 0 2rem;
+    box-shadow: 0 1px 30px rgba(0,0,0,.1);
+    border: 1px solid $lighter-gray;
+    background-color: $very-light-gray;
+    border-radius: 4px;
+    transition: 400ms ease;
+  }
+
+  p {
+    font-size: $font-sm;
+    line-height: 1.4;
+  }
+
+  a:hover {
+    box-shadow: 0 0 50px rgba(0,0,0,.5);
+  }
+
+  .card-img {
+    height: 225px;
+   
+    img {
+      width: 100%;
+      border-radius: 4px 4px 0px 0px;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .card-caption {
+    position: relative;
+    background: $very-light-gray;
+    padding: 15px 25px 5px 25px;
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  h5 {
+    font-size: $font-md;
+    font-weight: 600;
   }
 }
 

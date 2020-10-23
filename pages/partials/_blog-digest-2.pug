@@ -1,0 +1,22 @@
+.section.blog-digest.px-4
+  .max-layout-width
+    .container-fluid.mb-5.pb-3
+      .row
+        .col
+          h4.mt-5.mb-4
+            a.hidden-link(href="/blog/")
+              | Read On The Blog
+              ion-icon.align-middle.ml-3.light-gray(name="arrow-forward")
+      .row
+        each article, ind in articles
+          if ind < 3
+            .col-lg-4.col-md-6.col-sm-12
+              .post-card
+                a(href="/blog/" + article.slug)
+                  .card-img
+                    img(src=article.image, alt=article.description)
+                  .card-caption
+                    h5.heading= article.title
+                    p
+                      small.meta= article.prettyDate
+                    p= article.description

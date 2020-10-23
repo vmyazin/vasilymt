@@ -36,27 +36,7 @@ block content
         .illustration
           img.img-fluid(src='images/scheme.svg')
 
-  .section.blog-digest
-    .digest-grid.article-list
-      each article, ind in articles
-        if ind < 2
-          a.small.hover-effect(href="/blog/" + article.slug)
-            .summary-wrapper
-              .square
-                img(src=article.image, alt=article.description)
-              .text.d-flex.flex-column.px-4.py-3
-                h3.heading= article.title
-                small.meta= article.prettyDate
-                p= article.description
-        if ind == 3
-          a.grande.hover-effect(href="/blog/" + article.slug)
-            .summary-wrapper-vert
-              .stretch.flex-1
-                img(src=article.image, alt=article.description)
-              .text.px-4.py-3
-                h3.heading= article.title
-                small.meta= article.prettyDate
-                p= article.description
+  include partials/_blog-digest-2
 
   .section.gold
     .page-wrapper.pt-4.pt-sm-0
