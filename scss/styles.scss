@@ -8,7 +8,7 @@
 
 body {
   font: 18px rational, Helvetica, Arial, sans-serif;
-  color: #22262b;
+  color: $black;
 }
 
 html, body, .body-inner {
@@ -25,7 +25,7 @@ a {
   color: $accent-color;
 
   span {
-    border-bottom: 1px solid #22262b;
+    border-bottom: 1px solid $black;
   }
 
   &:hover {
