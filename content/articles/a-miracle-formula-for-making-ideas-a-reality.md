@@ -14,7 +14,7 @@ tags: ideas, notes, friends, hustle
 
 I so wish I could influence all of the people I come in contact with to act on their ideas. Some of them are subpar or merely nonsense, and it’s okay. Some have the potential of turning into gold. I, too, need to be reminded from time to time to make the first step.
 
-The issue that I have with hearing about my friends’ plans is that they often keep them in their minds, trusting their memories. David Lynch famously shared that he felt devastated a few times in his life when he didn’t bother to write down his idea. He thought the idea was so fantastic that it'd be impossible to forget. He was astonished that after a short time he only remembered the good feeling about the idea but not its contents. Lynch [made a career out of capturing ideas](https://youtu.be/mFsBaa_MEzM) and acting on them. 
+The issue I regularly have with my friends’ plans to work on something is that instead of writing down the outline and the steps they keep them in their minds. They trust their memory. Film director David Lynch famously shared that he felt devastated a few times in his life when he didn’t bother to write down an idea that came to his mind. He thought the idea was so fantastic that it'd be impossible to forget. He was astonished that after a short time he only remembered the good feeling about the idea but not its contents. Lynch [made a career out of capturing ideas](https://youtu.be/mFsBaa_MEzM) and acting on them. 
 
 Tools you can use may vary based on your preferences. I can recommend these idea-capturing approaches:
 
