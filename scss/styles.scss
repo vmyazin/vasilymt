@@ -26,11 +26,12 @@ html, body, .body-inner {
   margin: 0 auto;
 }
 
-a {
+a,
+.pseudo-link {
   color: $accent-color;
 
-  span {
-    border-bottom: 1px solid $black;
+  > span {
+    border-bottom: 1px solid $accent-color;
   }
 
   &:hover {
@@ -239,6 +240,27 @@ p {
   }
 }
 
+@include media-breakpoint-up(md) {
+  .cols-same-height {
+    .row {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .row > [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .post-card {
+    a {
+      height: 100%;
+    }
+  }
+}
+
 .hero {
   max-width: 470px;
   margin: 60px auto 0;
@@ -427,21 +449,30 @@ p {
     color: currentColor;
     text-decoration: none;
     width: 100%;
-    margin: 0 0 2rem;
+    margin: 0 0 .5rem;
     box-shadow: 0 1px 30px rgba(0,0,0,.1);
     border: 1px solid $lighter-gray;
     background-color: $very-light-gray;
     border-radius: 4px;
     transition: 400ms ease;
-  }
 
+    &:hover {
+      box-shadow: 0 0 50px rgba(0,0,0,.5);
+    }
+  }
+  
   p {
     font-size: $font-sm;
     line-height: 1.4;
-  }
+  }  
 
-  a:hover {
-    box-shadow: 0 0 50px rgba(0,0,0,.5);
+  .heading  {
+    font-size: $font-md;
+    font-weight: 600;
+    
+    &.lg {
+      font-size: $font-lg;      
+    }
   }
 
   .card-img {
@@ -462,9 +493,8 @@ p {
     border-radius: 0px 0px 4px 4px;
   }
 
-  h5 {
-    font-size: $font-md;
-    font-weight: 600;
+  .pseudo-link {
+    border-color: $accent-color;
   }
 }
 
