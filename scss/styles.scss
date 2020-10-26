@@ -1103,6 +1103,37 @@ blockquote {
   background-color: $text-color;
   color: $lighter-gray;
   margin-top: auto;
+  font-size: $font-xs;
+
+  .heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $lighter-gray;
+  }
+
+  .nav-cols {
+    max-width: 600px;
+    padding-left: 1rem;
+
+    @include media-breakpoint-down(xs) {
+      padding-left: .5rem;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+
+    li {
+      padding-bottom: .75rem;
+
+      a {
+        display: block;
+      }
+    }
+  }
   
   p {
     margin-bottom: 0;
@@ -1115,13 +1146,21 @@ blockquote {
   a {
     color: $main-bg;
     text-decoration: none;
+
+    &:hover {
+      color: $accent-color;
+    }
   }
 
   .fun-link {
-    display: block;
+    display: inline-block;
     color: $lighter-gray;
     padding: 10px 10px;
     margin: -10px -10px -10px 0;
+
+    span {
+      border-color: $lighter-gray;
+    }
     
     &:hover {
       color: $text-color;
@@ -1137,6 +1176,18 @@ blockquote {
   .icon {
     vertical-align: initial;
     margin: -5px 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .bottom-line {
+      text-align: center;
+      width: 100%;
+
+      .line {
+        display: block;
+        margin-top: 1rem;
+      }
+    }
   }
 }
 

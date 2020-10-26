@@ -1,21 +1,50 @@
 block content
 
-  footer.footer.text-center
+  footer.footer
+    .nav-cols
+      .container-fluid
+        .row
+          .col
+            p.heading Content
+            ul
+              li
+                a(href="/blog") Blog
+              li
+                a(href="/tags") Tags
+              li
+                a(href="/about") About Me
+          .col
+            p.heading Social
+            ul
+              li
+                a.text-nowrap(href=siteInfo.social.twitter)
+                  ion-icon.align-top(name='logo-twitter')
+                  |  Twitter
+              li
+                a.text-nowrap(href=siteInfo.social.linkedin)
+                  ion-icon.align-top(name='logo-linkedin')
+                  |  Linkedin
+          .col
+            p.heading Info
+            ul
+              li
+                a(href="/privacy") Privacy Policy
+              li
+                a(href="/terms") Terms Of Service
+
     .container-fluid
       .row
         .col
-          .d-flex.justify-content-between
-            p Copyright &copy; #{siteInfo.currentYear}
-            p
-              a(href="/privacy") Privacy
-              | &nbsp;|&nbsp;
-              a(href="/terms") Terms
-            p
-              a.fun-link(href="//dev.tapirio.com")
+          .d-flex.align-items-end.flex-column.mt-2
+            .bottom-line
+              a.fun-link.mr-0.mr-sm-5(href="//dev.tapirio.com")
                 img.icon(src="/images/logo-tapirio.svg")
                 | 
                 | Built on 
                 span Tapirio
+                |.
 
-  .scroll-to-top.fixed.hidden
-    img(src="/images/icon-up.svg", alt="Scroll up")
+              span.line Copyright &copy; #{siteInfo.currentYear}
+
+.scroll-to-top.fixed.hidden
+  img(src="/images/icon-up.svg", alt="Scroll up")
