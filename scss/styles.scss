@@ -704,7 +704,7 @@ p {
     }  
   }  
 
-  a {
+  a:not(.btn):not(.tag) {
     text-decoration: underline;
   }
 }
