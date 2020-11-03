@@ -97,6 +97,10 @@ p {
   border-radius: 0;
   padding: 12px 28px;
   font-weight: 600;
+
+  [class^="gg"] {
+    --ggs: 1.1;
+  }
 }
 
 .btn-primary {
