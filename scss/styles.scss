@@ -1339,10 +1339,27 @@ blockquote {
 
 .img-about {
   max-width: 327px;
+  width: 50%;
   border-radius: 50%;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.img-about-2 {
+  width: auto;
 }
 
 .foliage {
-  background: url(/images/bg-foliage.jpg) no-repeat;
+  background: $text-color url(/images/bg-foliage.jpg) no-repeat;
   background-size: 100%;
+
+  h3, h4 {
+    color: white;
+  }
+
+  p {
+    color: $lighter-gray;
+  }
 }
