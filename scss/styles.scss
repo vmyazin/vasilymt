@@ -26,6 +26,15 @@ html, body, .body-inner {
   margin: 0 auto;
 }
 
+p, li {
+  line-height: 1.75;
+
+  small {
+    display: inline-block;
+    line-height: 1.4;
+  }
+}
+
 a,
 .pseudo-link {
   color: $accent-color;
@@ -783,6 +792,15 @@ a.tag {
   font-size: $font-xs;
 }  
 
+.page-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  p {
+    line-height: 1.5;
+  }
+}
+
 .page {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -790,15 +808,6 @@ a.tag {
   .post-title {
     font-size: 3rem;
     font-weight: bold;
-  }
-
-  p, li {
-    line-height: 1.75;
-
-    small {
-      display: inline-block;
-      line-height: 1.4;
-    }
   }
 
   h1 {
@@ -1132,6 +1141,7 @@ blockquote {
     margin-bottom: 1rem;
 
     li {
+      line-height: unset;
       padding-bottom: .75rem;
 
       a {
@@ -1354,12 +1364,57 @@ blockquote {
 .foliage {
   background: $text-color url(/images/bg-foliage.jpg) no-repeat;
   background-size: 100%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $text-color;
+    z-index: 0;
+  }
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .offset-12 {
+    margin-top: -12rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+  }
+
+  .push-12 {
+    margin-top: 14rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+  }
+
+  .col-background {
+    background: rgba(33, 37, 42, 0.5);
+    padding: 2rem;
+  }
 
   h3, h4 {
     color: white;
+    font-weight: 600;
   }
 
   p {
     color: $lighter-gray;
+  }
+
+  .quote {
+    font-size: $font-md;
+    line-height: 1.4;
+    font-weight: 600;
   }
 }

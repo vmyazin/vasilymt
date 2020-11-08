@@ -26,7 +26,7 @@ function getEnv(host) {
 router.get('/', (req, res) => {
   const articles = blog.posts;
   getEnv(req.get('host'))
-  res.render('index', { articles, siteInfo, path: req.path });
+  res.render('home', { articles, siteInfo, path: req.path });
 });
 
 router.get('/about', (req, res) => {
