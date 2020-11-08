@@ -5,33 +5,43 @@ block content
   
   .container.page
     .row
-      .col.col-md-8.offset-md-2
-        h2 About This Site
-        p Vasily just wanted a fancy website, so he got to work. Frankly, the first time the proverbial shovel "hit the ground" was all the way in 2016. Here we are now. It's work in progress. I would highly value your feedback.
-
-        p Here is my attempt at quoting my wise self:
-        
-        h3 "If you have to wonder about it, choose to trust your intuition."
-
-        h4 Who is Vasily?
-        
-        p Digital (no)mad, world traveler, techie, design nut, musician, rookie philosopher, "this" guy.
-
-    .row
       .col
-        .text-center.mb-4
-          ul.list-inline.d-flex-inline.social-links
-            each socialLink, socialNet in siteInfo.social
-              if socialNet !== "telegram"
-                li.list-inline-item
-                  a.social-link.align-middle(href=socialLink)
-                    ion-icon(name='logo-' + socialNet)
-            li.list-inline-item
-              a.social-link.align-middle(href=siteInfo.social.telegram)
-                img.social-icon(src="/images/social/logo-telegram.svg")
+        .text-center.mt-4.mb-4
+          h2 About
+          p.meta Who is Vasily Myazin and what has he done so far, and what he’s doing now
 
-    .row
-      .col.col-md-8.offset-md-2
-        img.img-fluid(src="/images/florida-trio.jpg")
+  .section.odd
+    .container.page
+      .row
+        .col-md-6
+          h3.mb-1 Who Is Vasily?
+          p.meta It’s time to unveil the person behind the name
+          img.img-about.float-left.pr-4.pb-4(src="/images/vasily-cult.jpg", alt="Vasily's Photo")
+
+          p Born in Lipetsk, Russia in the decade of the sunsetting of the Soviet Union Vasily spent his formative years in creative environments. Surrounded by writers, artists, designers, programmers he was bound to be on the crossroads of creativity.
+          
+          p Vasily embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology. Naturally curious he connects the dots between tribal mysticism, applied phylosophy, wide-range frequency beats and graphical user interface. 
+          p Yes, he does feel a bit odd describing himself in third person.
+
+        .col-md-6
+          h4 Creative, Thoughtful, Motivating        
+          p In terms of labels (or #hashtags): world traveler, digital (no)mad, techie, design nut, musician, rookie philosopher, mentor for those who are stuck.
+
+      .row
+        .col
+          .text-center.mb-4
+            ul.list-inline.d-flex-inline.social-links
+              each socialLink, socialNet in siteInfo.social
+                if socialNet !== "telegram"
+                  li.list-inline-item
+                    a.social-link.align-middle(href=socialLink)
+                      ion-icon(name='logo-' + socialNet)
+              li.list-inline-item
+                a.social-link.align-middle(href=siteInfo.social.telegram)
+                  img.social-icon(src="/images/social/logo-telegram.svg")
+
+  .jumbotron.jumbotron-fluid.foliage.mb-0
+    .container
+      h1 &nbsp;
 
   include partials/footer

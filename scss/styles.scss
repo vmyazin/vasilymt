@@ -1334,3 +1334,15 @@ blockquote {
   font-size: $font-xs;
   color: $light-gray;
 }
+
+/* About */
+
+.img-about {
+  max-width: 327px;
+  border-radius: 50%;
+}
+
+.foliage {
+  background: url(/images/bg-foliage.jpg) no-repeat;
+  background-size: 100%;
+}
