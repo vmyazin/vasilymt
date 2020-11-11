@@ -3,12 +3,13 @@ extends layout
 block content
   include partials/header
   
-  .container.page
+  .container.page-header
     .row
       .col
-        h2 Contact
-        p Email your feedback and questions at <a href="mailto:contact@vasilym.com">contact@vasilym.com</a>.
-        p Follow me on <a href=#{siteInfo.social.twitter}>Twitter</a> for an occasional dose of casual wisdom.
+        .text-center.mt-4.mb-4
+          h2.mb-4 Contact
+          p Email your questions and feedback at <a href="mailto:contact@vasilym.com">contact@vasilym.com</a>.
+          p.meta Follow me on <a href=#{siteInfo.social.twitter}>Twitter</a> for an occasional dose of casual wisdom.
 
   include partials/_calendly
 

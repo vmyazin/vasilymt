@@ -8,7 +8,7 @@ block content
       .col
         .text-center.mt-4.mb-4
           h2 About
-          p.meta Who is Vasily Myazin and what has he done so far, and what he’s doing now
+          p.meta.compact Who is Vasily Myazin and what has he done so far, and what he’s doing now
 
   .section.odd
     .container.page
@@ -26,6 +26,17 @@ block content
         .col-md-6
           h4 Creative, Thoughtful, Motivating        
           p In terms of labels (or #hashtags): world traveler, digital (no)mad, techie, design nut, musician, rookie philosopher, mentor for those who are stuck.
+          .image-gallery
+            ul.list-unstyled
+              li
+                img(src="/images/vasily-look-phone.jpg", alt="V looks at this phone")
+              li
+                img(src="/images/vasily-look-phone.jpg", alt="V looks at this phone")
+              li
+                img(src="/images/vasily-look-phone.jpg", alt="V looks at this phone")
+              li
+                img(src="/images/vasily-look-phone.jpg", alt="V looks at this phone")
+
 
   .jumbotron.jumbotron-fluid.foliage.mb-0
     .container
@@ -33,7 +44,7 @@ block content
         .text-center.w-100
           img.img-about.img-about-2(src="/images/vasily-cult-2.jpg", alt="Vasily's Photo")
       .row.offset-12
-        .col-md-4.col-background.mb-4
+        .col-md-4.col-bg-dark.mb-4
           h4 Vagabonding & Galavanting
           p After moving to the USA from Russia in 2002, I lived in Los Angeles, San Francisco, and New York, with short stints in a number of other US cities.
           p I began traveling more regularly in 2016, and visited Canada, Mexico, Colombia, Brazil, Spain, Germany, The Netherlands, Thailand, Japan among others.
@@ -53,12 +64,25 @@ block content
                   img.social-icon(src="/images/social/logo-telegram.svg")
             p.quote.mt-5 "If you have to wonder about it, choose to trust your intuition."
 
-        .col-md-4.col-background.mb-4
+        .col-md-4.col-bg-dark.mb-4
           h4 Creative Outlets
           p Since I was 3 years old I was into drawing using a variety of mediums: pen sketching, ink, markers, color pencials, watercolors, goache, acrilics, and eventually iPad with a digital pen (my current method). See more on <a href="https://www.instagram.com/details_sketchy">@details_sketchy on Instagram</a>.
           p In years 2002-2013 I actively produced music in the style of psy-trance under the moniker Konflux (<a href="https://www.youtube.com/channel/UC6-63lzHmIDrX5CNOQBFChw">YouTube</a>).
           p 2012-2017 I had a project called Synter dedicted to a house/techno + electro/trance blend of genres.
-
+      .row
+        .col-md-6.offset-md-3.col-bg-light.my-5.with-shadow
+          h3 How Can I Help You?
+          p With my life experience I can inspire you to:
+          ul.mb-0
+            li travel
+            li work remotely
+            li learn a new language
+            li learn to create podcasts
+            li kick the habits that don’t serve you
+            li reinvent yourself
+        .col-md-6.offset-md-3
+          a.btn.btn-accent.btn-lg.btn-block.button(href='/contact')
+            |  Get In Touch With Me
 
 
   include partials/footer
