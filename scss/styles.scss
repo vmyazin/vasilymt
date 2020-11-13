@@ -1447,7 +1447,17 @@ blockquote {
   @include box-shadow;
 }
 
-.image-gallery {
+.flex-parent {
+  display: flex;
+  align-items: stretch;
+}
+
+.image-accordeon {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  height: 400px;
+
   ul {
     display: flex;
     height: 100%;
@@ -1458,6 +1468,11 @@ blockquote {
       width: 25%;
       flex: 1;
       overflow: hidden;
+      transition: .35s ease-in-out;
+
+      &:hover {
+        flex: 3;
+      }
     }
   }
   img {
