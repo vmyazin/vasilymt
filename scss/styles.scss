@@ -1397,6 +1397,10 @@ blockquote {
     z-index: 1;
   }
 
+  h4 {
+    font-size: $font-md;
+  }
+
   .offset-12 {
     margin-top: -12rem;
 
@@ -1422,7 +1426,7 @@ blockquote {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
 
-    h2, h3, p {
+    h2, h3, h4, p {
       color: $black;
     }
   }
@@ -1471,7 +1475,7 @@ blockquote {
       transition: .35s ease-in-out;
 
       &:hover {
-        flex: 3;
+        flex: 4;
       }
     }
   }
