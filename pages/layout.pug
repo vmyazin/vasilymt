@@ -60,7 +60,7 @@ html
       block content
 
     if siteInfo && (siteInfo.env !== '' && siteInfo.env === 'prod')
-      //  Global site tag (gtag.js) - Google Analytics 
+      //-  Global site tag (gtag.js) - Google Analytics 
       script(async src='https://www.googletagmanager.com/gtag/js?id=' + siteInfo.appIds.googleAnalytics)
       script.    
         window.dataLayer = window.dataLayer || [];
@@ -68,3 +68,15 @@ html
           gtag('js', new Date());
       
           gtag('config', "#{siteInfo.appIds.googleAnalytics}");
+
+      //- MouseFlow
+      script(type='text/javascript').
+        
+        window._mfq = window._mfq || [];
+          (function() {
+            var mf = document.createElement("script");
+            mf.type = "text/javascript"; mf.defer = true;
+            mf.src = "//cdn.mouseflow.com/projects/6f8b54bd-3a08-4bef-b04b-134f1f217165.js";
+            document.getElementsByTagName("head")[0].appendChild(mf);
+          })();
+        
