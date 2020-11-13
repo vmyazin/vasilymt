@@ -1392,6 +1392,17 @@ blockquote {
     z-index: 0;
   }
 
+  &:before {
+    content: '';
+    position: absolute;
+    height: 300px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: url(/images/about/bg-bottom-foliage.jpg) no-repeat;
+    z-index: 1;
+  }
+
   * {
     position: relative;
     z-index: 1;
