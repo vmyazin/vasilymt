@@ -23,6 +23,9 @@ function getEnv(host) {
   }
 }
 
+// About OG Image 
+const aboutImageForShare = "/images/about/og-image-about-vm.jpg"
+
 router.get('/', (req, res) => {
   const articles = blog.posts;
   getEnv(req.get('host'))
@@ -31,7 +34,9 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res) => {
   getEnv(req.get('host'))
-  res.render('about', { siteInfo, path: req.path, title: "About" });
+  const homeUrl = req.protocol + '://' + req.get('host'),
+        imageFullUrl = homeUrl + aboutImageForShare
+  res.render('about', { siteInfo, path: req.path, title: "About", imageFullUrl: imageFullUrl });
 });
 
 router.get('/contact', (req, res) => {
