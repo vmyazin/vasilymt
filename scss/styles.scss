@@ -1026,7 +1026,8 @@ blockquote {
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  quotes: "\201C""\201D";
+  // quotes: "\201C""\201D""\2018""\2019";
   
   &:before {
     color: #ccc;
