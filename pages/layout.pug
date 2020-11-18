@@ -33,18 +33,20 @@ html
         meta(name='description' content=postMetaData.description)
       else
         meta(property='og:type' content='website')
-        meta(property='og:title' content=siteInfo.blog.description + ' • ' + siteInfo.blog.siteName)
-        meta(name='twitter:title' content=siteInfo.blog.description + ' • ' + siteInfo.blog.siteName)
+        meta(property='og:title' content=siteInfo.blog.description)
+        meta(name='twitter:title' content=siteInfo.blog.description)
         meta(property='og:url' content='/')
         meta(property='og:description' content=siteInfo.blog.description)
         meta(name='description' content=title + ' • ' + siteInfo.blog.description)
 
+      //- Share images
       if isBlogPost && postMetaData.imageForShareFullUrl !== undefined
         meta(property='og:image' content=postMetaData.imageForShareFullUrl)
         meta(name='twitter:image' content=postMetaData.imageForShareFullUrl)
       else if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.imageFullUrl)
         meta(name='twitter:image' content=postMetaData.imageFullUrl)
+      //- share image for About
       else if path.includes('about')
         meta(property='og:image' content=imageFullUrl)
         meta(name='twitter:image' content=imageFullUrl)
