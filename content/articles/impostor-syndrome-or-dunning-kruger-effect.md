@@ -43,14 +43,14 @@ We can use some ideas [offered by Nancy Chick](https://cft.vanderbilt.edu/guides
 
 - **Preassessment:** “What do I already know about this topic that could guide me while performing the tasks at hand?”
 - **The Muddiest Point:** “What is most confusing to me about the tasks I need to work on today?”
-- **Retrospective Postassessment:** “Before evaluating this subject, I thought it was… Now I think that it is...” or “How is my thinking changing (or not changing) over time?”
-- **Reflective Journaling:** “What about my process worked well that I should remember to do next time? What did not work so well that I should not do next time or that I should change?”
+- **Retrospective Postassessment:** “Before evaluating this subject, I thought it was... Now I think that it is...” or “How is my thinking changing (or not changing) over time?”
+- **Reflective Journaling:** “What about my process worked well that I should remember to do next time? What did **not** work so well that I should **not** do next time or that I should change?”
 
 If this approach is too scientific for you, you can simply add the self-assessment idea to your mental toolkit. Keep it less formal. Remember to pause your busy work once in a while and think about your approach to getting things done. Simply ask yourself: “Am I competent about what I’m doing, and whether or not I am — am I open to feedback and learning?”
 
 <figure>
 <img src="/images/blog/simao-115.jpg" alt="Vasily self-assesses">
-<figcaption>Vasily self-assesses himself into a perfectly balanced state. Photo by <a href="https://www.instagram.com/nikolayphotography/">Nick Buneev</a></figcaption>
+<figcaption>Vasily self-reflects until reaching a perfectly balanced state. Photo by <a href="https://www.instagram.com/nikolayphotography/">Nick Buneev</a></figcaption>
 </figure>
 
 ### What Improved Self-Awareness Will Offer You
