@@ -719,6 +719,10 @@ p {
       color: $lighter-gray;
       font-size: $font-xs;
       font-weight: 300;
+
+      a {
+        color: inherit;
+      }
     }
   }
 
