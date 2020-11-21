@@ -41,7 +41,8 @@ block content
               //- if ind !== postMetaData.tags.length - 1
               //-   |, 
 
-          include partials/_subscribe-form
+          if postMetaData.hideMailchipForm !== 'true'
+            include partials/_subscribe-form
 
           .post-nav.d-flex.justify-content-between.align-items-center.pt-4.mt-4.mb-5
             div

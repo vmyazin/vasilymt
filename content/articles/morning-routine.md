@@ -7,6 +7,7 @@ description: If you don’t have a game plan for the day, things will happen but
 image: /images/blog/morning-collage.jpg
 imageDesc: Collage by Vasily Myazin from multiple sources at Pexels.com
 tags: productivity, exercise, routine, ritual
+hideMailchipForm: true
 ---
 
 **The day starts slow. Lots to do. The head is foggy. Where to begin? I’ve been there and I’ve seen others struggle. Lazy beginning of the day, no direction, time wasted on figuring out what to eat, what to wear, no stretching, no hydration. As one of my mentors once said “Without the rituals, the day wins you over.” It is so true – the day will just stream-roll over you if you don’t have a plan.**
