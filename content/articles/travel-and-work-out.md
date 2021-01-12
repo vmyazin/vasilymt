@@ -99,7 +99,9 @@ You should do all exercises in a controlled manner, with a 1.5 sec of contractio
 
 ![A1-A2](/images/blog/fitness/wood-chopper-1-2.png)
 
-### Punch the reflex ball.
+### Punch the reflex ball
+
+![reflex ball](/images/blog/fitness/punch-reflex-ball.jpg)
 
 #### Here are the benefits of training with a reflex ball:
 
