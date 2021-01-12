@@ -101,7 +101,7 @@ You should do all exercises in a controlled manner, with a 1.5 sec of contractio
 
 ### Punch the reflex ball.
 
-#### Here the benefits of training with a reflex ball
+#### Here are the benefits of training with a reflex ball:
 
 * Improves your hand-eye coordination
 * Increases focus and concentration
@@ -114,10 +114,19 @@ You should do all exercises in a controlled manner, with a 1.5 sec of contractio
 * Improves your defense skills
 * Low barrier to entry – virtually anyone can get on with it
 
-Videos to check out:
+### Reflex Ball Tutorial Videos
 
-- [“Boxing Reflex Ball must learn tricks!”](https://www.youtube.com/watch?v=3c61cXRD-r0) from Champs MMA
-- [“Quick Tips on How to Use a Reflex Ball for Boxing/ Striking”](https://www.youtube.com/watch?v=DPpxIqe9E9w) from csquaredboxing
+["Boxing Reflex Ball must learn tricks!"](https://www.youtube.com/watch?v=3c61cXRD-r0) from Champs MMA
+
+<p>
+<iframe src="https://www.youtube.com/embed/3c61cXRD-r0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+["Quick Tips on How to Use a Reflex Ball for Boxing/ Striking"](https://www.youtube.com/watch?v=DPpxIqe9E9w) from csquaredboxing
+
+<p>
+<iframe src="https://www.youtube.com/embed/DPpxIqe9E9w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 ## In Conclusion
 
