@@ -7,7 +7,7 @@ block content
     .blog-content
       .row.mt-0.pt-0.mt-md-5
         .col.col-md-2.nav-back
-          h2.font-light
+          .link-wrapper.font-light
             a.hidden-link(href="/blog/")
               ion-icon.align-bottom(name="arrow-back")
               span Posts
@@ -20,7 +20,7 @@ block content
             else
               figcaption= postMetaData.description
 
-          h3.post-title.mt-4= postMetaData.title
+          h1.post-title.mt-4= postMetaData.title
 
           p.author
             if postMetaData.author

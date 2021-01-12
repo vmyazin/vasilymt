@@ -726,24 +726,22 @@ p {
     }
   }
 
-  h2 {
-    font-size: $font-lg;
-
-    ion-icon {
-      opacity: .5;
-      margin-bottom: 4px;
-      margin-right: 4px;
-    }  
-  }  
-
   a:not(.btn):not(.tag) {
     text-decoration: underline;
   }
 }
 
 .nav-back {
-  h2 {
+  .link-wrapper {
+    font-size: $font-xl;
+
     * { transition: all .2s ease-in-out; }
+
+    ion-icon {
+      opacity: .5;
+      margin-bottom: 4px;
+      margin-right: 4px;
+    }
 
     span {
       opacity: 0;
@@ -767,7 +765,7 @@ p {
 
 @include media-breakpoint-down(md) {
   .nav-back {
-    h2 {
+    .link-wrapper {
       font-size: $font-md;
     }
   }
@@ -831,6 +829,14 @@ a.tag {
 
   h1 {
     font-size: $font-xxl;
+  }
+
+  h2 {
+    font-size: $font-xl;
+  }
+
+  h3 {
+    font-size: $font-lg;
   }
 
   p + p,
