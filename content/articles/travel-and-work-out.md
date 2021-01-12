@@ -134,6 +134,6 @@ You should do all exercises in a controlled manner, with a 1.5 sec of contractio
 
 There you have it, a bunch of ideas on what you can do to get your body moving. You can come up with your own routine by picking 3-5 exercises from this list for each session. Repeat them for 3 or 4 rounds.
 
-If you have anything to add or spotted a type, ;et me know by email or on social media. Your thoughts are always appreciated!
+If you have anything to add or spotted a type, let me know by email or on social media. Your thoughts are always appreciated!
 
 
