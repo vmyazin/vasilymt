@@ -4,7 +4,8 @@ date: 01-01-2021
 prettyDate: January 1st, 2021
 author: Vasily Myazin
 description: It’s not easy to maintain a workout routine when you don’t have stable access to a gym. There are good ways to keep your body in shape even during traveling and pandemics.
-image: /images/blog/sedona-vasily.jpg
+image: /images/blog/fitness-crunch.jpg
+imageForShare: /images/blog/fitness-crunch-share.jpg
 imageDesc: Photo by Dmitry Zdorov
 tags: traveling, workouts, health
 hideMailchipForm: true
@@ -19,6 +20,7 @@ It’s important to keep your body and mind in tip-top shape, especially during 
 
 In the year 2020, additional limitations appeared, and, for many of us, exercising at home or a nearby park became the most viable option. 
 
+![grass fitness](/images/blog/grass-fitness.jpg)
 ## Here Are Some Workout Options You Can Start Using Today
 
 Luckily for us, there are alternative methods to keep our bodies in shape. I invited my friend [Alex Pavlovskih](https://www.instagram.com/janrisfitness/), a fitness and nutrition trainer based in Brooklyn, NY, to help me compile a list of effective exercises that you can do:
@@ -99,7 +101,7 @@ You should do all exercises in a controlled manner, with a 1.5 sec of contractio
 
 ![A1-A2](/images/blog/fitness/wood-chopper-1-2.png)
 
-### Punch the reflex ball
+### Punch The Reflex Ball
 
 ![reflex ball](/images/blog/fitness/punch-reflex-ball.jpg)
 
