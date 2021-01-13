@@ -39,7 +39,7 @@ The three basic categories are:
 
 Follow these steps.
 
-You should do all exercises in a controlled manner, with a 1.5 sec of contraction – minimum, positive, and negative. If you aren’t familiar with the terminology, to explain it simply, think of a dumbbell curl. A positive contraction is your arm’s effort on the way up; a negative one is on the way down. During a positive contraction, your muscle fibers shorten. During a negative contraction, your muscle fibers lengthen.
+You should do all exercises in a controlled manner, with at minimum a 1.5 sec of contraction, positive, and negative. If you aren’t familiar with the terminology, to explain it simply, think of a dumbbell curl. A positive contraction is your arm’s effort on the way up; a negative one is on the way down. During a positive contraction, your muscle fibers shorten. During a negative contraction, your muscle fibers lengthen.
 
 ### Front Squats With A Shoulder-Width Stance
 
