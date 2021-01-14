@@ -1,7 +1,7 @@
 ---
 title: Tricks To Working Out Without A Gym (+ Free Exercise List)
 date: 01-01-2021
-prettyDate: January 1st, 2021
+prettyDate: January 13th, 2021
 author: Vasily Myazin
 description: It’s not easy to maintain a workout routine when you don’t have stable access to a gym. There are good ways to keep your body in shape even during traveling and pandemics.
 image: /images/blog/fitness-crunch.jpg
