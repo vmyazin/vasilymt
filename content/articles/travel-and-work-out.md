@@ -8,7 +8,7 @@ image: /images/blog/fitness-crunch.jpg
 imageForShare: /images/blog/fitness-crunch-share.jpg
 imageDesc: Photo by Dmitry Zdorov
 tags: traveling, workouts, health
-hideMailchipForm: true
+hideMailchipForm: false
 ---
 **Exercise. Regularly. Get vital benefits. I’m sure you already know that. You are also well aware of how unexpected events can easily disrupt your exercise routine. Even if you have a regular schedule and access to the gym. There is a number of events that can send you into a tailspin. Traveling to a different city or country takes away your habitual routine. Pandemics necessitate gym closures for indefinite periods. Mounting chores at home prevent you from walking (or jogging) to your gym that can be as near as several minutes away.**
 
