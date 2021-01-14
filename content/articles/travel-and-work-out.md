@@ -37,69 +37,133 @@ The three basic categories are:
 
 ## How To Do A Full-Body Workout At Home
 
-Follow these steps.
+Here we got three simple full-body workout routines. You will need [a resistance band](https://www.amazon.com/gp/product/B0827XBXGH/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) for some of them.
 
-You should do all exercises in a controlled manner, with at minimum a 1.5 sec of contraction, positive, and negative. If you aren’t familiar with the terminology, to explain it simply, think of a dumbbell curl. A positive contraction is your arm’s effort on the way up; a negative one is on the way down. During a positive contraction, your muscle fibers shorten. During a negative contraction, your muscle fibers lengthen.
+*Glossary for beginners:* **reps**, short for repetitions, are the action of one complete strength training exercise, like one biceps curl. **Sets** are how many reps you do in a row between periods of rest. 
+
+Each exercise is a set of 3 with 8-12 reps. Rest 1 minute between each set.
+
+**Workout A**
+
+1. [Push-Ups](#pushups) 
+2. [Front Squats With A Shoulder-Width Stance](#band-squat)
+3. [Tricep Bench Dips](#tricep-bench)
+4. [Lunges](#lunges)
+5. [Face Pull](#face-pull)
+6. [Crunches](#crunches)
+
+**Workout B**
+
+1. [Inverted Wrist Push-Ups](#inverted-wrist-push-ups)
+2. [Single-Leg Squat](#single-leg-squat)
+3. [Biceps Curls Seated](#curl-seated)
+4. [Plank](#plank) (30 secs to 1 min)
+5. [One-Arm Push-Downs](#arm-push-down)
+6. [Wood Chopper](#wood-chopper)
+
+**Workout C**
+
+1. [Overhead Band Extension](#overhead-extension)
+2. [Biceps Curls Standing](#curl-standing)
+3. [Tricep Bench Dips](#tricep-bench)
+4. [Shoulder Shrug](#shrug)
+5. [Crunches](#crunches)
+6. [Plank](#plank) (30 secs to 1 min)
+
+Tie the band into a knot and jam it in the door for some exercises.
+
+You should do all exercises in a controlled manner, with at minimum a 1.5 sec of contraction, positive and negative. If you aren’t familiar with the terminology, to explain it simply, think of a dumbbell curl. A positive contraction is your arm’s effort on the way up; a negative one is on the way down. During a positive contraction, your muscle fibers shorten. During a negative contraction, your muscle fibers lengthen.
+
+<div id="band-squat"></div>
 
 ### Front Squats With A Shoulder-Width Stance
 
-![A1-A2](/images/blog/fitness/band-1-2.png)
+![band-squat](/images/blog/fitness/band-squat-1-2.png)
+
+<div id="pushups"></div>
 
 ### Push Ups, Shoulder-Width
 
-![A1-A2](/images/blog/fitness/pushups-b1-b2.png)
+![Push Ups, Shoulder-Width](/images/blog/fitness/pushups-b1-b2.png)
+
+<div id="arm-push-down"></div>
 
 ### One-Arm Push-Downs
 
-![A1-A2](/images/blog/fitness/arm-push-down-1-2.png)
+![One-Arm Push-Downs](/images/blog/fitness/arm-push-down-1-2.png)
+
+<div id="curl-seated"></div>
 
 ### Biceps Curls Seated
 
-![A1-A2](/images/blog/fitness/curl-seated-1-2.png)
+![Biceps Curls Seated](/images/blog/fitness/curl-seated-1-2.png)
+
+<div id="crunches"></div>
 
 ### Crunches
 
-![A1-A2](/images/blog/fitness/crunches-1-2.png)
+![Crunches](/images/blog/fitness/crunches-1-2.png)
+
+<div id="curl-standing"></div>
 
 ### Biceps Curls Standing
 
-![A1-A2](/images/blog/fitness/curl-standing-1-2.png)
+![Biceps Curls Standing](/images/blog/fitness/curl-standing-1-2.png)
+
+
+<div id="face-pull"></div>
 
 ### Face Pull
 
-![A1-A2](/images/blog/fitness/face-pull-1-2.png)
+![Face Pull](/images/blog/fitness/face-pull-1-2.png)
+
+<div id="inverted-wrist-push-ups"></div>
 
 ### Inverted Wrist Push-Ups
 
-![A1-A2](/images/blog/fitness/inverted-wrist-push-ups-1-2.png)
+![Inverted Wrist Push-Ups](/images/blog/fitness/inverted-wrist-push-ups-1-2.png)
+
+<div id="overhead-extension"></div>
 
 ### Overhead Band Extension
 
-![A1-A2](/images/blog/fitness/overhead-extension-1-2.png)
+![Overhead Band Extension](/images/blog/fitness/overhead-extension-1-2.png)
+
+<div id="plank"></div>
 
 ### Plank
 
-![A1-A2](/images/blog/fitness/plank.png)
+![Plank](/images/blog/fitness/plank.png)
+
+<div id="shrug"></div>
 
 ### Shoulder Shrug
 
-![A1-A2](/images/blog/fitness/shrug-1-2.png)
+![Shoulder Shrug](/images/blog/fitness/shrug-1-2.png)
+
+<div id="single-leg-squat"></div>
 
 ### Single-Leg Squat
 
-![A1-A2](/images/blog/fitness/single-leg-squat-1-2.png)
+![Single-Leg Squat](/images/blog/fitness/single-leg-squat-1-2.png)
+
+<div id="lunges"></div>
 
 ### Lunges
 
-![A1-A2](/images/blog/fitness/lunges-1-2.png)
+![Lunges](/images/blog/fitness/lunges-1-2.png)
+
+<div id="tricep-bench"></div>
 
 ### Tricep Bench Dips
 
-![A1-A2](/images/blog/fitness/tricep-bench-1-2.png)
+![Tricep Bench Dips](/images/blog/fitness/tricep-bench-1-2.png)
+
+<div id="wood-chopper"></div>
 
 ### Wood Chopper
 
-![A1-A2](/images/blog/fitness/wood-chopper-1-2.png)
+![Wood Chopper](/images/blog/fitness/wood-chopper-1-2.png)
 
 ### Punch The Reflex Ball
 
@@ -136,6 +200,6 @@ You should do all exercises in a controlled manner, with at minimum a 1.5 sec of
 
 There you have it, a bunch of ideas on what you can do to get your body moving. You can come up with your own routine by picking 3-5 exercises from this list for each session. Repeat them for 3 or 4 rounds.
 
-If you have anything to add or spotted a type, let me know by email or on social media. Your thoughts are always appreciated!
+If you have anything to add or spotted a type, [let me know](/contact) by email or on social media. Your thoughts are always appreciated!
 
 
