@@ -6,7 +6,7 @@ author: Vasily Myazin
 description: It’s not easy to maintain a workout routine when you don’t have stable access to a gym. There are good ways to keep your body in shape even during traveling and pandemics.
 image: /images/blog/fitness-crunch.jpg
 imageForShare: /images/blog/fitness-crunch-share.jpg
-imageDesc: Photo by Dmitry Zdorov
+imageDesc: Photo from iStockPhoto, doctored by Vasily Myazin
 tags: traveling, workouts, health
 hideMailchipForm: false
 ---
