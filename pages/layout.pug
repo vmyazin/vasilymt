@@ -37,7 +37,7 @@ html
         meta(name='twitter:title' content=siteInfo.blog.description)
         meta(property='og:url' content='/')
         meta(property='og:description' content=siteInfo.blog.description)
-        meta(name='description' content=title + ' • ' + siteInfo.blog.description)
+        meta(name='description' content=(title ? title + ' • ' : '') + siteInfo.blog.description)
 
       //- Share images
       if isBlogPost && postMetaData.imageForShareFullUrl !== undefined
