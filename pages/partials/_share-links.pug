@@ -3,7 +3,7 @@ each tag, ind in postMetaData.tags
   - allTags += tag + ','
 - allTags = allTags.slice(0, -1)
 - url = encodeURI(postMetaData.fullUrl)
-- tweet = encodeURI(postMetaData.title + " by " + siteInfo.blog.author + " " + postMetaData.fullUrl + "&hashtags=" + allTags)
+- tweet = encodeURI(postMetaData.title + " by " + siteInfo.project.author + " " + postMetaData.fullUrl + "&hashtags=" + allTags)
 
   .social-share-list-holder
     ul.social-share-list
@@ -14,10 +14,10 @@ each tag, ind in postMetaData.tags
         a(href="https://www.facebook.com/sharer.php?u=" + url target="_blank")
           ion-icon(name='logo-facebook')
       li.list-group-item
-        a(href!="https://t.me/share/url?url=" + url + "&text=" + encodeURI(postMetaData.title + " by " + siteInfo.blog.author) target="_blank")
+        a(href!="https://t.me/share/url?url=" + url + "&text=" + encodeURI(postMetaData.title + " by " + siteInfo.project.author) target="_blank")
           img.social-icon(src="/images/social/logo-telegram.svg")
       li.list-group-item
-        a(href!="https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + encodeURI(postMetaData.title + " by " + siteInfo.blog.author) + "&source=" + encodeURI(siteInfo.blog.author) target="_blank")
+        a(href!="https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + encodeURI(postMetaData.title + " by " + siteInfo.project.author) + "&source=" + encodeURI(siteInfo.project.author) target="_blank")
           ion-icon(name='logo-linkedIn')
           
       

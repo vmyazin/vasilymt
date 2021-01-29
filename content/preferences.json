@@ -1,9 +1,10 @@
 {
-  "blog": {
+  "project": {
     "siteName": "Vasily Myazin",
     "author": "Vasily Myazin",
     "description": "Vasily Myazin: Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
-    "URL": "https://www.vasilym.com"
+    "URL": "https://www.vasilym.com",
+    "location": "Miami"
   },
   "appIds": {
     "googleAnalytics": "UA-2420101-39"
