@@ -53,6 +53,3 @@ My simple mantra is: if something is truly important, I will learn about it quic
 
 Did this resonate with you? If you feel so inclined, let me know what you think by email or some other way.
 
-
-![grass fitness](/images/blog/grass-fitness.jpg)
-## Here Are Some Workout Options You Can Start Using Today
