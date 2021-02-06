@@ -4,17 +4,17 @@ date: 02-06-2021
 prettyDate: February 6th, 2021
 author: Vasily Myazin
 description: Problem: too much information enters our minds. Solution: conscious limiting of information consumption and info-dieting.
-image: /images/blog/fitness-crunch.jpg
+image: /images/blog/blog-img-empty.jpg
 imageForShare: /images/blog/fitness-crunch-share.jpg
 imageDesc: Photo from iStockPhoto, doctored by Vasily Myazin
 tags: information, awareness, overload
 hideMailchipForm: false
 ---
-**It happens little by little, and suddenly you feel like you are consumed by the news, social media updates, sensational YouTube videos, links to tabloid websites -- often one that your friends and family share. The whirlwind of constant bits of information sucks you in and you don’t even notice its effect until you find yourself in the middle of it, fully buried.**
+**It happens little by little, and suddenly you feel like you are consumed by the news, social media updates, sensational YouTube videos, links to tabloid websites — often one that your friends and family share. The whirlwind of constant bits of information sucks you in and you don’t even notice its effect until you find yourself in the middle of it, fully buried.**
 
 ## Important: Why You Should Care
 
-When all of your mental receptors are constantly in the mode of receiving information –  unfiltered, relentless, you expend a lot of energy, often without even realizing it. Our brains are simply not evolved to deal with such an avalanche of information to process. A lot of it seems important and we do our best to give it every bit a fraction of our attention. It doesn’t help that information spreaders use tricks like putting the words such as "must see", "important", "you won’t believe it" into the headlines. Our communication patterns since childhood taught us that if something is declared to be significant it ought to be that.
+When all of your mental receptors are constantly in the mode of receiving information – unfiltered, relentless, you expend a lot of energy, often without even realizing it. Our brains are simply not evolved to deal with such an avalanche of information to process. A lot of it seems important and we do our best to give it every bit a fraction of our attention. It doesn’t help that information spreaders use tricks like putting the words such as "must see", "important", "you won’t believe it" into the headlines. Our communication patterns since childhood taught us that if something is declared to be significant it ought to be that.
 
 Turns out it’s not always true out there on the internet. Our compliance and curiosity are being taken advantage of, masterfully.
 
