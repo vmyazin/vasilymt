@@ -4,8 +4,8 @@ date: 02-06-2021
 prettyDate: February 6th, 2021
 author: Vasily Myazin
 description: Problem: too much information enters our minds. Solution: conscious limiting of information consumption and info-dieting.
-image: /images/blog/blog-img-empty.jpg
-imageForShare: /images/blog/fitness-crunch-share.jpg
+image: /images/blog/take-a-break.jpg
+imageForShare: /images/blog/take-a-break.jpg
 imageDesc: Photo from iStockPhoto, doctored by Vasily Myazin
 tags: information, awareness, overload
 hideMailchipForm: false
@@ -26,24 +26,25 @@ Without self-awareness and restraining we constantly stress ourselves out and gi
 
 ## Breaking Free From The News
 
-1. Allow yourself to ignore any links with sensational and manipulative titles, even if they were shared by your friends and family. You can still thank them. If they insist on knowing whether you watched or read it, you can politely explain that you either didn’t have the time or are currently going light on the news.
+1. **Ignore any links with sensational and manipulative titles.** Allow yourself to skip them even if they were shared by your friends and family. You can still thank them. If they insist on knowing whether you watched or read it, you can politely explain that you either didn’t have the time or are currently going light on the news.
 
-2. Say no to the news programs, even the short clips on YouTube that are so easy to get hooked on with the recommendation engine. It can get highly intelligent sometimes, it’s totally sinister. 
+2. **Say no to the news programs**, even the short clips on YouTube that are so easy to get hooked on with the recommendation engine. It can get highly intelligent sometimes, it’s totally sinister. Also, definitely remove any general news apps from your devices.
 
-3. Use ad blocking. The Brave browser is not too different from Chrome and Safari, but it comes with a built-in advertisement blocker that works most of the time. There are extensions for all web browsers that you can install, too.
+3. **Use ad blocking.** The Brave browser is not too different from Chrome and Safari, but it comes with a built-in advertisement blocker that works most of the time. There are extensions for all web browsers that you can install, too.
 
-4. Use extensions that hide the news in your social media sites.
-* Facebook feed remover
-* YouTube feed remover
-* Twitter trends remover
+4. **Use extensions that hide the news in your social media sites.**
 
-5. Remove the social media apps from your phone. If you can’t commit to doing it as a permanent change, give yourself a timeframe: 3 days, one week, two weeks. Remove them and set a reminder to bring them back. "Hey Siri, remind me to reinstall Twitter and Instagram in two weeks." Then see how you feel.
+    * [Facebook feed remover](https://www.google.com/search?client=safari&rls=en&q=Facebook+feed+remover&ie=UTF-8&oe=UTF-8)
+    * [YouTube feed remover](https://www.google.com/search?client=safari&rls=en&q=YouTube+feed+remover&ie=UTF-8&oe=UTF-8)
+    * [Twitter trends remover](https://www.google.com/search?client=safari&rls=en&q=Twitter+trends+remover&ie=UTF-8&oe=UTF-8)
 
-6. Have specific time windows to check your inboxes. For example, you can agree with yourself to only check your phone or an email app on your laptop four times a day. Once in the morning for 10 mins, then once before lunch, once in the afternoon around 4:30, then once after dinner. It’s helpful to write these down on a piece of paper and put next to your work area. Stay with this schedule for three days, see how you feel.
+5. **Remove the social media apps from your phone.** If you can’t commit to doing it as a permanent change, give yourself a timeframe: 3 days, one week, two weeks. Remove them and set a reminder to bring them back. "Hey Siri, remind me to reinstall Twitter and Instagram in two weeks." Then see how you feel.
 
-7. Take stock of how information consumption makes you feel. Think about replacing your "fast food" news and Netflix series items with "offline" activities. Choose to go for a walk, a bicycle ride, or a physical book instead. I find it helpful to build healthy "replacement links" (as in connections or chains). If I get an urge to read the news, I instead read a few pages of a book. Instead of watching an episode of a show, I’ll walk around the block.
+6. **Have specific time windows to check your inboxes.** For example, you can agree with yourself to only check your phone or an email app on your laptop four times a day. Once in the morning for 10 mins, then once before lunch, once in the afternoon around 4:30, then once after dinner. It’s helpful to write these down on a piece of paper and put next to your work area. Stay with this schedule for three days, see how you feel.
 
-8. If you are concerned about missing something important, make sure you let the important people in your life know that you can be reached by a text or Whatsapp message where they’d ideally need to explain what the urgency is. Chances are, 90% of other people’s urgencies are not so crucial in your life.
+7. **Take stock of how information consumption makes you feel.** Think about replacing your "fast food" news and Netflix series items with "offline" activities. Choose to go for a walk, a bicycle ride, or a physical book instead. I find it helpful to build healthy "replacement links" (meaning *connections* or *chain links*). If I get an urge to read the news, I instead read a few pages of a book. Instead of watching an episode of a show, I’ll walk around the block.
+
+8. **Make your policy known.** Casually explain to people in your circle that you may not get back to them immediately. If you are concerned about missing something important, make sure you let the important people in your life know that you can be reached by a text or Whatsapp message where they’d ideally need to mention what the urgency is. Chances are, 90% of other people’s urgencies are not so crucial in your life.
 
 ## In Conclusion
 
@@ -51,5 +52,5 @@ If you read this far, you likely share my concerns about ever-present informatio
 
 My simple mantra is: if something is truly important, I will learn about it quickly enough. Gazillions of information sources simply won’t let you go on uninformed, unless you live in the woods without Internet connection.
 
-Did this resonate with you? If you feel so inclined, let me know what you think by email or some other way.
+Did this resonate with you? Do you feel affected by the firehose of manipulative media and useless information? If you feel so inclined, [let me know](/contact) what you think by email or some other way.
 
