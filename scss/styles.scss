@@ -729,6 +729,10 @@ p {
   a:not(.btn):not(.tag) {
     text-decoration: underline;
   }
+
+  ul, ol {
+    margin: 0 0 1rem;
+  }
 }
 
 .nav-back {
