@@ -5,7 +5,7 @@ prettyDate: February 11th, 2021
 author: Vasily Myazin
 description: Problem: too much information enters our minds. Solution: conscious limiting of information consumption and info-dieting.
 image: /images/blog/take-a-break.jpg
-imageForShare: /images/blog/take-a-break.jpg
+imageForShare: /images/blog/take-a-break-share.jpg
 imageDesc: Photo from iStockPhoto, doctored by Vasily Myazin
 tags: information, awareness, overload
 hideMailchipForm: false
