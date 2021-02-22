@@ -1,5 +1,5 @@
 ---
-title: Why You Need To Go On An Information Diet
+title: 8 Ways To Be On An Information Diet (For Better Mental Health)
 date: 02-11-2021
 prettyDate: February 11th, 2021
 author: Vasily Myazin
@@ -42,7 +42,7 @@ Without self-awareness and restraining we constantly stress ourselves out and gi
 
 6. **Have specific time windows to check your inboxes.** For example, you can agree with yourself to only check your phone or an email app on your laptop four times a day. Once in the morning for 10 mins, then once before lunch, once in the afternoon around 4:30, then once after dinner. It’s helpful to write these down on a piece of paper and put next to your work area. Stay with this schedule for three days, see how you feel.
 
-7. **Take stock of how information consumption makes you feel.** Think about replacing your "fast food" news and Netflix series items with "offline" activities. Choose to go for a walk, a bicycle ride, or a physical book instead. I find it helpful to build healthy "replacement links" (meaning *connections* or *associations*). If I get an urge to read the news, I instead read a few pages of a book. Instead of watching an episode of a show, I’ll walk around the block.
+7. **Take stock of how information consumption makes you feel and choose healthy replacements.** Think about replacing your "fast food" news and Netflix series items with "offline" activities. Choose to go for a walk, a bicycle ride, or a physical book instead. I find it helpful to build healthy "replacement links" (meaning *connections* or *associations*). If I get an urge to read the news, I instead read a few pages of a book. Instead of watching an episode of a show, I’ll walk around the block.
 
 8. **Make your policy known.** Casually explain to people in your circle that you may not get back to them immediately. If you are concerned about missing something important, make sure you let the important people in your life know that you can be reached by a text or Whatsapp message where they’d ideally need to mention what the urgency is. Chances are, 90% of other people’s urgencies are not so crucial in your life.
 
