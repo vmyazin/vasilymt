@@ -1,7 +1,7 @@
 ---
 title: When You Run Out Of Ideas (Here's What To Do)
 date: 09-27-2021
-prettyDate: September 27rd, 2021
+prettyDate: September 27th, 2021
 author: Vasily Myazin
 description: I run of ideas regularly. Sometimes it bothers me greatly. At the risk of getting super-meta, I smash through my block by writing an article on what to do when you’re stuck blank-minded.
 image: /images/blog/out-of-ideas.jpg
