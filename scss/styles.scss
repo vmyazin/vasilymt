@@ -1,18 +1,20 @@
-@import url('https://unpkg.com/css.gg/icons/all.css');
-@import 'fonts.scss';
-@import 'bootstrap/_functions.scss';
-@import 'bootstrap/_variables.scss';
-@import 'bootstrap/_breakpoints.scss';
-@import 'social.scss';
-@import '_variables.scss';
-@import '_mixins.scss';
+@import url("https://unpkg.com/css.gg/icons/all.css");
+@import "fonts.scss";
+@import "bootstrap/_functions.scss";
+@import "bootstrap/_variables.scss";
+@import "bootstrap/_breakpoints.scss";
+@import "social.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
 
 body {
   font: 18px rational, Helvetica, Arial, sans-serif;
   color: $black;
 }
 
-html, body, .body-inner {
+html,
+body,
+.body-inner {
   height: 100%;
   margin: 0;
 }
@@ -27,7 +29,8 @@ html, body, .body-inner {
   margin: 0 auto;
 }
 
-p, li {
+p,
+li {
   line-height: 1.75;
 
   small {
@@ -166,15 +169,15 @@ p {
   padding: inherit 15px;
   @include disable-select;
 
-  transition: background-color .2s ease-in-out;
-  
+  transition: background-color 0.2s ease-in-out;
+
   .nav-link {
     font-size: $font-md;
   }
 }
 
 .opaque {
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 @include media-breakpoint-down(sm) {
@@ -187,9 +190,9 @@ p {
 .navbar-brand {
   position: relative;
   overflow: hidden;
-    
+
   img.on-hover {
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
     position: absolute;
     top: -75px;
     left: 0;
@@ -276,7 +279,7 @@ p {
       display: flex;
       flex-wrap: wrap;
     }
-    .row > [class*='col-'] {
+    .row > [class*="col-"] {
       display: flex;
       flex-direction: column;
     }
@@ -447,7 +450,7 @@ p {
   [class^="summary-wrapper"] {
     .meta {
       display: block;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     p {
@@ -459,7 +462,7 @@ p {
 .meta {
   display: block;
   color: $light-gray;
-}  
+}
 
 .stretch {
   overflow: hidden;
@@ -477,35 +480,35 @@ p {
     color: currentColor;
     text-decoration: none;
     width: 100%;
-    margin: 0 0 .5rem;
-    box-shadow: 0 1px 30px rgba(0,0,0,.05);
+    margin: 0 0 0.5rem;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid lighten($lighter-gray, 15%);
     background-color: $very-light-gray;
     border-radius: 2px;
     transition: 400ms ease;
 
     &:hover {
-      box-shadow: 0 0 50px rgba(0,0,0,.3);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
     }
   }
-  
+
   p {
     font-size: $font-sm;
     line-height: 1.4;
-  }  
+  }
 
-  .heading  {
+  .heading {
     font-size: $font-md;
     font-weight: 600;
-    
+
     &.lg {
-      font-size: $font-lg;      
+      font-size: $font-lg;
     }
   }
 
   .card-img {
     height: 225px;
-   
+
     img {
       width: 100%;
       border-radius: 2px 2px 0px 0px;
@@ -534,7 +537,7 @@ p {
   position: relative;
   overflow: hidden;
   text-align: center;
-  
+
   .page-wrapper {
     display: flex;
     height: 800px;
@@ -559,7 +562,7 @@ p {
   .video .page-wrapper {
     display: flex;
     height: 380px;
-    background: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, 0.7);
   }
 }
 
@@ -577,7 +580,7 @@ p {
 
 @media (max-width: 500px) {
   .video .page-header {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, 0.8);
     transform: scale(1.1);
     padding-bottom: 22px;
   }
@@ -593,9 +596,9 @@ p {
   padding: 0;
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   z-index: 0;
 
@@ -604,9 +607,9 @@ p {
     min-width: 1200px;
     position: relative;
     top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 100%;
   }
 }
@@ -638,7 +641,7 @@ p {
   background-color: $text-color;
 
   &:after {
-    content: '';
+    content: "";
     left: -20px;
     top: 0%;
     transform: translateY(70%);
@@ -711,11 +714,11 @@ p {
   img {
     max-width: 100%;
     width: auto;
-  }  
+  }
 
   figure {
     figcaption {
-      margin-top: .5rem;
+      margin-top: 0.5rem;
       color: $lighter-gray;
       font-size: $font-xs;
       font-weight: 300;
@@ -730,7 +733,8 @@ p {
     text-decoration: underline;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 0 0 1rem;
   }
 }
@@ -739,10 +743,12 @@ p {
   .link-wrapper {
     font-size: $font-xl;
 
-    * { transition: all .2s ease-in-out; }
+    * {
+      transition: all 0.2s ease-in-out;
+    }
 
     ion-icon {
-      opacity: .5;
+      opacity: 0.5;
       margin-bottom: 4px;
       margin-right: 4px;
     }
@@ -757,7 +763,7 @@ p {
 
   &:hover {
     [name="arrow-back"] {
-      opacity: .8;
+      opacity: 0.8;
     }
 
     span {
@@ -775,7 +781,7 @@ p {
   }
 }
 
-[role='tags'] {
+[role="tags"] {
   margin-bottom: -4px;
 }
 
@@ -783,7 +789,7 @@ a.tag {
   border-radius: 3px;
   background-color: $lighter-gray;
   color: $very-light-gray;
-  padding: .3em .65em .4em;
+  padding: 0.3em 0.65em 0.4em;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -809,9 +815,9 @@ a.tag {
   color: $light-gray;
   border-top: 2px $light-gray solid;
   padding-right: 1rem;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   font-size: $font-xs;
-}  
+}
 
 .page-header {
   margin-top: 2rem;
@@ -859,11 +865,10 @@ a.tag {
   p + h4 {
     margin-top: 1.5rem;
   }
-
 }
 
 @include media-breakpoint-down(md) {
-  .page {  
+  .page {
     .post-title {
       font-size: $font-xl;
     }
@@ -895,27 +900,27 @@ a.tag {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    
+
     a {
       display: flex;
       flex-direction: row;
       height: 100%;
     }
-    
+
     h3 {
       font-size: $font-lg;
     }
   }
 
-  .hover-effect {    
+  .hover-effect {
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: -10px;
       width: 100%;
       background-color: $accent-color;
       height: 5px;
-      transition: top .2s ease-in-out;
+      transition: top 0.2s ease-in-out;
     }
 
     &:hover {
@@ -931,7 +936,7 @@ a.tag {
 
       &:after {
         top: 100%;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -954,11 +959,11 @@ a.tag {
   .text {
     padding: 20px 30px;
     background-color: $main-bg;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     small {
       display: block;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     p {
@@ -1036,7 +1041,7 @@ a.tag {
 
 [class^="gg"] {
   display: inline-block;
-  --ggs: .7;
+  --ggs: 0.7;
 }
 
 blockquote {
@@ -1046,7 +1051,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D";
   // quotes: "\201C""\201D""\2018""\2019";
-  
+
   &:before {
     color: #ccc;
     content: open-quote;
@@ -1056,7 +1061,7 @@ blockquote {
     margin-right: 0.25rem;
     vertical-align: -0.4em;
   }
-  
+
   p {
     display: inline;
   }
@@ -1065,7 +1070,7 @@ blockquote {
 .post-nav {
   [class*="gg"] {
     vertical-align: sub;
-    --ggs: .8;
+    --ggs: 0.8;
   }
 
   a {
@@ -1112,9 +1117,9 @@ blockquote {
   bottom: 4.5rem;
   right: 1rem;
   padding: 1rem;
-  opacity: .5;
+  opacity: 0.5;
   cursor: pointer;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 
   [class*="gg-"] {
     color: desaturate($accent-color, 50%);
@@ -1165,7 +1170,7 @@ blockquote {
     padding-top: 1rem;
 
     @include media-breakpoint-down(xs) {
-      padding-left: .5rem;
+      padding-left: 0.5rem;
     }
   }
 
@@ -1176,14 +1181,14 @@ blockquote {
 
     li {
       line-height: unset;
-      padding-bottom: .75rem;
+      padding-bottom: 0.75rem;
 
       a {
         display: block;
       }
     }
   }
-  
+
   p {
     margin-bottom: 0;
 
@@ -1210,7 +1215,7 @@ blockquote {
     span {
       border-color: $lighter-gray;
     }
-    
+
     &:hover {
       color: $text-color;
       background-color: white;
@@ -1244,7 +1249,6 @@ blockquote {
   /Footer 
 ==================================================*/
 
-
 .horizontal-flip {
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
@@ -1266,7 +1270,7 @@ blockquote {
 
 .search-container {
   position: relative;
-  
+
   .form-control {
     padding-left: 8px;
   }
@@ -1289,7 +1293,7 @@ blockquote {
       left: 5px;
     }
   }
-  
+
   [class*="close"] {
     position: absolute;
     right: 10px;
@@ -1303,7 +1307,7 @@ blockquote {
 .search-results {
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
   li {
     a {
@@ -1331,7 +1335,9 @@ blockquote {
     }
 
     &:only-child {
-      a { border-radius: 4px; }
+      a {
+        border-radius: 4px;
+      }
     }
   }
 }
@@ -1348,7 +1354,7 @@ blockquote {
   h4 {
     font-size: $font-md;
     font-weight: 600;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
   }
 
   .subheading {
@@ -1360,7 +1366,7 @@ blockquote {
   input[type="email"] {
     border-radius: 3px;
     border: 2px solid $light-gray;
-    padding: .6rem .75rem;
+    padding: 0.6rem 0.75rem;
     width: 100%;
   }
 
@@ -1401,7 +1407,7 @@ blockquote {
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 250px;
     bottom: 0;
@@ -1412,7 +1418,7 @@ blockquote {
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     height: 300px;
     bottom: 0;
@@ -1457,12 +1463,16 @@ blockquote {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
 
-    h2, h3, h4, p {
+    h2,
+    h3,
+    h4,
+    p {
       color: $black;
     }
   }
 
-  h3, h4 {
+  h3,
+  h4 {
     color: white;
     font-weight: 600;
   }
@@ -1503,7 +1513,7 @@ blockquote {
       width: 25%;
       flex: 1;
       overflow: hidden;
-      transition: .35s ease-in-out;
+      transition: 0.35s ease-in-out;
 
       &:hover {
         flex: 4;
@@ -1514,5 +1524,36 @@ blockquote {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+/* Films Page */
+
+[class*="films"] {
+  .card {
+    border: 0;
+  }
+
+  .card-body {
+    padding-top: 0;
+  }
+}
+
+.film-meta {
+  color: $light-gray;
+  font-size: $font-xs;
+  font-weight: 400;
+}
+
+.desc p {
+  font-size: $font-sm;
+  line-height: 1.4;
+}
+
+.film-image-col {
+  background: linear-gradient(90deg, #cccccc 2.04%, rgba(204, 204, 204, 0) 50%);
+
+  img {
+    max-width: 340px;
   }
 }
