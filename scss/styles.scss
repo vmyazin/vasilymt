@@ -1,11 +1,11 @@
-@import url("https://unpkg.com/css.gg/icons/all.css");
-@import "fonts.scss";
-@import "bootstrap/_functions.scss";
-@import "bootstrap/_variables.scss";
-@import "bootstrap/_breakpoints.scss";
-@import "social.scss";
-@import "_variables.scss";
-@import "_mixins.scss";
+@import url('https://unpkg.com/css.gg/icons/all.css');
+@import 'fonts.scss';
+@import 'bootstrap/_functions.scss';
+@import 'bootstrap/_variables.scss';
+@import 'bootstrap/_breakpoints.scss';
+@import 'social.scss';
+@import '_variables.scss';
+@import '_mixins.scss';
 
 body {
   font: 18px rational, Helvetica, Arial, sans-serif;
@@ -111,7 +111,7 @@ p {
   padding: 12px 28px;
   font-weight: 600;
 
-  [class^="gg"] {
+  [class^='gg'] {
     --ggs: 1.1;
   }
 }
@@ -286,7 +286,7 @@ p {
       display: flex;
       flex-wrap: wrap;
     }
-    .row > [class*="col-"] {
+    .row > [class*='col-'] {
       display: flex;
       flex-direction: column;
     }
@@ -326,7 +326,7 @@ p {
   }
 }
 .brand-logo {
-  background-image: url("../images/logos.png");
+  background-image: url('../images/logos.png');
   display: inline-block;
   line-height: 0;
   font-size: 0;
@@ -337,7 +337,7 @@ p {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .brand-logo {
-    background-image: url("../images/logos@2x.png");
+    background-image: url('../images/logos@2x.png');
     background-size: 515px auto;
   }
 }
@@ -454,7 +454,7 @@ p {
     height: 100%;
   }
 
-  [class^="summary-wrapper"] {
+  [class^='summary-wrapper'] {
     .meta {
       display: block;
       margin-bottom: 0.5rem;
@@ -648,7 +648,7 @@ p {
   background-color: $text-color;
 
   &:after {
-    content: "";
+    content: '';
     left: -20px;
     top: 0%;
     transform: translateY(70%);
@@ -769,7 +769,7 @@ p {
   }
 
   &:hover {
-    [name="arrow-back"] {
+    [name='arrow-back'] {
       opacity: 0.8;
     }
 
@@ -788,18 +788,21 @@ p {
   }
 }
 
-[role="tags"] {
+[role='tags'] {
   margin-bottom: -4px;
 }
 
-a.tag {
+.tag {
   border-radius: 3px;
-  background-color: $lighter-gray;
   color: $very-light-gray;
   padding: 0.3em 0.65em 0.4em;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
+}
+
+a.tag {
+  background-color: $lighter-gray;
   margin-right: 10px;
   margin-bottom: 4px;
 
@@ -810,6 +813,22 @@ a.tag {
   &:hover {
     background-color: $accent-color;
   }
+}
+
+.tag-small {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 0.075em 0.45em 0.075em;
+  color: $lighter-gray;
+  border: 1px solid $lighter-gray;
+}
+
+.tags-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  align-items: stretch;
+  column-gap: 0.875rem;
 }
 
 .badge-accent {
@@ -888,13 +907,14 @@ a.tag {
 }
 
 .article-list {
-  a {
+  li > a {
     display: block;
     color: $black;
 
     small {
       color: $light-gray;
-      font-size: $font-sm;
+      font-size: $font-xs;
+      font-weight: 200;
     }
 
     &:hover {
@@ -921,7 +941,7 @@ a.tag {
 
   .hover-effect {
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: -10px;
       width: 100%;
@@ -989,8 +1009,8 @@ a.tag {
     }
 
     h3 {
-      font-size: $font-lg;
-      font-weight: 300;
+      font-size: $font-md;
+      font-weight: 600;
       margin-bottom: 0;
     }
   }
@@ -1035,6 +1055,10 @@ a.tag {
   }
 }
 
+.img-frame {
+  flex: 0 0 120px;
+}
+
 .columns {
   columns: 2;
   -webkit-columns: 2;
@@ -1046,7 +1070,7 @@ a.tag {
   }
 }
 
-[class^="gg"] {
+[class^='gg'] {
   display: inline-block;
   --ggs: 0.7;
 }
@@ -1056,7 +1080,7 @@ blockquote {
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  quotes: "\201C""\201D";
+  quotes: '\201C''\201D';
   // quotes: "\201C""\201D""\2018""\2019";
 
   &:before {
@@ -1075,7 +1099,7 @@ blockquote {
 }
 
 .post-nav {
-  [class*="gg"] {
+  [class*='gg'] {
     vertical-align: sub;
     --ggs: 0.8;
   }
@@ -1128,7 +1152,7 @@ blockquote {
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
 
-  [class*="gg-"] {
+  [class*='gg-'] {
     color: desaturate($accent-color, 50%);
     --ggs: 2.5;
   }
@@ -1136,7 +1160,7 @@ blockquote {
   &:hover {
     opacity: 1;
 
-    [class*="gg-"] {
+    [class*='gg-'] {
       color: $accent-color;
     }
   }
@@ -1301,7 +1325,7 @@ blockquote {
     }
   }
 
-  [class*="close"] {
+  [class*='close'] {
     position: absolute;
     right: 10px;
     top: 8px;
@@ -1369,8 +1393,8 @@ blockquote {
     color: $light-gray;
   }
 
-  input[type="text"],
-  input[type="email"] {
+  input[type='text'],
+  input[type='email'] {
     border-radius: 3px;
     border: 2px solid $light-gray;
     padding: 0.6rem 0.75rem;
@@ -1414,7 +1438,7 @@ blockquote {
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 250px;
     bottom: 0;
@@ -1425,7 +1449,7 @@ blockquote {
   }
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     height: 300px;
     bottom: 0;
@@ -1536,7 +1560,7 @@ blockquote {
 
 /* Films Page */
 
-[class*="films"] {
+[class*='films'] {
   .card {
     border: 0;
   }

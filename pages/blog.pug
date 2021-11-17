@@ -12,19 +12,25 @@ block content
 
   .container-fluid.max-body-width
     .row
-      include partials/_featured-posts.pug
+      //- include partials/_featured-posts.pug
       
   .container.page
     .row
       .col.col-lg-6.offset-lg-3
         ul.article-list.list-unstyled.plain-list.mb-5
           each article, ind in articles
-            if ind >= 2
-              li
-                a(href="/blog/" + article.slug)
-                  h3=article.title
-                  | 
+            li
+              a.d-flex(href="/blog/" + article.slug)
+                section.img-frame
+                  if article.image
+                    img.img-fluid(src=article.image, alt=article.description)
+                section.ml-3
                   small.text-nowrap.meta= article.prettyDate
+                  h3=article.title
+                  if article.tags.length > 0
+                    .tags-horizontal.mt-2
+                      each tag, ind in article.tags
+                        span.tag.tag-small=tag
 
         .search-container
           i.gg-search.horizontal-flip

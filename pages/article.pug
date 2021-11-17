@@ -13,12 +13,13 @@ block content
               span Posts
         .col-md-8
           include partials/_share-links
-          figure
-            img(src=postMetaData.image alt="postMetaData.description")
-            if postMetaData.imageDesc
-              figcaption= postMetaData.imageDesc
-            else
-              figcaption= postMetaData.description
+          if postMetaData.image
+            figure
+              img(src=postMetaData.image alt="postMetaData.description")
+              if postMetaData.imageDesc
+                figcaption= postMetaData.imageDesc
+              else
+                figcaption= postMetaData.description
 
           h1.post-title.mt-4= postMetaData.title
 
@@ -33,13 +34,14 @@ block content
 
           | !{content}
 
-          div.pt-4.mb-5(role='tags')
-            b Tags: 
-            |&nbsp;
-            each tag, ind in postMetaData.tags
-              a.tag(href="/tags/" + tag)= tag
-              //- if ind !== postMetaData.tags.length - 1
-              //-   |, 
+          if postMetaData.tags.length > 0
+            div.pt-4.mb-5(role='tags')
+              b Tags: 
+              |&nbsp;
+              each tag, ind in postMetaData.tags
+                a.tag(href="/tags/" + tag)= tag
+                //- if ind !== postMetaData.tags.length - 1
+                //-   |, 
 
           if postMetaData.hideMailchipForm !== 'true'
             include partials/_subscribe-form
