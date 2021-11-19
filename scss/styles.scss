@@ -210,6 +210,12 @@ p {
 .page-header {
   text-align: center;
   width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  p {
+    line-height: 1.5;
+  }
 
   h2 {
     font-weight: 600;
@@ -243,6 +249,11 @@ p {
 
 @include media-breakpoint-down(sm) {
   .page-header {
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: lighten($lighter-gray, 27%);
+
     h2 {
       font-size: $font-xxl;
       line-height: 1;
@@ -819,6 +830,7 @@ a.tag {
   font-size: 14px;
   font-weight: 300;
   padding: 0.075em 0.45em 0.075em;
+  margin-bottom: 0.5rem;
   color: $lighter-gray;
   border: 1px solid $lighter-gray;
 }
@@ -828,7 +840,7 @@ a.tag {
   flex-wrap: wrap;
   // justify-content: space-between;
   align-items: stretch;
-  column-gap: 0.875rem;
+  column-gap: 0.5rem;
 }
 
 .badge-accent {
@@ -843,15 +855,6 @@ a.tag {
   padding-right: 1rem;
   padding-top: 0.5rem;
   font-size: $font-xs;
-}
-
-.page-header {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  p {
-    line-height: 1.5;
-  }
 }
 
 .page {
@@ -1051,12 +1054,23 @@ a.tag {
       h3 {
         font-size: $font-sm;
       }
+
+      > li {
+        margin-bottom: 1rem;
+        min-height: 4rem;
+      }
     }
   }
 }
 
 .img-frame {
   flex: 0 0 120px;
+}
+
+@include media-breakpoint-down(sm) {
+  .img-frame {
+    flex: 0 0 90px;
+  }
 }
 
 .columns {
