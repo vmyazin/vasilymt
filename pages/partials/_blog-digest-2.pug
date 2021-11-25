@@ -13,8 +13,9 @@
             .col-lg-4.col-md-6.col-sm-12
               .post-card
                 a(href="/blog/" + article.slug)
-                  .card-img
-                    img(src=article.image, alt=article.description)
+                  if article.image
+                    .card-img
+                      img(src=article.image, alt=article.description)
                   .card-caption
                     h5.heading= article.title
                     p
