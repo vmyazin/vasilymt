@@ -1449,7 +1449,7 @@ blockquote {
 
 .foliage {
   background: $text-color url(/images/about/bg-foliage.jpg) no-repeat;
-  background-size: 100%;
+  background-size: cover;
   position: relative;
 
   &:after {
