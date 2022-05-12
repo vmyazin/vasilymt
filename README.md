@@ -1,6 +1,10 @@
 # vasilym.com
 
+<<<<<<< HEAD
 Vasily's personal+professional website and blog.
+=======
+Vasily's personal+professional website and blog
+>>>>>>> c611d2feb0ca7f0fc3042aa835d0972833882333
 
 ## Based on Tapirio Platform
 
