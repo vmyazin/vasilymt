@@ -1,6 +1,6 @@
 # vasilym.com
 
-Vasily's personal+professional website and blog.
+Vasily's personal+professional website and blog..
 
 ## Based on Tapirio Platform
 
