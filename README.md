@@ -1,13 +1,12 @@
 # vasilym.com
 
-Vasily's personal+professional website
+Vasily's personal+professional website and blog.
 
 ## Based on Tapirio Platform
 
 A simple to use platfrom for building Robust & SEO-friendly websites with blogging capabilities. Foundation built with ExpressJS, Pug, Sass, Bootstrap. There is no reliance upon jQuery.
 
 Blog posts support Markdown and HTML.
-
 ## Markdown blog post template
 
 ```
