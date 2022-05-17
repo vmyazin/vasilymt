@@ -5,6 +5,9 @@ prettyDate: November 25th, 2021
 author: Vasily Myazin
 description: I'm currently immersed, once again, in learning and practicing a foreign language. I'm in Brazil, so it is Portuguese for me. My ego is trying to hold me back, but I persevere.
 tags: languages, learning
+image: /images/blog/book-language-of-vasily.jpg
+imageForShare: /images/blog/book-language-of-vasily.jpg
+imageDesc: Photo by Angie (angiegophoto.com)
 hideMailchipForm: true
 ---
 
