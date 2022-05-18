@@ -1,5 +1,4 @@
 @import url('https://unpkg.com/css.gg/icons/all.css');
-@import 'fonts.scss';
 @import 'bootstrap/_functions.scss';
 @import 'bootstrap/_variables.scss';
 @import 'bootstrap/_breakpoints.scss';
@@ -8,7 +7,7 @@
 @import '_mixins.scss';
 
 body {
-  font: 18px rational, Helvetica, Arial, sans-serif;
+  font: 18px 'Nunito Sans', Helvetica, Arial, sans-serif;
   color: $black;
 }
 
@@ -60,10 +59,6 @@ a,
 
 .light-gray {
   color: $light-gray;
-}
-
-b {
-  font-family: rational;
 }
 
 .max-body-width {
@@ -238,7 +233,7 @@ p {
 .page-header-med {
   h2 {
     font-weight: 300;
-    font-family: rational, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
     font-size: 66px;
   }
   h3 {
