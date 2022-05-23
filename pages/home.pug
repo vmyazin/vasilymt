@@ -5,9 +5,9 @@ block content
 
   .container-fluid
     .row.position-relative.even
-      .page-header
-        h1 Vasily Myazin
-        h3 Digital Product Raffinerie
+        .page-header
+          h1 Vasily Myazin
+          h3 Digital Product Raffinerie
   .section.even.pb-5
     .py-5
       .page-callout
@@ -17,20 +17,6 @@ block content
             img.align-text-bottom(src="/images/pin.svg")
             |&nbsp;
             | Currently in #{siteInfo.project.location}
-
-  .section.odd(style="display: none")
-    .page-wrapper
-      .page-header.page-header-med
-        h2 Expertise
-        .illustration
-          img.img-fluid(src='images/venn.svg')
-
-  .section.scheme
-    .page-wrapper
-      .page-header.page-header-med
-        h2 Out of clutter unearth clarity
-        .illustration
-          img.img-fluid(src='images/scheme.svg')
 
   include partials/_blog-digest-2
 
