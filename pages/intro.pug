@@ -3,11 +3,15 @@ extends layout
 block content
   include partials/header
 
-  .container-fluid
-    .row.position-relative.even
-      .page-header
-        h1 Vasily Myazin
-        h3 Digital Product Raffinerie
+  .container-fluid.video-container
+    .row.position-relative.video.even
+      .page-wrapper
+        .page-header
+          h1 Vasily Myazin
+          h3 Digital Product Raffinerie
+        .video-holder
+          video(autoplay loop muted preload='auto' playsinline='playsinline')
+            source(src='/videos/VasilyWorkReel-2020.mp4' type='video/mp4')
   .section.even.pb-5
     .py-5
       .page-callout

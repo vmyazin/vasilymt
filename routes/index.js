@@ -33,6 +33,12 @@ router.get("/", (req, res) => {
   res.render("home", { articles, siteInfo, path: req.path });
 });
 
+router.get("/intro", (req, res) => {
+  const articles = blog.posts;
+  getEnv(req.get("host"));
+  res.render("intro", { articles, siteInfo, path: req.path });
+});
+
 router.get("/about", (req, res) => {
   getEnv(req.get("host"));
   const homeUrl = req.protocol + "://" + req.get("host"),

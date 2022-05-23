@@ -23,7 +23,7 @@ class TopNav {
     // these are relative to the viewport
     let top = viewportOffset.top;
 
-    if (this.bodyEl.classList.contains('home')) {
+    if (this.bodyEl.classList.contains('intro')) {
       if (top < offsetFromTop) {
         this.topNavEl.classList.add('opaque')
       } else {
@@ -34,7 +34,7 @@ class TopNav {
   }
 
   setUpTopNav () {
-    if (!this.bodyEl.classList.contains('home')) {
+    if (!this.bodyEl.classList.contains('intro')) {
       this.topNavEl.classList.add('opaque')
     }
   }
