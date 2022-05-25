@@ -66,10 +66,10 @@ a,
 }
 
 h1 {
-  font-size: 88px;
+  font-size: $font-xl;
   margin: 0 0 1rem;
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 h2 {
@@ -265,9 +265,13 @@ p {
   }
 }
 
+.page-intro {
+  max-width: 500px;
+}
+
 .page-callout {
   p {
-    font-size: $font-lg;
+    font-size: $font-sm;
     max-width: 580px;
     margin: 0 auto 20px;
     font-weight: 300;
@@ -320,15 +324,17 @@ p {
 
 @media (max-width: 544px) {
   h1 {
-    font-size: 44px;
   }
   h3 {
     font-size: 22px;
   }
   .page-callout p {
-    font-size: 22px;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    p {
+      font-size: 22px;
+    }
   }
 }
 .brand-logo {
@@ -395,6 +401,10 @@ p {
   .logos .brand-logo {
     margin-bottom: 30px;
   }
+}
+
+.intro-photo {
+  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
 }
 
 .blog-digest {
