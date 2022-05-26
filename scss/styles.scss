@@ -79,12 +79,12 @@ h2 {
 h3 {
   font-size: $font-xl;
   margin: 0 0 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h4 {
   font-size: $font-lg;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .font-light {
@@ -1454,7 +1454,7 @@ blockquote {
 
 .foliage {
   background: $text-color url(/images/about/bg-foliage.jpg) no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: relative;
 
   &:after {
