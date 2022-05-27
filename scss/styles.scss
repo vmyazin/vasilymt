@@ -136,6 +136,16 @@ p {
   }
 }
 
+.btn-secondary {
+  background-color: $secondary-color;
+  color: white;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    color: white;
+  }
+}
+
 .section {
   display: table;
   table-layout: fixed;
@@ -199,6 +209,12 @@ p {
       top: 5px;
       display: inline-block;
     }
+  }
+}
+
+hr {
+  &.dashed {
+    border-style: dashed;
   }
 }
 
@@ -1434,6 +1450,14 @@ blockquote {
 .indicates-required {
   font-size: $font-xs;
   color: $light-gray;
+}
+
+/* Home */
+
+.home {
+  h2 {
+    font-size: $font-xl;
+  }
 }
 
 /* About */

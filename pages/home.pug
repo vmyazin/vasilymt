@@ -3,7 +3,7 @@ extends layout
 block content
   include partials/header
 
-  .container-fluid
+  .container
     .row.even.my-5
       .col-12.col-md-6.mb-3.mb-sm-0
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
@@ -17,11 +17,25 @@ block content
                 |&nbsp;
                 | Currently in #{siteInfo.project.location}
             p
-              a.btn.btn-accent.btn-lg#mc-embedded-subscribe.button(href="mailto:contact@vasilym.com?subject=Inquiry from Vasily\'s website") Get In Touch With Me
+              a.btn.btn-accent.btn-lg.button(href="mailto:contact@vasilym.com?subject=Inquiry from Vasily\'s website") Get In Touch With Me
 
       .col.col-md-6
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
           img.intro-photo.rounded(src="/images/portrait-vasily.jpeg", alt="Vasily Simon Myazin")
+
+  .container
+    .row.mt-5
+      .col   
+        hr.dashed
+    .row.my-5
+      .col
+        .d-flex.justify-content-center.align-items-center.flex-column.h-100
+          p Book image
+      .col
+        h2 My Book On Learning Languages
+        p Get started with learning language using the right mindset and techniques. I’ll give you a brief introduction.
+        p
+          a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
 
   include partials/_blog-digest-2
 
