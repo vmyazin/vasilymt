@@ -27,15 +27,17 @@ block content
     .row.mt-5
       .col   
         hr.dashed
-    .row.my-5
-      .col
+    .row.my-3.my-sm-5
+      .col-12.offset-0.col-sm-3.offset-sm-1
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
-          p Book image
-      .col
-        h2 My Book On Learning Languages
-        p Get started with learning language using the right mindset and techniques. I’ll give you a brief introduction.
-        p
-          a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
+          img.img-fluid.ebook-photo.mb-4.mb-0-sm(src="/images/kindle-lang-book.png", alt="Language Learner's StarterGuide")
+      .col-12.col-sm
+        .d-flex.justify-content-center.flex-column.h-100
+          h2 My Book On Learning Languages
+          .row
+            p.col.col-md-9 Get started with learning language using the right mindset and techniques. I’ll give you a brief introduction.
+          p
+            a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
 
   include partials/_blog-digest-2
 
