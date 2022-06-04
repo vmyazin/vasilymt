@@ -1,4 +1,4 @@
-.section.blog-digest.px-4
+.section.blog-digest.px-3
   .max-layout-width
     .container-fluid.mb-5.pb-3
       .row
@@ -11,7 +11,7 @@
         each article, ind in articles
           if ind < 3
             .col-lg-4.col-md-6.col-sm-12
-              .post-card
+              .post-card.mb-4.mb-md-0
                 a(href="/blog/" + article.slug)
                   if article.image
                     .card-img
