@@ -943,6 +943,7 @@ a.tag {
   li > a {
     display: block;
     color: $black;
+    text-decoration: none;
 
     small {
       color: $light-gray;
