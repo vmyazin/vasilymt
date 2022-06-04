@@ -3,7 +3,7 @@ extends layout
 block content
   include partials/header
   
-  .container.page-header
+  .container-fluid.page-header
     .row
       .col
         .text-center.mt-4.mb-4
@@ -35,7 +35,7 @@ block content
                 li
                   img(src="/images/about/simao-62.jpg", alt="V looks at this phone")
 
-  .jumbotron.jumbotron-fluid.foliage.mb-0
+  .foliage.mb-0.py-5
     .container
       .row
         .text-center.w-100
@@ -81,8 +81,10 @@ block content
         .col-md-6.offset-md-3
           .text-center.mb-4
             h5 Ready to talk and see if we are a good fit?
-          a.btn.btn-accent.btn-lg.btn-block.button(href='/contact')
-            |  Get In Touch With Me
+
+          .d-grid.gap-2.d-md-block.m-auto.text-center.mb-4            
+              a.btn.btn-accent.btn-lg.btn-block.button(href='/contact')
+                |  Get In Touch With Me
 
 
   include partials/footer
