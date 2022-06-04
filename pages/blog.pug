@@ -3,7 +3,7 @@ extends layout
 block content
   include partials/header
   
-  .container.page-header
+  .container-fluid.page-header
     .row
       .col
         .text-center.mt-4.mb-4
@@ -23,8 +23,8 @@ block content
               a.d-flex(href="/blog/" + article.slug)
                 section.img-frame
                   if article.image
-                    img.img-fluid(src=article.image, alt=article.description)
-                section.ms-3
+                    img.img-fluid.rounded(src=article.image, alt=article.description)
+                section.ms-4
                   small.text-nowrap.meta= article.prettyDate
                   h3=article.title
                   if article.tags.length > 0

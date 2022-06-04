@@ -946,7 +946,7 @@ a.tag {
     text-decoration: none;
 
     small {
-      color: $light-gray;
+      color: $text-color;
       font-size: $font-xs;
       font-weight: 200;
     }
@@ -1039,7 +1039,7 @@ a.tag {
     flex-direction: column;
 
     li {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     h3 {
@@ -1095,12 +1095,12 @@ a.tag {
 }
 
 .img-frame {
-  flex: 0 0 120px;
+  flex: 0 0 200px;
 }
 
 @include media-breakpoint-down(sm) {
   .img-frame {
-    flex: 0 0 90px;
+    flex: 0 0 120px;
   }
 }
 
