@@ -24,8 +24,8 @@ function getEnv(host) {
 }
 
 // About OG Image
-const aboutImageForShare = "/images/about/og-image-about-vm.jpg",
-  filmsImageForShare = "/images/films/og-image-films-vm.jpg";
+const aboutImageForShare = "/images/about/og-image-about-vm.jpeg",
+  filmsImageForShare = "/images/films/og-image-films-vm.jpeg";
 
 router.get("/", (req, res) => {
   const articles = blog.posts;
