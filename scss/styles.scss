@@ -179,6 +179,13 @@ p {
   .nav-link {
     font-size: $font-md;
   }
+
+  &:hover {
+    img.on-hover {
+      top: 5px;
+      display: inline-block;
+    }
+  }
 }
 
 .opaque {
@@ -196,19 +203,17 @@ p {
   position: relative;
   overflow: hidden;
 
+  img {
+    width: 62px;
+    height: 62px;
+  }
+
   img.on-hover {
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
     position: absolute;
     top: -75px;
     left: 0;
     z-index: 99;
-  }
-
-  &:hover {
-    img.on-hover {
-      top: 5px;
-      display: inline-block;
-    }
   }
 }
 
