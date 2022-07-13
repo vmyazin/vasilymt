@@ -18,6 +18,7 @@ author: Vasily Myazin
 description: 
 image: /images/blog/
 imageDesc: Photo by 
+imageForShare: /images/blog/
 tags: 
 ---
 ```

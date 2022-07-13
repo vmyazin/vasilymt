@@ -30,7 +30,7 @@ body,
 
 p,
 li {
-  line-height: 1.75;
+  line-height: 1.55;
 
   small {
     display: inline-block;
@@ -69,7 +69,7 @@ h1 {
   font-size: $font-xl;
   margin: 0 0 1rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 h2 {
@@ -789,6 +789,10 @@ hr {
   ul,
   ol {
     margin: 0 0 1rem;
+
+    li > ul {
+      margin-bottom: 0;
+    }  
   }
 }
 
@@ -918,7 +922,6 @@ a.tag {
     font-size: $font-md;
   }
 
-  p + p,
   ul + p {
     margin-bottom: 1.5rem;
   }
@@ -927,8 +930,9 @@ a.tag {
     margin-top: 2.5rem;
   }
 
+  p + h3,
   p + h4 {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
   }
 }
 
