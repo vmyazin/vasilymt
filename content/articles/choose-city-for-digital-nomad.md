@@ -39,8 +39,7 @@ Cost of living is high on the list because one of the key reasons to leave your 
 
 Part of the geo-arbitrage equation is lowered expenses. You earn good money from your “home base” and make your cash go a long way in a cheaper country. 
 
-It doesn’t make much sense to stay somewhere for months if it’s significantly more expensive than where you came from. Unless you're obsessed with visiting a certain city and want to splurge on it (Zurich, Tel Aviv, New York City).
-In the meantime, my focus is on where you can save money.
+It doesn’t make much sense to stay somewhere for months if it’s significantly more expensive than where you came from. Unless you're obsessed with visiting a certain city and want to splurge on it (Zurich, Tel Aviv, New York City). In the meantime, my focus is on where you can save money.
 
 ### Accommodation Abundance
 
@@ -48,7 +47,7 @@ Choose a city with a wide variety of apartments, rooms, hotels, and co-living sp
 
 Check [AirBnb](http://airbnb.com/) and [booking.com](http://booking.com) in advance to make sure that there are loads of options in the city center. You’d be surprised but some cities don’t have very many budget-friendly and high-quality options (Bratislava, Moscow), even though the country itself might not be that pricey. 
 
-Send a message to the owner to ask if the internet speed is good at their rental. When you work remotely, stable connectivity is critical. This brings me to the next point
+Send a message to the owner to ask if the internet speed is good at their rental. When you work remotely, stable connectivity is critical. This brings me to the next point.
 
 ### Internet Speed and Wifi Availability
 
@@ -58,7 +57,7 @@ It’s great to have a fast and steady wifi connection at the rental place. Many
 
 If you don’t mind spending a little money, coworking spaces are a good place to get your work done, and they usually guarantee great wifi. WeWork is a fantastic worldwide chain of high-end coworking spaces that I used in the US, Brazil, Argentina, England, Czechia, and more (one access keycard unlocks all of them).
 
-Get a local SIM card, maybe even two. If wifi is down, you can use a cellular data connection as backup. If you can get unlimited, go for it.
+Get a local SIM card, maybe even two. If the wifi is down, you can use a cellular data connection as backup. If you can get unlimited, go for it.
 
 ### Safety And Security
 
@@ -66,7 +65,7 @@ Not all digital nomad-friendly places have an equal safety situation.
 
 There are some cities that are excellent in everything except crime rates (Rio De Janeiro, Medellin).
 
-It varies for men and women, and LGBT folks. Men can generally endure a higher risk environment, while more vulnerable travelers will be more comfortable in well-known safer places (Bangkok, Budapest, Berlin, Lisbon).
+It varies for men and women, and LGBT folks. Men can generally endure a higher-risk environment, while more vulnerable travelers will be more comfortable in well-known safer places (Bangkok, Budapest, Berlin, Lisbon).
 
 For beginner nomads of all backgrounds, it’s recommended to settle into the new lifestyle in a widely recognized safe city. It could be even in your own country if it makes you feel more secure.
 
@@ -116,13 +115,13 @@ Not all cities are created equally walkable (I’m looking at you, US and Canada
 
 Reasons for that may be in the way the cities are planned, giving preference to car drivers over pedestrians, or due to the safety situation. However, be aware of whether or not it is safe and comfortable to walk in the city.
 
-Climate and weather conditions can also be factors. The most walkable cities might not be enjoyable in the rainy or cold seasons.
+Climate and weather conditions can also be factors. Even the most walkable cities might not be enjoyable in the rainy or cold seasons.
 
 I consider walkability one of the biggest motivations to spend an extended time in a city. Notable examples are most European cities, followed by Tokyo, New York, and Buenos Aires.
 
 One of the ways to gauge how walkable the place is is to use [Nomad List’s filters](https://nomadlist.com/walkable-places). It’s not super accurate, but it covers all of the known digital nomad locations in the world.
 
-You may need to sign up for it to see the filters, but if you are serious about being a remote worker who escapes icy winters and wants to connect to the community, I’m telling you NomadList worth it. 
+You may need to sign up for it to see the filters, but if you are serious about being a remote worker who escapes icy winters and wants to connect to the community, I’m telling you NomadList is worth it (this is an unpaid endorsement).
 
 Another great website to research walkability is [WalkScore.com](https://www.walkscore.com/). Type in a city and get a score of 1 to 100. The site is generally geared towards USA and Canada, but you can get scores on international cities as well. Be sure to check out their Travel Time Map feature.
 
