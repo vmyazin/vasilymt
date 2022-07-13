@@ -77,7 +77,10 @@ Make sure you are into the type of food common at your destination. Research if 
 
 For the especially budget-conscious travelers, I recommend knowing the local version of “fast food.” Sometimes it’s vibrant, fresh, and inexpensive (Thai, Brazilian, Mexican). The place might not be a good choice if you don't like local foods.
 
-![Photo by Helena Lopes](/images/blog/digital-nomads-pexels-helena-lopes-933964.jpg)
+<figure>
+<img src="/images/blog/digital-nomads-pexels-helena-lopes-933964.jpg" alt="Group of digital nomads">
+<figcaption>Photo by Helena Lopes @ Pexels</figcaption>
+</figure>
 
 ### People
 
