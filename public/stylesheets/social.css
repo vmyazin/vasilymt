@@ -1,0 +1,93 @@
+.social-links {
+  max-width: 200px;
+  display: flex;
+  align-self: center;
+  flex-shrink: 1;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.social-links .social-link {
+  display: inline-block;
+  color: #21252A;
+}
+.social-links .social-link.white {
+  color: white;
+}
+.social-links .social-link:hover {
+  color: #f85200;
+}
+
+.social-link ion-icon,
+.list-group-item ion-icon {
+  font-size: 36px;
+}
+
+img.social-icon {
+  width: 36px;
+  height: auto;
+}
+img.social-icon:hover, img.social-icon.white:hover {
+  filter: invert(66%) sepia(70%) saturate(7152%) hue-rotate(2deg) brightness(96%) contrast(109%);
+}
+
+.social-share-list-holder {
+  position: fixed;
+  top: 170px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.social-share-list {
+  position: absolute;
+  right: 45px;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+}
+.social-share-list:hover {
+  opacity: 1;
+}
+.social-share-list .list-group-item {
+  border: 0;
+}
+.social-share-list .list-group-item a {
+  color: #aaa;
+  display: block;
+  height: 28px;
+}
+.social-share-list .list-group-item a:hover {
+  color: #f85200;
+}
+.social-share-list .list-group-item ion-icon {
+  font-size: 28px;
+}
+.social-share-list .list-group-item img.social-icon {
+  width: 28px;
+  display: block;
+}
+
+img.social-icon {
+  filter: invert(80%) sepia(9%) saturate(19%) hue-rotate(326deg) brightness(86%) contrast(83%);
+}
+img.social-icon.white {
+  filter: invert(93%) sepia(100%) saturate(27%) hue-rotate(97deg) brightness(106%) contrast(108%);
+}
+
+@media (max-width: 767.98px) {
+  .social-share-list-holder {
+    position: unset;
+  }
+  .social-share-list {
+    position: unset;
+    display: flex;
+    justify-content: center;
+  }
+  .social-share-list .list-group-item {
+    display: inline-block;
+  }
+}
