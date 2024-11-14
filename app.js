@@ -3,7 +3,7 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-let sassMiddleware = require('node-sass-middleware');
+const sassMiddleware = require("sass-middleware");
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
