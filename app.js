@@ -1,9 +1,20 @@
+// app.js
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const sassMiddleware = require("sass-middleware");
+const dotenv = require('dotenv');
+
+// Load environment variables
+dotenv.config();
+
+// Import config
+const config = {
+  websitePerson: process.env.websitePerson || 'Default Name',
+  // Add other variables as needed
+};
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
@@ -15,14 +26,20 @@ const port = 3000;
 app.set('views', path.join(__dirname, 'pages'));
 app.set('view engine', 'pug');
 
+// Make config available to all templates
+app.use((req, res, next) => {
+  res.locals.config = config;
+  next();
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   sassMiddleware({
-    src: __dirname + '/scss', //where the sass files are
-    dest: __dirname + '/public/stylesheets', //where css should go
+    src: __dirname + '/scss',
+    dest: __dirname + '/public/stylesheets',
     debug: true,
     indentedSyntax: false,
     outputStyle: 'compressed',
@@ -33,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// Test
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
