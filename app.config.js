@@ -10,7 +10,8 @@ const professionalProfile = {
     URL: "https://www.vasilym.com",
     location: "undisclosed location",
     imagePrefix: process.env.PROFESSIONAL_IMAGE_PREFIX || "vasily",
-    ogImage: process.env.PROFESSIONAL_OGIMAGE || "/images/og-image-vm.png"
+    ogImage: process.env.PROFESSIONAL_OGIMAGE || "/images/og-image-vm.png",
+    favicon: "/images/favicon.png"
   },
   appIds: {
     googleAnalytics: "UA-2420101-39"
@@ -31,7 +32,8 @@ const entrepreneurProfile = {
     URL: process.env.ENTREPRENEUR_URL || "https://simon.vasilym.com",
     location: "undisclosed location",
     imagePrefix: process.env.ENTREPRENEUR_IMAGE_PREFIX || "simon",
-    ogImage: process.env.ENTREPRENEUR_OGIMAGE || "/images/og-image-vm.png"
+    ogImage: process.env.ENTREPRENEUR_OGIMAGE || "/images/og-image-vm.png",
+    favicon: "/images/favicon-simon.png"
   },
   appIds: {
     googleAnalytics: "UA-XXXXXXX"
