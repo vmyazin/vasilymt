@@ -1,17 +1,30 @@
 // app.config.js
+const sharedConfig = {
+  project: {
+    location: "undisclosed location",
+    URL: "https://www.vasilym.com",
+    ogImage: "/images/og-image-vm.png",
+    favicon: "/images/favicon.png"
+  },
+  navigation: {
+    showAbout: true,
+    showBlog: true
+  }
+};
+
 const professionalProfile = {
   project: {
     theme: "professional",
+    ...sharedConfig.project,
     siteName: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
     author: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
-    headline: "Tech Leadership Through Design Thinking and Engineering Excellence",
+    headline: "Tech Leadership Through Product Design and Coding",
     description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
     email: "contact@vasilym.com",
     URL: "https://www.vasilym.com",
-    location: "undisclosed location",
+    location: "Miami, FL",
     imagePrefix: process.env.PROFESSIONAL_IMAGE_PREFIX || "vasily",
-    ogImage: process.env.PROFESSIONAL_OGIMAGE || "/images/og-image-vm.png",
-    favicon: "/images/favicon.png"
+    ogImage: process.env.PROFESSIONAL_OGIMAGE || sharedConfig.project.ogImage,
   },
   appIds: {
     googleAnalytics: "UA-2420101-39"
@@ -24,16 +37,16 @@ const professionalProfile = {
 const entrepreneurProfile = {
   project: {
     theme: "entrepreneur",
+    ...sharedConfig.project,
     siteName: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
     author: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
-    headline: "Learn to Hack Life: Where Code Meets Zen and World Travel",
+    headline: "Learn to Hack Life: Knowledge Work Meets Zen and World Travel",
     description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
     email: "simon@rapidsystemshub.com",
     URL: process.env.ENTREPRENEUR_URL || "https://simon.vasilym.com",
-    location: "undisclosed location",
     imagePrefix: process.env.ENTREPRENEUR_IMAGE_PREFIX || "simon",
-    ogImage: process.env.ENTREPRENEUR_OGIMAGE || "/images/og-image-vm.png",
-    favicon: "/images/favicon-simon.png"
+    ogImage: process.env.ENTREPRENEUR_OGIMAGE || sharedConfig.project.ogImage,
+    favicon: "/images/favicon-simon.png",
   },
   appIds: {
     googleAnalytics: "UA-XXXXXXX"
