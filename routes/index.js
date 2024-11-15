@@ -1,3 +1,4 @@
+// routes/index.js
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
@@ -12,35 +13,27 @@ let current = {};
 current.year = dateObj.getFullYear();
 siteInfo["currentYear"] = current.year;
 
-// ask Request for the host name and assign environment name
-function getEnv(host) {
-  if (host.includes("localhost")) {
-    siteInfo.env = "local";
-  } else if (host.includes("alpha")) {
-    siteInfo.env = "alpha";
-  } else {
-    siteInfo.env = "prod";
-  }
-}
-
 // About OG Image
 const aboutImageForShare = "/images/about/og-image-about-vm.jpeg",
   filmsImageForShare = "/images/films/og-image-films-vm.jpeg";
 
+// Add content loader for about2
+const getContent = (profile) => {
+  const db = require('../content/db.json');
+  return db.pages.about[profile];
+};
+
 router.get("/", (req, res) => {
   const articles = blog.posts;
-  getEnv(req.get("host"));
   res.render("home", { articles, siteInfo, path: req.path });
 });
 
 router.get("/intro", (req, res) => {
   const articles = blog.posts;
-  getEnv(req.get("host"));
   res.render("intro", { articles, siteInfo, path: req.path });
 });
 
 router.get("/about", (req, res) => {
-  getEnv(req.get("host"));
   const homeUrl = req.protocol + "://" + req.get("host"),
     imageFullUrl = homeUrl + aboutImageForShare;
   res.render("about", {
@@ -51,8 +44,30 @@ router.get("/about", (req, res) => {
   });
 });
 
+router.get("/about2", (req, res) => {
+  const homeUrl = req.protocol + "://" + req.get("host"),
+    imageFullUrl = homeUrl + aboutImageForShare;
+  
+  try {
+    const content = getContent(process.env.PROFILE);
+    res.render("about2", {
+      content,
+      siteInfo,
+      path: req.path,
+      title: content.meta.title,
+      imageFullUrl: imageFullUrl
+    });
+  } catch (err) {
+    console.error('Error loading about2 page:', err);
+    res.status(500).render('error', { 
+      message: 'Error loading content',
+      siteInfo,
+      path: req.path 
+    });
+  }
+});
+
 router.get("/films", (req, res) => {
-  getEnv(req.get("host"));
   const homeUrl = req.protocol + "://" + req.get("host"),
     imageFullUrl = homeUrl + filmsImageForShare;
   res.render("films", {
@@ -64,23 +79,19 @@ router.get("/films", (req, res) => {
 });
 
 router.get("/contact", (req, res) => {
-  getEnv(req.get("host"));
   res.render("contact", { siteInfo, path: req.path, title: "Contact" });
 });
 
 router.get("/privacy", (req, res) => {
-  getEnv(req.get("host"));
   res.render("privacy", { siteInfo, path: req.path, title: "Privacy Policy" });
 });
 
 router.get("/terms", (req, res) => {
-  getEnv(req.get("host"));
   res.render("terms", { siteInfo, path: req.path, title: "Privacy Policy" });
 });
 
 router.get("/blog", async (req, res) => {
   const articles = blog.posts;
-  getEnv(req.get("host"));
   res.render("blog", { articles, siteInfo, path: req.path, title: "Blog" });
 });
 
@@ -113,7 +124,6 @@ router.get("/blog/:filename", async (req, res) => {
       postMetaData.homeUrl + postMetaData.imageForShare;
   }
 
-  getEnv(req.get("host"));
 
   if (!postMetaData) {
     res.render("blog-not-found", slug);
@@ -140,7 +150,6 @@ router.get("/blog/:filename", async (req, res) => {
 
 router.get("/tags", async (req, res) => {
   const tags = blog.tags;
-  getEnv(req.get("host"));
   res.render("tags", { tags, siteInfo, path: req.path, title: "Tags" });
 });
 
@@ -148,7 +157,6 @@ router.get("/tags/:tag", async (req, res) => {
   const tag = req.params.tag;
   const tags = blog.tags;
   const articles = await blog.getPostsByTag(tag);
-  getEnv(req.get("host"));
   res.render("tag", {
     tag,
     tags,
