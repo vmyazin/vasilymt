@@ -1,39 +1,48 @@
 //- pages/mixins/debug-overlay.pug
-mixin debugOverlay(siteConfig, envConfig)
+mixin debugOverlay(site, envVars)
   .debug-overlay.position-fixed.top-0.end-0.p-3.bg-dark.bg-opacity-75.text-light.invisible(
     style="z-index: 9999; width: 400px; max-height: 100vh; overflow-y: auto; font-family: monospace;"
     id="debugOverlay"
   )
     .accordion#debugAccordion
-      if siteConfig
-        .accordion-item.bg-dark
-          h2.accordion-header
-            button.accordion-button.bg-dark.text-light(
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#siteConfigCollapse"
-            ) Site Profile
-          #siteConfigCollapse.accordion-collapse.collapse.show
-            .accordion-body
-              pre.m-0.text-success.small= JSON.stringify(siteConfig, null, 2)
+      .accordion-item.bg-dark
+        h2.accordion-header
+          button.accordion-button.bg-dark.text-light(
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#siteConfigCollapse"
+          ) Site Profile
+        #siteConfigCollapse.accordion-collapse.collapse.show
+          .accordion-body
+            pre.m-0.text-success.small= JSON.stringify(site, null, 2)
       
-      if envConfig
-        .accordion-item.bg-dark
-          h2.accordion-header
-            button.accordion-button.collapsed.bg-dark.text-light(
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#envConfigCollapse"
-            ) Environment Config
-          #envConfigCollapse.accordion-collapse.collapse
-            .accordion-body
-              pre.m-0.text-info.small= JSON.stringify(envConfig, null, 2)
+      .accordion-item.bg-dark
+        h2.accordion-header
+          button.accordion-button.collapsed.bg-dark.text-light(
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#envFileCollapse"
+        ) .env File
+        #envFileCollapse.accordion-collapse.collapse
+          .accordion-body
+            pre.m-0.text-warning.small= Object.entries(envVars).map(([key, val]) => `${key}=${val}`).join('\n')
 
-    .mt-3.text-muted.small Press 'D' to toggle overlay
+    .mt-3.text-muted.small
+      div Press 'D' to toggle overlay
+      div Press 'P' to switch profile (#{envVars.ACTIVE_PROFILE})
 
   script.
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'd') {  // Only match lowercase 'd'
+      if (e.key === 'd') {  // Toggle debug overlay
         document.getElementById('debugOverlay').classList.toggle('invisible');
+      }
+      if (e.key === 'p') {  // Toggle profile
+        fetch('/debug/toggle-profile', { method: 'POST' })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              window.location.reload();
+            }
+          });
       }
     });

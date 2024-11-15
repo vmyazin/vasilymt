@@ -44,6 +44,17 @@ const siteProfiles = {
   entrepreneur: entrepreneurProfile
 };
 
+// Create filtered environment variables object
+const getFilteredEnv = () => {
+  return Object.fromEntries(
+    Object.entries(process.env).filter(([key]) => 
+      key.startsWith('ACTIVE_') || 
+      key.startsWith('ENTREPRENEUR_') || 
+      key.startsWith('PROFESSIONAL_')
+    )
+  );
+};
+
 // Simple environment-based profile selection middleware
 const setSiteProfile = (req, res, next) => {
   const activeProfile = process.env.ACTIVE_PROFILE || 'professional';
@@ -57,6 +68,9 @@ const setSiteProfile = (req, res, next) => {
   
   // Add development mode flag
   res.locals.isDev = process.env.NODE_ENV !== 'production';
+  
+  // Add filtered environment variables
+  res.locals.envVars = getFilteredEnv();
   
   next();
 };

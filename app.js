@@ -1,15 +1,16 @@
 // app.js
+const dotenv = require('dotenv');
+
+// Load environment variables first, before any other imports
+dotenv.config();
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const sassMiddleware = require("sass-middleware");
-const dotenv = require('dotenv');
 const { setSiteProfile } = require('./app.config');
-
-// Load environment variables
-dotenv.config();
 
 // Import config
 const config = {
@@ -18,6 +19,7 @@ const config = {
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+const debugRouter = require('./routes/debug');
 
 let app = express();
 const port = 3000;
@@ -51,9 +53,12 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Enable routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+if (process.env.NODE_ENV !== 'production') {
+  app.use('/debug', debugRouter);
+}
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
