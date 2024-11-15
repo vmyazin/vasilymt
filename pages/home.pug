@@ -41,6 +41,7 @@ block content
           .d-grid.gap-2.d-md-block.mb-4
             a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
 
-  include partials/_blog-digest-2
+  if envVars.ACTIVE_PROFILE !== 'professional'
+    include partials/_blog-digest-2
 
   include partials/footer

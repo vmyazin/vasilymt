@@ -9,7 +9,7 @@ nav.navbar.navbar-expand.navbar-dark
     ul.navbar-nav.ms-auto
       li.nav-item.d-none.d-sm-block
         a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home
-      if site.project.theme !== 'professional'
+      if envVars.ACTIVE_PROFILE !== 'professional'
         li.nav-item.ms-0.ms-sm-5
           a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
       li.nav-item.ms-5

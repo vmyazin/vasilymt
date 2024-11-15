@@ -7,8 +7,9 @@ block content
           .col
             p.heading Content
             ul
-              li
-                a(href="/blog") Blog
+              if envVars.ACTIVE_PROFILE !== 'professional'
+                li
+                  a(href="/blog") Blog
               li
                 a(href="/films") Movies
               li
