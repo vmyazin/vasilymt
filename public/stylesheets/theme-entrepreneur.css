@@ -1,0 +1,15 @@
+body {
+  --color-primary: #2c3e50;
+  --color-accent: #3498db;
+  --color-text: #333;
+  --color-background: #ecf0f1;
+  background-color: var(--color-background);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+}
+.btn-accent:hover {
+  background-color: var(--color-accent);
+}
