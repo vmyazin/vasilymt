@@ -1,3 +1,5 @@
+// scripts/blog-setup.js
+
 const Compiler = require('./compiler');
 const info = require('../content/preferences.json');
 

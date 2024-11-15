@@ -17,30 +17,30 @@ html
     //- check if siteInfo object is present, a lot depends on it
     if siteInfo
       if isBlogPost
-        title #{postMetaData.title} • #{siteInfo.project.siteName}
+        title #{postMetaData.title} • #{site.project.siteName}
       else if title
-        title #{title} • #{siteInfo.project.siteName}
+        title #{title} • #{site.project.siteName}
       else
-        title= siteInfo.project.siteName
+        title= site.project.siteName
     
       meta(property='og:locale' content='en_US')
-      meta(property='og:site_name' content=siteInfo.project.siteName)
+      meta(property='og:site_name' content=site.project.siteName)
       
       if isBlogPost
         meta(property='og:type' content='article')
-        meta(property='og:title' content=postMetaData.title + ' by ' + siteInfo.project.author)
+        meta(property='og:title' content=postMetaData.title + ' by ' + site.project.author)
         meta(property='og:description' content=postMetaData.description)
-        meta(name='twitter:title' content=postMetaData.title + ' by ' + siteInfo.project.author)
+        meta(name='twitter:title' content=postMetaData.title + ' by ' + site.project.author)
         meta(name='twitter:description' content=postMetaData.description)
         meta(property='og:url' content=postMetaData.fullUrl)
         meta(name='description' content=postMetaData.description)
       else
         meta(property='og:type' content='website')
-        meta(property='og:title' content=siteInfo.project.description)
-        meta(name='twitter:title' content=siteInfo.project.description)
+        meta(property='og:title' content=site.project.description)
+        meta(name='twitter:title' content=site.project.description)
         meta(property='og:url' content='/')
-        meta(property='og:description' content=siteInfo.project.description)
-        meta(name='description' content=(title ? title + ' • ' : '') + siteInfo.project.description)
+        meta(property='og:description' content=site.project.description)
+        meta(name='description' content=(title ? title + ' • ' : '') + site.project.description)
 
       //- Share images
       if isBlogPost && postMetaData.imageForShareFullUrl !== undefined
