@@ -1,0 +1,23 @@
+$theme-pro-colors: (
+  primary: #2c3e50,
+  accent: #3498db,
+  text: #333,
+  background: #ecf0f1
+);
+
+.theme-professional {
+  @each $name, $color in $theme-pro-colors {
+    --color-#{$name}: #{$color};
+  }
+
+  background-color: var(--color-background);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+
+  &:hover {
+    background-color: var(--color-accent);
+  }
+}
