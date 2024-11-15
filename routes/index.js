@@ -19,8 +19,26 @@ const aboutImageForShare = "/images/about/og-image-about-vm.jpeg",
 
 // Add content loader for about2
 const getContent = (profile) => {
-  const db = require('../content/db.json');
-  return db.pages.about[profile];
+  try {
+    const db = require('../content/db.json');
+    
+    // Check if we have the about page data
+    if (!db.pages || !db.pages.about) {
+      console.error('Content DB missing about page section');
+      return null;
+    }
+
+    // Check if we have the profile data
+    if (!db.pages.about[profile]) {
+      console.error(`Profile "${profile}" not found in content DB`);
+      return null;
+    }
+
+    return db.pages.about[profile];
+  } catch (err) {
+    console.error('Error loading content DB:', err);
+    return null;
+  }
 };
 
 router.get("/", (req, res) => {
@@ -48,14 +66,27 @@ router.get("/about2", (req, res) => {
   const homeUrl = req.protocol + "://" + req.get("host"),
     imageFullUrl = homeUrl + aboutImageForShare;
   
+  // Debug logging
+  console.log('Active Profile:', process.env.ACTIVE_PROFILE);
+  
   try {
-    const content = getContent(process.env.PROFILE);
+    const content = getContent(process.env.ACTIVE_PROFILE);
+    
+    if (!content) {
+      return res.status(500).render('error', { 
+        message: 'Content not found for current profile',
+        siteInfo,
+        path: req.path 
+      });
+    }
+
     res.render("about2", {
       content,
       siteInfo,
       path: req.path,
       title: content.meta.title,
-      imageFullUrl: imageFullUrl
+      imageFullUrl: imageFullUrl,
+      profile: process.env.ACTIVE_PROFILE
     });
   } catch (err) {
     console.error('Error loading about2 page:', err);

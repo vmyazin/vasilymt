@@ -1,0 +1,36 @@
+{
+  "pages": {
+    "about": {
+      "professional": {
+        "meta": {
+          "title": "About",
+          "description": "Who is Simon and what has he done in tech leadership"
+        },
+        "bio": {
+          "title": "Who Is Simon?",
+          "subtitle": "Professional leader in technology",
+          "paragraphs": [
+            "Born in Russia in the decade of the sunsetting of the Soviet Union, Simon spent his formative years in technical environments.",
+            "Simon embodies deep technical expertise and strategic leadership, connecting technology with business outcomes."
+          ],
+          "traits": ["Strategic", "Technical", "Innovative"]
+        }
+      },
+      "entrepreneur": {
+        "meta": {
+          "title": "About",
+          "description": "Who is Simon and how he guides entrepreneurs to success"
+        },
+        "bio": {
+          "title": "Who Is Simon?",
+          "subtitle": "It's time to unveil the person behind the name",
+          "paragraphs": [
+            "Born in Russia in the decade of the sunsetting of the Soviet Union, Simon spent his formative years in creative environments.",
+            "Simon embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology."
+          ],
+          "traits": ["Creative", "Thoughtful", "Motivating"]
+        }
+      }
+    }
+  }
+}

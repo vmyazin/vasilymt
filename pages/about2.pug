@@ -1,0 +1,37 @@
+//- pages/about2.pug
+extends layout
+
+block content
+  include partials/header
+  
+  .container-fluid.page-header
+    .row
+      .col
+        .text-center.mt-4.mb-4
+          h2= content.meta.title
+          p.meta.compact= content.meta.description
+
+  .section.odd
+    .container.page
+      .row
+        .col-md-6
+          h3.mb-1= content.bio.title
+          p.meta= content.bio.subtitle
+
+          each paragraph in content.bio.paragraphs
+            p= paragraph
+          
+        .col-md-6
+          h4= content.bio.traits.join(", ")
+          //- Keeping your existing image accordion structure
+          .flex-parent
+            .image-accordeon
+              ul.list-unstyled
+                li
+                  img(src="/images/about/vasily-cubertura.jpg", alt="V looks at this phone")
+                li
+                  img(src="/images/about/vasily-office-full.jpg", alt="V looks at this phone")
+                li
+                  img(src="/images/about/simao-62.jpg", alt="V looks at this phone")
+
+  include partials/footer
