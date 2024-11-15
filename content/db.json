@@ -4,16 +4,80 @@
       "professional": {
         "meta": {
           "title": "About",
-          "description": "Who is Simon and what has he done in tech leadership"
+          "description": "Who is Vasily Myazin and what has he done so far, and what he's doing now",
+          "name": "Vasily Myazin"
         },
         "bio": {
-          "title": "Who Is Simon?",
-          "subtitle": "Professional leader in technology",
+          "title": "Who Is Vasily Myazin?",
+          "subtitle": "It's time to unveil the person behind the name",
           "paragraphs": [
-            "Born in Russia in the decade of the sunsetting of the Soviet Union, Simon spent his formative years in technical environments.",
-            "Simon embodies deep technical expertise and strategic leadership, connecting technology with business outcomes."
+            "Born in Russia in the decade of the sunsetting of the Soviet Union Vasily spent his formative years in creative environments. Surrounded by writers, artists, designers, programmers he was bound to be on the crossroads of creativity.",
+            "Vasily embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology. Naturally curious he connects the dots between tribal mysticism, applied phylosophy, wide-range frequency beats and graphical user interface.",
+            "Simon is his middle name. Turns out it's a name that is easier to pronounce and remember."
           ],
-          "traits": ["Strategic", "Technical", "Innovative"]
+          "traits": ["Creative", "Thoughtful", "Motivating"],
+          "tagline": "In terms of labels (or #hashtags): world traveler, digital nomad, copywriter, techie, designer, musician, rookie philosopher, mentor for those who are stuck.",
+          "images": {
+            "accordion": [
+              {
+                "src": "/images/about/vasily-cubertura.jpg",
+                "alt": "V looks at this phone"
+              },
+              {
+                "src": "/images/about/vasily-office-full.jpg",
+                "alt": "V looks at this phone"
+              },
+              {
+                "src": "/images/about/simao-62.jpg",
+                "alt": "V looks at this phone"
+              }
+            ],
+            "featured": {
+              "src": "/images/vasily-cult.jpg",
+              "alt": "Vasily's Photo"
+            }
+          }
+        },
+        "sections": {
+          "nomad": {
+            "title": "Vagabonding Meets Wanderlust: The Digital Nomad Lifestyle",
+            "paragraphs": [
+              "After moving to the USA in 2002, I lived in Los Angeles, San Francisco, New York, and Miami with short stints in a number of other US cities.",
+              "I began traveling more regularly in 2016, and spent some time in Canada, Mexico, Colombia, Brazil, Spain, Germany, The Netherlands, Poland, Thailand, Japan among others.",
+              "I made a lot of friends along the way and became deeply interested in cultures and languages I encountered.",
+              "I speak English, Russian, Spanish, and Portuguese."
+            ]
+          },
+          "social": {
+            "title": "Social Media",
+            "quote": "If you have to wonder about it, choose to trust your intuition."
+          },
+          "creative": {
+            "title": "Creative Outlets",
+            "content": [
+              "Since I was 3 years old I was into drawing using a variety of mediums: pen sketching, ink, markers, color pencials, watercolors, goache, acrilics, and eventually iPad with a digital pen (my current method). See more on <a href=\"https://www.instagram.com/details_sketchy\">@details_sketchy on Instagram</a>.",
+              "In years 2002-2013 I actively produced music in the style of psy-trance under the moniker Konflux (<a href=\"https://www.youtube.com/results?search_query=konflux+psy\">tunes on YouTube</a>).",
+              "2012-2017 I had a project called <a href=\"https://soundcloud.com/synter\">Synter</a> dedicted to a house/techno + electro/trance blend of genres."
+            ]
+          }
+        },
+        "help": {
+          "title": "How Can I Help You?",
+          "intro": "With my life experience I can inspire you to:",
+          "items": [
+            "learn about copywriting",
+            "learn a new language",
+            "travel",
+            "work remotely",
+            "learn how to create podcasts",
+            "kick the habits that don't serve you",
+            "reinvent yourself"
+          ],
+          "cta": {
+            "title": "Ready to talk and see if we are a good fit?",
+            "buttonText": "Get In Touch With Me",
+            "buttonLink": "/contact"
+          }
         }
       },
       "entrepreneur": {

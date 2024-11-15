@@ -21,7 +21,11 @@ const aboutImageForShare = "/images/about/og-image-about-vm.jpeg",
 const getContent = (profile) => {
   try {
     const db = require('../content/db.json');
-    
+
+    // Debug the path we're trying to access
+    console.log('Loading profile:', profile);
+    console.log('Full DB structure:', JSON.stringify(db, null, 2));
+  
     // Check if we have the about page data
     if (!db.pages || !db.pages.about) {
       console.error('Content DB missing about page section');
@@ -72,6 +76,11 @@ router.get("/about2", (req, res) => {
   try {
     const content = getContent(process.env.ACTIVE_PROFILE);
     
+    console.log('Active Profile:', process.env.ACTIVE_PROFILE);
+    console.log('Full content:', JSON.stringify(content, null, 2));
+    console.log('Bio section:', JSON.stringify(content.bio, null, 2));
+    console.log('Bio images:', content.bio.images ? JSON.stringify(content.bio.images, null, 2) : 'No images found');
+
     if (!content) {
       return res.status(500).render('error', { 
         message: 'Content not found for current profile',
