@@ -8,10 +8,11 @@ block content
       .col-12.col-md-6.mb-3.mb-sm-0
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
           .page-intro.me-0.me-md-4
-            h1 I Will Help You Find Freedom and Sanity In The Digital World
+            - console.log('Project object:', site.project)
+            h1= site.project.headline
             p
               img.d-block.d-md-none.img-fluid.rounded(src="/images/portrait-vasily-sq.jpg", alt="Vasily Simon Myazin")
-            p My name is #{siteInfo.project.author}. I work on digital products, apply UX design, develop language learning techniques, record podcasts all while traveling the world.
+            p My name is #{site.project.author}. I work on digital products, apply UX design, develop language learning techniques, record podcasts all while traveling the world.
             p Here I invite like-minded people to get coaching, collaborate, explore work opportunities, and friendship.
             .subtext
               p.mb-4
@@ -19,7 +20,7 @@ block content
                 |&nbsp;
                 | Currently in #{siteInfo.project.location}
             .d-grid.gap-2.d-md-block
-              a.btn.btn-accent.btn-lg.button(href="mailto:contact@vasilym.com?subject=Inquiry from Vasily\'s website") Get In Touch With Me
+              a.btn.btn-accent.btn-lg.button(href=`mailto:${site.project.email}?subject=Inquiry from Vasily\'s website`) Get In Touch With Me
 
       .col.col-md-6
         .d-flex.justify-content-center.align-items-center.flex-column.h-100

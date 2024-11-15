@@ -4,7 +4,9 @@ const professionalProfile = {
     theme: "professional",
     siteName: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
     author: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
+    headline: "Tech Leadership Through Design Thinking and Engineering Excellence",
     description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
+    email: "contact@vasilym.com",
     URL: "https://www.vasilym.com",
     location: "undisclosed location",
     imagePrefix: process.env.PROFESSIONAL_IMAGE_PREFIX || "vasily",
@@ -23,7 +25,9 @@ const entrepreneurProfile = {
     theme: "entrepreneur",
     siteName: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
     author: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
+    headline: "Learn to Hack Life: Where Code Meets Zen and World Travel",
     description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
+    email: "simon@rapidsystemshub.com",
     URL: process.env.ENTREPRENEUR_URL || "https://simon.vasilym.com",
     location: "undisclosed location",
     imagePrefix: process.env.ENTREPRENEUR_IMAGE_PREFIX || "simon",
@@ -72,6 +76,9 @@ const setSiteProfile = (req, res, next) => {
   
   // Add filtered environment variables
   res.locals.envVars = getFilteredEnv();
+
+  console.log('Headline value:', res.locals.site.project.headline);
+
   
   next();
 };
