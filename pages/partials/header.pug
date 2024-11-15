@@ -1,3 +1,5 @@
+//- pages/partials/header.pug
+
 nav.navbar.navbar-expand.navbar-dark
   .container-xxl.flex-wrap
     a.navbar-brand(href="/")
@@ -7,8 +9,8 @@ nav.navbar.navbar-expand.navbar-dark
     ul.navbar-nav.ms-auto
       li.nav-item.d-none.d-sm-block
         a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home
-      li.nav-item.ms-0.ms-sm-5
-        a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
+      if site.project.theme !== 'professional'
+        li.nav-item.ms-0.ms-sm-5
+          a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
       li.nav-item.ms-5
         a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
-            

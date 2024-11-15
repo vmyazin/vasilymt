@@ -6,14 +6,14 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const sassMiddleware = require("sass-middleware");
 const dotenv = require('dotenv');
+const { setSiteProfile } = require('./app.config');
 
 // Load environment variables
 dotenv.config();
 
 // Import config
 const config = {
-  websitePerson: process.env.websitePerson || 'Default Name',
-  // Add other variables as needed
+  // websitePerson: process.env.websitePerson || 'Default Name',
 };
 
 let indexRouter = require('./routes/index');
@@ -25,6 +25,9 @@ const port = 3000;
 // view engine setup
 app.set('views', path.join(__dirname, 'pages'));
 app.set('view engine', 'pug');
+
+// Add the profile middleware before your routes
+app.use(setSiteProfile);
 
 // Make config available to all templates
 app.use((req, res, next) => {
@@ -70,5 +73,6 @@ app.use(function (err, req, res, next) {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
 
 module.exports = app;

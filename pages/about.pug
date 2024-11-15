@@ -1,3 +1,5 @@
+//- pages/about.pug
+
 extends layout
 
 block content
@@ -8,18 +10,18 @@ block content
       .col
         .text-center.mt-4.mb-4
           h2 About
-          p.meta.compact Who is #{config.websitePerson} and what has he done so far, and what he’s doing now
+          p.meta.compact Who is #{site.project.author} and what has he done so far, and what he's doing now
 
   .section.odd
     .container.page
       .row
         .col-md-6
-          h3.mb-1 Who Is #{config.websitePerson}?
-          p.meta It’s time to unveil the person behind the name
+          h3.mb-1 Who Is #{site.project.author}?
+          p.meta It's time to unveil the person behind the name
 
-          p Born in Russia in the decade of the sunsetting of the Soviet Union #{config.websitePerson} spent his formative years in creative environments. Surrounded by writers, artists, designers, programmers he was bound to be on the crossroads of creativity.
+          p Born in Russia in the decade of the sunsetting of the Soviet Union #{site.project.author} spent his formative years in creative environments. Surrounded by writers, artists, designers, programmers he was bound to be on the crossroads of creativity.
           
-          p #{config.websitePerson} embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology. Naturally curious he connects the dots between tribal mysticism, applied phylosophy, wide-range frequency beats and graphical user interface. 
+          p #{site.project.author} embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology. Naturally curious he connects the dots between tribal mysticism, applied phylosophy, wide-range frequency beats and graphical user interface. 
 
           p Simon is his middle name. Turns out it's a name that is easier to pronounce and remember.
 
@@ -40,7 +42,7 @@ block content
     .container
       .row
         .text-center.w-100
-          img.img-about.img-about-2(src="/images/vasily-cult.jpg", alt=`${config.websitePerson}'s Photo`)
+          img.img-about.img-about-2(src="/images/vasily-cult.jpg", alt=`${site.project.author}'s Photo`)
       .row.offset-12
         .col-md-4.col-bg-dark.mb-4
           h4 Vagabonding Meets Wanderlust: The Digital Nomad Lifestyle
@@ -78,7 +80,7 @@ block content
             li travel
             li work remotely
             li learn how to create podcasts
-            li kick the habits that don’t serve you
+            li kick the habits that don't serve you
             li reinvent yourself
 
         .col-md-6.offset-md-3

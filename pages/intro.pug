@@ -7,7 +7,7 @@ block content
     .row.position-relative.video.even
       .page-wrapper
         .page-header
-          h1 #{config.websitePerson}
+          h1 #{site.project.author}
           h3 Digital Product Raffinerie
         .video-holder
           video(autoplay loop muted preload='auto' playsinline='playsinline')
@@ -49,7 +49,7 @@ block content
             .vm-tooltip
               | What's good?
 
-        a.btn.btn-primary.btn-lg(href=`mailto:contact@vasilym.com?subject=Inquiry from ${config.websitePerson}'s website`) contact@vasilym.com
+        a.btn.btn-primary.btn-lg(href=`mailto:contact@vasilym.com?subject=Inquiry from ${site.project.author}'s website`) contact@vasilym.com
         .col-md-4.offset-md-4
           p I’m interested in chatting about design and user experience solutions.<br>Also, about life and alleviating suffering.
 

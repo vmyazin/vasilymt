@@ -1,0 +1,22 @@
+// scss/_debug.scss
+.debug-overlay {
+  &:not(.hidden) {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  pre {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

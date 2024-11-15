@@ -1,36 +1,67 @@
 // app.config.js
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const path = require('path');
-const dotenv = require('dotenv');
-
-// Load environment variables
-dotenv.config();
-
-// Create config object
-const config = {
-  websitePerson: process.env.websitePerson || 'Default Name',
-  // Add other variables as needed
+const professionalProfile = {
+  project: {
+    theme: "professional",
+    siteName: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
+    author: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
+    description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
+    URL: "https://www.vasilym.com",
+    location: "undisclosed location",
+    imagePrefix: process.env.PROFESSIONAL_IMAGE_PREFIX || "vasily",
+    ogImage: process.env.PROFESSIONAL_OGIMAGE || "/images/og-image-vm.png"
+  },
+  appIds: {
+    googleAnalytics: "UA-2420101-39"
+  },
+  social: {
+    linkedin: "https://www.linkedin.com/in/vmyazin/",
+  }
 };
 
-function basicConfig(app, options = {}) {
-    app.use(logger('dev'));
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: false }));
-    app.use(cookieParser());
-    
-    // view engine setup
-    app.set('views', path.join(__dirname, 'pages'));
-    app.set('view engine', 'pug');
-    
-    // Make config available to all templates
-    app.use((req, res, next) => {
-        res.locals.config = config;
-        next();
-    });
-    
-    app.use(express.static(path.join(__dirname, options.public ? options.public : 'public')));
-}
+const entrepreneurProfile = {
+  project: {
+    theme: "entrepreneur",
+    siteName: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
+    author: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
+    description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
+    URL: process.env.ENTREPRENEUR_URL || "https://simon.vasilym.com",
+    location: "undisclosed location",
+    imagePrefix: process.env.ENTREPRENEUR_IMAGE_PREFIX || "simon",
+    ogImage: process.env.ENTREPRENEUR_OGIMAGE || "/images/og-image-vm.png"
+  },
+  appIds: {
+    googleAnalytics: "UA-XXXXXXX"
+  },
+  social: {
+    instagram: "https://instagram.com/vasily",
+    telegram: "https://t.me/vasilymz",
+    twitter: "https://twitter.com/rapidsystemshub",
+  }
+};
 
-module.exports = basicConfig;
+const siteProfiles = {
+  professional: professionalProfile,
+  entrepreneur: entrepreneurProfile
+};
+
+// Simple environment-based profile selection middleware
+const setSiteProfile = (req, res, next) => {
+  const activeProfile = process.env.ACTIVE_PROFILE || 'professional';
+  
+  if (!siteProfiles[activeProfile]) {
+    console.warn(`Warning: Profile "${activeProfile}" not found, falling back to professional profile`);
+    res.locals.site = siteProfiles.professional;
+  } else {
+    res.locals.site = siteProfiles[activeProfile];
+  }
+  
+  // Add development mode flag
+  res.locals.isDev = process.env.NODE_ENV !== 'production';
+  
+  next();
+};
+
+module.exports = {
+  siteProfiles,
+  setSiteProfile
+};

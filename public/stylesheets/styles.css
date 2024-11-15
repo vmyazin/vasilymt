@@ -93,6 +93,24 @@ img.social-icon.white {
     display: inline-block;
   }
 }
+.debug-overlay:not(.hidden) {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.debug-overlay pre {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   font: 18px "Nunito Sans", Helvetica, Arial, sans-serif;
   color: #21252A;
