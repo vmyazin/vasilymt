@@ -3,11 +3,11 @@
   "version": "0.1.3",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "NODE_ENV=production node ./bin/www",
+    "devstart": "NODE_ENV=development concurrently \"nodemon ./bin/www\" \"npm run sass\"",
     "admin": "node ./admin/bin/www",
     "test": "jest",
     "sass": "sass --no-source-map --watch scss:public/stylesheets",
-    "devstart": "concurrently \"nodemon ./bin/www\" \"npm run sass\"",
     "serverstart": "DEBUG=vasilymt:* npm run devstart"
   },
   "jest": {

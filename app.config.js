@@ -48,6 +48,7 @@ const siteProfiles = {
 const getFilteredEnv = () => {
   return Object.fromEntries(
     Object.entries(process.env).filter(([key]) => 
+      key === 'NODE_ENV' ||
       key.startsWith('ACTIVE_') || 
       key.startsWith('ENTREPRENEUR_') || 
       key.startsWith('PROFESSIONAL_')
