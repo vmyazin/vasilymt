@@ -12,19 +12,30 @@ const sharedConfig = {
   }
 };
 
+// Helper to safely get environment variables with fallback
+const getEnvVar = (key, fallback) => {
+  const value = process.env[key];
+  if (value === undefined) {
+    console.log(`Environment variable ${key} not found, using fallback: ${fallback}`);
+  } else {
+    console.log(`Environment variable ${key} found with value: ${value}`);
+  }
+  return value || fallback;
+};
+
 const professionalProfile = {
   project: {
     theme: "professional",
     ...sharedConfig.project,
-    siteName: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
-    author: process.env.PROFESSIONAL_NAME || "Vasily Myazin",
+    siteName: getEnvVar('PROFESSIONAL_NAME', 'Vasily Myazin'),
+    author: getEnvVar('PROFESSIONAL_NAME', 'Vasily Myazin'),
     headline: "Tech Leadership Through Product Design and Coding",
     description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
     email: "contact@vasilym.com",
     URL: "https://www.vasilym.com",
     location: "Miami, FL",
-    imagePrefix: process.env.PROFESSIONAL_IMAGE_PREFIX || "vasily",
-    ogImage: process.env.PROFESSIONAL_OGIMAGE || sharedConfig.project.ogImage,
+    imagePrefix: getEnvVar('PROFESSIONAL_IMAGE_PREFIX', 'vasily'),
+    ogImage: getEnvVar('PROFESSIONAL_OGIMAGE', sharedConfig.project.ogImage),
   },
   appIds: {
     googleAnalytics: "UA-2420101-39"
@@ -39,14 +50,15 @@ const entrepreneurProfile = {
   project: {
     theme: "entrepreneur",
     ...sharedConfig.project,
-    siteName: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
-    author: process.env.ENTREPRENEUR_NAME || "Simon Myazin",
+    siteName: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
+    author: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
     headline: "Learn to Hack Life: Knowledge Work Meets Zen and World Travel",
     description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
     email: "simon@rapidsystemshub.com",
-    URL: process.env.ENTREPRENEUR_URL || "https://simon.vasilym.com",
-    imagePrefix: process.env.ENTREPRENEUR_IMAGE_PREFIX || "simon",
-    ogImage: process.env.ENTREPRENEUR_OGIMAGE || sharedConfig.project.ogImage,
+    URL: getEnvVar('ENTREPRENEUR_URL', 'https://simon.vasilym.com'),
+    imagePrefix: getEnvVar('ENTREPRENEUR_IMAGE_PREFIX', 'simon'),
+    // Override the spread of sharedConfig.project.ogImage
+    ogImage: getEnvVar('ENTREPRENEUR_OGIMAGE', '/images/og-image-sm.jpg'),
     favicon: "/images/favicon-simon.png",
   },
   appIds: {
@@ -65,7 +77,7 @@ const siteProfiles = {
 
 // Create filtered environment variables object
 const getFilteredEnv = () => {
-  return Object.fromEntries(
+  const filtered = Object.fromEntries(
     Object.entries(process.env).filter(([key]) => 
       key === 'NODE_ENV' ||
       key.startsWith('ACTIVE_') || 
@@ -73,11 +85,14 @@ const getFilteredEnv = () => {
       key.startsWith('PROFESSIONAL_')
     )
   );
+  console.log('Filtered environment variables:', filtered);
+  return filtered;
 };
 
 // Simple environment-based profile selection middleware
 const setSiteProfile = (req, res, next) => {
-  const activeProfile = process.env.ACTIVE_PROFILE || 'professional';
+  const activeProfile = getEnvVar('ACTIVE_PROFILE', 'professional');
+  console.log(`Setting site profile to: ${activeProfile}`);
   
   if (!siteProfiles[activeProfile]) {
     console.warn(`Warning: Profile "${activeProfile}" not found, falling back to professional profile`);
@@ -92,8 +107,8 @@ const setSiteProfile = (req, res, next) => {
   // Add filtered environment variables
   res.locals.envVars = getFilteredEnv();
 
-  console.log('Headline value:', res.locals.site.project.headline);
-
+  // Debug log the final ogImage value
+  console.log('Final ogImage value:', res.locals.site.project.ogImage);
   
   next();
 };
