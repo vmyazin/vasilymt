@@ -58,7 +58,6 @@
             ]
           },
           "social": {
-            "title": "Professional Network",
             "quote": "Great design is invisible. Great engineering makes it possible."
           },
           "creative": {
@@ -129,7 +128,6 @@
             ]
           },
           "social": {
-            "title": "Professional Network",
             "quote": "If you have to wonder about it, choose to trust your intuition."
           },
           "creative": {
@@ -155,7 +153,6 @@
           ],
           "cta": {
             "title": "Feel stuck with your online presence?",
-            "buttonText": "Break Through Your Blocks",
             "buttonLink": "/contact"
           }
         }

@@ -31,6 +31,7 @@ const professionalProfile = {
   },
   social: {
     linkedin: "https://www.linkedin.com/in/vmyazin/",
+    telegram: "https://t.me/vasilymz",
   }
 };
 
@@ -53,7 +54,6 @@ const entrepreneurProfile = {
   },
   social: {
     instagram: "https://instagram.com/vasily",
-    telegram: "https://t.me/vasilymz",
     twitter: "https://twitter.com/rapidsystemshub",
   }
 };

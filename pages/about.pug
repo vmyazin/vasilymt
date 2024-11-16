@@ -1,5 +1,4 @@
-//- pages/about.pug
-
+//- pages/about2.pug
 extends layout
 
 block content
@@ -9,86 +8,94 @@ block content
     .row
       .col
         .text-center.mt-4.mb-4
-          h2 About
-          p.meta.compact Who is #{site.project.author} and what has he done so far, and what he's doing now
+          h2= content.meta.title || 'About'
+          p.meta.compact= content.meta.description || 'About me'
 
   .section.odd
     .container.page
       .row
         .col-md-6
-          h3.mb-1 Who Is #{site.project.author}?
-          p.meta It's time to unveil the person behind the name
+          h3.mb-1= content.bio.title || 'Who Am I?'
+          p.meta= content.bio.subtitle || 'My Story'
 
-          p Born in Russia in the decade of the sunsetting of the Soviet Union #{site.project.author} spent his formative years in creative environments. Surrounded by writers, artists, designers, programmers he was bound to be on the crossroads of creativity.
-          
-          p #{site.project.author} embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology. Naturally curious he connects the dots between tribal mysticism, applied phylosophy, wide-range frequency beats and graphical user interface. 
-
-          p Simon is his middle name. Turns out it's a name that is easier to pronounce and remember.
+          each paragraph in content.bio.paragraphs || ['No content available']
+            p!= paragraph
 
         .col-md-6
-          h4 Creative, Thoughtful, Motivating        
-          p In terms of labels (or #hashtags): world traveler, digital nomad, copywriter, techie, designer, musician, rookie philosopher, mentor for those who are stuck.
+          h4= (content.bio.traits || ['Creative', 'Thoughtful', 'Motivated']).join(", ")
+          p= content.bio.tagline || 'Digital nomad, world traveler, lifelong learner'
           .flex-parent
             .image-accordeon
               ul.list-unstyled
-                li
-                  img(src="/images/about/vasily-cubertura.jpg", alt="V looks at this phone")
-                li
-                  img(src="/images/about/vasily-office-full.jpg", alt="V looks at this phone")
-                li
-                  img(src="/images/about/simao-62.jpg", alt="V looks at this phone")
+                - const defaultImages = [{src: "/images/placeholder.jpg", alt: "Placeholder image"}]
+                - const images = (content.bio.images && content.bio.images.accordion) || defaultImages
+                each image in images
+                  li
+                    img(src=image.src, alt=image.alt)
 
   .foliage.mb-0.py-5
     .container
       .row
         .text-center.w-100
-          img.img-about.img-about-2(src="/images/vasily-cult.jpg", alt=`${site.project.author}'s Photo`)
+          - const featuredImage = (content.bio.images && content.bio.images.featured && content.bio.images.featured.src) || '/images/placeholder.jpg'
+          - const featuredAlt = (content.bio.images && content.bio.images.featured && content.bio.images.featured.alt) || 'Profile photo'
+          img.img-about.img-about-2(src=featuredImage, alt=featuredAlt)
+      
       .row.offset-12
+        //- Nomad section
         .col-md-4.col-bg-dark.mb-4
-          h4 Vagabonding Meets Wanderlust: The Digital Nomad Lifestyle
-          p After moving to the USA in 2002, I lived in Los Angeles, San Francisco, New York, and Miami with short stints in a number of other US cities.
-          p I began traveling more regularly in 2016, and spent some time in Canada, Mexico, Colombia, Brazil, Spain, Germany, The Netherlands, Poland, Thailand, Japan among others.
-          p I made a lot of friends along the way and became deeply interested in cultures and languages I encountered.
-          p I speak English, Russian, Spanish, and Portuguese.
+          - const feature = content.sections && content.sections.feature || {}
+          h4= feature.title || 'Vagabonding Meets Wanderlust'
+          each paragraph in feature.paragraphs || ['Travel and location information not available']
+            p!= paragraph
 
+        //- Social Media section
         .col-md-4
           .text-center.push-12
-            h4.mb-3 Social Media
+            - const social = content.sections && content.sections.social || {}
+            h4.mb-3= social.title || 'Social Connection'
             ul.list-inline.d-flex-inline.social-links
-              each socialLink, socialNet in siteInfo.social
-                if socialNet !== "telegram"
-                  li.list-inline-item
-                    a.social-link.white.align-middle(href=socialLink)
-                      ion-icon(name='logo-' + socialNet)
-              li.list-inline-item
-                a.social-link.align-middle(href=siteInfo.social.telegram)
-                  img.social-icon.white(src="/images/social/logo-telegram.svg")
-            p.quote.mt-5 "If you have to wonder about it, choose to trust your intuition."
+              if site.social.linkedin
+                li.list-inline-item
+                  a.social-link.white.align-middle(href=site.social.linkedin)
+                    ion-icon(name='logo-linkedin')
+              if site.social.instagram
+                li.list-inline-item
+                  a.social-link.white.align-middle(href=site.social.instagram)
+                    ion-icon(name='logo-instagram')
+              if site.social.twitter
+                li.list-inline-item
+                  a.social-link.white.align-middle(href=site.social.twitter)
+                    ion-icon(name='logo-twitter')
+              if site.social.telegram
+                li.list-inline-item
+                  a.social-link.align-middle(href=site.social.telegram)
+                    img.social-icon.white(src="/images/social/logo-telegram.svg")
+            p.quote.mt-5= social.quote || 'If you have to wonder about it, choose to trust your intuition.'
 
+        //- Creative section
         .col-md-4.col-bg-dark.mb-4
-          h4 Creative Outlets
-          p Since I was 3 years old I was into drawing using a variety of mediums: pen sketching, ink, markers, color pencials, watercolors, goache, acrilics, and eventually iPad with a digital pen (my current method). See more on <a href="https://www.instagram.com/details_sketchy">@details_sketchy on Instagram</a>.
-          p In years 2002-2013 I actively produced music in the style of psy-trance under the moniker Konflux (<a href="https://www.youtube.com/results?search_query=konflux+psy">tunes on YouTube</a>).
-          p 2012-2017 I had a project called <a href="https://soundcloud.com/synter">Synter</a> dedicted to a house/techno + electro/trance blend of genres.
+          - const creative = content.sections && content.sections.creative || {}
+          h4= creative.title || 'Creative Outlets'
+          each item in creative.content || ['Creative content not available']
+            p!= item
+
+      //- Help section
       .row
+        - const help = content.help || {}
         .col-md-6.offset-md-3.col-bg-light.my-5.with-shadow
-          h3 How Can I Help You?
-          p With my life experience I can inspire you to:
+          h3= help.title || 'How Can I Help You?'
+          p= help.intro || 'With my life experience I can inspire you to:'
           ul.mb-0
-            li learn about copywriting
-            li learn a new language
-            li travel
-            li work remotely
-            li learn how to create podcasts
-            li kick the habits that don't serve you
-            li reinvent yourself
+            each item in help.items || ['Content not available']
+              li= item
 
         .col-md-6.offset-md-3
           .text-center.mb-4
-            h5 Ready to talk and see if we are a good fit?
+            h5= (help.cta && help.cta.title) || 'Ready to talk and see if we are a good fit?'
 
           .d-grid.gap-2.d-md-block.m-auto.text-center.mb-4            
-              a.btn.btn-accent.btn-lg.btn-block.button(href='/contact')
-                |  Get In Touch With Me
+              a.btn.btn-accent.btn-lg.btn-block.button(href=(help.cta && help.cta.buttonLink) || '/contact')
+                | #{(help.cta && help.cta.buttonText) || 'Get In Touch With Me'}
 
   include partials/footer

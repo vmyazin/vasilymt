@@ -17,14 +17,10 @@ siteInfo["currentYear"] = current.year;
 const aboutImageForShare = "/images/about/og-image-about-vm.jpeg",
   filmsImageForShare = "/images/films/og-image-films-vm.jpeg";
 
-// Add content loader for about2
+// Add content loader for about
 const getContent = (profile) => {
   try {
     const db = require('../content/db.json');
-
-    // Debug the path we're trying to access
-    console.log('Loading profile:', profile);
-    console.log('Full DB structure:', JSON.stringify(db, null, 2));
   
     // Check if we have the about page data
     if (!db.pages || !db.pages.about) {
@@ -55,10 +51,10 @@ router.get("/intro", (req, res) => {
   res.render("intro", { articles, siteInfo, path: req.path });
 });
 
-router.get("/about", (req, res) => {
+router.get("/about_old", (req, res) => {
   const homeUrl = req.protocol + "://" + req.get("host"),
     imageFullUrl = homeUrl + aboutImageForShare;
-  res.render("about", {
+  res.render("about_old", {
     siteInfo,
     path: req.path,
     title: "About",
@@ -66,7 +62,7 @@ router.get("/about", (req, res) => {
   });
 });
 
-router.get("/about2", (req, res) => {
+router.get("/about", (req, res) => {
   const homeUrl = req.protocol + "://" + req.get("host"),
     imageFullUrl = homeUrl + aboutImageForShare;
   
@@ -89,7 +85,7 @@ router.get("/about2", (req, res) => {
       });
     }
 
-    res.render("about2", {
+    res.render("about", {
       content,
       siteInfo,
       path: req.path,
@@ -98,7 +94,7 @@ router.get("/about2", (req, res) => {
       profile: process.env.ACTIVE_PROFILE
     });
   } catch (err) {
-    console.error('Error loading about2 page:', err);
+    console.error('Error loading about page:', err);
     res.status(500).render('error', { 
       message: 'Error loading content',
       siteInfo,
