@@ -3,54 +3,63 @@
     "about": {
       "professional": {
         "meta": {
-          "title": "About",
-          "description": "Who is Vasily Myazin and what has he done so far, and what he's doing now",
+          "title": "About Vasily: Senior Product Designer",
+          "description": "Senior UX/UI designer and front-end engineer with expertise in product design, user experience, and engineering leadership",
           "name": "Vasily Myazin"
         },
         "bio": {
           "title": "Who Is Vasily Myazin?",
-          "subtitle": "It's time to unveil the person behind the name",
+          "subtitle": "Design technologist bridging aesthetics and engineering",
           "paragraphs": [
-            "Born in Russia in the decade of the sunsetting of the Soviet Union Vasily spent his formative years in creative environments. Surrounded by writers, artists, designers, programmers he was bound to be on the crossroads of creativity.",
-            "Vasily embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology. Naturally curious he connects the dots between tribal mysticism, applied phylosophy, wide-range frequency beats and graphical user interface.",
-            "Simon is his middle name. Turns out it's a name that is easier to pronounce and remember."
+            "As a seasoned UX/UI designer and front-end engineer, I've shaped digital products across the technology landscape – from enterprise solutions at Sony to innovative startups in major tech hubs.",
+            "My career spans multiple tech epicenters including Los Angeles, San Francisco, Boston, and New York City, where I've consistently pushed the boundaries of what's possible in digital product design.",
+            "I thrive at the intersection of design and technology, bringing a unique blend of aesthetic sensibility and technical expertise to every project.",
+            "The combination of enterprise and startup experience, spanning entertainment and automotive industries, has shaped my approach to product design and team leadership."
           ],
-          "traits": ["Creative", "Thoughtful", "Motivating"],
-          "tagline": "In terms of labels (or #hashtags): world traveler, digital nomad, copywriter, techie, designer, musician, rookie philosopher, mentor for those who are stuck.",
+          "traits": ["UX Designer", "Front-End Engineer", "Product Design Lead"],
+          "tagline": "Creating intuitive, cutting-edge digital experiences through thoughtful design and modern engineering",
           "images": {
             "accordion": [
               {
                 "src": "/images/about/vasily-cubertura.jpg",
-                "alt": "V looks at this phone"
+                "alt": "Vasily working on UX design"
               },
               {
                 "src": "/images/about/vasily-office-full.jpg",
-                "alt": "V looks at this phone"
+                "alt": "Vasily leading a design review"
               },
               {
                 "src": "/images/about/simao-62.jpg",
-                "alt": "V looks at this phone"
+                "alt": "Vasily mentoring team members"
               }
             ],
             "featured": {
               "src": "/images/vasily-cult.jpg",
-              "alt": "Vasily's Photo"
+              "alt": "Vasily Myazin - UX Designer & Engineer"
             }
           }
         },
         "sections": {
-          "nomad": {
-            "title": "Vagabonding Meets Wanderlust: The Digital Nomad Lifestyle",
+          "expertise": {
+            "title": "Design & Engineering Excellence",
             "paragraphs": [
-              "After moving to the USA in 2002, I lived in Los Angeles, San Francisco, New York, and Miami with short stints in a number of other US cities.",
-              "I began traveling more regularly in 2016, and spent some time in Canada, Mexico, Colombia, Brazil, Spain, Germany, The Netherlands, Poland, Thailand, Japan among others.",
-              "I made a lot of friends along the way and became deeply interested in cultures and languages I encountered.",
-              "I speak English, Russian, Spanish, and Portuguese."
+              "My expertise spans the full spectrum of digital product development, from initial UX research to final implementation.",
+              "I've led design and engineering teams at various company scales, from startups to major corporations like Sony.",
+              "Currently mentoring teams of product designers and engineers, helping them bridge the gap between design thinking and technical implementation.",
+              "Constantly exploring emerging technologies and their impact on user experience design."
+            ]
+          },
+          "feature": {
+            "title": "Location & Experience",
+            "paragraphs": [
+              "Since relocating to the United States in 2002, I've built my career across key innovation centers. At Sony Los Angeles, I led digital entertainment experience initiatives.",
+              "In San Francisco, I immersed myself in the startup ecosystem, working with emerging technologies. Later in New York, I helped scale <a href=\"http://automotivemastermind.com\">automotiveMastermind</a> while mentoring product teams.",
+              "Currently based in South Florida, I maintain strong connections with global technology hubs while embracing remote work culture."
             ]
           },
           "social": {
-            "title": "Social Media",
-            "quote": "If you have to wonder about it, choose to trust your intuition."
+            "title": "Professional Network",
+            "quote": "Great design is invisible. Great engineering makes it possible."
           },
           "creative": {
             "title": "Creative Outlets",
@@ -62,37 +71,93 @@
           }
         },
         "help": {
-          "title": "How Can I Help You?",
-          "intro": "With my life experience I can inspire you to:",
+          "title": "How Can I Enhance Your Product?",
+          "intro": "I can help your team with:",
           "items": [
-            "learn about copywriting",
-            "learn a new language",
-            "travel",
-            "work remotely",
-            "learn how to create podcasts",
-            "kick the habits that don't serve you",
-            "reinvent yourself"
+            "UX/UI design leadership",
+            "front-end architecture",
+            "design system development",
+            "product team mentorship",
+            "user research implementation",
+            "technical design solutions",
+            "design-engineering collaboration"
           ],
           "cta": {
-            "title": "Ready to talk and see if we are a good fit?",
-            "buttonText": "Get In Touch With Me",
+            "title": "Ready to elevate your product's user experience?",
+            "buttonText": "Let's Discuss Your Project",
             "buttonLink": "/contact"
           }
         }
       },
       "entrepreneur": {
         "meta": {
-          "title": "About",
-          "description": "Who is Simon and how he guides entrepreneurs to success"
+          "title": "About Simon: Digital Marketing & AI Expert",
+          "description": "Global entrepreneur specializing in digital marketing, AI implementation, and business coaching across 40 countries"
         },
         "bio": {
           "title": "Who Is Simon?",
-          "subtitle": "It's time to unveil the person behind the name",
+          "subtitle": "Digital marketing virtuoso and AI implementation expert",
           "paragraphs": [
-            "Born in Russia in the decade of the sunsetting of the Soviet Union, Simon spent his formative years in creative environments.",
-            "Simon embodies the idealistic age of yore and the pragmatic fast-paced new era of rapidly developing technology."
+            "As a globe-trotting digital marketer and AI expert, I've helped businesses across 40 countries harness the power of technology and marketing to achieve their goals.",
+            "My journey has taken me from the vibrant streets of Thailand to the beaches of Brazil, my two favorite destinations among the many countries I've explored.",
+            "With expertise in digital marketing, web design, and artificial intelligence, I help entrepreneurs break through their blocks and establish powerful online presences."
           ],
-          "traits": ["Creative", "Thoughtful", "Motivating"]
+          "traits": ["Digital Marketer", "AI Expert", "Business Coach"],
+          "images": {
+            "featured": {
+              "alt": "Simon - Digital Marketing & AI Expert"
+            }
+          }
+        },
+        "sections": {
+          "expertise": {
+            "title": "Marketing & Technology Mastery",
+            "paragraphs": [
+              "I specialize in digital marketing strategy, advertising optimization, and AI implementation for businesses.",
+              "My approach combines web design expertise with cutting-edge AI tools to create powerful online presences.",
+              "Speaking four languages has allowed me to work with diverse clients across cultural boundaries.",
+              "I've helped countless entrepreneurs transform their digital presence and overcome business roadblocks."
+            ]
+          },
+          "feature": {
+            "title": "Global Experience & Cultural Intelligence",
+            "paragraphs": [
+              "My journey spans 40 countries, with deep connections in Brazil and Thailand.",
+              "This global perspective informs my approach to digital marketing and business strategy.",
+              "I leverage my multilingual capabilities (four languages) to bridge cultural gaps in international business.",
+              "Each destination has added unique insights to my understanding of global markets and consumer behavior."
+            ]
+          },
+          "social": {
+            "title": "Professional Network",
+            "quote": "If you have to wonder about it, choose to trust your intuition."
+          },
+          "creative": {
+            "title": "Digital Innovation",
+            "content": [
+              "As an early adopter of artificial intelligence technologies, I've implemented AI solutions across various business domains, from customer service automation to content generation.",
+              "My approach to digital marketing combines data-driven strategies with creative storytelling, helping businesses stand out in crowded markets.",
+              "Through my global network, I've built successful online presences for clients in diverse markets, from local startups to international brands."
+            ]
+          }
+        },
+        "help": {
+          "title": "Ready to Transform Your Business?",
+          "intro": "I empower entrepreneurs to:",
+          "items": [
+            "develop effective digital marketing strategies",
+            "implement AI solutions for business growth",
+            "create compelling web designs",
+            "overcome business roadblocks",
+            "establish strong online presences",
+            "optimize advertising campaigns",
+            "expand into international markets"
+          ],
+          "cta": {
+            "title": "Feel stuck with your online presence?",
+            "buttonText": "Break Through Your Blocks",
+            "buttonLink": "/contact"
+          }
         }
       }
     }
