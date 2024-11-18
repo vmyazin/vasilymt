@@ -3,9 +3,12 @@
 nav.navbar.navbar-expand.navbar-dark
   .container-xxl.flex-wrap
     a.navbar-brand(href="/")
-      img(src="/images/vm-logo-22-2b.svg", alt=site.project.siteName)
-      img.on-hover(src="/images/vm-logo-22-2.svg", alt=site.project.siteName)
-
+      if site.project.logoAnimated
+        img(src="/images/vm-logo-22-2b.svg", alt=site.project.siteName)
+        img.on-hover(src=site.project.siteLogo, alt=site.project.siteName)
+      else
+        img(src=site.project.siteLogo, alt=site.project.siteName)
+        
     ul.navbar-nav.ms-auto
       li.nav-item.d-none.d-sm-block
         a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home

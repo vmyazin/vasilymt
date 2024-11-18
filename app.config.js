@@ -4,7 +4,8 @@ const sharedConfig = {
     location: "undisclosed location",
     URL: "https://www.vasilym.com",
     ogImage: "/images/og-image-vm.png",
-    favicon: "/images/favicon.png"
+    favicon: "/images/favicon.png",
+    siteLogo: "/images/vm-logo-22-2.svg",
   },
   navigation: {
     showAbout: true,
@@ -34,6 +35,7 @@ const professionalProfile = {
     email: "contact@vasilym.com",
     URL: "https://www.vasilym.com",
     location: "Miami, FL",
+    logoAnimated: true,
     imagePrefix: getEnvVar('PROFESSIONAL_IMAGE_PREFIX', 'vasily'),
     ogImage: getEnvVar('PROFESSIONAL_OGIMAGE', sharedConfig.project.ogImage),
   },
@@ -57,7 +59,8 @@ const entrepreneurProfile = {
     email: "simon@rapidsystemshub.com",
     URL: getEnvVar('ENTREPRENEUR_URL', 'https://simon.vasilym.com'),
     imagePrefix: getEnvVar('ENTREPRENEUR_IMAGE_PREFIX', 'simon'),
-    // Override the spread of sharedConfig.project.ogImage
+    siteLogo: "/images/simon-logo-3d-out2.svg",
+    logoAnimated: false,
     ogImage: getEnvVar('ENTREPRENEUR_OGIMAGE', '/images/og-image-sm.jpg'),
     favicon: "/images/favicon-simon.png",
   },
