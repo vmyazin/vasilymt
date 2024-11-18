@@ -24,10 +24,7 @@ block content
           h1.post-title.mt-4= postMetaData.title
 
           p.author
-            if postMetaData.author
-              =postMetaData.author
-            else
-              =siteInfo.project.author
+            =site.project.author
             span.separator ,
             | 
             =postMetaData.prettyDate
