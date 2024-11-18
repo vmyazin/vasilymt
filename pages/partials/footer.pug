@@ -19,14 +19,26 @@ block content
           .col
             p.heading Social
             ul
-              li
-                a.text-nowrap(href=siteInfo.social.twitter)
-                  ion-icon.align-top(name='logo-twitter')
-                  |  Twitter
-              li
-                a.text-nowrap(href=siteInfo.social.linkedin)
-                  ion-icon.align-top(name='logo-linkedin')
-                  |  Linkedin
+              if site.social.twitter
+                li
+                  a.text-nowrap(href=site.social.twitter)
+                    ion-icon.align-top(name='logo-twitter')
+                    |  X/Twitter
+              if site.social.linkedin
+                li
+                  a.text-nowrap(href=site.social.linkedin)
+                    ion-icon.align-top(name='logo-linkedin')
+                    |  Linkedin
+              if site.social.instagram
+                li
+                  a.text-nowrap(href=site.social.instagram)
+                    ion-icon.align-top(name='logo-instagram')
+                    |  Instagram
+              if site.social.telegram
+                li
+                  a.text-nowrap(href=site.social.telegram)
+                    img.social-icon.white(src="/images/social/logo-telegram.svg", style="width: 16px")
+                    |  Telegram
           .col
             p.heading Info
             ul
