@@ -6,6 +6,7 @@ router.blogPath = __dirname + "/../content/articles/";
 const MarkdownBlog = require("../scripts/blog-setup");
 const blog = new MarkdownBlog(router.blogPath);
 const siteInfo = blog.info;
+const { siteProfiles } = require('../app.config');
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
 let dateObj = new Date();
@@ -126,32 +127,37 @@ router.get("/terms", (req, res) => {
   res.render("terms", { siteInfo, path: req.path, title: "Privacy Policy" });
 });
 
-router.get("/blog", async (req, res) => {
-  const articles = blog.posts;
-  res.render("blog", { articles, siteInfo, path: req.path, title: "Blog" });
-});
-
-router.route("/api/search").get(cors(), async (req, res) => {
-  const articles = blog.posts;
-  const search = req.query.name.toLowerCase();
-
-  if (search) {
-    results = articles.filter((a) =>
-      (a.title + a.description + a.author).toLowerCase().includes(search)
-    );
-  } else {
-    results = [];
+// Middleware to check entrepreneur profile for all blog routes
+const checkEntrepreneurProfile = (req, res, next) => {
+  const isEntrepreneur = res.locals.site === siteProfiles.entrepreneur;
+  if (!isEntrepreneur) {
+    return res.redirect('/');
   }
-  res.json(results);
+  next();
+};
+
+// Apply profile check to all blog routes
+router.use('/blog', checkEntrepreneurProfile);
+
+// Blog index route
+router.get("/blog", (req, res) => {
+  const articles = blog.posts;
+  res.render("blog", { 
+    articles, 
+    siteInfo, 
+    path: req.path,
+    title: "Blog",
+    isBlog: true
+  });
 });
 
+// Individual blog post route (keep existing logic, remove duplicate profile check)
 router.get("/blog/:filename", async (req, res) => {
   const slug = req.params.filename;
   const postMetaData = blog.getPostMetadata(slug),
     nextPostMetaData = blog.getPostMetadata(slug, 1),
     prevPostMetaData = blog.getPostMetadata(slug, -1);
-  postMetaData.fullUrl =
-    req.protocol + "://" + req.get("host") + req.originalUrl;
+  postMetaData.fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
   postMetaData.homeUrl = req.protocol + "://" + req.get("host");
   postMetaData.imageFullUrl = postMetaData.homeUrl + postMetaData.image;
 
@@ -159,7 +165,6 @@ router.get("/blog/:filename", async (req, res) => {
     postMetaData.imageForShareFullUrl =
       postMetaData.homeUrl + postMetaData.imageForShare;
   }
-
 
   if (!postMetaData) {
     res.render("blog-not-found", slug);
@@ -182,6 +187,20 @@ router.get("/blog/:filename", async (req, res) => {
       }
     )
   );
+});
+
+router.route("/api/search").get(cors(), async (req, res) => {
+  const articles = blog.posts;
+  const search = req.query.name.toLowerCase();
+
+  if (search) {
+    results = articles.filter((a) =>
+      (a.title + a.description + a.author).toLowerCase().includes(search)
+    );
+  } else {
+    results = [];
+  }
+  res.json(results);
 });
 
 router.get("/tags", async (req, res) => {
