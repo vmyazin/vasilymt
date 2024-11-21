@@ -1,9 +1,10 @@
 // app.config.js
 const sharedConfig = {
   project: {
-    location: "undisclosed location",
+    location: "an undisclosed location",
     URL: "https://www.vasilym.com",
     ogImage: "/images/og-image-vm.png",
+    homepageImage: "/images/portrait-vasily-exp.jpg",
     favicon: "/images/favicon.png",
     siteLogo: "/images/vm-logo-22-2.svg",
   },
@@ -61,6 +62,7 @@ const entrepreneurProfile = {
     imagePrefix: getEnvVar('ENTREPRENEUR_IMAGE_PREFIX', 'simon'),
     siteLogo: "/images/simon-logo-3d-out2.svg",
     logoAnimated: false,
+    homepageImage: "/images/about/simon-chi-laptop.jpeg",
     ogImage: getEnvVar('ENTREPRENEUR_OGIMAGE', '/images/og-image-sm.jpg'),
     favicon: "/images/favicon-simon.png",
   },

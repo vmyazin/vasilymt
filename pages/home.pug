@@ -10,37 +10,39 @@ block content
           .page-intro.me-0.me-md-4
             - console.log('Project object:', site.project)
             h1= site.project.headline
-            p
-              img.d-block.d-md-none.img-fluid.rounded(src="/images/portrait-vasily-sq.jpg", alt="Vasily Simon Myazin")
+            p.image-square-crop.rounded.d-block.d-md-none
+              img(src=site.project.homepageImage, alt=site.project.author)
+
             p My name is #{site.project.author}. I work on digital products, apply UX design, develop language learning techniques, and record podcasts.
             p Here I invite like-minded people to get coaching, collaborate, explore work opportunities, and friendship.
             .subtext
               p.mb-4
                 img.align-text-bottom(src="/images/pin.svg")
                 |&nbsp;
-                | Currently in #{site.project.location}
+                | Based in #{site.project.location}
             .d-grid.gap-2.d-md-block
               a.btn.btn-accent.btn-lg.button(href=`mailto:${site.project.email}?subject=Inquiry from the website`) Get In Touch With Me
 
       .col.col-md-6
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
-          img.d-none.d-md-block.intro-photo.rounded.mt-4(src="/images/portrait-vasily.jpg", alt="Vasily Simon Myazin")
+          img.d-none.d-md-block.intro-photo.rounded.mt-4(src=site.project.homepageImage, alt=site.project.author)
 
-  .container
-    .row
-      .col   
-        hr.dashed
-    .row.my-3.my-sm-5.px-3
-      .col-12.offset-0.col-sm-3.offset-sm-1
-        .d-flex.justify-content-center.align-items-center.flex-column.h-100
-          img.img-fluid.ebook-photo.mb-4.mb-0-sm(src="/images/kindle-lang-book.png", alt="Language Learner's StarterGuide")
-      .col-12.col-sm
-        .d-flex.justify-content-center.flex-column.h-100
-          h2 My Book On Learning Languages
-          .row
-            p.col.col-md-9 Get started with learning language using the right mindset and techniques. I’ll give you a brief introduction.
-          .d-grid.gap-2.d-md-block.mb-4
-            a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
+  if envVars.ACTIVE_PROFILE === 'professional'
+    .container
+      .row
+        .col   
+          hr.dashed
+      .row.my-3.my-sm-5.px-3
+        .col-12.offset-0.col-sm-3.offset-sm-1
+          .d-flex.justify-content-center.align-items-center.flex-column.h-100
+            img.img-fluid.ebook-photo.mb-4.mb-0-sm(src="/images/kindle-lang-book.png", alt="Language Learner's StarterGuide")
+        .col-12.col-sm
+          .d-flex.justify-content-center.flex-column.h-100
+            h2 My Book On Learning Languages
+            .row
+              p.col.col-md-9 Get started with learning language using the right mindset and techniques. I’ll give you a brief introduction.
+            .d-grid.gap-2.d-md-block.mb-4
+              a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
 
   if envVars.ACTIVE_PROFILE !== 'professional'
     include partials/_blog-digest-2

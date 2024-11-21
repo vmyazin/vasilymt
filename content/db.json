@@ -103,6 +103,20 @@
           ],
           "traits": ["Digital Marketer", "AI Expert", "Business Coach"],
           "images": {
+            "accordion": [
+              {
+                "src": "/images/about/simon-bridge.jpeg",
+                "alt": "Vasily working on UX design"
+              },
+              {
+                "src": "/images/about/simon-lavatory.jpeg",
+                "alt": "Vasily mentoring team members"
+              },
+              {
+                "src": "/images/about/simon-island.jpeg",
+                "alt": "Vasily leading a design review"
+              }
+            ],
             "featured": {
               "alt": "Simon - Digital Marketing & AI Expert"
             }
