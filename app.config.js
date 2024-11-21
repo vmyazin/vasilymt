@@ -64,7 +64,7 @@ const createProfiles = () => {
       ogImage: getEnvVar('PROFESSIONAL_OGIMAGE', sharedConfig.project.ogImage),
     },
     appIds: {
-      googleAnalytics: "UA-2420101-39"
+      googleAnalytics: getEnvVar('PROFESSIONAL_GAID')
     },
     social: {
       linkedin: "https://www.linkedin.com/in/vmyazin/",
@@ -92,7 +92,7 @@ const createProfiles = () => {
       favicon: "/images/favicon-simon.png",
     },
     appIds: {
-      googleAnalytics: "UA-XXXXXXX"
+      googleAnalytics: getEnvVar('ENTREPRENEUR_GAID')
     },
     social: {
       instagram: "https://instagram.com/vasily",

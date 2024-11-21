@@ -60,12 +60,13 @@ html
       meta(name="twitter:card" content="summary_large_image")
       meta(name="twitter:creator" content="rapidsystemshub")
 
-    //- Plausible Analytics
-    script(defer data-domain=site.project.domain src='https://plausible.io/js/script.js')
-    script.
-      window.plausible = window.plausible || function() { 
-        (window.plausible.q = window.plausible.q || []).push(arguments) 
-      }
+    if !isDev
+      //- Plausible Analytics
+      script(defer data-domain=site.project.domain src='https://plausible.io/js/script.js')
+      script.
+        window.plausible = window.plausible || function() { 
+          (window.plausible.q = window.plausible.q || []).push(arguments) 
+        }
 
   if path === '/'
     - path = 'home'
@@ -75,15 +76,15 @@ html
     .body-inner
       block content
 
-    if siteInfo && (siteInfo.env !== '' && siteInfo.env === 'prod')
-      //-  Global site tag (gtag.js) - Google Analytics 
-      script(async src='https://www.googletagmanager.com/gtag/js?id=' + siteInfo.appIds.googleAnalytics)
-      script.    
+    if !isDev
+      //- Global site tag (gtag.js) - Google Analytics 
+      script(async src='https://www.googletagmanager.com/gtag/js?id=' + site.appIds.googleAnalytics)
+      script.
         window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-      
-          gtag('config', "#{siteInfo.appIds.googleAnalytics}");
+        
+          gtag('config', '#{site.appIds.googleAnalytics}');
 
     //- Google Fonts          
     link(rel='preconnect' href='https://fonts.googleapis.com')
