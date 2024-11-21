@@ -6,7 +6,8 @@ body {
   background-color: var(--color-background);
 }
 
-.btn-accent {
+.btn-accent,
+.btn-primary {
   background-color: var(--color-accent);
   color: white;
 }

@@ -60,16 +60,46 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
+  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+  
+  // Ensure theme and profile data is available
+  if (!res.locals.site) {
+    res.locals.site = {
+      project: {
+        theme: 'professional',
+        name: 'Default Profile'
+      }
+    };
+  }
+
+  // Set HTTP status
   res.status(err.status || 500);
-  res.render('error');
+  
+  // Handle JSON requests
+  if (req.accepts('html')) {
+    res.render("error", {
+      error: { status: err.status || 500 },
+      message: err.status === 404 ? 'Page Not Found' : (err.message || 'Something went wrong'),
+      path: req.path,
+      siteInfo: req.app.locals.siteInfo || {},
+      site: res.locals.site,
+      themeClass: `theme-${res.locals.site.project.theme}`
+    });
+  } else {
+    // API/JSON response
+    res.json({ 
+      error: err.status === 404 ? 'Not Found' : (err.message || 'An error occurred'),
+      status: err.status || 500
+    });
+  }
 });
 
 app.listen(port, () => {

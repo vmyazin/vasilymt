@@ -1,0 +1,24 @@
+// scss/_error.scss
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  
+  .display-1 {
+    color: var(--bs-primary);
+    font-size: 6rem;
+    
+    @include media-breakpoint-down(md) {
+      font-size: 4rem;
+    }
+  }
+
+  .profile-name {
+    color: var(--bs-primary);
+    font-weight: 600;
+  }
+
+  .illustration {
+    opacity: .25;
+  }
+}

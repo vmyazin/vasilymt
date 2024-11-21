@@ -151,42 +151,65 @@ router.get("/blog", (req, res) => {
   });
 });
 
-// Individual blog post route (keep existing logic, remove duplicate profile check)
+// Individual blog post route
 router.get("/blog/:filename", async (req, res) => {
   const slug = req.params.filename;
-  const postMetaData = blog.getPostMetadata(slug),
-    nextPostMetaData = blog.getPostMetadata(slug, 1),
-    prevPostMetaData = blog.getPostMetadata(slug, -1);
-  postMetaData.fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
-  postMetaData.homeUrl = req.protocol + "://" + req.get("host");
-  postMetaData.imageFullUrl = postMetaData.homeUrl + postMetaData.image;
-
-  if (postMetaData.imageForShare !== undefined) {
-    postMetaData.imageForShareFullUrl =
-      postMetaData.homeUrl + postMetaData.imageForShare;
-  }
-
+  const postMetaData = blog.getPostMetadata(slug);
+  
+  // Check if post exists first
   if (!postMetaData) {
-    res.render("blog-not-found", slug);
-    return;
+    return res.render("error", {
+      error: { status: 404 },
+      message: 'Blog post not found',
+      path: req.path,
+      isBlog: true,
+      layout: 'blog',  // Specify blog layout
+      siteInfo,        // Make sure to pass siteInfo
+      site: res.locals.site // Pass site info for theme
+    });
   }
 
-  res.render(
-    "article",
-    Object.assign(
-      {},
-      { postMetaData },
-      { nextPostMetaData, prevPostMetaData },
-      { siteInfo },
-      {
-        content: await blog.renderMarkdown(slug),
-        path: req.path,
-        layout: "blog",
-        isBlog: true,
-        isBlogPost: true,
-      }
-    )
-  );
+  // Only get next/prev if we have a valid post
+  const nextPostMetaData = blog.getPostMetadata(slug, 1);
+  const prevPostMetaData = blog.getPostMetadata(slug, -1);
+  
+  // Add URL data
+  const homeUrl = req.protocol + "://" + req.get("host");
+  postMetaData.fullUrl = homeUrl + req.originalUrl;
+  postMetaData.homeUrl = homeUrl;
+  postMetaData.imageFullUrl = homeUrl + postMetaData.image;
+
+  if (postMetaData.imageForShare) {
+    postMetaData.imageForShareFullUrl = homeUrl + postMetaData.imageForShare;
+  }
+
+  try {
+    const content = await blog.renderMarkdown(slug);
+    
+    res.render("article", {
+      postMetaData,
+      nextPostMetaData,
+      prevPostMetaData,
+      siteInfo,
+      content,
+      path: req.path,
+      layout: 'blog',
+      isBlog: true,
+      isBlogPost: true,
+      site: res.locals.site
+    });
+  } catch (err) {
+    console.error('Error rendering blog post:', err);
+    res.render("error", {
+      error: { status: 500 },
+      message: 'Error loading blog post',
+      path: req.path,
+      isBlog: true,
+      layout: 'blog',  // Specify blog layout
+      siteInfo,        // Make sure to pass siteInfo
+      site: res.locals.site // Pass site info for theme
+    });
+  }
 });
 
 router.route("/api/search").get(cors(), async (req, res) => {

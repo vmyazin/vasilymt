@@ -93,6 +93,28 @@ img.social-icon.white {
     display: inline-block;
   }
 }
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+.error-page .display-1 {
+  color: var(--bs-primary);
+  font-size: 6rem;
+}
+@media (max-width: 991.98px) {
+  .error-page .display-1 {
+    font-size: 4rem;
+  }
+}
+.error-page .profile-name {
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+.error-page .illustration {
+  opacity: 0.25;
+}
+
 .debug-overlay:not(.hidden) {
   display: block;
   animation: fadeIn 0.3s ease-in-out;
