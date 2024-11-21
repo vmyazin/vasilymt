@@ -1,65 +1,66 @@
 block content
 
   footer.footer
-    .nav-cols
+    .container-xxl.flex-wrap
+      .nav-cols
+        .container-fluid
+          .row
+            .col
+              p.heading Content
+              ul
+                if envVars.ACTIVE_PROFILE !== 'professional'
+                  li
+                    a(href="/blog") Blog
+                  li
+                    a(href="/films") Movies
+                li
+                  a(href="/tags") Tags
+                li
+                  a(href="/about") About Me
+            .col
+              p.heading Social
+              ul
+                if site.social.twitter
+                  li
+                    a.text-nowrap(href=site.social.twitter)
+                      ion-icon.align-top(name='logo-twitter')
+                      |  X/Twitter
+                if site.social.linkedin
+                  li
+                    a.text-nowrap(href=site.social.linkedin)
+                      ion-icon.align-top(name='logo-linkedin')
+                      |  Linkedin
+                if site.social.instagram
+                  li
+                    a.text-nowrap(href=site.social.instagram)
+                      ion-icon.align-top(name='logo-instagram')
+                      |  Instagram
+                if site.social.telegram
+                  li
+                    a.text-nowrap(href=site.social.telegram)
+                      img.social-icon.white(src="/images/social/logo-telegram.svg", style="width: 16px")
+                      |  Telegram
+            .col
+              p.heading Info
+              ul
+                li
+                  a(href="/privacy") Privacy Policy
+                li
+                  a(href="/terms") Terms Of Service
+
       .container-fluid
         .row
           .col
-            p.heading Content
-            ul
-              if envVars.ACTIVE_PROFILE !== 'professional'
-                li
-                  a(href="/blog") Blog
-                li
-                  a(href="/films") Movies
-              li
-                a(href="/tags") Tags
-              li
-                a(href="/about") About Me
-          .col
-            p.heading Social
-            ul
-              if site.social.twitter
-                li
-                  a.text-nowrap(href=site.social.twitter)
-                    ion-icon.align-top(name='logo-twitter')
-                    |  X/Twitter
-              if site.social.linkedin
-                li
-                  a.text-nowrap(href=site.social.linkedin)
-                    ion-icon.align-top(name='logo-linkedin')
-                    |  Linkedin
-              if site.social.instagram
-                li
-                  a.text-nowrap(href=site.social.instagram)
-                    ion-icon.align-top(name='logo-instagram')
-                    |  Instagram
-              if site.social.telegram
-                li
-                  a.text-nowrap(href=site.social.telegram)
-                    img.social-icon.white(src="/images/social/logo-telegram.svg", style="width: 16px")
-                    |  Telegram
-          .col
-            p.heading Info
-            ul
-              li
-                a(href="/privacy") Privacy Policy
-              li
-                a(href="/terms") Terms Of Service
+            .d-flex.align-items-end.flex-column.mt-2
+              .bottom-line
+                a.fun-link.me-0.me-sm-5(href="//dev.tapirio.com")
+                  img.icon(src="/images/logo-tapirio.svg")
+                  | 
+                  | Built on 
+                  span Tapirio
+                  |.
 
-    .container-fluid
-      .row
-        .col
-          .d-flex.align-items-end.flex-column.mt-2
-            .bottom-line
-              a.fun-link.me-0.me-sm-5(href="//dev.tapirio.com")
-                img.icon(src="/images/logo-tapirio.svg")
-                | 
-                | Built on 
-                span Tapirio
-                |.
-
-              span.line Copyright &copy; #{siteInfo.currentYear}
+                span.line Copyright &copy; #{siteInfo.currentYear}
 
 .scroll-to-top.fixed.hidden
   img(src="/images/icon-up.svg", alt="Scroll up")

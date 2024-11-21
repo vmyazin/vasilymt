@@ -1181,7 +1181,6 @@ blockquote p {
 }
 .footer .nav-cols {
   max-width: 600px;
-  padding-left: 1rem;
   padding-top: 1rem;
 }
 @media (max-width: 575.98px) {
