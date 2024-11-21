@@ -8,14 +8,21 @@ block content
     .row.justify-content-center.align-items-center.text-center.text-lg-start.g-5.w-100
       .col-lg-6
         h1.display-3.fw-bold.mb-3 Oops, this page isn’t available
-        p.lead.text-muted.mb-4 The page you were looking for couldn’t be found.
+        if isBlog
+          p.lead.text-muted.mb-4 The blog post you were looking for couldn’t be found.
+        else
+          p.lead.text-muted.mb-4 The page you were looking for couldn’t be found.
         p.text-secondary.mb-4
           | Go back to the 
         
         .d-flex.justify-content-center.justify-content-lg-start
-          a.btn.btn-accent.btn-lg(href="/") 
-            | Home Page
-      
+          if isBlog
+            a.btn.btn-accent.btn-lg(href="/blog") 
+              | Blog Home
+          else      
+            a.btn.btn-accent.btn-lg(href="/") 
+              | Home Page
+              
       .col-lg-6.text-center
         img.illustration.img-fluid(
           src="/images/404-error.svg" 
