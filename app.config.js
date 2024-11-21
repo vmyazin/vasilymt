@@ -1,4 +1,32 @@
 // app.config.js
+const dotenv = require('dotenv');
+
+// Load environment variables first, before any config is created
+const result = dotenv.config();
+if (result.error) {
+  console.warn('Warning: .env file not found or cannot be read');
+}
+
+// Enhanced helper to safely get environment variables with better debugging
+const getEnvVar = (key, fallback) => {
+  // Log all environment variables for debugging
+  console.log('\nEnvironment variables loaded:', 
+    Object.keys(process.env)
+      .filter(k => !k.includes('SECRET'))
+      .reduce((obj, k) => ({ ...obj, [k]: process.env[k] }), {})
+  );
+
+  const value = process.env[key];
+  
+  if (value === undefined) {
+    console.warn(`⚠️ Environment variable ${key} not found, using fallback: ${fallback}`);
+    return fallback;
+  }
+  
+  console.log(`✅ Environment variable ${key} loaded with value: ${value}`);
+  return value;
+};
+
 const sharedConfig = {
   project: {
     location: "an undisclosed location",
@@ -14,72 +42,68 @@ const sharedConfig = {
   }
 };
 
-// Helper to safely get environment variables with fallback
-const getEnvVar = (key, fallback) => {
-  const value = process.env[key];
-  if (value === undefined) {
-    console.log(`Environment variable ${key} not found, using fallback: ${fallback}`);
-  } else {
-    console.log(`Environment variable ${key} found with value: ${value}`);
-  }
-  return value || fallback;
-};
+// Create the profiles after environment is definitely loaded
+const createProfiles = () => {
+  console.log('\nCreating profiles with environment configuration...');
+  
+  const professionalProfile = {
+    project: {
+      theme: "professional",
+      ...sharedConfig.project,
+      siteName: getEnvVar('PROFESSIONAL_NAME', 'Vasily Myazin'),
+      author: getEnvVar('PROFESSIONAL_NAME', 'Vasily Myazin'),
+      alias: "vasily",
+      headline: "Tech Leadership Through Product Design and Coding",
+      description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
+      email: "contact@vasilym.com",
+      URL: "https://www.vasilym.com",
+      location: "Miami, FL",
+      logoAnimated: true,
+      domain: getEnvVar('PROFESSIONAL_DOMAIN'),
+      imagePrefix: getEnvVar('PROFESSIONAL_IMAGE_PREFIX', 'vasily'),
+      ogImage: getEnvVar('PROFESSIONAL_OGIMAGE', sharedConfig.project.ogImage),
+    },
+    appIds: {
+      googleAnalytics: "UA-2420101-39"
+    },
+    social: {
+      linkedin: "https://www.linkedin.com/in/vmyazin/",
+      telegram: "https://t.me/vasilymz",
+    }
+  };
 
-const professionalProfile = {
-  project: {
-    theme: "professional",
-    ...sharedConfig.project,
-    siteName: getEnvVar('PROFESSIONAL_NAME', 'Vasily Myazin'),
-    author: getEnvVar('PROFESSIONAL_NAME', 'Vasily Myazin'),
-    alias: "vasily",
-    headline: "Tech Leadership Through Product Design and Coding",
-    description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
-    email: "contact@vasilym.com",
-    URL: "https://www.vasilym.com",
-    location: "Miami, FL",
-    logoAnimated: true,
-    imagePrefix: getEnvVar('PROFESSIONAL_IMAGE_PREFIX', 'vasily'),
-    ogImage: getEnvVar('PROFESSIONAL_OGIMAGE', sharedConfig.project.ogImage),
-  },
-  appIds: {
-    googleAnalytics: "UA-2420101-39"
-  },
-  social: {
-    linkedin: "https://www.linkedin.com/in/vmyazin/",
-    telegram: "https://t.me/vasilymz",
-  }
-};
+  const entrepreneurProfile = {
+    project: {
+      theme: "entrepreneur",
+      ...sharedConfig.project,
+      siteName: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
+      author: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
+      alias: "simon",
+      headline: "Learn to Hack Life: Knowledge Work Meets Zen and World Travel",
+      description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
+      email: "simon@rapidsystemshub.com",
+      URL: getEnvVar('ENTREPRENEUR_URL', 'https://simon.vasilym.com'),
+      domain: getEnvVar('ENTREPRENEUR_DOMAIN'),
+      imagePrefix: getEnvVar('ENTREPRENEUR_IMAGE_PREFIX', 'simon'),
+      siteLogo: "/images/simon-logo-3d-out2.svg",
+      logoAnimated: false,
+      homepageImage: "/images/about/simon-chi-laptop.jpeg",
+      ogImage: getEnvVar('ENTREPRENEUR_OGIMAGE', '/images/og-image-sm.jpg'),
+      favicon: "/images/favicon-simon.png",
+    },
+    appIds: {
+      googleAnalytics: "UA-XXXXXXX"
+    },
+    social: {
+      instagram: "https://instagram.com/vasily",
+      twitter: "https://twitter.com/rapidsystemshub",
+    }
+  };
 
-const entrepreneurProfile = {
-  project: {
-    theme: "entrepreneur",
-    ...sharedConfig.project,
-    siteName: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
-    author: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
-    alias: "simon",
-    headline: "Learn to Hack Life: Knowledge Work Meets Zen and World Travel",
-    description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
-    email: "simon@rapidsystemshub.com",
-    URL: getEnvVar('ENTREPRENEUR_URL', 'https://simon.vasilym.com'),
-    imagePrefix: getEnvVar('ENTREPRENEUR_IMAGE_PREFIX', 'simon'),
-    siteLogo: "/images/simon-logo-3d-out2.svg",
-    logoAnimated: false,
-    homepageImage: "/images/about/simon-chi-laptop.jpeg",
-    ogImage: getEnvVar('ENTREPRENEUR_OGIMAGE', '/images/og-image-sm.jpg'),
-    favicon: "/images/favicon-simon.png",
-  },
-  appIds: {
-    googleAnalytics: "UA-XXXXXXX"
-  },
-  social: {
-    instagram: "https://instagram.com/vasily",
-    twitter: "https://twitter.com/rapidsystemshub",
-  }
-};
-
-const siteProfiles = {
-  professional: professionalProfile,
-  entrepreneur: entrepreneurProfile
+  return {
+    professional: professionalProfile,
+    entrepreneur: entrepreneurProfile
+  };
 };
 
 // Create filtered environment variables object
@@ -92,14 +116,22 @@ const getFilteredEnv = () => {
       key.startsWith('PROFESSIONAL_')
     )
   );
-  console.log('Filtered environment variables:', filtered);
+  console.log('\nFiltered environment variables:', filtered);
   return filtered;
 };
 
+// Create profiles only when needed
+let siteProfiles = null;
+
 // Simple environment-based profile selection middleware
 const setSiteProfile = (req, res, next) => {
+  // Initialize profiles if not already done
+  if (!siteProfiles) {
+    siteProfiles = createProfiles();
+  }
+
   const activeProfile = getEnvVar('ACTIVE_PROFILE', 'professional');
-  console.log(`Setting site profile to: ${activeProfile}`);
+  console.log(`\nSetting site profile to: ${activeProfile}`);
   
   if (!siteProfiles[activeProfile]) {
     console.warn(`Warning: Profile "${activeProfile}" not found, falling back to professional profile`);
@@ -114,13 +146,14 @@ const setSiteProfile = (req, res, next) => {
   // Add filtered environment variables
   res.locals.envVars = getFilteredEnv();
 
-  // Debug log the final ogImage value
-  console.log('Final ogImage value:', res.locals.site.project.ogImage);
+  // Debug log the final values
+  console.log('\nFinal configuration values:');
+  console.log('- ogImage:', res.locals.site.project.ogImage);
+  console.log('- domain:', res.locals.site.project.domain);
   
   next();
 };
 
 module.exports = {
-  siteProfiles,
   setSiteProfile
 };
