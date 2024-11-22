@@ -10,23 +10,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Production Sites
+    - name: Debug SSH connection
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
+        debug: true
         script: |
-          # Deploy to vasilym.com
-          cd /var/www/vasilym.com
-          git pull github-vasilym-com main
-          npm install
-          mkdir -p tmp
-          touch tmp/restart.txt
-
-          # Deploy to simon.rapidsystemshub.com
-          cd /var/www/simon.rapidsystemshub.com
-          git pull github-simon-rsh main
-          npm install
-          mkdir -p tmp
-          touch tmp/restart.txt
+          whoami
+          pwd
