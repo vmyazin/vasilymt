@@ -1,7 +1,16 @@
-body {
+.theme-professional {
+  --color-primary: #2c3e50;
   --color-accent: #3498db;
   --color-text: #333;
-  --color-background: #fff;
-
+  --color-background: #ecf0f1;
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
   background-color: var(--color-background);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+}
+.btn-accent:hover {
+  background-color: var(--color-accent);
 }

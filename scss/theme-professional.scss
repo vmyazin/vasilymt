@@ -10,6 +10,7 @@ $theme-pro-colors: (
     --color-#{$name}: #{$color};
   }
 
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
   background-color: var(--color-background);
 }
 
