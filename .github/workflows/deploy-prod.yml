@@ -19,16 +19,14 @@ jobs:
         script: |
           # Deploy to vasilym.com
           cd /var/www/vasilym.com
-          git pull origin main
+          git pull github-vasilym-com main
           npm install
-          npm run build
           mkdir -p tmp
           touch tmp/restart.txt
 
           # Deploy to simon.rapidsystemshub.com
           cd /var/www/simon.rapidsystemshub.com
-          git pull origin main
+          git pull github-simon-rsh main
           npm install
-          npm run build
           mkdir -p tmp
           touch tmp/restart.txt
