@@ -20,14 +20,14 @@ jobs:
        script: |
          # Deploy to vasilym.com
          cd /var/www/vasilym.com
-         git pull github-actions master
+         git pull origin master
          npm install
          mkdir -p tmp
          touch tmp/restart.txt
 
          # Deploy to simon.rapidsystemshub.com
          cd /var/www/simon.rapidsystemshub.com
-         git pull github-actions master
+         git pull origin master
          npm install
          mkdir -p tmp
          touch tmp/restart.txt
