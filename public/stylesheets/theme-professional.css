@@ -3,7 +3,7 @@
   --color-accent: #3498db;
   --color-text: #333;
   --color-background: #ecf0f1;
-  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
   background-color: var(--color-background);
 }
 
@@ -13,4 +13,8 @@
 }
 .btn-accent:hover {
   background-color: var(--color-accent);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
 }
