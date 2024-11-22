@@ -154,6 +154,13 @@ const setSiteProfile = (req, res, next) => {
   next();
 };
 
+// Export both the middleware and the profiles getter
 module.exports = {
-  setSiteProfile
+  setSiteProfile,
+  getSiteProfiles: () => {
+    if (!siteProfiles) {
+      siteProfiles = createProfiles();
+    }
+    return siteProfiles;
+  }
 };

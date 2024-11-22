@@ -2,11 +2,15 @@
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
+const { getSiteProfiles } = require('../app.config');
 router.blogPath = __dirname + "/../content/articles/";
 const MarkdownBlog = require("../scripts/blog-setup");
 const blog = new MarkdownBlog(router.blogPath);
 const siteInfo = blog.info;
-const { siteProfiles } = require('../app.config');
+
+// Initialize profiles
+const siteProfiles = getSiteProfiles();
+
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
 let dateObj = new Date();
@@ -23,13 +27,11 @@ const getContent = (profile) => {
   try {
     const db = require('../content/db.json');
   
-    // Check if we have the about page data
     if (!db.pages || !db.pages.about) {
       console.error('Content DB missing about page section');
       return null;
     }
 
-    // Check if we have the profile data
     if (!db.pages.about[profile]) {
       console.error(`Profile "${profile}" not found in content DB`);
       return null;
@@ -67,17 +69,9 @@ router.get("/about", (req, res) => {
   const homeUrl = req.protocol + "://" + req.get("host"),
     imageFullUrl = homeUrl + aboutImageForShare;
   
-  // Debug logging
-  console.log('Active Profile:', process.env.ACTIVE_PROFILE);
-  
   try {
     const content = getContent(process.env.ACTIVE_PROFILE);
     
-    console.log('Active Profile:', process.env.ACTIVE_PROFILE);
-    console.log('Full content:', JSON.stringify(content, null, 2));
-    console.log('Bio section:', JSON.stringify(content.bio, null, 2));
-    console.log('Bio images:', content.bio.images ? JSON.stringify(content.bio.images, null, 2) : 'No images found');
-
     if (!content) {
       return res.status(500).render('error', { 
         message: 'Content not found for current profile',
@@ -124,20 +118,31 @@ router.get("/privacy", (req, res) => {
 });
 
 router.get("/terms", (req, res) => {
-  res.render("terms", { siteInfo, path: req.path, title: "Privacy Policy" });
+  res.render("terms", { siteInfo, path: req.path, title: "Terms of Service" });
 });
 
-// Middleware to check entrepreneur profile for all blog routes
-const checkEntrepreneurProfile = (req, res, next) => {
-  const isEntrepreneur = res.locals.site === siteProfiles.entrepreneur;
-  if (!isEntrepreneur) {
-    return res.redirect('/');
+// Modified blog middleware to check profile
+const checkBlogAccess = (req, res, next) => {
+  // Check if site profile is available
+  if (!res.locals.site?.project?.theme) {
+    console.error('Site profile not properly set');
+    return res.status(500).render('error', { 
+      message: 'Site configuration error',
+      siteInfo,
+      path: req.path 
+    });
   }
+
+  // Example of how to use siteProfiles for specific checks if needed
+  const isEntrepreneur = res.locals.site === siteProfiles.entrepreneur;
+  console.log('Blog access check - Is entrepreneur profile:', isEntrepreneur);
+
+  // For now, allow access to all profiles
   next();
 };
 
-// Apply profile check to all blog routes
-router.use('/blog', checkEntrepreneurProfile);
+// Apply blog access check to all blog routes
+router.use('/blog', checkBlogAccess);
 
 // Blog index route
 router.get("/blog", (req, res) => {
@@ -147,7 +152,8 @@ router.get("/blog", (req, res) => {
     siteInfo, 
     path: req.path,
     title: "Blog",
-    isBlog: true
+    isBlog: true,
+    site: res.locals.site // Ensure site profile is passed
   });
 });
 
@@ -163,9 +169,9 @@ router.get("/blog/:filename", async (req, res) => {
       message: 'Blog post not found',
       path: req.path,
       isBlog: true,
-      layout: 'blog',  // Specify blog layout
-      siteInfo,        // Make sure to pass siteInfo
-      site: res.locals.site // Pass site info for theme
+      layout: 'blog',
+      siteInfo,
+      site: res.locals.site
     });
   }
 
@@ -205,9 +211,9 @@ router.get("/blog/:filename", async (req, res) => {
       message: 'Error loading blog post',
       path: req.path,
       isBlog: true,
-      layout: 'blog',  // Specify blog layout
-      siteInfo,        // Make sure to pass siteInfo
-      site: res.locals.site // Pass site info for theme
+      layout: 'blog',
+      siteInfo,
+      site: res.locals.site
     });
   }
 });
