@@ -33,7 +33,7 @@ So here's how I'm measuring the Nomad Benchmark today:
 By the way, the WiFi speed here is a solid 60 Mbps.
 
 <figure>
-<img src="/images/blog/Beach-club-table.jpg" alt="Laptop setup at a shaded beach club table in Cumbuco">
+<img src="/images/blog/Beach-club-table.jpeg" alt="Laptop setup at a shaded beach club table in Cumbuco">
 <figcaption>My temporary office setup with an ocean view</figcaption>
 </figure>
 
