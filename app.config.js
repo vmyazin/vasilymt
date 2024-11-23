@@ -56,7 +56,7 @@ const createProfiles = () => {
       headline: "Tech Leadership Through Product Design and Coding",
       description: "Senior Software Engineer, Technical Leader, and Enterprise Solutions Architect.",
       email: "contact@vasilym.com",
-      URL: "https://www.vasilym.com",
+      URL: "https://vasilym.com",
       location: "Miami, FL",
       logoAnimated: true,
       domain: getEnvVar('PROFESSIONAL_DOMAIN'),
