@@ -15,6 +15,11 @@ html
     link(rel='stylesheet', href='/stylesheets/theme-' + site.project.theme + '.css')
     link(rel="icon" href=site.project.favicon type="images/x-icon")
 
+    if site.project.alias === 'vasily'
+      link(rel="sitemap" type="application/xml" href="/sitemap-professional.xml")
+    else if site.project.alias === 'simon'
+      link(rel="sitemap" type="application/xml" href="/sitemap-entrepreneur.xml")
+
     //- check if siteInfo object is present, a lot depends on it
     if siteInfo
       if isBlogPost
