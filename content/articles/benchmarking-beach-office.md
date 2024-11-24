@@ -1,9 +1,9 @@
 ---
-title: Benchmarking the Beach Office Dream
+title: Benchmarking the Beach Office
 date: 11-23-2024
 prettyDate: November 23rd, 2024
 author: Vasily Myazin
-description: Testing the reality of working from a beach in Brazil - exploring the practicality of the digital nomad dream from a beachside office in Cumbuco
+description: Testing the reality of working from a beach - exploring the practicality of the digital nomad dream from a beachside office in Cumbuco
 image: /images/blog/beach-office-cumbuco.jpg
 imageDesc: View of the Atlantic Ocean from a beach club in Cumbuco, Brazil
 tags: digital nomad, remote work, Brazil, productivity, travel
