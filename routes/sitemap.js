@@ -3,11 +3,26 @@ const express = require('express');
 const router = express.Router();
 const { create } = require('xmlbuilder2');
 const dayjs = require('dayjs');
+const utc = require('dayjs/plugin/utc'); // Add UTC plugin
+const timezone = require('dayjs/plugin/timezone'); // Add timezone plugin
 const path = require('path');
 const fs = require('fs').promises;
 const { getSiteProfiles } = require('../app.config');
 
-// Helper function to get environment variable, matching app.config.js
+// Extend dayjs with plugins
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+// Format date to ISO 8601 with timezone
+const formatDate = (date) => {
+  if (date) {
+    // If we have a date string like "07-13-2022", convert it to ISO format
+    return dayjs(date).utc().format('YYYY-MM-DDTHH:mm:ss+00:00');
+  }
+  // For current date
+  return dayjs().utc().format('YYYY-MM-DDTHH:mm:ss+00:00');
+};
+
 const getEnvVar = (key, fallback) => {
   const value = process.env[key];
   return value === undefined ? fallback : value;
@@ -17,12 +32,16 @@ const getEnvVar = (key, fallback) => {
 const staticRoutes = [
   { path: '/', priority: 1.0, changefreq: 'weekly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
-  { path: '/blog', priority: 0.9, changefreq: 'daily' },
   { path: '/contact', priority: 0.7, changefreq: 'monthly' },
   { path: '/films', priority: 0.8, changefreq: 'weekly' },
   { path: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { path: '/terms', priority: 0.3, changefreq: 'yearly' },
   { path: '/tags', priority: 0.5, changefreq: 'weekly' }
+];
+
+// Blog-specific routes
+const blogRoutes = [
+  { path: '/blog', priority: 0.9, changefreq: 'daily' }
 ];
 
 async function getBlogPosts() {
@@ -63,24 +82,30 @@ async function getBlogPosts() {
   }
 }
 
-async function generateSitemap(siteProfile) {
+async function generateSitemap(siteProfile, profileName) {
   const SITE_URL = siteProfile.project.URL;
-  const blogPosts = await getBlogPosts();
-  const allRoutes = [...staticRoutes, ...blogPosts];
+  
+  const routes = [...staticRoutes];
+  if (profileName === 'entrepreneur') {
+    routes.push(...blogRoutes);
+    const blogPosts = await getBlogPosts();
+    routes.push(...blogPosts);
+  }
   
   const root = create({ version: '1.0', encoding: 'UTF-8' })
     .ele('urlset', { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' });
 
-  allRoutes.forEach(route => {
+  routes.forEach(route => {
     const url = root.ele('url');
     url.ele('loc').txt(`${SITE_URL}${route.path}`);
-    url.ele('lastmod').txt(route.lastmod || dayjs().format('YYYY-MM-DD'));
+    url.ele('lastmod').txt(formatDate(route.lastmod));
     url.ele('changefreq').txt(route.changefreq);
     url.ele('priority').txt(route.priority.toString());
   });
 
   return root.end({ prettyPrint: true });
 }
+
 
 router.get('/sitemap.xml', async (req, res) => {
   try {
@@ -96,7 +121,7 @@ router.get('/sitemap.xml', async (req, res) => {
       siteProfile = profiles[activeProfile];
     }
 
-    const sitemap = await generateSitemap(siteProfile);
+    const sitemap = await generateSitemap(siteProfile, activeProfile);
     
     res.header('Content-Type', 'application/xml');
     res.send(sitemap);
