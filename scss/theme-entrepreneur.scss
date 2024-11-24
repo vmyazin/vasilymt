@@ -1,0 +1,36 @@
+// scss/theme-professional.scss
+
+// Theme variables
+$color-primary: #2c3e50;
+$color-accent: #3498db;
+$color-text: #333;
+$color-background: #fff;
+$font-primary: "Inter", Helvetica, Arial, sans-serif;
+$font-headers: "Nunito Sans", Helvetica, Arial, sans-serif;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+  --color-text: #{$color-text};
+  --color-background: #{$color-background};
+}
+
+.theme-professional {
+  
+  font-family: $font-primary;
+  background-color: var(--color-background);
+
+  // Nested heading styles
+  h1, h2, h3, h4, h5 {
+    font-family: $font-headers;
+  }
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+  
+  &:hover {
+    background-color: var(--color-accent);
+  }
+}

@@ -1,13 +1,19 @@
-body {
+:root {
   --color-primary: #2c3e50;
   --color-accent: #3498db;
   --color-text: #333;
-  --color-background: #ecf0f1;
-  background-color: var(--color-background);
+  --color-background: #fff;
 }
 
-.btn-accent,
-.btn-primary {
+.theme-professional {
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  background-color: var(--color-background);
+}
+.theme-professional h1, .theme-professional h2, .theme-professional h3, .theme-professional h4, .theme-professional h5 {
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+}
+
+.btn-accent {
   background-color: var(--color-accent);
   color: white;
 }
