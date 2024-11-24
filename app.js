@@ -14,6 +14,7 @@ dotenv.config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const debugRouter = require('./routes/debug');
+const robotsRouter = require('./routes/robots');
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,8 @@ const port = 3000;
 // view engine setup
 app.set('views', path.join(__dirname, 'pages'));
 app.set('view engine', 'pug');
+
+app.use('/', robotsRouter);
 
 // Add profile and theme middleware before routes
 app.use(setSiteProfile);
