@@ -1,12 +1,12 @@
-// scss/theme-professional.scss
+// scss/theme-entrepreneur.scss
 
 // Theme variables
 $color-primary: #2c3e50;
 $color-accent: #3498db;
 $color-text: #333;
 $color-background: #fff;
-$font-primary: "Inter", Helvetica, Arial, sans-serif;
-$font-headers: "Nunito Sans", Helvetica, Arial, sans-serif;
+$font-primary: "Funnel Display", Helvetica, Arial, sans-serif;
+$font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
 
 :root {
   --color-primary: #{$color-primary};
@@ -15,14 +15,16 @@ $font-headers: "Nunito Sans", Helvetica, Arial, sans-serif;
   --color-background: #{$color-background};
 }
 
-.theme-professional {
-  
+.theme-entrepreneur {
   font-family: $font-primary;
   background-color: var(--color-background);
 
-  // Nested heading styles
   h1, h2, h3, h4, h5 {
     font-family: $font-headers;
+  }
+
+  h1 {
+    font-weight: 600;
   }
 }
 

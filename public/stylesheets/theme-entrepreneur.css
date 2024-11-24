@@ -5,12 +5,15 @@
   --color-background: #fff;
 }
 
-.theme-professional {
-  font-family: "Inter", Helvetica, Arial, sans-serif;
+.theme-entrepreneur {
+  font-family: "Funnel Display", Helvetica, Arial, sans-serif;
   background-color: var(--color-background);
 }
-.theme-professional h1, .theme-professional h2, .theme-professional h3, .theme-professional h4, .theme-professional h5 {
-  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+.theme-entrepreneur h1, .theme-entrepreneur h2, .theme-entrepreneur h3, .theme-entrepreneur h4, .theme-entrepreneur h5 {
+  font-family: "Funnel Display", Helvetica, Arial, sans-serif;
+}
+.theme-entrepreneur h1 {
+  font-weight: 600;
 }
 
 .btn-accent {
