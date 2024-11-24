@@ -15,6 +15,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const debugRouter = require('./routes/debug');
 const robotsRouter = require('./routes/robots');
+const sitemapRouter = require('./routes/sitemap');
 
 const app = express();
 const port = 3000;
@@ -24,6 +25,7 @@ app.set('views', path.join(__dirname, 'pages'));
 app.set('view engine', 'pug');
 
 app.use('/', robotsRouter);
+app.use('/', sitemapRouter);
 
 // Add profile and theme middleware before routes
 app.use(setSiteProfile);

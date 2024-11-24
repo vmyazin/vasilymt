@@ -1,12 +1,17 @@
-// scripts/generate-sitemap.js
-const fs = require('fs').promises;
-const path = require('path');
+// routes/sitemap.js
+const express = require('express');
+const router = express.Router();
 const { create } = require('xmlbuilder2');
 const dayjs = require('dayjs');
+const path = require('path');
+const fs = require('fs').promises;
 const { getSiteProfiles } = require('../app.config');
 
-// Get site profiles
-const profiles = getSiteProfiles();
+// Helper function to get environment variable, matching app.config.js
+const getEnvVar = (key, fallback) => {
+  const value = process.env[key];
+  return value === undefined ? fallback : value;
+};
 
 // Static routes configuration
 const staticRoutes = [
@@ -58,39 +63,47 @@ async function getBlogPosts() {
   }
 }
 
-async function generateSitemapForProfile(profileName, profile) {
+async function generateSitemap(siteProfile) {
+  const SITE_URL = siteProfile.project.URL;
+  const blogPosts = await getBlogPosts();
+  const allRoutes = [...staticRoutes, ...blogPosts];
+  
+  const root = create({ version: '1.0', encoding: 'UTF-8' })
+    .ele('urlset', { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' });
+
+  allRoutes.forEach(route => {
+    const url = root.ele('url');
+    url.ele('loc').txt(`${SITE_URL}${route.path}`);
+    url.ele('lastmod').txt(route.lastmod || dayjs().format('YYYY-MM-DD'));
+    url.ele('changefreq').txt(route.changefreq);
+    url.ele('priority').txt(route.priority.toString());
+  });
+
+  return root.end({ prettyPrint: true });
+}
+
+router.get('/sitemap.xml', async (req, res) => {
   try {
-    const SITE_URL = profile.project.URL;
-    const blogPosts = await getBlogPosts();
-    const allRoutes = [...staticRoutes, ...blogPosts];
+    const profiles = getSiteProfiles();
+    const activeProfile = getEnvVar('ACTIVE_PROFILE', 'professional');
     
-    const root = create({ version: '1.0', encoding: 'UTF-8' })
-      .ele('urlset', { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' });
+    // Use the same profile selection logic as setSiteProfile
+    let siteProfile;
+    if (!profiles[activeProfile]) {
+      console.warn(`Warning: Profile "${activeProfile}" not found, falling back to professional profile`);
+      siteProfile = profiles.professional;
+    } else {
+      siteProfile = profiles[activeProfile];
+    }
 
-    allRoutes.forEach(route => {
-      const url = root.ele('url');
-      url.ele('loc').txt(`${SITE_URL}${route.path}`);
-      url.ele('lastmod').txt(route.lastmod || dayjs().format('YYYY-MM-DD'));
-      url.ele('changefreq').txt(route.changefreq);
-      url.ele('priority').txt(route.priority.toString());
-    });
-
-    const sitemap = root.end({ prettyPrint: true });
+    const sitemap = await generateSitemap(siteProfile);
     
-    // Write to public directory with profile-specific name
-    const outputPath = path.join(__dirname, `../public/sitemap-${profileName}.xml`);
-    await fs.writeFile(outputPath, sitemap);
-    console.log(`Sitemap for ${profileName} profile generated successfully at: ${outputPath}`);
+    res.header('Content-Type', 'application/xml');
+    res.send(sitemap);
   } catch (error) {
-    console.error(`Error generating sitemap for ${profileName}:`, error);
+    console.error('Error generating sitemap:', error);
+    res.status(500).send('Error generating sitemap');
   }
-}
+});
 
-async function generateSitemaps() {
-  // Generate sitemaps for each profile
-  for (const [profileName, profile] of Object.entries(profiles)) {
-    await generateSitemapForProfile(profileName, profile);
-  }
-}
-
-generateSitemaps();
+module.exports = router;
