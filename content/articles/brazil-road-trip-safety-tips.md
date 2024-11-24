@@ -4,7 +4,7 @@ date: 11-22-2024
 prettyDate: November 22nd, 2024
 author: Simon Myazin
 description: A practical guide to driving safety in Brazil based on first-hand experience
-image: /images/blog/brazil-road-trip.jpg
+image: /images/blog/brazil-car-driver.jpg
 imageDesc: Brazilian countryside road
 imageForShare: /images/blog/brazil-road-trip-share.jpg
 tags: travel, safety, brazil, road trip, guide
@@ -51,9 +51,9 @@ For 1-2 night stops, I recommend staying in pousadas, which are guesthouses – 
 
 An important observation about driving times: avoid long trips after sunset plus about an hour. From my experience, watching the road becomes significantly more difficult. Roads are often unlit, and you have to rely on headlights.
 
-In the end, I'm very satisfied, full of impressions, and planning to continue next year. I don't have an exact plan yet.
+In the end, I'm very satisfied, full of impressions, and planning to continue next year.
 
 <figure>
-<img src="/images/blog/brazil-road-safety.jpg" alt="A typical Brazilian highway with safety signs">
-<figcaption>Brazilian highway safety signage</figcaption>
+<img src="/images/blog/brazil-fiscalizacao.jpg" alt="A typical Brazilian electronic speed enforcement sign">
+<figcaption>A typical Brazilian electronic speed enforcement sign</figcaption>
 </figure>
