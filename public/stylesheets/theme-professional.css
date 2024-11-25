@@ -2,14 +2,12 @@
   --color-primary: #2c3e50;
   --color-accent: #f85200;
   --color-text: #333;
+  --color-background: #ecf0f1;
 }
 
 .theme-professional {
   font-family: "Inter", Helvetica, Arial, sans-serif;
   background-color: var(--color-background);
-}
-.theme-professional h1, .theme-professional h2 {
-  font-weight: 700;
 }
 
 .btn-accent {
