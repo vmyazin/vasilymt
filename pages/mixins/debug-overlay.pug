@@ -28,15 +28,15 @@ mixin debugOverlay(site, envVars)
             pre.m-0.text-warning.small= Object.entries(envVars).map(([key, val]) => `${key}=${val}`).join('\n')
 
     .mt-3.text-muted.small
-      div Press 'D' to toggle overlay
-      div Press 'P' to switch profile (#{envVars.ACTIVE_PROFILE})
+      div Press 'Shift+D' to toggle overlay
+      div Press 'Shift+P' to switch profile (#{envVars.ACTIVE_PROFILE})
 
   script.
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'd') {  // Toggle debug overlay
+      if (e.key === 'D' && e.shiftKey) {  // Toggle debug overlay
         document.getElementById('debugOverlay').classList.toggle('invisible');
       }
-      if (e.key === 'p') {  // Toggle profile
+      if (e.key === 'P' && e.shiftKey) {  // Toggle profile
         fetch('/debug/toggle-profile', { method: 'POST' })
           .then(response => response.json())
           .then(data => {

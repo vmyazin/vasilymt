@@ -16,6 +16,7 @@ const usersRouter = require('./routes/users');
 const debugRouter = require('./routes/debug');
 const robotsRouter = require('./routes/robots');
 const sitemapRouter = require('./routes/sitemap');
+const searchRouter = require('./routes/search');
 
 const app = express();
 const port = 3000;
@@ -23,9 +24,6 @@ const port = 3000;
 // view engine setup
 app.set('views', path.join(__dirname, 'pages'));
 app.set('view engine', 'pug');
-
-app.use('/', robotsRouter);
-app.use('/', sitemapRouter);
 
 // Add profile and theme middleware before routes
 app.use(setSiteProfile);
@@ -35,11 +33,30 @@ app.use((req, res, next) => {
   next();
 });
 
+// Global envVars middleware
+app.use((req, res, next) => {
+  res.locals.envVars = {
+    ACTIVE_PROFILE: process.env.ACTIVE_PROFILE || 'entrepreneur',
+  };
+  next();
+});
+
+
 // Make site config available to all templates
 app.use((req, res, next) => {
   res.locals.siteProfiles = siteProfiles;
   next();
 });
+
+// Routes
+app.use('/', robotsRouter);
+app.use('/', sitemapRouter);
+app.use('/', searchRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+if (process.env.NODE_ENV !== 'production') {
+  app.use('/debug', debugRouter);
+}
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -56,13 +73,6 @@ app.use(
   })
 );
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Routes
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-if (process.env.NODE_ENV !== 'production') {
-  app.use('/debug', debugRouter);
-}
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

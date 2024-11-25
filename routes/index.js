@@ -2,6 +2,7 @@
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
+
 const { getSiteProfiles } = require('../app.config');
 router.blogPath = __dirname + "/../content/articles/";
 const MarkdownBlog = require("../scripts/blog-setup");
@@ -10,6 +11,14 @@ const siteInfo = blog.info;
 
 // Initialize profiles
 const siteProfiles = getSiteProfiles();
+
+// Initialize envVars middleware
+router.use((req, res, next) => {
+  res.locals.envVars = {
+    ACTIVE_PROFILE: process.env.ACTIVE_PROFILE || 'entrepreneur',
+  };
+  next();
+});
 
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
@@ -218,20 +227,6 @@ router.get("/blog/:filename", async (req, res) => {
   }
 });
 
-router.route("/api/search").get(cors(), async (req, res) => {
-  const articles = blog.posts;
-  const search = req.query.name.toLowerCase();
-
-  if (search) {
-    results = articles.filter((a) =>
-      (a.title + a.description + a.author).toLowerCase().includes(search)
-    );
-  } else {
-    results = [];
-  }
-  res.json(results);
-});
-
 router.get("/tags", async (req, res) => {
   const tags = blog.tags;
   res.render("tags", { tags, siteInfo, path: req.path, title: "Tags" });
@@ -250,5 +245,6 @@ router.get("/tags/:tag", async (req, res) => {
     title: tag,
   });
 });
+
 
 module.exports = router;
