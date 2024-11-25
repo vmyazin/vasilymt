@@ -152,6 +152,11 @@ class WebCrawler {
           const pageData = await this.crawlPage(url);
           if (pageData) {
             searchIndex.push(pageData);
+
+            if (pageData.embeddedPosts) {
+              searchIndex.push(...pageData.embeddedPosts);
+            }
+          
             successCount++;
             console.log(`✅ Indexed: ${url}`);
           }
@@ -251,71 +256,39 @@ class WebCrawler {
   async extractPageContent() {
     try {
       const content = await this.page.evaluate(() => {
-        // Helper to fetch meta content
-        const getMetaContent = (name) => {
-          const meta = document.querySelector(`meta[name="${name}"]`);
-          return meta ? meta.content : '';
-        };
+        const posts = [];
   
-        // Elements to remove
-        const removeSelectors = [
-          'nav', 'header', 'footer', '.navigation', '#navigation',
-          '.menu', '#menu', '.sidebar', '#sidebar',
-          '.footer', '#footer'
-        ];
-  
-        // Clone the body to clean up
-        const contentArea = document.body.cloneNode(true);
-        removeSelectors.forEach(selector => {
-          contentArea.querySelectorAll(selector).forEach(el => el.remove());
+        // Extract blog entries if available
+        document.querySelectorAll('.blog-post').forEach(post => {
+          posts.push({
+            title: post.querySelector('h2, h1')?.textContent.trim(),
+            description: post.querySelector('p')?.textContent.trim(),
+            tags: post.dataset.tags?.split(',') || [],
+            date: post.dataset.date || '',
+            url: post.querySelector('a')?.href,
+            type: 'article',
+          });
         });
   
-        // Extract content
-        const mainContent =
-          contentArea.querySelector('article')?.innerHTML ||
-          contentArea.querySelector('main')?.innerHTML ||
-          contentArea.innerHTML;
-  
-        // Extract type
-        const isArticle = window.location.pathname.includes('/blog/');
-  
-        // Extract title, tags, and date
-        const h1 = document.querySelector('h1')?.textContent || '';
-        const h2 = document.querySelector('h2')?.textContent || '';
-        const title = h1 || h2 || ''; // Fallback to h2 if h1 is missing
-        const tags = isArticle ? (getMetaContent('tags')?.split(',').map(tag => tag.trim()) || []) : [];
-        const date = isArticle
-          ? document.querySelector('time[datetime]')?.getAttribute('datetime') ||
-            getMetaContent('date') ||
-            getMetaContent('pubdate') ||
-            ''
-          : '';
+        // Page-level data
+        const pageTitle = document.querySelector('title')?.textContent.trim();
+        const pageDescription = document.querySelector('meta[name="description"]')?.content;
+        const pageH1 = document.querySelector('h1')?.textContent.trim();
+        const pageH2 = document.querySelector('h2')?.textContent.trim();
+        const pageUrl = window.location.href;
   
         return {
-          title,
-          description: getMetaContent('description'),
-          h1,
-          h2,
-          url: window.location.href, // Full URL
-          rawContent: mainContent,
-          type: isArticle ? 'article' : 'page',
-          tags,
-          date
+          title: pageTitle,
+          description: pageDescription,
+          h1: pageH1,
+          h2: pageH2,
+          url: pageUrl,
+          type: 'page',
+          content: document.body.innerText.trim(),
+          embeddedPosts: posts,
         };
       });
   
-      // Clean and process content
-      content.content = sanitizeHtml(content.rawContent, {
-        allowedTags: [],
-        allowedAttributes: {},
-        textFilter: text => text.trim(),
-      });
-  
-      delete content.rawContent; // Remove raw content
-      if (content.type === 'page') {
-        delete content.tags; // Remove tags for pages
-        delete content.date; // Remove date for pages
-      }
       return content;
     } catch (error) {
       console.error(`Content extraction failed: ${error.message}`);
