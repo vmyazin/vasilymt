@@ -7,23 +7,33 @@ if (result.error) {
   console.warn('Warning: .env file not found or cannot be read');
 }
 
+// Debug logger that only logs in development and only once per session
+const debugLogger = {
+  logged: new Set(),
+  log(key, message, data) {
+    if (process.env.NODE_ENV !== 'development') return;
+    
+    const logKey = `${key}-${JSON.stringify(message)}`;
+    if (this.logged.has(logKey)) return;
+    
+    this.logged.add(logKey);
+    if (data) {
+      console.log(message, data);
+    } else {
+      console.log(message);
+    }
+  }
+};
+
 // Enhanced helper to safely get environment variables with better debugging
 const getEnvVar = (key, fallback) => {
-  // Log all environment variables for debugging
-  console.log('\nEnvironment variables loaded:', 
-    Object.keys(process.env)
-      .filter(k => !k.includes('SECRET'))
-      .reduce((obj, k) => ({ ...obj, [k]: process.env[k] }), {})
-  );
-
   const value = process.env[key];
   
   if (value === undefined) {
-    console.warn(`⚠️ Environment variable ${key} not found, using fallback: ${fallback}`);
+    debugLogger.log(key, `⚠️ Environment variable ${key} not found, using fallback: ${fallback}`);
     return fallback;
   }
   
-  console.log(`✅ Environment variable ${key} loaded with value: ${value}`);
   return value;
 };
 
@@ -44,7 +54,7 @@ const sharedConfig = {
 
 // Create the profiles after environment is definitely loaded
 const createProfiles = () => {
-  console.log('\nCreating profiles with environment configuration...');
+  debugLogger.log('profiles', 'Creating profiles with environment configuration...');
   
   const professionalProfile = {
     project: {
@@ -108,7 +118,7 @@ const createProfiles = () => {
 
 // Create filtered environment variables object
 const getFilteredEnv = () => {
-  const filtered = Object.fromEntries(
+  return Object.fromEntries(
     Object.entries(process.env).filter(([key]) => 
       key === 'NODE_ENV' ||
       key.startsWith('ACTIVE_') || 
@@ -116,8 +126,6 @@ const getFilteredEnv = () => {
       key.startsWith('PROFESSIONAL_')
     )
   );
-  console.log('\nFiltered environment variables:', filtered);
-  return filtered;
 };
 
 // Create profiles only when needed
@@ -128,13 +136,14 @@ const setSiteProfile = (req, res, next) => {
   // Initialize profiles if not already done
   if (!siteProfiles) {
     siteProfiles = createProfiles();
+    // Log environment info only once when profiles are first created
+    debugLogger.log('env', '\nFiltered environment variables:', getFilteredEnv());
   }
 
   const activeProfile = getEnvVar('ACTIVE_PROFILE', 'professional');
-  console.log(`\nSetting site profile to: ${activeProfile}`);
   
   if (!siteProfiles[activeProfile]) {
-    console.warn(`Warning: Profile "${activeProfile}" not found, falling back to professional profile`);
+    debugLogger.log('profile-warning', `Warning: Profile "${activeProfile}" not found, falling back to professional profile`);
     res.locals.site = siteProfiles.professional;
   } else {
     res.locals.site = siteProfiles[activeProfile];
@@ -145,16 +154,10 @@ const setSiteProfile = (req, res, next) => {
   
   // Add filtered environment variables
   res.locals.envVars = getFilteredEnv();
-
-  // Debug log the final values
-  console.log('\nFinal configuration values:');
-  console.log('- ogImage:', res.locals.site.project.ogImage);
-  console.log('- domain:', res.locals.site.project.domain);
   
   next();
 };
 
-// Export both the middleware and the profiles getter
 module.exports = {
   setSiteProfile,
   getSiteProfiles: () => {

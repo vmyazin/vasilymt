@@ -1,0 +1,28 @@
+{
+  "verbose": true,
+  "ignore": [
+    "public/*",
+    "tmp/*",
+    "data/*",
+    ".git",
+    "node_modules/*",
+    "*.test.js",
+    "*.scss",
+    "*.sass",
+    "*.css",
+    "*.json"
+  ],
+  "watch": [
+    "routes/",
+    "services/",
+    "app.js",
+    "app.config.js",
+    "bin/www",
+    "scripts/"
+  ],
+  "ext": "js,pug,mjs",
+  "delay": "2500",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
