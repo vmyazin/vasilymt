@@ -1,0 +1,162 @@
+//- pages/search.pug
+extends layout
+
+block content
+  .container.py-5
+    .row.justify-content-center
+      .col-md-8
+        h1.mb-4 Search
+        #search-container
+          .input-group.mb-4
+            input#search-input.form-control.form-control-lg(
+              type="search" 
+              placeholder="Type to search..." 
+              aria-label="Search"
+            )
+            button#search-button.btn.btn-primary(type="button")
+              i.fas.fa-search Search
+
+          #search-feedback.small.text-muted.mb-3
+            //- Will show "Searching...", suggestions, etc.
+
+          #search-results
+            //- Results will be populated here
+
+  script(type="text/javascript").
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const searchFeedback = document.getElementById('search-feedback');
+    const searchResults = document.getElementById('search-results');
+
+    let searchTimeout;
+
+    const performSearch = async (query) => {
+      if (query.length < 2) {
+        searchResults.innerHTML = '';
+        searchFeedback.textContent = 'Please enter at least 2 characters';
+        return;
+      }
+
+      searchFeedback.textContent = 'Searching...';
+      
+      try {
+        const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        
+        if (data.suggestions && data.suggestions.length > 0) {
+          searchFeedback.innerHTML = `Did you mean: ${data.suggestions
+            .map(s => `<a href="#" onclick="searchInput.value='${s}';performSearch('${s}');return false">${s}</a>`)
+            .join(', ')}?`;
+        } else {
+          searchFeedback.textContent = `Found ${data.results.length} results`;
+        }
+
+        searchResults.innerHTML = data.results
+          .map(result => `
+            <div class="search-result mb-4 p-4 rounded-lg hover:bg-gray-50 ${result.type === 'page' ? 'border-l-4 border-blue-500' : ''}">
+              <div class="flex justify-between items-start">
+                <h3 class="h5 mb-2">
+                  <a href="${result.url}" class="text-decoration-none hover:underline">
+                    ${result.title}
+                  </a>
+                  <span class="ml-2 px-2 py-1 text-xs rounded-full ${
+                    result.type === 'page' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
+                  }">
+                    ${result.type}
+                  </span>
+                </h3>
+              </div>
+              ${result.description ? 
+                `<p class="mb-1 text-gray-600">${result.description}</p>` : 
+                ''
+              }
+              ${result.tags && result.tags.length ? 
+                `<div class="tags small">
+                  ${result.tags.map(tag => 
+                    `<span class="badge bg-gray-200 text-gray-700 me-1">${tag}</span>`
+                  ).join('')}
+                </div>` : 
+                ''
+              }
+              ${result.date ? 
+                `<small class="text-gray-500">${new Date(result.date).toLocaleDateString()}</small>` : 
+                ''
+              }
+            </div>
+          `)
+          .join('');
+
+        if (data.results.length === 0) {
+          searchResults.innerHTML = `
+            <div class="alert alert-info">
+              No results found for "${query}".
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error('Search error:', error);
+        searchFeedback.textContent = 'An error occurred while searching';
+        searchResults.innerHTML = `
+          <div class="alert alert-danger">
+            Sorry, there was an error performing the search. Please try again.
+          </div>
+        `;
+      }
+    };
+
+    // Debounced search on input
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        performSearch(e.target.value);
+      }, 300);
+    });
+
+    // Search on button click
+    searchButton.addEventListener('click', () => {
+      performSearch(searchInput.value);
+    });
+
+    // Search on Enter key
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        performSearch(searchInput.value);
+      }
+    });
+
+    // Focus search input on page load
+    window.addEventListener('load', () => {
+      searchInput.focus();
+    });
+
+  style.
+    .search-result {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: rgba(var(--bs-light-rgb), 0.5);
+      transition: background-color 0.2s;
+    }
+    .search-result:hover {
+      background-color: rgba(var(--bs-light-rgb), 0.8);
+    }
+    #search-feedback a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .badge {
+      padding: 0.5em 0.8em;
+      border-radius: 2em;
+    }
+    #search-input:focus {
+      box-shadow: none;
+      border-color: var(--bs-primary);
+    }

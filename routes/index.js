@@ -2,6 +2,8 @@
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
+const searchService = require('../services/search');
+
 const { getSiteProfiles } = require('../app.config');
 router.blogPath = __dirname + "/../content/articles/";
 const MarkdownBlog = require("../scripts/blog-setup");
@@ -218,20 +220,6 @@ router.get("/blog/:filename", async (req, res) => {
   }
 });
 
-router.route("/api/search").get(cors(), async (req, res) => {
-  const articles = blog.posts;
-  const search = req.query.name.toLowerCase();
-
-  if (search) {
-    results = articles.filter((a) =>
-      (a.title + a.description + a.author).toLowerCase().includes(search)
-    );
-  } else {
-    results = [];
-  }
-  res.json(results);
-});
-
 router.get("/tags", async (req, res) => {
   const tags = blog.tags;
   res.render("tags", { tags, siteInfo, path: req.path, title: "Tags" });
@@ -249,6 +237,60 @@ router.get("/tags/:tag", async (req, res) => {
     path: req.path,
     title: tag,
   });
+});
+
+// Search page route
+router.get('/search', (req, res) => {
+  res.render('search', {
+    title: 'Search',
+    description: 'Search across all content',
+    siteInfo,
+    path: req.path
+  });
+});
+
+// Search API endpoint
+router.get('/api/search', cors(), async (req, res) => {
+  try {
+    const { q: query } = req.query;
+    
+    if (!query || query.length < 2) {
+      return res.json({ 
+        results: [], 
+        suggestions: [],
+        error: 'Query too short'
+      });
+    }
+
+    // Ensure search index is built
+    if (!searchService.searchIndex.length) {
+      blog.posts.forEach(post => {
+        searchService.searchIndex.push({
+          id: post.slug || path.basename(post.filename, '.md'),
+          type: 'article',
+          title: post.title,
+          description: post.description,
+          tags: post.tags,
+          content: post.content,
+          url: `/blog/${post.slug || path.basename(post.filename, '.md')}`,
+          date: post.date,
+          author: post.author
+        });
+      });
+      searchService.initializeFuse();
+    }
+
+    const searchResults = searchService.search(query);
+
+    res.json(searchResults);
+
+  } catch (error) {
+    console.error('Search error:', error);
+    res.status(500).json({ 
+      error: 'Search failed',
+      message: error.message
+    });
+  }
 });
 
 module.exports = router;
