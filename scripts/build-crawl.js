@@ -1,86 +1,337 @@
+// scripts/build-crawl.js
 const puppeteer = require('puppeteer');
 const fs = require('fs-extra');
 const path = require('path');
+const { parseStringPromise } = require('xml2js');
+const sanitizeHtml = require('sanitize-html');
+const { performance } = require('perf_hooks');
+const http = require('http');
+const { spawn } = require('child_process');
 
-async function fetchDynamicUrls(baseURL) {
-  try {
-    const sitemapURL = `${baseURL}/sitemap.xml`;
-    console.log(`Fetching sitemap from ${sitemapURL}`);
-    const response = await fetch(sitemapURL);
-    const sitemap = await response.text();
-
-    // Parse sitemap for URLs (use regex for simplicity)
-    const urls = sitemap.match(/<loc>(.*?)<\/loc>/g).map(loc => loc.replace(/<\/?loc>/g, ''));
-    return urls;
-  } catch (error) {
-    console.error('Error fetching dynamic URLs:', error);
-    return [];
+class WebCrawler {
+  constructor(baseURL, isLocal = true) {
+    this.baseURL = baseURL;
+    this.isLocal = isLocal;
+    this.visitedUrls = new Set();
   }
-}
 
-async function safeGoto(page, url, retries = 3) {
-  for (let attempt = 1; attempt <= retries; attempt++) {
+  // Convert site URLs to local ones
+  normalizeUrl(url) {
+    if (this.isLocal) {
+      return url.replace(/https?:\/\/simon\.rapidsystemshub\.com/, 'http://localhost:3000');
+    }
+    return url;
+  }
+
+  async checkServer() {
+    return new Promise((resolve) => {
+      http.get(this.baseURL, () => {
+        resolve(true);
+      }).on('error', () => {
+        resolve(false);
+      });
+    });
+  }
+
+  async ensureServer() {
+    const maxRetries = 5;
+    let retries = 0;
+
+    while (retries < maxRetries) {
+      const isRunning = await this.checkServer();
+      if (isRunning) return null;
+
+      if (retries === 0) {
+        console.log('Server not running. Starting server...');
+        const server = spawn('npm', ['run', 'start'], {
+          stdio: 'inherit',
+          shell: true,
+          detached: true
+        });
+
+        // Handle server process errors
+        server.on('error', (err) => {
+          console.error('Failed to start server:', err);
+        });
+
+        return server;
+      }
+
+      console.log(`Waiting for server to start (attempt ${retries + 1}/${maxRetries})...`);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      retries++;
+    }
+
+    throw new Error('Server failed to start after multiple attempts');
+  }
+
+  async parseSitemap(xmlContent) {
     try {
-      await page.goto(url, { waitUntil: 'networkidle2' });
-      return;
+      const result = await parseStringPromise(xmlContent);
+      return result.urlset.url.map(url => url.loc[0]); // Extract all <loc> tags
     } catch (error) {
-      console.error(`Attempt ${attempt} failed for ${url}:`, error);
-      if (attempt === retries) throw error;
+      console.error('Error parsing sitemap:', error);
+      return [];
     }
   }
-}
 
-async function crawlAndIndex() {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-  const baseURL = 'http://localhost:3000'; // Replace with your site's base URL
-
-  const urlsToCrawl = await fetch(`${baseURL}/sitemap.xml`)
-  .then(res => res.text())
-  .then(data => parseSitemap(data));
+  async fetchSitemap() {
+    try {
+      const response = await fetch(`${this.baseURL}/sitemap.xml`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const xml = await response.text();
+      const sitemapUrls = await this.parseSitemap(xml);
   
-  const searchIndex = [];
-
-  for (const url of urlsToCrawl) {
-    try {
-      console.log(`Crawling ${url}...`);
-      await safeGoto(page, url);
-
-      // Extract content
-      const title = await page.title();
-      const description = await page.evaluate(() => {
-        const metaDesc = document.querySelector('meta[name="description"]');
-        return metaDesc ? metaDesc.content : '';
-      });
-      const bodyText = await page.evaluate(() => document.body.innerText);
-      const tags = await page.evaluate(() => {
-        const metaKeywords = document.querySelector('meta[name="keywords"]');
-        return metaKeywords ? metaKeywords.content.split(',').map(tag => tag.trim()) : [];
-      });
-
-      searchIndex.push({
-        url,
-        title,
-        description,
-        content: bodyText,
-        tags,
-      });
+      console.log(`Sitemap contains ${sitemapUrls.length} URLs`);
+      return sitemapUrls;
     } catch (error) {
-      console.error(`Error crawling ${url}:`, error);
+      console.error('Failed to fetch sitemap:', error);
+  
+      // Fallback: Crawl known routes
+      console.log('Using fallback routes...');
+      return [
+        '/',
+        '/about',
+        '/blog',
+        '/contact',
+        '/privacy',
+        '/terms'
+      ].map(route => `${this.baseURL}${route}`);
     }
   }
 
-  await browser.close();
+  async crawlPage(url, retries = 3) {
+    const normalizedUrl = this.normalizeUrl(url);
+    if (this.visitedUrls.has(normalizedUrl)) return null;
+    this.visitedUrls.add(normalizedUrl);
+  
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+        const response = await this.page.goto(normalizedUrl, {
+          waitUntil: 'networkidle0',
+          timeout: 30000
+        });
+  
+        if (response.status() !== 200 && response.status() !== 304) {
+          throw new Error(`HTTP ${response.status()} on ${url}`);
+        }
+  
+        const pageData = await this.extractPageContent();
+        if (pageData) {
+          pageData.url = url; // Use the exact URL from the sitemap
+          pageData.type = url.includes('/blog/') ? 'article' : 'page'; // Classify as article or page
+        }
+        return pageData;
+  
+      } catch (error) {
+        console.error(`Attempt ${attempt}/${retries} failed for ${normalizedUrl}:`, error.message);
+        if (attempt === retries) throw error;
+        await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+      }
+    }
+  }
 
-  const dataDir = path.join(__dirname, '..', 'data');
-  await fs.ensureDir(dataDir);
-  const indexPath = path.join(dataDir, 'search-index.json');
-  await fs.writeJson(indexPath, { lastUpdated: new Date().toISOString(), items: searchIndex }, { spaces: 2 });
+  async crawl() {
+    const startTime = performance.now();
+    const searchIndex = [];
+    let successCount = 0;
+    let errorCount = 0;
+    let serverProcess = null;
 
-  console.log(`✅ Crawling and indexing completed successfully. Indexed ${searchIndex.length} pages.`);
+    try {
+      serverProcess = await this.ensureServer();
+      await this.initialize();
+      const urls = await this.fetchSitemap();
+
+      console.log(`Found ${urls.length} URLs to crawl`);
+
+      for (const url of urls) {
+        try {
+          const pageData = await this.crawlPage(url);
+          if (pageData) {
+            searchIndex.push(pageData);
+            successCount++;
+            console.log(`✅ Indexed: ${url}`);
+          }
+        } catch (error) {
+          errorCount++;
+          console.error(`❌ Failed: ${url}`, error.message);
+        }
+      }
+
+      const endTime = performance.now();
+      const duration = (endTime - startTime) / 1000;
+
+      const stats = {
+        totalPages: urls.length,
+        successfulCrawls: successCount,
+        failedCrawls: errorCount,
+        crawlTimeSeconds: duration.toFixed(2),
+        averageTimePerPage: (duration / successCount).toFixed(2),
+        timestamp: new Date().toISOString()
+      };
+
+      const dataDir = path.join(__dirname, '..', 'data');
+      await fs.ensureDir(dataDir);
+      await fs.writeJson(
+        path.join(dataDir, 'search-index.json'),
+        {
+          lastUpdated: new Date().toISOString(),
+          stats,
+          items: searchIndex
+        },
+        { spaces: 2 }
+      );
+
+      console.log('\nCrawl Statistics:', stats);
+    } finally {
+      if (this.browser) await this.browser.close();
+      if (serverProcess) {
+        process.kill(-serverProcess.pid);
+      }
+    }
+
+    return searchIndex;
+  }
+
+  async initialize() {
+    this.browser = await puppeteer.launch({
+      headless: "new",
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage'
+      ]
+    });
+
+    this.page = await this.browser.newPage();
+    await this.page.setUserAgent('VasilyMT Search Crawler Bot 1.0');
+
+    // Ignore resource loading errors
+    this.page.on('console', msg => {
+      if (msg.type() === 'error' && !msg.text().includes('net::ERR_FAILED')) {
+        console.error('Page Error:', msg.text());
+      }
+    });
+
+    // Block unnecessary resources
+    await this.page.setRequestInterception(true);
+    this.page.on('request', (request) => {
+      if (this.shouldBlockResource(request)) {
+        request.abort();
+      } else {
+        request.continue();
+      }
+    });
+  }
+
+  shouldBlockResource(request) {
+    // Block non-essential resources
+    const blockedResources = [
+      'image', 'media', 'font', 'stylesheet',
+      'script',  // Block most scripts since we just need content
+      'other'
+    ];
+
+    // Allow essential scripts (e.g. for dynamic content loading)
+    const essentialScripts = [
+      '/javascript/search.js',
+      '/javascript/topnav.js'
+    ];
+
+    const resourceType = request.resourceType();
+    const url = request.url();
+
+    return blockedResources.includes(resourceType) &&
+      !essentialScripts.some(script => url.includes(script));
+  }
+
+  async extractPageContent() {
+    try {
+      const content = await this.page.evaluate(() => {
+        // Helper to fetch meta content
+        const getMetaContent = (name) => {
+          const meta = document.querySelector(`meta[name="${name}"]`);
+          return meta ? meta.content : '';
+        };
+  
+        // Elements to remove
+        const removeSelectors = [
+          'nav', 'header', 'footer', '.navigation', '#navigation',
+          '.menu', '#menu', '.sidebar', '#sidebar',
+          '.footer', '#footer'
+        ];
+  
+        // Clone the body to clean up
+        const contentArea = document.body.cloneNode(true);
+        removeSelectors.forEach(selector => {
+          contentArea.querySelectorAll(selector).forEach(el => el.remove());
+        });
+  
+        // Extract content
+        const mainContent =
+          contentArea.querySelector('article')?.innerHTML ||
+          contentArea.querySelector('main')?.innerHTML ||
+          contentArea.innerHTML;
+  
+        // Extract type
+        const isArticle = window.location.pathname.includes('/blog/');
+  
+        // Extract title, tags, and date
+        const h1 = document.querySelector('h1')?.textContent || '';
+        const h2 = document.querySelector('h2')?.textContent || '';
+        const title = h1 || h2 || ''; // Fallback to h2 if h1 is missing
+        const tags = isArticle ? (getMetaContent('tags')?.split(',').map(tag => tag.trim()) || []) : [];
+        const date = isArticle
+          ? document.querySelector('time[datetime]')?.getAttribute('datetime') ||
+            getMetaContent('date') ||
+            getMetaContent('pubdate') ||
+            ''
+          : '';
+  
+        return {
+          title,
+          description: getMetaContent('description'),
+          h1,
+          h2,
+          url: window.location.href, // Full URL
+          rawContent: mainContent,
+          type: isArticle ? 'article' : 'page',
+          tags,
+          date
+        };
+      });
+  
+      // Clean and process content
+      content.content = sanitizeHtml(content.rawContent, {
+        allowedTags: [],
+        allowedAttributes: {},
+        textFilter: text => text.trim(),
+      });
+  
+      delete content.rawContent; // Remove raw content
+      if (content.type === 'page') {
+        delete content.tags; // Remove tags for pages
+        delete content.date; // Remove date for pages
+      }
+      return content;
+    } catch (error) {
+      console.error(`Content extraction failed: ${error.message}`);
+      return null;
+    }
+  }
 }
 
-crawlAndIndex().catch(err => {
-  console.error('❌ Error during crawling and indexing:', err);
-});
+if (require.main === module) {
+  const crawler = new WebCrawler('http://localhost:3000', true);
+  crawler.crawl()
+    .then(() => process.exit(0))
+    .catch(err => {
+      console.error('Crawling failed:', err);
+      process.exit(1);
+    });
+}
+
+module.exports = WebCrawler;
