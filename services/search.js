@@ -3,11 +3,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const matter = require('gray-matter');
 const removeMd = require('remove-markdown');
-const { glob } = require('glob');
 const Fuse = require('fuse.js');
-const yaml = require('js-yaml');
-const pug = require('pug');
-const { JSDOM } = require('jsdom');
 
 // Create a data directory if it doesn't exist
 const DATA_DIR = path.join(__dirname, '..', 'data');
@@ -24,11 +20,12 @@ class SearchService {
       const { items } = await fs.readJson(this.indexPath);
       this.fuse = new Fuse(items, {
         includeScore: true,
-        threshold: 0.3,
+        threshold: 0.5,
+        tokenize: true,
         keys: [
           { name: 'title', weight: 0.4 },
-          { name: 'description', weight: 0.3 }, 
-          { name: 'content', weight: 0.2 },
+          { name: 'content', weight: 0.3 },
+          { name: 'description', weight: 0.2 }, 
           { name: 'tags', weight: 0.1 }
         ]
       });
