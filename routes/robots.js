@@ -32,6 +32,7 @@ Sitemap: ${siteProfile.project.URL}/sitemap-${activeProfile}.xml
 # Disallow common development paths
 Disallow: /admin/
 Disallow: /debug/
+Disallow: /search/
 `;
 
   res.set('Content-Type', 'text/plain');
