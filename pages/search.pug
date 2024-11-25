@@ -75,14 +75,15 @@ block content
                   </span>
                 </h3>
               </div>
+              <small class="text-muted d-block mb-2">${window.location.origin}${result.url}</small>
               ${result.description ? 
                 `<p class="mb-1 text-gray-600">${result.description}</p>` : 
                 ''
               }
               ${result.tags && result.tags.length ? 
-                `<div class="tags small">
+                `<div class="tags small mb-2">
                   ${result.tags.map(tag => 
-                    `<span class="badge bg-gray-200 text-gray-700 me-1">${tag}</span>`
+                    `<span class="badge badge-accent me-1">${tag}</span>`
                   ).join('')}
                 </div>` : 
                 ''
@@ -94,7 +95,7 @@ block content
             </div>
           `)
           .join('');
-
+          
         if (data.results.length === 0) {
           searchResults.innerHTML = `
             <div class="alert alert-info">
