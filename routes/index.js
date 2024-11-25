@@ -2,7 +2,6 @@
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
-const searchService = require('../services/search');
 
 const { getSiteProfiles } = require('../app.config');
 router.blogPath = __dirname + "/../content/articles/";
@@ -12,6 +11,14 @@ const siteInfo = blog.info;
 
 // Initialize profiles
 const siteProfiles = getSiteProfiles();
+
+// Initialize envVars middleware
+router.use((req, res, next) => {
+  res.locals.envVars = {
+    ACTIVE_PROFILE: process.env.ACTIVE_PROFILE || 'entrepreneur',
+  };
+  next();
+});
 
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
@@ -239,58 +246,5 @@ router.get("/tags/:tag", async (req, res) => {
   });
 });
 
-// Search page route
-router.get('/search', (req, res) => {
-  res.render('search', {
-    title: 'Search',
-    description: 'Search across all content',
-    siteInfo,
-    path: req.path
-  });
-});
-
-// Search API endpoint
-router.get('/api/search', cors(), async (req, res) => {
-  try {
-    const { q: query } = req.query;
-    
-    if (!query || query.length < 2) {
-      return res.json({ 
-        results: [], 
-        suggestions: [],
-        error: 'Query too short'
-      });
-    }
-
-    // Ensure search index is built
-    if (!searchService.searchIndex.length) {
-      blog.posts.forEach(post => {
-        searchService.searchIndex.push({
-          id: post.slug || path.basename(post.filename, '.md'),
-          type: 'article',
-          title: post.title,
-          description: post.description,
-          tags: post.tags,
-          content: post.content,
-          url: `/blog/${post.slug || path.basename(post.filename, '.md')}`,
-          date: post.date,
-          author: post.author
-        });
-      });
-      searchService.initializeFuse();
-    }
-
-    const searchResults = searchService.search(query);
-
-    res.json(searchResults);
-
-  } catch (error) {
-    console.error('Search error:', error);
-    res.status(500).json({ 
-      error: 'Search failed',
-      message: error.message
-    });
-  }
-});
 
 module.exports = router;

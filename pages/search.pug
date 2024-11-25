@@ -68,14 +68,12 @@ block content
                   <a href="${result.url}" class="text-decoration-none hover:underline">
                     ${result.title}
                   </a>
-                  <span class="ml-2 px-2 py-1 text-xs rounded-full ${
-                    result.type === 'page' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
-                  }">
+                  <span class="ml-2 px-2 py-1 text-xs rounded-full text-muted">
                     ${result.type}
                   </span>
                 </h3>
               </div>
-              <small class="text-muted d-block mb-2">${window.location.origin}${result.url}</small>
+              <small class="text-muted d-block mb-2">${result.url}</small>
               ${result.description ? 
                 `<p class="mb-1 text-gray-600">${result.description}</p>` : 
                 ''

@@ -28,10 +28,6 @@ class Compiler {
                 this.addToSearchIndex(parsed, f);
             }
         }));
-
-        // After processing all files, initialize search and save index
-        await this.finalizeSearchIndex();
-        return true;
     }
 
     // New method to add content to search index
@@ -39,15 +35,17 @@ class Compiler {
         if (!parsed || !parsed.meta) return;
 
         const { meta, content } = parsed;
-        
+
+        const type = file.startsWith('blog/') ? 'article' : 'page';
+
         this.searchIndex.push({
             id: path.basename(file, '.md'),
-            type: 'article',
+            type,
             title: meta.title || '',
             description: meta.description || '',
             tags: meta.tags || [],
             content: this.cleanTextForSearch(content),
-            url: `/blog/${meta.slug || path.basename(file, '.md')}`,
+            url: `/${type === 'article' ? 'blog/' : ''}${meta.slug || path.basename(file, '.md')}`,
             date: meta.date || '',
             author: meta.author || ''
         });
@@ -59,32 +57,6 @@ class Compiler {
             .toLowerCase()
             .replace(/\s+/g, ' ')
             .trim();
-    }
-
-    // New method to initialize Fuse and save index
-    async finalizeSearchIndex() {
-        // Configure Fuse options
-        const fuseOptions = {
-            includeScore: true,
-            threshold: 0.3,
-            minMatchCharLength: 2,
-            keys: [
-                { name: 'title', weight: 0.4 },
-                { name: 'description', weight: 0.3 },
-                { name: 'content', weight: 0.2 },
-                { name: 'tags', weight: 0.1 }
-            ]
-        };
-
-        this.fuse = new Fuse(this.searchIndex, fuseOptions);
-
-        // Save search index to public directory
-        const indexPath = path.join(process.cwd(), 'public', 'search-index.json');
-        await fs.ensureFile(indexPath);
-        await fs.writeJson(indexPath, {
-            lastUpdated: new Date().toISOString(),
-            items: this.searchIndex
-        }, { spaces: 2 });
     }
 
     async renderContent(file) {
@@ -99,13 +71,13 @@ class Compiler {
             const i = l.indexOf(':');
             if (i > -1) meta[l.substring(0, i)] = l.substring(i + 1).trim();
         });
-        
+
         Compiler.requiredMetaFields.forEach(requiredField => {
             if (!meta[requiredField]) {
                 throwError(`${requiredField} is not included in <meta> for ${file}`);
             }
         });
-        
+
         meta.slug = file.substr(0, file.length - 3);
         const tags = meta.tags;
         meta.tags = tags ? tags.split(',').map(t => t.trim()) : [];
@@ -130,7 +102,7 @@ class Compiler {
     async listMeta() {
         const files = await this.getFiles();
         const meta = [];
-        for(let i = 0; i < files.length; i++) {
+        for (let i = 0; i < files.length; i++) {
             const parsed = await this.parseFile(files[i]);
             if (parsed && parsed.meta) {
                 meta.push(parsed.meta);
@@ -182,13 +154,13 @@ class Compiler {
     // Helper method for search suggestions
     getSuggestions(query, results) {
         if (results.length === 0) return [];
-        
+
         return results
             .slice(0, 3)
             .map(result => result.item.title.toLowerCase().split(' '))
             .flat()
-            .filter((word, index, self) => 
-                word.length > 2 && 
+            .filter((word, index, self) =>
+                word.length > 2 &&
                 self.indexOf(word) === index
             );
     }
