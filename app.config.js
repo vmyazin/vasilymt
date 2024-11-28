@@ -79,6 +79,10 @@ const createProfiles = () => {
     social: {
       linkedin: "https://www.linkedin.com/in/vmyazin/",
       telegram: "https://t.me/vasilymz",
+    },
+    navigation: {
+      ...sharedConfig.navigation,
+      showBlog: false
     }
   };
 
@@ -107,7 +111,10 @@ const createProfiles = () => {
     social: {
       instagram: "https://instagram.com/vasily",
       twitter: "https://twitter.com/rapidsystemshub",
-    }
+    },
+    navigation: {
+      ...sharedConfig.navigation,
+    },
   };
 
   return {

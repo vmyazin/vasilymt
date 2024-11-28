@@ -17,6 +17,10 @@ router.use((req, res, next) => {
   res.locals.envVars = {
     ACTIVE_PROFILE: process.env.ACTIVE_PROFILE || 'entrepreneur',
   };
+
+  // Initialize site profile based on ACTIVE_PROFILE
+  res.locals.site = siteProfiles[res.locals.envVars.ACTIVE_PROFILE];
+
   next();
 });
 
@@ -130,23 +134,11 @@ router.get("/terms", (req, res) => {
   res.render("terms", { siteInfo, path: req.path, title: "Terms of Service" });
 });
 
-// Modified blog middleware to check profile
 const checkBlogAccess = (req, res, next) => {
-  // Check if site profile is available
-  if (!res.locals.site?.project?.theme) {
-    console.error('Site profile not properly set');
-    return res.status(500).render('error', { 
-      message: 'Site configuration error',
-      siteInfo,
-      path: req.path 
-    });
+  // Check if site profile is available and showBlog is false
+  if (!res.locals.site?.navigation?.showBlog) {
+    return res.redirect('/');
   }
-
-  // Example of how to use siteProfiles for specific checks if needed
-  const isEntrepreneur = res.locals.site === siteProfiles.entrepreneur;
-  console.log('Blog access check - Is entrepreneur profile:', isEntrepreneur);
-
-  // For now, allow access to all profiles
   next();
 };
 

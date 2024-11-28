@@ -15,12 +15,11 @@ class WebCrawler {
     this.visitedUrls = new Set();
   }
 
-  // Convert site URLs to local ones
+  // Normalize URLs to local ones if running locally
   normalizeUrl(url) {
-    if (this.isLocal) {
-      return url.replace(/https?:\/\/simon\.rapidsystemshub\.com/, 'http://localhost:3000');
-    }
-    return url;
+    return this.isLocal
+      ? url.replace(/https?:\/\/simon\.rapidsystemshub\.com/, 'http://localhost:3000')
+      : url;
   }
 
   async checkServer() {
@@ -106,31 +105,22 @@ class WebCrawler {
     const normalizedUrl = this.normalizeUrl(url);
     if (this.visitedUrls.has(normalizedUrl)) return null;
     this.visitedUrls.add(normalizedUrl);
-  
-    for (let attempt = 1; attempt <= retries; attempt++) {
-      try {
-        const response = await this.page.goto(normalizedUrl, {
-          waitUntil: 'networkidle0',
-          timeout: 30000
-        });
-  
-        if (response.status() !== 200 && response.status() !== 304) {
-          throw new Error(`HTTP ${response.status()} on ${url}`);
-        }
-  
-        const pageData = await this.extractPageContent();
-        if (pageData) {
-          pageData.url = url; // Use the exact URL from the sitemap
-          pageData.type = url.includes('/blog/') ? 'article' : 'page'; // Classify as article or page
-        }
-        return pageData;
-  
-      } catch (error) {
-        console.error(`Attempt ${attempt}/${retries} failed for ${normalizedUrl}:`, error.message);
-        if (attempt === retries) throw error;
-        await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
-      }
+
+    const response = await this.page.goto(normalizedUrl, {
+      waitUntil: 'networkidle0',
+      timeout: 30000
+    });
+
+    if (response.status() !== 200 && response.status() !== 304) {
+      throw new Error(`HTTP ${response.status()} on ${url}`);
     }
+
+    const pageData = await this.extractPageContent();
+    if (pageData) {
+      pageData.url = url; // Use the exact URL from the sitemap
+      pageData.type = url.includes('/blog/') ? 'article' : 'page'; // Classify as article or page
+    }
+    return pageData;
   }
 
   async crawl() {

@@ -8,7 +8,7 @@ block content
             .col
               p.heading Content
               ul
-                if envVars.ACTIVE_PROFILE !== 'professional'
+                if site.navigation.showBlog
                   li
                     a(href="/blog") Blog
                   li
