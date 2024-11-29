@@ -11,6 +11,11 @@ const { setSiteProfile, siteProfiles } = require('./app.config');
 // Load environment variables first
 dotenv.config();
 
+// Env logging
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('Debugger should be visible:', process.env.NODE_ENV === 'development');
+console.log('ACTIVE_PROFILE:', process.env.ACTIVE_PROFILE);
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const debugRouter = require('./routes/debug');
