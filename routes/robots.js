@@ -27,7 +27,7 @@ User-agent: *
 Allow: /
 
 # ${activeProfile} profile sitemap
-Sitemap: ${siteProfile.project.URL}/sitemap-${activeProfile}.xml
+Sitemap: ${siteProfile.project.URL}/sitemap.xml
 
 # Disallow common development paths
 Disallow: /admin/
