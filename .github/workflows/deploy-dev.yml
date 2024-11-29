@@ -1,5 +1,5 @@
 # .github/workflows/deploy-prod.yml
-name: Deploy to Production
+name: Deploy to Development
 
 on:
  push:
