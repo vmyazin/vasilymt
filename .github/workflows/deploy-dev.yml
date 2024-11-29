@@ -1,0 +1,26 @@
+# .github/workflows/deploy-prod.yml
+name: Deploy to Production
+
+on:
+ push:
+   branches: [ dev ]
+ workflow_dispatch:
+
+jobs:
+ deploy:
+   runs-on: ubuntu-latest
+   steps:
+   - name: Deploy to Production Sites
+     uses: appleboy/ssh-action@master
+     with:
+       host: ${{ secrets.SSH_HOST }}
+       username: ${{ secrets.SSH_USER }}
+       key: ${{ secrets.SSH_KEY }}
+       debug: true
+       script: |
+         # Deploy to dev.vasilym.com
+         cd /var/www/dev.vasilym.com
+         git pull origin dev
+         npm install
+         mkdir -p tmp
+         touch tmp/restart.txt
