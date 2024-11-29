@@ -1,4 +1,4 @@
-# .github/workflows/deploy-prod.yml
+# .github/workflows/deploy-dev.yml
 name: Deploy to Development
 
 on:
@@ -10,7 +10,7 @@ jobs:
  deploy:
    runs-on: ubuntu-latest
    steps:
-   - name: Deploy to Production Sites
+   - name: Deploy to Development Site
      uses: appleboy/ssh-action@master
      with:
        host: ${{ secrets.SSH_HOST }}
