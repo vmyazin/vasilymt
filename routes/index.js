@@ -59,7 +59,17 @@ const getContent = (profile) => {
 
 router.get("/", (req, res) => {
   const articles = blog.posts;
-  res.render("home", { articles, siteInfo, path: req.path });
+  
+  // Get content based on active profile
+  const profile = process.env.ACTIVE_PROFILE || 'professional';
+  const content = require('../content/db.json').pages.home[profile];
+    
+  res.render("home", { 
+    articles, 
+    siteInfo, 
+    path: req.path,
+    content // Pass content to the template
+  });
 });
 
 router.get("/intro", (req, res) => {

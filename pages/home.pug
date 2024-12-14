@@ -13,8 +13,8 @@ block content
             p.image-square-crop.rounded.d-block.d-md-none
               img(src=site.project.homepageImage, alt=site.project.author)
 
-            p My name is #{site.project.author}. I work on digital products, apply UX design, develop language learning techniques, and record podcasts.
-            p Here I invite like-minded people to get coaching, collaborate, explore work opportunities, and friendship.
+            each paragraph in content.intro.text
+              p= paragraph
             .subtext
               p.mb-4
                 img.align-text-bottom(src="/images/pin.svg")

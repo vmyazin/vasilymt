@@ -171,6 +171,47 @@
           }
         }
       }
+    },
+    "home": {
+      "professional": {
+        "intro": {
+          "text": [
+            "My name is Vasily Myazin. I work on digital products, apply UX design, develop language learning techniques, and record podcasts.",
+            "Here I invite like-minded people to get coaching, collaborate, explore work opportunities, and friendship."
+          ],
+          "location": "South Florida"
+        },
+        "cta": {
+          "buttonText": "Get In Touch With Me",
+          "emailSubject": "Inquiry from the website"
+        },
+        "book": {
+          "title": "My Book On Learning Languages",
+          "description": "Get started with learning language using the right mindset and techniques. I'll give you a brief introduction.",
+          "image": {
+            "src": "/images/kindle-lang-book.png",
+            "alt": "Language Learner's StarterGuide"
+          },
+          "cta": {
+            "buttonText": "Buy on Amazon",
+            "buttonLink": "https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC"
+          }
+        }
+      },
+      "entrepreneur": {
+        "intro": {
+          "text": [
+            "My name is Simon. I help entrepreneurs and businesses implement digital marketing strategies and leverage AI for growth.",
+            "I've worked with a range of clients, helping them break through business and productivity roadblocks, and establish powerful online presences.",
+            "All while traveling to 40+ countries."
+          ],
+          "location": "Digital Nomad"
+        },
+        "cta": {
+          "buttonText": "Let's Connect",
+          "emailSubject": "Business Inquiry"
+        }
+      }
     }
   }
 }
