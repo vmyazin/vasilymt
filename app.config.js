@@ -93,7 +93,7 @@ const createProfiles = () => {
       siteName: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
       author: getEnvVar('ENTREPRENEUR_NAME', 'Simon Myazin'),
       alias: "simon",
-      headline: "Learn to Hack Life: Knowledge Work Meets Zen and World Travel",
+      headline: "Maximize Life's ROI: Knowledge Work Meets Zen and World Travel",
       description: "Creator, Designer, Traveler, Mentor. Get Inspired and Become Productive with me!",
       email: "simon@rapidsystemshub.com",
       URL: getEnvVar('ENTREPRENEUR_URL', 'https://simon.vasilym.com'),
