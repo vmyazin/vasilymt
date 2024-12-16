@@ -21,7 +21,7 @@ block content
                 |&nbsp;
                 | Based in #{site.project.location}
             .d-grid.gap-2.d-md-block
-              a.btn.btn-accent.btn-lg.button(href=`mailto:${site.project.email}?subject=Inquiry from the website`) Get In Touch With Me
+              a.btn.btn-accent.btn-lg.button(href=`mailto:${site.project.email}?subject=${content.cta.emailSubject}`)= content.cta.buttonText
 
       .col.col-md-6
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
