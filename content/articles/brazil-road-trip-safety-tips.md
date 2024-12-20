@@ -1,7 +1,7 @@
 ---
 title: Safety in Brazil: A Road Trip Experience
-date: 11-22-2024
-prettyDate: November 22nd, 2024
+date: 12-20-2024
+prettyDate: December 20th, 2024
 author: Simon Myazin
 description: A practical guide to driving safety in Brazil based on first-hand experience
 image: /images/blog/brazil-car-driver.jpg
@@ -10,7 +10,11 @@ imageForShare: /images/blog/brazil-road-trip-share.jpg
 tags: travel, safety, brazil, road trip, guide
 ---
 
-Let me start by saying this: if you're picturing a white-knuckle drive through the settings of 'City of God' or navigating the crowded streets from 'Elite Squad', you can relax – the reality of driving in Brazil is far less dramatic.
+In 2024, I set about an ambitious journey across Brazil, equipped with a newly purchased sedan crossover and a spirit of adventure. It just made sense to buy a car instead of renting one. Not quite a home on wheels, but close.
+
+My route took me through six diverse states, covering thousands of kilometers of Brazilian roads – from coastal highways to inland routes, from bustling cities to remote countryside paths. This extensive journey gave me a comprehensive understanding of what it really means to drive in Brazil, and I'm here to share these insights with you.
+
+Let me start by saying this: if you're picturing a white-knuckle drive through the settings of '[City of God](https://www.imdb.com/title/tt0317248/)' or navigating the crowded streets from '[Elite Squad](https://www.imdb.com/title/tt0861739/)', you can relax – the reality of driving in Brazil is far less dramatic.
 
 ### What You Shouldn't Worry About
 
