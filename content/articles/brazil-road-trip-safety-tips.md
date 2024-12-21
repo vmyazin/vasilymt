@@ -6,7 +6,6 @@ author: Simon Myazin
 description: A practical guide to driving safety in Brazil based on first-hand experience
 image: /images/blog/brazil-car-driver.jpg
 imageDesc: Brazilian countryside road
-imageForShare: /images/blog/brazil-road-trip-share.jpg
 tags: travel, safety, brazil, road trip, guide
 ---
 
