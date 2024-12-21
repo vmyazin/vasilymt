@@ -15,7 +15,7 @@ My route took me through six diverse states, covering thousands of kilometers of
 
 Let me start by saying this: if you're picturing a white-knuckle drive through the settings of '[City of God](https://www.imdb.com/title/tt0317248/)' or navigating the crowded streets from '[Elite Squad](https://www.imdb.com/title/tt0861739/)', you can relax – the reality of driving in Brazil is far less dramatic.
 
-### What You Shouldn't Worry About
+### Common Safety Concerns: What You Shouldn't Worry About
 
 There are several things that shouldn't concern you at all:
 - Police checkpoints
@@ -32,9 +32,9 @@ Here's what you should be cautious about and pay attention to:
 - Driving through ultra-poor areas like "favelas" (especially relevant around Rio de Janeiro)
 - Motorcyclists
 
-### Solutions and Tips
+### Practical Solutions for Safe Driving in Brazil
 
-Everything has a solution. Speed cameras are marked with large "Fiscalizaçaão electronico" signs about a kilometer in advance. At this point, you need to reduce your speed to the posted limit. There are apps that beep and announce approaching cameras in advance, such as RadarBot and Waze.
+Everything has a solution. Speed cameras are marked with large "Fiscalizaçaão electronico" signs about a kilometer in advance. At this point, you need to reduce your speed to the posted limit. There are apps that beep and announce approaching cameras in advance, such as [RadarBot](https://www.radarbot.com) and [Waze](https://www.waze.com).
 
 These apps also warn about speed bumps ("lombada"), but not always, so you need to watch carefully, especially at night. Hitting your wheels and chassis against an asphalt bump at 80 km/h is very unpleasant and gradually damages the car.
 
@@ -47,15 +47,15 @@ Motorcyclists ride very boldly; it feels like they're confident that drivers wil
 <figcaption>Pedra da Boca (Rock of the Mouth) formation in Minas Gerais, via a scenic mountain drive</figcaption>
 </figure>
 
-### Navigation Tips
+### Brazil Road Trip Navigation: Maps and Route Planning
 
 Google Maps is recommended for navigation. While other apps can be used, a warning for Waze lovers: it tends to actively reduce route length and travel time. This can lead to unexpected turns into disadvantaged areas or roads in poor condition. While this is acceptable for experts who know when to trust Waze and when not to, it can lead to unpleasant surprises for beginners.
 
-### Accommodation
+### Where to Stay: Pousadas and Accommodation Tips
 
 For 1-2 night stops, I recommend staying in pousadas, which are guesthouses – hostels with a special Brazilian twist. They typically feature a large yard, veranda, covered outdoor restaurant, sometimes a pool, and a shared kitchen. Almost always includes a Brazilian breakfast buffet. Prices start from $25 per night.
 
-### Important Time Considerations
+### Best Times for Driving in Brazil: Safety After Dark
 
 An important observation about driving times: avoid long trips after sunset plus about an hour. From my experience, watching the road becomes significantly more difficult. Roads are often unlit, and you have to rely on headlights.
 
