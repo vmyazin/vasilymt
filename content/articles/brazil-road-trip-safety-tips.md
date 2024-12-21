@@ -42,6 +42,11 @@ I've had to brake for cows on country roads. While I haven't seen deer or capyba
 
 Motorcyclists ride very boldly; it feels like they're confident that drivers will try to see and protect them.
 
+<figure>
+<img src="/images/blog/brazil-pedra.jpg" alt="The rocky formation of Pedra da Boca in Minas Gerais">
+<figcaption>Pedra da Boca (Rock of the Mouth) formation in Minas Gerais, via a scenic mountain drive</figcaption>
+</figure>
+
 ### Navigation Tips
 
 Google Maps is recommended for navigation. While other apps can be used, a warning for Waze lovers: it tends to actively reduce route length and travel time. This can lead to unexpected turns into disadvantaged areas or roads in poor condition. While this is acceptable for experts who know when to trust Waze and when not to, it can lead to unpleasant surprises for beginners.
@@ -55,6 +60,11 @@ For 1-2 night stops, I recommend staying in pousadas, which are guesthouses – 
 An important observation about driving times: avoid long trips after sunset plus about an hour. From my experience, watching the road becomes significantly more difficult. Roads are often unlit, and you have to rely on headlights.
 
 In the end, I'm very satisfied, full of impressions, and planning to continue next year.
+
+<figure>
+<img src="/images/blog/brazil-jesus.jpg" alt="Jesus statue near Cachoeira do Recanto in Espirito Santo">
+<figcaption>A Jesus statue near Cachoeira do Recanto, Espirito Santo</figcaption>
+</figure>
 
 <figure>
 <img src="/images/blog/brazil-fiscalizacao.jpg" alt="A typical Brazilian electronic speed enforcement sign">
