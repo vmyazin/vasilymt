@@ -9,9 +9,14 @@ class MarkdownBlog {
     this.info = info;
     this.path = path;
     this.tagsHash_ = {};
-    this.compiler_ =  new Compiler(path);
+    this.compiler_ = new Compiler(path);
     this.compiler_.compileAll();
-    this.getPosts();
+  }
+
+  async initialize() {
+    await this.getPosts();
+    await this.getTagsHash();
+    return this;
   }
 
   init() {

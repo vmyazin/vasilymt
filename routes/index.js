@@ -24,7 +24,26 @@ router.use((req, res, next) => {
   next();
 });
 
-blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
+// Initialize blog before setting up routes
+let blogInitialized = false;
+const initializeBlog = async () => {
+  if (!blogInitialized) {
+    await blog.initialize();
+    await blog.sortBy({ property: "date", asc: false });
+    blogInitialized = true;
+  }
+};
+
+// Middleware to ensure blog is initialized
+router.use(async (req, res, next) => {
+  try {
+    await initializeBlog();
+    next();
+  } catch (err) {
+    console.error('Error initializing blog:', err);
+    next(err);
+  }
+});
 
 let dateObj = new Date();
 let current = {};
@@ -57,7 +76,7 @@ const getContent = (profile) => {
   }
 };
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   const articles = blog.posts;
   
   // Get content based on active profile
@@ -68,7 +87,7 @@ router.get("/", (req, res) => {
     articles, 
     siteInfo, 
     path: req.path,
-    content // Pass content to the template
+    content
   });
 });
 
