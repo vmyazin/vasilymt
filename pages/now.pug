@@ -7,11 +7,11 @@ block content
   .container-fluid.page-header
     .row
       .col
-        .text-center.mt-4.mb-4
+        .text-center.mt-4
           h2= content.meta.title
           p.meta.compact Last updated: #{lastUpdated}
 
-  .container-xxl.py-5
+  .container-xxl.pt-3.pb-5
     .row.justify-content-center
       .col-12.col-md-8
 
@@ -19,38 +19,38 @@ block content
         .now-section.mb-5
           h2.h3.mb-4 🎯 #{content.sections.projects.title}
           ul.list-unstyled
-          each item in content.sections.projects.items
-            li.mb-3
-              strong #{item.title} 
-              | - #{item.description}
+            each item in content.sections.projects.items
+              li.mb-3
+                strong #{item.title} 
+                | - !{item.description}
 
         //- Learning Section
         .now-section.mb-5
           h2.h3.mb-4 📚 #{content.sections.learning.title}
           ul.list-unstyled
-          each item in content.sections.learning.items
-            li.mb-3
-              strong #{item.title} 
-              | - #{item.description}
+            each item in content.sections.learning.items
+              li.mb-3
+                strong #{item.title} 
+                | - !{item.description}
 
         //- Personal Development Section
         .now-section.mb-5
           h2.h3.mb-4 🌱 #{content.sections.development.title}
           ul.list-unstyled
-          each item in content.sections.development.items
-            li.mb-3
-              strong #{item.title} 
-              | - #{item.description}
+            each item in content.sections.development.items
+              li.mb-3
+                strong #{item.title} 
+                | - !{item.description}
 
         //- Location Section
         .now-section.mb-5
           h2.h3.mb-4 📍 #{content.sections.location.title}
-          p #{content.sections.location.description}
+          p !{content.sections.location.description}
 
         //- What's Next Section
         .now-section.mb-5
           h2.h3.mb-4 💭 #{content.sections.next.title}
-          p #{content.sections.next.description}
+          p !{content.sections.next.description}
 
         hr.my-5
 
