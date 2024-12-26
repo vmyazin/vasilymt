@@ -48,7 +48,8 @@ const sharedConfig = {
   },
   navigation: {
     showAbout: true,
-    showBlog: true
+    showBlog: true,
+    showNow: true
   }
 };
 
@@ -82,7 +83,8 @@ const createProfiles = () => {
     },
     navigation: {
       ...sharedConfig.navigation,
-      showBlog: false
+      showBlog: false,
+      showNow: false
     }
   };
 

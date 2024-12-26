@@ -15,6 +15,9 @@ nav.navbar.navbar-expand.header-with-gradient
       if site.navigation.showBlog
         li.nav-item.ms-0.ms-sm-5
           a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
+      if site.navigation.showNow
+        li.nav-item.ms-5
+          a.nav-link(href='/now/' class=(path.includes('now') ? 'active' : '')) Now
       li.nav-item.ms-5
         a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
 
