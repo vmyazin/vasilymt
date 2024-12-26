@@ -1,3 +1,14 @@
+@keyframes breathe {
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(2);
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+}
 :root {
   --color-primary: #2c3e50;
   --color-accent: #3498db;
@@ -58,6 +69,8 @@
   right: -360px;
   top: 50%;
   transform: translateY(-50%);
+  animation: breathe 4s ease-in-out infinite;
+  transform-origin: center right;
   z-index: 1;
 }
 .header-with-gradient > * {
