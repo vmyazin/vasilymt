@@ -111,7 +111,7 @@ const createProfiles = () => {
       googleAnalytics: getEnvVar('ENTREPRENEUR_GAID')
     },
     social: {
-      instagram: "https://instagram.com/vasily",
+      instagram: "https://instagram.com/rapidlyproductive",
       twitter: "https://twitter.com/rapidsystemshub",
     },
     navigation: {
