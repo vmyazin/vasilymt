@@ -53,3 +53,36 @@
 @mixin box-shadow() {
   box-shadow: 0px 18px 15px rgba(0, 0, 0, 0.5);
 }
+
+@mixin circular-gradient($color, $size, $position) {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      $color 0%,
+      rgba($color, 0.3) 45%,
+      rgba($color, 0) 70%
+    );
+    filter: blur(40px);
+    @if $position == 'right' {
+      right: -#{$size * 0.3};
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    // Add more positions as needed
+    z-index: 1;
+  }
+  
+  // Ensure content stays above the gradient
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}

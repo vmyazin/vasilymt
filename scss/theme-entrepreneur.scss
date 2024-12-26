@@ -1,5 +1,7 @@
 // scss/theme-entrepreneur.scss
 
+@import 'mixins';
+
 // Theme variables
 $color-primary: #2c3e50;
 $color-accent: #3498db;
@@ -35,4 +37,33 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
   &:hover {
     background-color: var(--color-accent);
   }
+}
+
+.navbar {
+  background-color: #bed1e1;
+
+  .nav-link {
+    color: #2b2707;
+
+    &.active {
+      color: #2b2707;
+      font-weight: 600;
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #2b2707;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.header-with-gradient {
+  @include circular-gradient(
+    rgba(255, 235, 156, 0.8), // faint yellow
+    1200px,  // size of the circle
+    'right' // position
+  );
 }

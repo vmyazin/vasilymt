@@ -23,3 +23,44 @@
 .btn-accent:hover {
   background-color: var(--color-accent);
 }
+
+.navbar {
+  background-color: #bed1e1;
+}
+.navbar .nav-link {
+  color: #2b2707;
+}
+.navbar .nav-link.active {
+  color: #2b2707;
+  font-weight: 600;
+}
+.navbar .nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #2b2707;
+  margin-top: 2px;
+}
+
+.header-with-gradient {
+  position: relative;
+  overflow: hidden;
+}
+.header-with-gradient::before {
+  content: "";
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 235, 156, 0.8) 0%, rgba(255, 235, 156, 0.3) 45%, rgba(255, 235, 156, 0) 70%);
+  filter: blur(40px);
+  right: -360px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.header-with-gradient > * {
+  position: relative;
+  z-index: 2;
+}
