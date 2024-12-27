@@ -8,7 +8,7 @@
   100% {
     transform: translateY(-50%) scale(1);
   }
-}
+} 
 :root {
   --color-primary: #2c3e50;
   --color-accent: #3498db;
