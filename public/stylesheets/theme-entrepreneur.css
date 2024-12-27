@@ -20,7 +20,11 @@
   font-family: "Funnel Display", Helvetica, Arial, sans-serif;
   background-color: var(--color-background);
 }
-.theme-entrepreneur h1, .theme-entrepreneur h2, .theme-entrepreneur h3, .theme-entrepreneur h4, .theme-entrepreneur h5 {
+.theme-entrepreneur h1,
+.theme-entrepreneur h2,
+.theme-entrepreneur h3,
+.theme-entrepreneur h4,
+.theme-entrepreneur h5 {
   font-family: "Funnel Display", Helvetica, Arial, sans-serif;
 }
 .theme-entrepreneur h1 {
@@ -140,28 +144,35 @@
 .footer-alt .footer-links a:hover {
   color: white;
 }
-.footer-alt .footer-bottom {
+.footer-alt .copyright {
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer-alt .fun-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer-alt .fun-link:hover {
+  color: #3498db;
+}
+.footer-alt .back-to-top:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 2rem;
   font-size: 0.9rem;
 }
 @media (max-width: 768px) {
-  .footer-alt .footer-bottom {
+  .footer-bottom {
     padding-top: 1.5rem;
     text-align: center;
   }
 }
-.footer-alt .footer-bottom a {
+.footer-bottom a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.footer-alt .footer-bottom a:hover {
+.footer-bottom a:hover {
   color: white;
-}
-.footer-alt .copyright {
-  color: rgba(255, 255, 255, 0.8);
-}
-.footer-alt .back-to-top:hover {
-  text-decoration: underline;
 }

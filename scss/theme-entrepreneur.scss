@@ -7,8 +7,14 @@ $color-primary: #2c3e50;
 $color-accent: #3498db;
 $color-text: #333;
 $color-background: #fff;
-$font-primary: "Funnel Display", Helvetica, Arial, sans-serif;
-$font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
+$font-primary: "Funnel Display",
+Helvetica,
+Arial,
+sans-serif;
+$font-headers: "Funnel Display",
+Helvetica,
+Arial,
+sans-serif;
 
 :root {
   --color-primary: #{$color-primary};
@@ -21,7 +27,11 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
   font-family: $font-primary;
   background-color: var(--color-background);
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: $font-headers;
   }
 
@@ -33,7 +43,7 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
 .btn-accent {
   background-color: var(--color-accent);
   color: white;
-  
+
   &:hover {
     background-color: var(--color-accent);
   }
@@ -48,6 +58,7 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
     &.active {
       color: #2b2707;
       font-weight: 600;
+
       &::after {
         content: '';
         display: block;
@@ -61,9 +72,8 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
 }
 
 .header-with-gradient {
-  @include circular-gradient(
-    rgba(255, 235, 156, 0.8), // faint yellow
-    1200px,  // size of the circle
+  @include circular-gradient(rgba(255, 235, 156, 0.8), // faint yellow
+    1200px, // size of the circle
     'right' // position
   );
 }
@@ -72,11 +82,11 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
   background-color: $color-accent;
   color: white;
   padding: 4rem 0 2rem;
-  
+
   @media (max-width: 768px) {
     padding: 3rem 0 1.5rem;
   }
-  
+
   .footer-logo {
     max-width: 200px;
     height: auto;
@@ -131,34 +141,41 @@ $font-headers: "Funnel Display", Helvetica, Arial, sans-serif;
     }
   }
 
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 2rem;
-    font-size: 0.9rem;
-
-    @media (max-width: 768px) {
-      padding-top: 1.5rem;
-      text-align: center;
-    }
-
-    a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: white;
-      }
-    }
-  }
-
   .copyright {
     color: rgba(255, 255, 255, 0.8);
+  }
+
+  .fun-link {
+    color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      color: $color-accent;
+    }
   }
 
   .back-to-top {
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+
+  @media (max-width: 768px) {
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: white;
     }
   }
 }
