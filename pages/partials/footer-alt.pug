@@ -3,12 +3,12 @@ block content
   footer.footer.footer-alt
     .container-xxl.flex-wrap
       .row.mb-5
-        .col-md-3
+        .col-md-3.text-center.text-md-start
           a(href="/")
             img.footer-logo(src="/images/simon-logo-3d-out3.svg", alt=site.project.siteName)
         .col-md-9
-          .row
-            .col-md-4
+          .row.row-cols-2.row-cols-md-3
+            .col.mb-4.mb-md-0
               h3.footer-heading Content
               ul.footer-links
                 if site.navigation.showBlog
@@ -20,7 +20,7 @@ block content
                   li
                     a(href="/films") Movies
 
-            .col-md-4
+            .col.mb-4.mb-md-0
               h3.footer-heading Find Out
               ul.footer-links
                 li
@@ -35,20 +35,19 @@ block content
                   li
                     a(href=site.social.twitter) X/Twitter
 
-            .col-md-4
-              h3.footer-heading Legal
+            .col-12.col-md-4
+              h3.footer-heading.mt-2.mt-md-0 Legal
               ul.footer-links
                 li
                   a(href="/privacy") Privacy Policy
                 li
                   a(href="/terms") Terms Of Service
 
-
       .footer-bottom.mt-4
-        .row
-          .col-md-4
+        .row.text-center.text-md-start
+          .col-md-4.mb-3.mb-md-0
             span.copyright Copyright &copy; #{siteInfo.currentYear} #{site.project.siteName}
-          .col-md-4.text-md-center
+          .col-md-4.mb-3.mb-md-0.text-md-center
             | .
           .col-md-4.text-md-end
             a.back-to-top(href="#") Back to top
