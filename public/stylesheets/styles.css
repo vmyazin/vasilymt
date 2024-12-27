@@ -1577,3 +1577,108 @@ blockquote p {
   object-fit: cover;
   object-position: center;
 }
+
+/* Newspaper-style Blog Layout */
+.newspaper-header {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 3rem;
+}
+.newspaper-header .serif-font {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.newspaper-header .lead {
+  font-style: italic;
+  color: #999;
+}
+
+.featured-article .featured-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 0;
+}
+.featured-article .featured-content {
+  padding: 2rem;
+  background: #eee;
+}
+@media (max-width: 991.98px) {
+  .featured-article .featured-content {
+    padding: 2rem 0;
+  }
+}
+.featured-article .featured-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.featured-article .featured-title a {
+  color: #21252A;
+  text-decoration: none;
+}
+.featured-article .featured-title a:hover {
+  color: #f85200;
+}
+.featured-article .featured-cta {
+  margin-top: 1.5rem;
+}
+.featured-article .featured-cta .btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+}
+.featured-article .featured-cta .btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9);
+}
+.featured-article .featured-cta .btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+}
+
+.article-grid {
+  position: relative;
+  padding-top: 3rem;
+}
+
+.article-card {
+  margin-bottom: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.article-card .article-image-link {
+  display: block;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.article-card .article-image-link:hover .article-img {
+  transform: scale(1.05);
+}
+.article-card .article-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.article-card .article-content {
+  flex: 1;
+  padding: 0;
+}
+.article-card .article-title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.article-card .article-title a {
+  color: #21252A;
+  text-decoration: none;
+}
+.article-card .article-title a:hover {
+  color: #f85200;
+}
+.article-card .text-muted {
+  font-style: italic;
+}

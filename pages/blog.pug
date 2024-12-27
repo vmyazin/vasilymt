@@ -3,41 +3,61 @@ extends layout
 block content
   include partials/header
   
-  .container-fluid.page-header
+  .container-fluid.page-header.newspaper-header.max-body-width
     .row
       .col
         .text-center.mt-4.mb-4
-          h2 Blog
-          p.meta.mb-0 #{site.project.author}’s thoughts in written form are collected here.
+          h1.display-3.serif-font Blog
+          p.meta.mb-0.lead #{site.project.author}'s thoughts in written form are collected here.
 
-  .container-fluid.max-body-width
+  .container-fluid.max-body-width.mb-5
     .row
-      //- include partials/_featured-posts.pug
-      
+      .col-12
+        if articles && articles.length > 0
+          - const featuredArticle = articles[0]
+          .featured-article
+            .row
+              .col-md-8
+                if featuredArticle.image
+                  img.img-fluid.featured-img(src=featuredArticle.image, alt=featuredArticle.description)
+              .col-md-4.d-flex.flex-column.justify-content-center
+                .featured-content
+                  small.text-muted.d-block.mb-2= featuredArticle.prettyDate
+                  h2.featured-title
+                    a.text-dark(href="/blog/" + featuredArticle.slug)= featuredArticle.title
+                  if featuredArticle.description
+                    p.lead.mt-3= featuredArticle.description
+                  if featuredArticle.tags.length > 0
+                    .tags-horizontal.mt-3
+                      each tag in featuredArticle.tags
+                        span.tag.tag-small=tag
+                  .featured-cta
+                    a.btn.btn-accent(href="/blog/" + featuredArticle.slug) Read Article
+
   .container.page
     .row
-      .col.col-lg-6.offset-lg-3
-        ul.article-list.list-unstyled.plain-list.mb-5
-          each article, ind in articles
-            li
-              a.d-flex(href="/blog/" + article.slug)
-                section.img-frame
-                  if article.image
-                    img.img-fluid.rounded(src=article.image, alt=article.description)
-                section.ms-4
-                  small.text-nowrap.meta= article.prettyDate
-                  h3=article.title
-                  if article.tags.length > 0
-                    .tags-horizontal.mt-2
-                      each tag, ind in article.tags
-                        span.tag.tag-small=tag
-
-        .search-container
+      .col-12
+        .search-container.mb-5
           i.gg-search.horizontal-flip
-          input#search.form-control(type='text' placeholder='Search posts' aria-label='Search posts'  autocomplete="off")
+          input#search.form-control(type='text' placeholder='Search posts' aria-label='Search posts' autocomplete="off")
           i.gg-close.clear-search-input
         ul.list-unstyled.search-results
 
-        .mb-5.pb-5
+    .row.article-grid
+      if articles && articles.length > 1
+        each article, ind in articles.slice(1)
+          .col-md-6.col-lg-4.mb-4
+            .article-card
+              if article.image
+                a.article-image-link(href="/blog/" + article.slug)
+                  img.img-fluid.article-img(src=article.image, alt=article.description)
+              .article-content
+                small.text-muted.d-block.mb-2= article.prettyDate
+                h3.article-title
+                  a.text-dark(href="/blog/" + article.slug)= article.title
+                if article.tags.length > 0
+                  .tags-horizontal.mt-2
+                    each tag in article.tags
+                      span.tag.tag-small=tag
 
   include partials/footer
