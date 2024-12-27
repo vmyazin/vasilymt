@@ -9,8 +9,9 @@ html
     script(type="text/javascript" src="/javascript/topnav.js" charset="utf-8")
     script(type="text/javascript" src="/javascript/search.js" charset="utf-8")
 
-    link(rel='stylesheet', href='/stylesheets/styles.css')
-    link(rel='stylesheet', href='/stylesheets/theme-' + site.project.theme + '.css')
+    - const cssVersion = Date.now()
+    link(rel='stylesheet', href=`/stylesheets/styles.css?v=${cssVersion}`)
+    link(rel='stylesheet', href=`/stylesheets/theme-${site.project.theme}.css?v=${cssVersion}`)
     link(rel="icon" href=site.project.favicon type="images/x-icon")
 
     if site.project.alias === 'vasily'
