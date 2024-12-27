@@ -8,13 +8,13 @@ $color-accent: #3498db;
 $color-text: #333;
 $color-background: #fff;
 $font-primary: "Funnel Display",
-Helvetica,
-Arial,
-sans-serif;
+  Helvetica,
+  Arial,
+  sans-serif;
 $font-headers: "Funnel Display",
-Helvetica,
-Arial,
-sans-serif;
+  Helvetica,
+  Arial,
+  sans-serif;
 
 :root {
   --color-primary: #{$color-primary};
@@ -37,6 +37,19 @@ sans-serif;
 
   h1 {
     font-weight: 600;
+  }
+
+}
+
+a,
+.pseudo-link {
+  color: $color-accent;
+}
+
+a.tag {
+  &:hover {
+    background-color: $color-accent;
+    color: white;
   }
 }
 
@@ -147,6 +160,7 @@ sans-serif;
 
   .fun-link {
     color: rgba(255, 255, 255, 0.8);
+
     &:hover {
       color: $color-accent;
     }

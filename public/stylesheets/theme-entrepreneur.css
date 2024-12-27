@@ -31,6 +31,16 @@
   font-weight: 600;
 }
 
+a,
+.pseudo-link {
+  color: #3498db;
+}
+
+a.tag:hover {
+  background-color: #3498db;
+  color: white;
+}
+
 .btn-accent {
   background-color: var(--color-accent);
   color: white;
