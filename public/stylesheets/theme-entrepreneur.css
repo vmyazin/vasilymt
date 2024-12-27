@@ -36,7 +36,7 @@
 }
 
 .navbar {
-  background-color: #bed1e1;
+  background-color: var(--color-accent);
 }
 .navbar .nav-link {
   color: #2b2707;
@@ -76,4 +76,58 @@
 .header-with-gradient > * {
   position: relative;
   z-index: 2;
+}
+
+.footer-alt {
+  background-color: #3498db;
+  color: white;
+  padding: 4rem 0 2rem;
+}
+.footer-alt .footer-logo {
+  max-width: 200px;
+  height: auto;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  opacity: 0.4;
+}
+.footer-alt .footer-heading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+.footer-alt .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-alt .footer-links li {
+  margin-bottom: 0.75rem;
+}
+.footer-alt .footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-alt .footer-links a:hover {
+  color: white;
+}
+.footer-alt .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+.footer-alt .footer-bottom a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-alt .footer-bottom a:hover {
+  color: white;
+}
+.footer-alt .copyright {
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer-alt .back-to-top:hover {
+  text-decoration: underline;
 }
