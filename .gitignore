@@ -3,3 +3,4 @@
 robots.txt
 .env
 tmp/
+.vscode

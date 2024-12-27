@@ -163,6 +163,52 @@ router.get("/terms", (req, res) => {
   res.render("terms", { siteInfo, path: req.path, title: "Terms of Service" });
 });
 
+// Add Now page route
+router.get("/now", (req, res) => {
+  // Check if Now page is enabled for current profile
+  if (!res.locals.site?.navigation?.showNow) {
+    console.log('Now page access attempted but disabled for profile:', process.env.ACTIVE_PROFILE);
+    return res.redirect('/');
+  }
+
+  try {
+    const db = require('../content/db.json');
+    const profile = res.locals.envVars.ACTIVE_PROFILE || 'entrepreneur';
+    
+    if (!db.pages?.now?.[profile]) {
+      return res.status(500).render('error', { 
+        message: 'Now page content not found for current profile',
+        siteInfo,
+        path: req.path 
+      });
+    }
+
+    const content = db.pages.now[profile];
+    const homeUrl = req.protocol + "://" + req.get("host");
+
+    res.render("now", {
+      content,
+      siteInfo,
+      path: req.path,
+      title: content.meta.title,
+      description: content.meta.description,
+      profile: profile,
+      site: res.locals.site,
+      lastUpdated: new Date().toLocaleDateString('en-US', { 
+        month: 'long',
+        year: 'numeric'
+      })
+    });
+  } catch (err) {
+    console.error('Error loading now page:', err);
+    res.status(500).render('error', { 
+      message: 'Error loading content',
+      siteInfo,
+      path: req.path 
+    });
+  }
+});
+
 const checkBlogAccess = (req, res, next) => {
   // Check if site profile is available and showBlog is false
   if (!res.locals.site?.navigation?.showBlog) {

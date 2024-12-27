@@ -48,7 +48,8 @@ const sharedConfig = {
   },
   navigation: {
     showAbout: true,
-    showBlog: true
+    showBlog: true,
+    showNow: true
   }
 };
 
@@ -82,7 +83,8 @@ const createProfiles = () => {
     },
     navigation: {
       ...sharedConfig.navigation,
-      showBlog: false
+      showBlog: false,
+      showNow: false
     }
   };
 
@@ -109,7 +111,7 @@ const createProfiles = () => {
       googleAnalytics: getEnvVar('ENTREPRENEUR_GAID')
     },
     social: {
-      instagram: "https://instagram.com/vasily",
+      instagram: "https://instagram.com/rapidlyproductive",
       twitter: "https://twitter.com/rapidsystemshub",
     },
     navigation: {

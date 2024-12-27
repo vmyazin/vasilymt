@@ -212,6 +212,59 @@
           "emailSubject": "From the website"
         }
       }
+    },
+    "now": {
+      "entrepreneur": {
+        "meta": {
+          "title": "What I'm Focused On Now",
+          "description": "Current projects, learning journey, and future plans in the entrepreneurship space."
+        },
+        "sections": {
+          "projects": {
+            "title": "Current Projects",
+            "items": [
+              {
+                "title": "Offer Dog",
+                "description": "A web app for creating marketing offers"
+              }
+            ]
+          },
+          "learning": {
+            "title": "Learning",
+            "items": [
+              {
+                "title": "Cursor AI programming",
+                "description": "Coding with lightning speed"
+              },
+              {
+                "title": "Digital Marketing",
+                "description": "Studying the latest trends and techniques on Meta Ads"
+              }
+            ]
+          },
+          "development": {
+            "title": "Personal Development",
+            "items": [
+              {
+                "title": "Reading 'Surrounded by Idiots'",
+                "description": "Understanding how to be a better people reader. Get the book on <a href=\"https://www.amazon.com/Surrounded-Idiots-Behavior-Effectively-Communicate/dp/1250179947/\" target=\"_blank\" rel=\"noopener\">Amazon</a>"
+              },
+              {
+                "title": "Accepting Reality As It Is",
+                "description": "Accepting the world as it is, and not as it appears to be in my mind"
+              }
+            ]
+          },
+          "location": {
+            "title": "Location & Travel",
+            "description": "Currently based in Taguig, Philippines, with more Asian destinations coming soon."
+          },
+          "next": {
+            "title": "What's Next",
+            "description": "Planning to launch new projects and expand my network. Thinking of how to give back to the local communities."
+          }
+        }
+      }
     }
   }
 }

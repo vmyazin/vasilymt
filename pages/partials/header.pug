@@ -1,6 +1,6 @@
 //- pages/partials/header.pug
 
-nav.navbar.navbar-expand.navbar-dark
+nav.navbar.navbar-expand.header-with-gradient
   .container-xxl.flex-wrap
     a.navbar-brand(href="/")
       if site.project.logoAnimated
@@ -11,9 +11,16 @@ nav.navbar.navbar-expand.navbar-dark
         
     ul.navbar-nav.ms-auto
       li.nav-item.d-none.d-sm-block
-        a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home
+        a.nav-link(href='/' class=(path === '/' || path === 'home' ? 'active' : '')) Home
       if site.navigation.showBlog
         li.nav-item.ms-0.ms-sm-5
           a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
+      if site.navigation.showNow
+        li.nav-item.ms-5
+          a.nav-link(href='/now/' class=(path.includes('now') ? 'active' : '')) Now
       li.nav-item.ms-5
         a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
+
+//- Debug element (temporary)
+if process.env.NODE_ENV !== 'production'
+  .d-none= JSON.stringify({debug_path: path})
