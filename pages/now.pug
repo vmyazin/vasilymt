@@ -33,6 +33,14 @@ block content
                 strong #{item.title} 
                 | - !{item.description}
 
+        .now-section.mb-5
+          h2.h3.mb-4 📚 #{content.sections.reading.title}
+          ul.list-unstyled
+            each item in content.sections.reading.items
+              li.mb-3
+                strong #{item.title} 
+                | - !{item.description}
+
         //- Personal Development Section
         .now-section.mb-5
           h2.h3.mb-4 🌱 #{content.sections.development.title}
