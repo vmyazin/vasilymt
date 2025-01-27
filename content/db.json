@@ -225,7 +225,11 @@
             "items": [
               {
                 "title": "Offer Dog",
-                "description": "A web app for creating marketing offers"
+                "description": "A web app for <a href='https://offer-dog-next.vercel.app/'>creating marketing offers</a>"
+              },
+              {
+                "title": "Travel Tracker",
+                "description": "A web app for <a href='https://travel-tracker-pi-puce.vercel.app/'>mapping photos</a> to create a time line of locations visited"
               }
             ]
           },
@@ -233,12 +237,21 @@
             "title": "Learning",
             "items": [
               {
-                "title": "Cursor AI programming",
-                "description": "Coding with lightning speed"
+                "title": "Local LLM models",
+                "description": "I installed Llama and Deepseek R1 on my Mac and they are amazing to have without internet connection (and free)"
               },
               {
                 "title": "Digital Marketing",
                 "description": "Studying the latest trends and techniques on Meta Ads"
+              }
+            ]
+          },
+          "reading": {
+            "title": "Reading",
+            "items": [
+              {
+                "title": "Surrounded by Idiots",
+                "description": "A popular <a href='https://www.surroundedbyidiots.com/en/books/surrounded-by-idiots/'>book on psychology</a> by Thomas Erikson. How to understand those who cannot be understood"
               }
             ]
           },
