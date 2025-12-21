@@ -122,8 +122,11 @@ app.use((err, req, res, next) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
-});
+// Only start server when running directly (not via bin/www or Vercel)
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+  });
+}
 
 module.exports = app;
