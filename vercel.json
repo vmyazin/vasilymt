@@ -30,8 +30,8 @@
             "dest": "/api/index.js"
         }
     ],
-"env": {
-    "NODE_ENV": "production",
-    "ACTIVE_PROFILE": "professional"
-  }
+    "env": {
+        "NODE_ENV": "production",
+        "ACTIVE_PROFILE": "professional"
+    }
 }

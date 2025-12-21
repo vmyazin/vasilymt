@@ -20,7 +20,6 @@ const usersRouter = require('./routes/users');
 const debugRouter = require('./routes/debug');
 const robotsRouter = require('./routes/robots');
 const sitemapRouter = require('./routes/sitemap');
-const searchRouter = require('./routes/search');
 
 const app = express();
 const port = 3000;
@@ -32,32 +31,31 @@ app.set('view engine', 'pug');
 // Add profile and theme middleware before routes
 app.use(setSiteProfile);
 app.use((req, res, next) => {
-  const profile = res.locals.site?.project?.theme || 'professional';
-  res.locals.themeClass = `theme-${profile}`;
-  next();
+    const profile = res.locals.site ? .project ? .theme || 'professional';
+    res.locals.themeClass = `theme-${profile}`;
+    next();
 });
 
 // Global envVars middleware
 app.use((req, res, next) => {
-  res.locals.envVars = { NODE_ENV: process.env.NODE_ENV };
-  next();
+    res.locals.envVars = { NODE_ENV: process.env.NODE_ENV };
+    next();
 });
 
 
 // Make site config available to all templates
 app.use((req, res, next) => {
-  res.locals.siteConfig = siteConfig;
-  next();
+    res.locals.siteConfig = siteConfig;
+    next();
 });
 
 // Routes
 app.use('/', robotsRouter);
 app.use('/', sitemapRouter);
-app.use('/', searchRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 if (process.env.NODE_ENV !== 'production') {
-  app.use('/debug', debugRouter);
+    app.use('/debug', debugRouter);
 }
 
 app.use(logger('dev'));
@@ -67,68 +65,68 @@ app.use(cookieParser());
 
 // Only use sass-middleware in development (Vercel has read-only filesystem)
 if (process.env.NODE_ENV !== 'production') {
-  app.use(
-    sassMiddleware({
-      src: __dirname + '/scss',
-      dest: __dirname + '/public/stylesheets',
-      debug: true,
-      indentedSyntax: false,
-      outputStyle: 'compressed',
-      prefix: '/stylesheets',
-    })
-  );
+    app.use(
+        sassMiddleware({
+            src: __dirname + '/scss',
+            dest: __dirname + '/public/stylesheets',
+            debug: true,
+            indentedSyntax: false,
+            outputStyle: 'compressed',
+            prefix: '/stylesheets',
+        })
+    );
 }
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use((err, req, res, next) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  
-  // Ensure theme and profile data is available
-  if (!res.locals.site) {
-    res.locals.site = {
-      project: {
-        theme: 'professional',
-        name: 'Default Profile'
-      }
-    };
-  }
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // Set HTTP status
-  res.status(err.status || 500);
-  
-  // Handle JSON requests
-  if (req.accepts('html')) {
-    res.render("error", {
-      error: { status: err.status || 500 },
-      message: err.status === 404 ? 'Page Not Found' : (err.message || 'Something went wrong'),
-      path: req.path,
-      siteInfo: req.app.locals.siteInfo || {},
-      site: res.locals.site,
-      themeClass: `theme-${res.locals.site.project.theme}`
-    });
-  } else {
-    // API/JSON response
-    res.json({ 
-      error: err.status === 404 ? 'Not Found' : (err.message || 'An error occurred'),
-      status: err.status || 500
-    });
-  }
+    // Ensure theme and profile data is available
+    if (!res.locals.site) {
+        res.locals.site = {
+            project: {
+                theme: 'professional',
+                name: 'Default Profile'
+            }
+        };
+    }
+
+    // Set HTTP status
+    res.status(err.status || 500);
+
+    // Handle JSON requests
+    if (req.accepts('html')) {
+        res.render("error", {
+            error: { status: err.status || 500 },
+            message: err.status === 404 ? 'Page Not Found' : (err.message || 'Something went wrong'),
+            path: req.path,
+            siteInfo: req.app.locals.siteInfo || {},
+            site: res.locals.site,
+            themeClass: `theme-${res.locals.site.project.theme}`
+        });
+    } else {
+        // API/JSON response
+        res.json({
+            error: err.status === 404 ? 'Not Found' : (err.message || 'An error occurred'),
+            status: err.status || 500
+        });
+    }
 });
 
 // Only start server when running directly (not via bin/www or Vercel)
 if (require.main === module) {
-  app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
-  });
+    app.listen(port, () => {
+        console.log(`App listening at http://localhost:${port}`);
+    });
 }
 
 module.exports = app;
