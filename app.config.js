@@ -140,26 +140,44 @@ const getFilteredEnv = () => {
 // Create profiles only when needed
 let siteProfiles = null;
 
-// Domain to profile mapping
+// Exact domain to profile mapping
 const domainProfileMap = {
-    'vasilym.com': 'professional',
-    'www.vasilym.com': 'professional',
     'simon.rapidsystemshub.com': 'entrepreneur',
     'rapidsystemshub.com': 'entrepreneur',
 };
 
+// Pattern-based domain matching (checked after exact matches)
+const domainPatterns = [
+    { pattern: /^(www\.)?vasilym\..+$/, profile: 'professional' }, // vasilym.*, www.vasilym.*
+    { pattern: /^vasilym-.+\.vercel\.app$/, profile: 'professional' }, // vasilym-*.vercel.app
+];
+
 
 /**
  * Determines profile based on request hostname.
+ * Checks exact matches first, then pattern matches.
  * Falls back to ACTIVE_PROFILE env var or 'professional'.
  */
 const getProfileFromHost = (host) => {
     if (!host) return null;
 
     // Remove port if present
-    const hostname = host.split(':')[0];
+    const hostname = host.split(':')[0].toLowerCase();
 
-    return domainProfileMap[hostname] || null;
+    // Check exact match first
+    if (domainProfileMap[hostname]) {
+        return domainProfileMap[hostname];
+    }
+
+    // Check pattern matches
+    for (const { pattern, profile }
+        of domainPatterns) {
+        if (pattern.test(hostname)) {
+            return profile;
+        }
+    }
+
+    return null;
 };
 
 
