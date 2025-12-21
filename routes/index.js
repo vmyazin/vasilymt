@@ -3,23 +3,16 @@ const cors = require("cors");
 const express = require("express");
 const router = express.Router();
 
-const { getSiteProfiles } = require('../app.config');
+const { siteConfig } = require('../app.config');
 router.blogPath = __dirname + "/../content/articles/";
 const MarkdownBlog = require("../scripts/blog-setup");
 const blog = new MarkdownBlog(router.blogPath);
 const siteInfo = blog.info;
 
-// Initialize profiles
-const siteProfiles = getSiteProfiles();
-
-// Initialize envVars middleware
+// Initialize site config middleware
 router.use((req, res, next) => {
-  res.locals.envVars = {
-    ACTIVE_PROFILE: process.env.ACTIVE_PROFILE || 'entrepreneur',
-  };
-
-  // Initialize site profile based on ACTIVE_PROFILE
-  res.locals.site = siteProfiles[res.locals.envVars.ACTIVE_PROFILE];
+  res.locals.site = siteConfig;
+  res.locals.envVars = { NODE_ENV: process.env.NODE_ENV };
 
   next();
 });
@@ -79,9 +72,8 @@ const getContent = (profile) => {
 router.get("/", async (req, res) => {
   const articles = blog.posts;
   
-  // Get content based on active profile
-  const profile = process.env.ACTIVE_PROFILE || 'professional';
-  const content = require('../content/db.json').pages.home[profile];
+  // Get content for professional profile
+  const content = require('../content/db.json').pages.home.professional;
     
   res.render("home", { 
     articles, 
@@ -112,7 +104,7 @@ router.get("/about", (req, res) => {
     imageFullUrl = homeUrl + aboutImageForShare;
   
   try {
-    const content = getContent(process.env.ACTIVE_PROFILE);
+    const content = getContent('professional');
     
     if (!content) {
       return res.status(500).render('error', { 
@@ -128,7 +120,7 @@ router.get("/about", (req, res) => {
       path: req.path,
       title: content.meta.title,
       imageFullUrl: imageFullUrl,
-      profile: process.env.ACTIVE_PROFILE
+      profile: 'professional'
     });
   } catch (err) {
     console.error('Error loading about page:', err);
@@ -167,13 +159,13 @@ router.get("/terms", (req, res) => {
 router.get("/now", (req, res) => {
   // Check if Now page is enabled for current profile
   if (!res.locals.site?.navigation?.showNow) {
-    console.log('Now page access attempted but disabled for profile:', process.env.ACTIVE_PROFILE);
+    console.log('Now page access attempted but disabled for this profile');
     return res.redirect('/');
   }
 
   try {
     const db = require('../content/db.json');
-    const profile = res.locals.envVars.ACTIVE_PROFILE || 'entrepreneur';
+    const profile = 'professional';
     
     if (!db.pages?.now?.[profile]) {
       return res.status(500).render('error', { 

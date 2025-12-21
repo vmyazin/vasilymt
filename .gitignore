@@ -5,3 +5,4 @@ robots.txt
 tmp/
 .vscode
 .vercel
+.env*.local

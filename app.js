@@ -6,7 +6,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require("sass-middleware");
-const { setSiteProfile, siteProfiles } = require('./app.config');
+const { setSiteProfile, siteConfig } = require('./app.config');
 
 // Load environment variables first
 dotenv.config();
@@ -14,7 +14,6 @@ dotenv.config();
 // Env logging
 console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('Debugger should be visible:', process.env.NODE_ENV === 'development');
-console.log('ACTIVE_PROFILE:', process.env.ACTIVE_PROFILE);
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -40,16 +39,14 @@ app.use((req, res, next) => {
 
 // Global envVars middleware
 app.use((req, res, next) => {
-  res.locals.envVars = {
-    ACTIVE_PROFILE: process.env.ACTIVE_PROFILE || 'entrepreneur',
-  };
+  res.locals.envVars = { NODE_ENV: process.env.NODE_ENV };
   next();
 });
 
 
 // Make site config available to all templates
 app.use((req, res, next) => {
-  res.locals.siteProfiles = siteProfiles;
+  res.locals.siteConfig = siteConfig;
   next();
 });
 
