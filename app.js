@@ -31,7 +31,8 @@ app.set('view engine', 'pug');
 // Add profile and theme middleware before routes
 app.use(setSiteProfile);
 app.use((req, res, next) => {
-    const profile = res.locals.site ? .project ? .theme || 'professional';
+    const site = res.locals.site;
+    const profile = (site && site.project && site.project.theme) || 'professional';
     res.locals.themeClass = `theme-${profile}`;
     next();
 });

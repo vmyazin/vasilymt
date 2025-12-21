@@ -36,7 +36,7 @@ const getContent = (page, profile = 'professional') => {
     try {
         const db = require('../content/db.json');
 
-        if (!db.pages ? .[page] ? .[profile]) {
+        if (!db.pages || !db.pages[page] || !db.pages[page][profile]) {
             console.error(`Content not found: pages.${page}.${profile}`);
             return null;
         }

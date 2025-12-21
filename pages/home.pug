@@ -27,8 +27,8 @@ block content
         .d-flex.justify-content-center.align-items-center.flex-column.h-100
           img.d-none.d-md-block.intro-photo.rounded.mt-4(src=site.project.homepageImage, alt=site.project.author)
 
-  if envVars.ACTIVE_PROFILE === 'professional'
-    .container
+  //- Book section (professional profile)
+  .container
       .row
         .col   
           hr.dashed
@@ -43,8 +43,5 @@ block content
               p.col.col-md-9 Get started with learning language using the right mindset and techniques. I’ll give you a brief introduction.
             .d-grid.gap-2.d-md-block.mb-4
               a.btn.btn-secondary.btn-lg(href="https://read.amazon.com/kp/embed?asin=B098PLS7NM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_R9KDEJNAGNZ7HQFFQMSC") Buy on Amazon
-
-  if envVars.ACTIVE_PROFILE !== 'professional'
-    include partials/_blog-digest-2
 
   include partials/footer
