@@ -67,16 +67,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  sassMiddleware({
-    src: __dirname + '/scss',
-    dest: __dirname + '/public/stylesheets',
-    debug: true,
-    indentedSyntax: false,
-    outputStyle: 'compressed',
-    prefix: '/stylesheets',
-  })
-);
+
+// Only use sass-middleware in development (Vercel has read-only filesystem)
+if (process.env.NODE_ENV !== 'production') {
+  app.use(
+    sassMiddleware({
+      src: __dirname + '/scss',
+      dest: __dirname + '/public/stylesheets',
+      debug: true,
+      indentedSyntax: false,
+      outputStyle: 'compressed',
+      prefix: '/stylesheets',
+    })
+  );
+}
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler

@@ -4,3 +4,4 @@ robots.txt
 .env
 tmp/
 .vscode
+.vercel
