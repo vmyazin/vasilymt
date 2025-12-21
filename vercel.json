@@ -31,7 +31,6 @@
         }
     ],
     "env": {
-        "NODE_ENV": "production",
-        "ACTIVE_PROFILE": "entrepreneur"
+        "NODE_ENV": "production"
     }
 }
