@@ -66,3 +66,6 @@ If security might be a concern, follow these rules:
 * Separate data from functions: when necessary move sql scripts, llm prompts and configs to dedicated files, keep them separated from code that performs task executions. 
 * Avoid nested loops and multilayered if-then-else scopes. Split it into helpers.
 * Check the resulting code against this list.
+
+# Commits
+Don't auto commit
