@@ -114,4 +114,18 @@ router.get("/terms", (req, res) => {
 });
 
 
+// === LEGACY BLOG REDIRECTS ===
+// The blog moved to simon.rapidsystemshub.com. Permanently (301) redirect the
+// old /blog and /blog/:slug URLs, preserving the slug so links keep resolving.
+const NEW_BLOG_BASE = "https://simon.rapidsystemshub.com";
+
+router.get("/blog", (req, res) => {
+    res.redirect(301, `${NEW_BLOG_BASE}/blog`);
+});
+
+router.get("/blog/:slug", (req, res) => {
+    res.redirect(301, `${NEW_BLOG_BASE}/blog/${req.params.slug}`);
+});
+
+
 module.exports = router;
